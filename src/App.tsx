@@ -32,10 +32,12 @@ export default function App() {
 
   const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
   const exercieTest: ExerciseTestAdapter = exerciseItem.exerciseTest;
+  const exerciseTitle: string = exercieInfo.getTitle();
 
   return (
       <div className="app">
         <h1 className="title">Hello Student</h1>
+        <h3>{exerciseTitle}</h3>
         <Box mb={2}>
           <Instructions exercieInfo={exercieInfo}/>
         </Box>
@@ -48,10 +50,17 @@ export default function App() {
 
 function Instructions(props: any) {
   const exercieInfo: ExerciseInfoAdapter = props.exercieInfo;
+  const mainInstruction: string = exercieInfo.getMainInstruction();
+  const instructions: string[] = exercieInfo.getInstructions();
 
   return (
     <>
-      {exercieInfo.getInstructions().map((e, idx) => <div key={idx}>{e}</div>)}
+      <Box mb={1}>{mainInstruction}</Box>
+      {instructions.map((e, idx) =>
+        <li key={idx}>
+          {e}
+        </li>)
+      }
     </>
   );
 }
@@ -123,7 +132,7 @@ function TestResultView(props: any) {
 function OK() {
   return (
     <div className="tests-ok">
-      <h2>Your code is correct!</h2>
+      <h4>Your code is correct!</h4>
     </div>
   );
 }
@@ -131,7 +140,7 @@ function OK() {
 function MyError(props: any) {
   return (
     <div className="tests-fail">
-      <h2>Error: {props.errMessage}</h2>
+      <h4>Error: {props.errMessage}</h4>
     </div>
   );
 }
