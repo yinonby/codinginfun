@@ -1,22 +1,37 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./styles.css";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ExerciseMap, {ExerciseItem} from "./ExerciseMap";
 import ExerciseInfoAdapter from "./ExerciseInfoAdapter";
 import ExerciseTestAdapter from "./ExerciseTestAdapter";
-import {useLocation} from "react-router-dom";
-import ExerciseInfo from "./exercises/bpts/vars-basic-1/ExerciseInfo";
+import {useLocation, useSearchParams} from "react-router-dom";
 
 const exerciseMap = new ExerciseMap();
 
 export default function App() {
   const search = useLocation().search;
-  const courseName: string | null = new URLSearchParams(search).get("courseName");
-  const exerciseName: string | null = new URLSearchParams(search).get("exerciseName");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const urlSearchParams = new URLSearchParams(search);
+  const courseName: string | null = urlSearchParams.get("courseName");
+  const exerciseName: string | null = urlSearchParams.get("exerciseName");
+  let fileName: string | null = urlSearchParams.get("file");
+
+  useEffect(() => {
+    if (fileName === null) {
+      fileName = "/src/exercises/" + courseName + "/" + exerciseName + "/Exercise.ts";
+      searchParams.set("file", fileName);
+      setSearchParams(searchParams);
+    }
+  });
+  
   if (! courseName || ! exerciseName) {
     return <></>;
+  }
+
+  if (fileName === null) {
+    return null;
   }
 
   const exerciseItem: ExerciseItem = exerciseMap.getExerciseItem(courseName !, exerciseName !);
