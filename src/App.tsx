@@ -16,12 +16,12 @@ export default function App() {
   const urlSearchParams = new URLSearchParams(search);
   const courseName: string | null = urlSearchParams.get("courseName");
   const exerciseName: string | null = urlSearchParams.get("exerciseName");
-  let fileName: string | null = urlSearchParams.get("file");
+  const actualFileName: string | null = urlSearchParams.get("file");
+  const expectedFileName = "/src/exercises/" + courseName + "/" + exerciseName + "/Exercise.ts";
 
   useEffect(() => {
-    if (fileName === null) {
-      fileName = "/src/exercises/" + courseName + "/" + exerciseName + "/Exercise.ts";
-      searchParams.set("file", fileName);
+    if (actualFileName !== expectedFileName) {
+      searchParams.set("file", expectedFileName);
       setSearchParams(searchParams);
     }
   });
@@ -30,7 +30,7 @@ export default function App() {
     return <></>;
   }
 
-  if (fileName === null) {
+  if (actualFileName === null) {
     return null;
   }
 
