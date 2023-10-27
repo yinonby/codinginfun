@@ -1,4 +1,6 @@
-export default class ExerciseInfo {
+import ExerciseInfoAdapter from "../../../ExerciseInfoAdapter";
+
+export default class ExerciseInfo implements ExerciseInfoAdapter {
     getTitle(): string {
       return "Variables - basic";
     }
