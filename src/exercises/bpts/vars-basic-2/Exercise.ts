@@ -1,10 +1,8 @@
+
 export default class Exercise {
-    foo(): number {
+    foo(): void {
       // line 1
       
-
-      // line 2
-      return -1;
     }
   }
   
