@@ -14,27 +14,21 @@ export default function App() {
   const search = useLocation().search;
   const [searchParams, setSearchParams] = useSearchParams();
   const urlSearchParams = new URLSearchParams(search);
-  const courseName: string | null = urlSearchParams.get("courseName");
-  const exerciseName: string | null = urlSearchParams.get("exerciseName");
   const actualFileName: string | null = urlSearchParams.get("file");
-  const expectedFileName = "/src/exercises/" + courseName + "/" + exerciseName + "/Exercise.ts";
-
-  useEffect(() => {
-    if (actualFileName !== expectedFileName) {
-      searchParams.set("file", expectedFileName);
-      setSearchParams(searchParams);
-    }
-  });
-  
-  if (! courseName || ! exerciseName) {
-    return <></>;
-  }
 
   if (actualFileName === null) {
     return null;
   }
 
-  const exerciseItem: ExerciseItem = exerciseMap.getExerciseItem(courseName !, exerciseName !);
+  const actualFileNameParts: string[] = actualFileName.split("/");
+  const courseName: string = actualFileNameParts[3];
+  const exerciseName: string = actualFileNameParts[4];
+
+  const exerciseItem: ExerciseItem | null = exerciseMap.getExerciseItem(courseName !, exerciseName !);
+  if (! exerciseItem) {
+    return null;
+  }
+  
   const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
   const exercieTest: ExerciseTestAdapter = exerciseItem.exerciseTest;
 

@@ -23,8 +23,11 @@ export default class ExerciseMap {
         }
     }
 
-    getExerciseItem(courseName: string, exerciseName: string) {
-        return this.map[courseName][exerciseName];
+    getExerciseItem(courseName: string, exerciseName: string): ExerciseItem | null {
+        if (this.map[courseName] && this.map[courseName][exerciseName]) {
+            return this.map[courseName][exerciseName];
+        }
+        return null;
     }
 }
 
