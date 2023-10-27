@@ -26,9 +26,10 @@ export default function App() {
 
   const exerciseItem: ExerciseItem | null = exerciseMap.getExerciseItem(courseName !, exerciseName !);
   if (! exerciseItem) {
+    console.log("no exercise found")
     return null;
   }
-  
+
   const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
   const exercieTest: ExerciseTestAdapter = exerciseItem.exerciseTest;
 
