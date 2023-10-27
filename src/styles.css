@@ -1,0 +1,16 @@
+.app {
+  font-family: sans-serif;
+}
+
+.title {
+  text-align: center;
+}
+
+.tests-ok {
+  color: green;
+}
+
+.tests-fail {
+  color: red;
+}
+  
