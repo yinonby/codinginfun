@@ -57,19 +57,19 @@ export default class ExerciseMap {
                             "displayName": "Variables basics",
                             "exercises": [
                                 {
-                                    "name": "vars-basics-1",
+                                    "name": "bpts-vars-basics-1",
                                     "displayName": "Variables basics - declaration",
                                     "exerciseInfo": new BptsVarsBasic1ExerciseInfo(),
                                     "exerciseTest": new BptsVarsBasic1ExerciseTest(),
                                 },
                                 {
-                                    "name": "vars-basics-2",
+                                    "name": "bpts-vars-basics-2",
                                     "displayName": "Variables basics - giving meaningful names",
                                     "exerciseInfo": new BptsVarsBasic2ExerciseInfo(),
                                     "exerciseTest": new BptsVarsBasic2ExerciseTest(),
                                 },
                                 {
-                                    "name": "vars-basics-3",
+                                    "name": "bpts-vars-basics-3",
                                     "displayName": "Variables basics - changing a variable's value",
                                     "exerciseInfo": new BptsVarsBasic3ExerciseInfo(),
                                     "exerciseTest": new BptsVarsBasic3ExerciseTest(),
@@ -82,10 +82,9 @@ export default class ExerciseMap {
         }
     }
 
-    getExerciseItem(courseName: string, exerciseName: string): ExerciseItem | null {
-        const exerciseNameParts: string[] = exerciseName.split("-");
-        const chapterName = exerciseNameParts[0];
-        const lessonName = exerciseNameParts[1];
+    getExerciseItem(courseName: string, chapterName: string,
+        lessonName: string,
+        exerciseName: string): ExerciseItem | null {
 
         if (! this.map[courseName]) {
             console.log("not course found", courseName);

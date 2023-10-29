@@ -19,19 +19,28 @@ export default function App() {
   const [searchParams, setSearchParams] = useSearchParams();
   const urlSearchParams = new URLSearchParams(search);
   const actualFileName: string | null = urlSearchParams.get("file");
+  const exerciseName: string | null = urlSearchParams.get("ex");
 
   if (actualFileName === null) {
-    return null;
+    return <Box mx={2} className="app">No file name query param</Box>;
   }
 
+  if (exerciseName === null) {
+    return <Box mx={2} className="app">No exercise name query param</Box>;
+  }
+
+  /*
   const actualFileNameParts: string[] = actualFileName.split("/");
   const courseName: string = actualFileNameParts[3];
-  const exerciseName: string = actualFileNameParts[4];
+  const exerciseName: string = actualFileNameParts[4];*/
   const exerciseNameParts: string[] = exerciseName.split("-");
-  const chapterName = exerciseNameParts[0];
-  const lessonName = exerciseNameParts[1];
+  const courseName: string = exerciseNameParts[0];
+  const chapterName = exerciseNameParts[1];
+  const lessonName = exerciseNameParts[2];
 
-  const exerciseItem: ExerciseItem | null = exerciseMap.getExerciseItem(courseName !, exerciseName !);
+  const exerciseItem: ExerciseItem | null =
+    exerciseMap.getExerciseItem(courseName,chapterName,
+      lessonName, exerciseName);
   if (! exerciseItem) {
     return <Box mx={2} className="app">No exercise found</Box>;
   }
