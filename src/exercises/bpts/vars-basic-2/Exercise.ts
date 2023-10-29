@@ -1,6 +1,6 @@
 
 export default class Exercise {
-    foo(): void {
+  solution(): void {
       // line 1
       
     }

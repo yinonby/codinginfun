@@ -7,6 +7,10 @@ import ExerciseMap, {ExerciseItem} from "./ExerciseMap";
 import ExerciseInfoAdapter from "./ExerciseInfoAdapter";
 import ExerciseTestAdapter from "./ExerciseTestAdapter";
 import {useLocation, useSearchParams} from "react-router-dom";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 const exerciseMap = new ExerciseMap();
 
@@ -23,11 +27,13 @@ export default function App() {
   const actualFileNameParts: string[] = actualFileName.split("/");
   const courseName: string = actualFileNameParts[3];
   const exerciseName: string = actualFileNameParts[4];
+  const exerciseNameParts: string[] = exerciseName.split("-");
+  const chapterName = exerciseNameParts[0];
+  const lessonName = exerciseNameParts[1];
 
   const exerciseItem: ExerciseItem | null = exerciseMap.getExerciseItem(courseName !, exerciseName !);
   if (! exerciseItem) {
-    console.log("no exercise found")
-    return null;
+    return <Box mx={2} className="app">No exercise found</Box>;
   }
 
   const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
@@ -35,8 +41,28 @@ export default function App() {
   const exerciseTitle: string = exercieInfo.getTitle();
 
   return (
-      <div className="app">
+      <Box mx={2} className="app">
         <h1 className="title">Hello Student</h1>
+        <Box mb={2}>
+          <Box sx={{ display: "flex" }}>
+            <Box sx={{ flex: 1 }} mr={1}>
+              <CourseSelector courseName={courseName}/>
+            </Box>
+            <Box sx={{ flex: 1 }} mr={1}>
+              <ChapterSelector courseName={courseName}
+                chapterName={chapterName}/>
+            </Box>
+            <Box sx={{ flex: 1 }} mr={1}>
+              <LessonSelector courseName={courseName}
+                chapterName={chapterName} lessonName={lessonName}/>
+            </Box>
+            <Box sx={{ flex: 1 }}>
+              <ExerciseSelector courseName={courseName}
+                chapterName={chapterName} lessonName={lessonName}
+                exerciseName={exerciseName}/>
+            </Box>
+          </Box>
+        </Box>
         <h3>{exerciseTitle}</h3>
         <Box mb={2}>
           <Instructions exercieInfo={exercieInfo}/>
@@ -44,8 +70,122 @@ export default function App() {
         <Box mb={2}>
           <TestSection exercieTest={exercieTest}/>
         </Box>
-      </div>
+      </Box>
   );
+}
+
+type SelectItem = {
+  name: string,
+  displayName: string,
+}
+
+function BasicSelector(props: any) {
+  const selectItems: SelectItem[] = props.selectItems;
+  const curValue: string = props.curValue;
+  const label: string = props.label;
+  const onChange: Function = props.onChange;
+
+  const handleChange = (event: SelectChangeEvent) => {
+    onChange(event.target.value as string);
+  };
+
+  return (
+    <FormControl fullWidth>
+      <InputLabel id="course-name-select-label">{label}</InputLabel>
+      <Select
+        labelId="course-name-select-label"
+        id="course-name-select"
+        value={curValue}
+        label={label}
+        onChange={handleChange}
+      >
+        {selectItems.map(e =>
+          <MenuItem key={e.name} value={e.name}>{e.displayName}</MenuItem>
+        )}
+      </Select>
+    </FormControl>
+  );
+}
+
+function CourseSelector(props: any) {
+  const courseName = props.courseName;
+  const courseNames: SelectItem[] = exerciseMap.getCourses().map(e => ({
+    name: e.name,
+    displayName: e.displayName,
+  }));
+
+  const handleChange = (value: string) => {
+    //setCourseName(value);
+  };
+
+  return <BasicSelector
+    selectItems={courseNames}
+    label="Course"
+    onChange={handleChange}
+    curValue={courseName}/>;
+}
+
+function ChapterSelector(props: any) {
+  const courseName: string = props.courseName;
+  const chapterName: string = props.chapterName;
+  const chapterNames: SelectItem[] =
+    exerciseMap.getChapterNames(courseName).map(e => ({
+      name: e.name,
+      displayName: e.displayName,
+    }));
+
+  const handleChange = (value: string) => {
+    //setChapterName(value);
+  };
+
+  return <BasicSelector
+    selectItems={chapterNames}
+    label="Chapter"
+    onChange={handleChange}
+    curValue={chapterName}/>;
+}
+
+function LessonSelector(props: any) {
+  const courseName: string = props.courseName;
+  const chapterName: string = props.chapterName;
+  const lessonName: string = props.lessonName;
+  const lessonNames: SelectItem[] =
+    exerciseMap.getLessonNames(courseName, chapterName).map(e => ({
+      name: e.name,
+      displayName: e.displayName,
+    }));
+
+  const handleChange = (value: string) => {
+    //setLessonName(value);
+  };
+
+  return <BasicSelector
+    selectItems={lessonNames}
+    label="Lesson"
+    onChange={handleChange}
+    curValue={lessonName}/>;
+}
+
+function ExerciseSelector(props: any) {
+  const courseName: string = props.courseName;
+  const chapterName: string = props.chapterName;
+  const lessonName: string = props.lessonName;
+  const exerciseName: string = props.exerciseName;
+  const exerciseNames: SelectItem[] =
+    exerciseMap.getExerciseNames(courseName, chapterName, lessonName).map(e => ({
+      name: e.name,
+      displayName: e.displayName,
+    }));
+
+  const handleChange = (value: string) => {
+    //setExerciseName(value);
+  };
+
+  return <BasicSelector
+    selectItems={exerciseNames}
+    label="Exercise"
+    onChange={handleChange}
+    curValue={exerciseName}/>;
 }
 
 function Instructions(props: any) {

@@ -7,14 +7,14 @@ export default class Test implements ExerciseTestAdapter {
     this.verifyFoo();
   }
 
-  foo(): void {
+  solution(): void {
     // line 1
     const x: number = 10;
   }
 
   verifyFoo() {
     const exercise: Exercise = new Exercise();
-    if (exercise.foo.toString() !== this.foo.toString()) {
+    if (exercise.solution.toString() !== this.solution.toString()) {
       throw new Error(
         "Did you declare the variable with the correct value?"
       );
