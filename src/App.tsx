@@ -18,9 +18,14 @@ export default function App() {
   const search = useLocation().search;
   const [searchParams, setSearchParams] = useSearchParams();
   const urlSearchParams = new URLSearchParams(search);
-  const actualFileName: string | null = urlSearchParams.get("file");
-  const exerciseName: string | null = urlSearchParams.get("ex");
+  const courseName: string | null = urlSearchParams.get("course");
+  const chapterName: string | null = urlSearchParams.get("chapter");
+  const lessonName: string | null = urlSearchParams.get("lesson");
+  const exerciseName: string | null = urlSearchParams.get("exercise");
 
+  /*
+
+  const actualFileName: string | null = urlSearchParams.get("file");
   if (actualFileName === null) {
     return <Box mx={2} className="app">No file name query param</Box>;
   }
@@ -28,11 +33,9 @@ export default function App() {
   if (exerciseName === null) {
     return <Box mx={2} className="app">No exercise name query param</Box>;
   }
-
-  /*
   const actualFileNameParts: string[] = actualFileName.split("/");
   const courseName: string = actualFileNameParts[3];
-  const exerciseName: string = actualFileNameParts[4];*/
+  const exerciseName: string = actualFileNameParts[4];
   const exerciseNameParts: string[] = exerciseName.split("-");
   const courseName: string = exerciseNameParts[0];
   const chapterName = exerciseNameParts[1];
@@ -47,31 +50,85 @@ export default function App() {
 
   const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
   const exercieTest: ExerciseTestAdapter = exerciseItem.exerciseTest;
-  const exerciseTitle: string = exercieInfo.getTitle();
+  const exerciseTitle: string = exercieInfo.getTitle();*/
 
   return (
       <Box mx={2} className="app">
         <h1 className="title">Hello Student</h1>
         <Box mb={2}>
-          <Box sx={{ display: "flex" }}>
-            <Box sx={{ flex: 1 }} mr={1}>
-              <CourseSelector courseName={courseName}/>
-            </Box>
-            <Box sx={{ flex: 1 }} mr={1}>
-              <ChapterSelector courseName={courseName}
-                chapterName={chapterName}/>
-            </Box>
-            <Box sx={{ flex: 1 }} mr={1}>
-              <LessonSelector courseName={courseName}
-                chapterName={chapterName} lessonName={lessonName}/>
-            </Box>
-            <Box sx={{ flex: 1 }}>
-              <ExerciseSelector courseName={courseName}
-                chapterName={chapterName} lessonName={lessonName}
-                exerciseName={exerciseName}/>
-            </Box>
-          </Box>
+          <SelectorArea/>
         </Box>
+        {exerciseName && <ExerciseArea courseName={courseName!}
+          chapterName={chapterName!} lessonName={lessonName!}
+          exerciseName={exerciseName!}/>}
+      </Box>
+  );
+}
+
+function SelectorArea() {
+  const search = useLocation().search;
+  const [searchParams, setSearchParams] = useSearchParams();
+  const urlSearchParams = new URLSearchParams(search);
+  const courseName: string | null = urlSearchParams.get("course") || "";
+  const chapterName: string | null = urlSearchParams.get("chapter") || "";
+  const lessonName: string | null = urlSearchParams.get("lesson") || "";
+  const exerciseName: string | null = urlSearchParams.get("exercise") || "";
+
+  function handleChange(courseName: string, chapterName: string,
+    lessonName: string, exerciseName: string) {
+    const urlSearchParams = new URLSearchParams(search);
+    searchParams.set("course", courseName);
+    searchParams.set("chapter", chapterName);
+    searchParams.set("lesson", lessonName);
+    searchParams.set("exercise", exerciseName);
+    setSearchParams(searchParams);
+  }
+
+  return (
+    <Box sx={{ display: "flex" }}>
+      <Box sx={{ flex: 1 }} mr={1}>
+        <CourseSelector courseName={courseName}
+          onChange={handleChange}/>
+      </Box>
+      <Box sx={{ flex: 1 }} mr={1}>
+        <ChapterSelector courseName={courseName}
+          chapterName={chapterName}
+          onChange={handleChange}/>
+      </Box>
+      <Box sx={{ flex: 1 }} mr={1}>
+        <LessonSelector courseName={courseName}
+          chapterName={chapterName} lessonName={lessonName}
+          onChange={handleChange}/>
+      </Box>
+      <Box sx={{ flex: 1 }}>
+        <ExerciseSelector courseName={courseName}
+          chapterName={chapterName} lessonName={lessonName}
+          exerciseName={exerciseName}
+          onChange={handleChange}/>
+      </Box>
+    </Box>
+  );
+}
+
+function ExerciseArea(props: any) {
+  const courseName: string = props.courseName;
+  const chapterName: string = props.chapterName;
+  const lessonName: string = props.lessonName;
+  const exerciseName: string = props.exerciseName;
+
+  const exerciseItem: ExerciseItem | null =
+    exerciseMap.getExerciseItem(courseName,chapterName,
+      lessonName, exerciseName);
+  if (! exerciseItem) {
+    return <Box mx={2} className="app">No exercise found</Box>;
+  }
+
+  const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
+  const exercieTest: ExerciseTestAdapter = exerciseItem.exerciseTest;
+  const exerciseTitle: string = exercieInfo.getTitle();
+
+  return (
+      <Box>
         <h3>{exerciseTitle}</h3>
         <Box mb={2}>
           <Instructions exercieInfo={exercieInfo}/>
@@ -118,13 +175,14 @@ function BasicSelector(props: any) {
 
 function CourseSelector(props: any) {
   const courseName = props.courseName;
+  const onChange: Function = props.onChange;
   const courseNames: SelectItem[] = exerciseMap.getCourses().map(e => ({
     name: e.name,
     displayName: e.displayName,
   }));
 
   const handleChange = (value: string) => {
-    //setCourseName(value);
+    onChange(value, "", "", "");
   };
 
   return <BasicSelector
@@ -137,14 +195,18 @@ function CourseSelector(props: any) {
 function ChapterSelector(props: any) {
   const courseName: string = props.courseName;
   const chapterName: string = props.chapterName;
-  const chapterNames: SelectItem[] =
-    exerciseMap.getChapterNames(courseName).map(e => ({
+  const onChange: Function = props.onChange;
+  let chapterNames: SelectItem[] = [];
+
+  if (courseName) {
+    chapterNames = exerciseMap.getChapterNames(courseName).map(e => ({
       name: e.name,
       displayName: e.displayName,
     }));
+  }
 
   const handleChange = (value: string) => {
-    //setChapterName(value);
+    onChange(courseName, value, "", "");
   };
 
   return <BasicSelector
@@ -158,14 +220,19 @@ function LessonSelector(props: any) {
   const courseName: string = props.courseName;
   const chapterName: string = props.chapterName;
   const lessonName: string = props.lessonName;
-  const lessonNames: SelectItem[] =
-    exerciseMap.getLessonNames(courseName, chapterName).map(e => ({
-      name: e.name,
-      displayName: e.displayName,
-    }));
+  const onChange: Function = props.onChange;
+  let lessonNames: SelectItem[] = [];
+  
+  if (courseName && chapterName) {
+    lessonNames =
+      exerciseMap.getLessonNames(courseName, chapterName).map(e => ({
+        name: e.name,
+        displayName: e.displayName,
+      }));
+  }
 
   const handleChange = (value: string) => {
-    //setLessonName(value);
+    onChange(courseName, chapterName, value, "");
   };
 
   return <BasicSelector
@@ -180,14 +247,18 @@ function ExerciseSelector(props: any) {
   const chapterName: string = props.chapterName;
   const lessonName: string = props.lessonName;
   const exerciseName: string = props.exerciseName;
-  const exerciseNames: SelectItem[] =
-    exerciseMap.getExerciseNames(courseName, chapterName, lessonName).map(e => ({
+  const onChange: Function = props.onChange;
+  let exerciseNames: SelectItem[] = [];
+
+  if (courseName && chapterName && lessonName) {
+    exerciseNames = exerciseMap.getExerciseNames(courseName, chapterName, lessonName).map(e => ({
       name: e.name,
       displayName: e.displayName,
     }));
+  }
 
   const handleChange = (value: string) => {
-    //setExerciseName(value);
+    onChange(courseName, chapterName, lessonName, value);
   };
 
   return <BasicSelector

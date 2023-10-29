@@ -44,6 +44,11 @@ export type NameItem = {
 
 export default class ExerciseMap {
     private map: ExerciseMapItem = {
+        "test": {
+            "name": "test",
+            "displayName": "Test",
+            "chapters": [],
+        },
         "bpts": {
             "name": "bpts",
             "displayName": "Basic Programming with TypeScript",
@@ -87,12 +92,12 @@ export default class ExerciseMap {
         exerciseName: string): ExerciseItem | null {
 
         if (! this.map[courseName]) {
-            console.log("not course found", courseName);
+            console.log("no course found", courseName);
             return null;
         }
         const chapter = this.map[courseName].chapters.find(e => e.name == chapterName);
         if (! chapter) {
-            console.log("not chapter found", courseName, chapterName);
+            console.log("no chapter found", courseName, chapterName);
             return null;
         }
         const lesson = chapter.lessons.find(e => e.name == lessonName);
