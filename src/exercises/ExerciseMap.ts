@@ -5,13 +5,20 @@ import BptsVarsBasic1ExerciseTest
     from "./bpts/vars/basics/bpts-vars-basics-1/ExerciseTest";
 import BptsVarsBasic2ExerciseInfo
     from "./bpts/vars/basics/bpts-vars-basics-2/ExerciseInfo";
-import BptsVarsBasic2ExerciseTest from "./bpts/vars/basics/bpts-vars-basics-2/ExerciseTest";
-import BptsVarsBasic3ExerciseInfo from "./bpts/vars/basics/bpts-vars-basics-3/ExerciseInfo";
-import BptsVarsBasic3ExerciseTest from "./bpts/vars/basics/bpts-vars-basics-3/ExerciseTest";
-import BptsVarsTypesStringExerciseInfo from "./bpts/vars/types/bpts-vars-types-string/ExerciseInfo";
-import BptsVarsTypesStringExerciseTest from "./bpts/vars/types/bpts-vars-types-string/ExerciseTest";
-import ExerciseInfoAdapter from "./ExerciseInfoAdapter";
-import ExerciseTestAdapter from "./ExerciseTestAdapter";
+import BptsVarsBasic2ExerciseTest
+    from "./bpts/vars/basics/bpts-vars-basics-2/ExerciseTest";
+import BptsVarsBasic3ExerciseInfo
+    from "./bpts/vars/basics/bpts-vars-basics-3/ExerciseInfo";
+import BptsVarsBasic3ExerciseTest
+    from "./bpts/vars/basics/bpts-vars-basics-3/ExerciseTest";
+import BptsVarsTypesStringExerciseInfo
+    from "./bpts/vars/types/bpts-vars-types-string/ExerciseInfo";
+import BptsVarsTypesStringExerciseTest
+    from "./bpts/vars/types/bpts-vars-types-string/ExerciseTest";
+import ExerciseInfoAdapter
+    from "./ExerciseInfoAdapter";
+import ExerciseTestAdapter
+    from "./ExerciseTestAdapter";
 
 type ExerciseMapItem = {
     [key: string]: CourseItem,
@@ -37,7 +44,6 @@ type LessonItem = {
 
 export type ExerciseItem = {
     name: string,
-    displayName: string,
     exerciseInfo: ExerciseInfoAdapter,
     exerciseTest: ExerciseTestAdapter,
 }
@@ -68,19 +74,16 @@ export default class ExerciseMap {
                             "exercises": [
                                 {
                                     "name": "bpts-vars-basics-1",
-                                    "displayName": "Variables basics - declaration",
                                     "exerciseInfo": new BptsVarsBasic1ExerciseInfo(),
                                     "exerciseTest": new BptsVarsBasic1ExerciseTest(),
                                 },
                                 {
                                     "name": "bpts-vars-basics-2",
-                                    "displayName": "Variables basics - giving meaningful names",
                                     "exerciseInfo": new BptsVarsBasic2ExerciseInfo(),
                                     "exerciseTest": new BptsVarsBasic2ExerciseTest(),
                                 },
                                 {
                                     "name": "bpts-vars-basics-3",
-                                    "displayName": "Variables basics - changing a variable's value",
                                     "exerciseInfo": new BptsVarsBasic3ExerciseInfo(),
                                     "exerciseTest": new BptsVarsBasic3ExerciseTest(),
                                 }
@@ -92,7 +95,6 @@ export default class ExerciseMap {
                             "exercises": [
                                 {
                                     "name": "bpts-vars-types-string",
-                                    "displayName": "Variables types - string",
                                     "exerciseInfo": new BptsVarsTypesStringExerciseInfo(),
                                     "exerciseTest": new BptsVarsTypesStringExerciseTest(),
                                 },
@@ -160,7 +162,7 @@ export default class ExerciseMap {
             .find(e => e.name === lessonName)!.exercises
             .map(e => ({
                 name: e.name,
-                displayName: e.displayName,
+                displayName: e.exerciseInfo.getTitle(),
             }));
     }
 

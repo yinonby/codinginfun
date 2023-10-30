@@ -2,7 +2,7 @@ import ExerciseInfoAdapter from "../../../../ExerciseInfoAdapter";
 
 export default class ExerciseInfo implements ExerciseInfoAdapter {
     getTitle(): string {
-        return "Variables basics - changing a variable's value";
+        return "Changing variables' values";
     }
 
     getMainInstruction(): string {

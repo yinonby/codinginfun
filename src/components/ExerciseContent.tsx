@@ -30,7 +30,7 @@ export default function ExerciseContent(props: any) {
 
     const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
     const exercieTest: ExerciseTestAdapter = exerciseItem.exerciseTest;
-    const exerciseTitle: string = exercieInfo.getTitle();
+    const exerciseTitle: string = exerciseItem.exerciseInfo.getTitle();
 
     return (
         <Box>
