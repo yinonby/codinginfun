@@ -1,42 +1,40 @@
-import * as React from "react";
-import { render } from "react-dom";
-import App from "./App";
+
+import Exercise from "./pages/Exercise";
 import { createRoot } from "react-dom/client";
 import {
     createBrowserRouter,
     RouterProvider,
-    Route,
-    Link,
 } from "react-router-dom";
+import ExerciseContent from "./components/ExerciseContent";
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <App />,
-    },
-    {
         path: "/codesandbox/:courseName/:chapterName/:lessonName/:exerciseName",
-        element: <App codesandbox={true}/>,
+        element: <ExerciseContent />,
     },
     {
         path: "/exercises/:courseName/:chapterName/:lessonName/:exerciseName",
-        element: <App />,
+        element: <Exercise />,
     },
     {
         path: "/exercises/:courseName/:chapterName/:lessonName",
-        element: <App />,
+        element: <Exercise />,
     },
     {
         path: "/exercises/:courseName/:chapterName",
-        element: <App />,
+        element: <Exercise />,
     },
     {
         path: "/exercises/:courseName",
-        element: <App />,
+        element: <Exercise />,
     },
     {
         path: "/exercises",
-        element: <App />,
+        element: <Exercise />,
+    },
+    {
+        path: "/",
+        element: <Exercise />,
     },
 ]);
 

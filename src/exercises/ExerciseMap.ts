@@ -1,12 +1,12 @@
 
-import BptsVarsBasic1ExerciseInfo from "./exercises/bpts/vars/basics/bpts-vars-basics-1/ExerciseInfo";
-import BptsVarsBasic1ExerciseTest from "./exercises/bpts/vars/basics/bpts-vars-basics-1/ExerciseTest";
-import BptsVarsBasic2ExerciseInfo from "./exercises/bpts/vars/basics/bpts-vars-basics-2/ExerciseInfo";
-import BptsVarsBasic2ExerciseTest from "./exercises/bpts/vars/basics/bpts-vars-basics-2/ExerciseTest";
-import BptsVarsBasic3ExerciseInfo from "./exercises/bpts/vars/basics/bpts-vars-basics-3/ExerciseInfo";
-import BptsVarsBasic3ExerciseTest from "./exercises/bpts/vars/basics/bpts-vars-basics-3/ExerciseTest";
-import BptsVarsTypesStringExerciseInfo from "./exercises/bpts/vars/types/bpts-vars-types-string/ExerciseInfo";
-import BptsVarsTypesStringExerciseTest from "./exercises/bpts/vars/types/bpts-vars-types-string/ExerciseTest";
+import BptsVarsBasic1ExerciseInfo from "./bpts/vars/basics/bpts-vars-basics-1/ExerciseInfo";
+import BptsVarsBasic1ExerciseTest from "./bpts/vars/basics/bpts-vars-basics-1/ExerciseTest";
+import BptsVarsBasic2ExerciseInfo from "./bpts/vars/basics/bpts-vars-basics-2/ExerciseInfo";
+import BptsVarsBasic2ExerciseTest from "./bpts/vars/basics/bpts-vars-basics-2/ExerciseTest";
+import BptsVarsBasic3ExerciseInfo from "./bpts/vars/basics/bpts-vars-basics-3/ExerciseInfo";
+import BptsVarsBasic3ExerciseTest from "./bpts/vars/basics/bpts-vars-basics-3/ExerciseTest";
+import BptsVarsTypesStringExerciseInfo from "./bpts/vars/types/bpts-vars-types-string/ExerciseInfo";
+import BptsVarsTypesStringExerciseTest from "./bpts/vars/types/bpts-vars-types-string/ExerciseTest";
 import ExerciseInfoAdapter from "./ExerciseInfoAdapter";
 import ExerciseTestAdapter from "./ExerciseTestAdapter";
 
