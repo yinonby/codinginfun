@@ -1,16 +1,16 @@
 
-import BptsVarsBasic1ExerciseInfo
-    from "./bpts/vars/basics/bpts-vars-basics-1/ExerciseInfo";
-import BptsVarsBasic1ExerciseTest
-    from "./bpts/vars/basics/bpts-vars-basics-1/ExerciseTest";
-import BptsVarsBasic2ExerciseInfo
-    from "./bpts/vars/basics/bpts-vars-basics-2/ExerciseInfo";
-import BptsVarsBasic2ExerciseTest
-    from "./bpts/vars/basics/bpts-vars-basics-2/ExerciseTest";
-import BptsVarsBasic3ExerciseInfo
-    from "./bpts/vars/basics/bpts-vars-basics-3/ExerciseInfo";
-import BptsVarsBasic3ExerciseTest
-    from "./bpts/vars/basics/bpts-vars-basics-3/ExerciseTest";
+import BptsVarsBasicConstExerciseInfo
+    from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseInfo";
+import BptsVarsBasicConstExerciseTest
+    from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseTest";
+import BptsVarsBasicNamingExerciseInfo
+    from "./bpts/vars/basics/bpts-vars-basics-naming/ExerciseInfo";
+import BptsVarsBasicNamingExerciseTest
+    from "./bpts/vars/basics/bpts-vars-basics-naming/ExerciseTest";
+import BptsVarsBasicLetExerciseInfo
+    from "./bpts/vars/basics/bpts-vars-basics-let/ExerciseInfo";
+import BptsVarsBasicLetExerciseTest
+    from "./bpts/vars/basics/bpts-vars-basics-let/ExerciseTest";
 import BptsVarsTypesStringExerciseInfo
     from "./bpts/vars/types/bpts-vars-types-string/ExerciseInfo";
 import BptsVarsTypesStringExerciseTest
@@ -74,18 +74,18 @@ export default class ExerciseMap {
                             "exercises": [
                                 {
                                     "name": "bpts-vars-basics-1",
-                                    "exerciseInfo": new BptsVarsBasic1ExerciseInfo(),
-                                    "exerciseTest": new BptsVarsBasic1ExerciseTest(),
+                                    "exerciseInfo": new BptsVarsBasicConstExerciseInfo(),
+                                    "exerciseTest": new BptsVarsBasicConstExerciseTest(),
                                 },
                                 {
                                     "name": "bpts-vars-basics-2",
-                                    "exerciseInfo": new BptsVarsBasic2ExerciseInfo(),
-                                    "exerciseTest": new BptsVarsBasic2ExerciseTest(),
+                                    "exerciseInfo": new BptsVarsBasicNamingExerciseInfo(),
+                                    "exerciseTest": new BptsVarsBasicNamingExerciseTest(),
                                 },
                                 {
                                     "name": "bpts-vars-basics-3",
-                                    "exerciseInfo": new BptsVarsBasic3ExerciseInfo(),
-                                    "exerciseTest": new BptsVarsBasic3ExerciseTest(),
+                                    "exerciseInfo": new BptsVarsBasicLetExerciseInfo(),
+                                    "exerciseTest": new BptsVarsBasicLetExerciseTest(),
                                 }
                             ]
                         },
