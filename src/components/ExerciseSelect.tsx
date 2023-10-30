@@ -33,22 +33,22 @@ export default function ExerciseSelect() {
     }
 
     return (
-        <Box sx={{ display: "flex" }}>
-            <Box sx={{ flex: 1 }} mr={1}>
+        <Box sx={{ display: "flex", flexWrap: "wrap" }} m={-1}>
+            <Box sx={{ flex: 1 }} m={1}>
                 <CourseSelector courseName={courseName}
                     onChange={handleChange} />
             </Box>
-            <Box sx={{ flex: 1 }} mr={1}>
+            <Box sx={{ flex: 1 }} m={1}>
                 <ChapterSelector courseName={courseName}
                     chapterName={chapterName}
                     onChange={handleChange} />
             </Box>
-            <Box sx={{ flex: 1 }} mr={1}>
+            <Box sx={{ flex: 1 }} m={1}>
                 <LessonSelector courseName={courseName}
                     chapterName={chapterName} lessonName={lessonName}
                     onChange={handleChange} />
             </Box>
-            <Box sx={{ flex: 1 }}>
+            <Box sx={{ flex: 1 }} m={1}>
                 <ExerciseSelector courseName={courseName}
                     chapterName={chapterName} lessonName={lessonName}
                     exerciseName={exerciseName}
