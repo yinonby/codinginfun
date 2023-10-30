@@ -5,6 +5,8 @@ import BptsVarsBasic2ExerciseInfo from "./exercises/bpts/vars/basics/vars-basic-
 import BptsVarsBasic2ExerciseTest from "./exercises/bpts/vars/basics/vars-basic-2/ExerciseTest";
 import BptsVarsBasic3ExerciseInfo from "./exercises/bpts/vars/basics/vars-basic-3/ExerciseInfo";
 import BptsVarsBasic3ExerciseTest from "./exercises/bpts/vars/basics/vars-basic-3/ExerciseTest";
+import BptsVarsTypesStringExerciseInfo from "./exercises/bpts/vars/types/vars-types-string/ExerciseInfo";
+import BptsVarsTypesStringExerciseTest from "./exercises/bpts/vars/types/vars-types-string/ExerciseTest";
 import ExerciseInfoAdapter from "./ExerciseInfoAdapter";
 import ExerciseTestAdapter from "./ExerciseTestAdapter";
 
@@ -79,6 +81,18 @@ export default class ExerciseMap {
                                     "exerciseInfo": new BptsVarsBasic3ExerciseInfo(),
                                     "exerciseTest": new BptsVarsBasic3ExerciseTest(),
                                 }
+                            ]
+                        },
+                        {
+                            "name": "types",
+                            "displayName": "Variables types",
+                            "exercises": [
+                                {
+                                    "name": "bpts-vars-types-string",
+                                    "displayName": "Variables types - string",
+                                    "exerciseInfo": new BptsVarsTypesStringExerciseInfo(),
+                                    "exerciseTest": new BptsVarsTypesStringExerciseTest(),
+                                },
                             ]
                         }
                     ]
