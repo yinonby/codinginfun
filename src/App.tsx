@@ -24,16 +24,18 @@ export default function App(props: any) {
 
   return (
       <Box mx={2} className="app">
-        <h1 className="title">Hello Student</h1>
-        <Box mb={2}>
-          <SelectorArea/>
-        </Box>
+        {! codesandbox &&
+          <>
+            <h1 className="title">Hello Student</h1>
+            <Box mb={2}>
+              <SelectorArea/>
+            </Box>
+            {exerciseName && <CodeSandbox />}
+          </>
+        }
         { codesandbox && exerciseName && <ExerciseArea courseName={courseName!}
           chapterName={chapterName!} lessonName={lessonName!}
           exerciseName={exerciseName!}/>}
-        <div>
-          {! codesandbox && exerciseName && <CodeSandbox />}
-        </div>
       </Box>
   );
 }
