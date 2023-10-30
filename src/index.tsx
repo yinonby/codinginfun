@@ -6,7 +6,7 @@ import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import ExerciseContent from "./components/ExerciseContent";
+import ExerciseContentPage from "./pages/ExerciseContentPage";
 import './index.css';
 
 const appStyle = {
@@ -16,7 +16,7 @@ const appStyle = {
 const router = createBrowserRouter([
     {
         path: "/codesandbox/:courseName/:chapterName/:lessonName/:exerciseName",
-        element: <ExerciseContent />,
+        element: <ExerciseContentPage />,
     },
     {
         path: "/exercises/:courseName/:chapterName/:lessonName/:exerciseName",
