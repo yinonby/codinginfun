@@ -14,6 +14,7 @@ const selectItems: SelectItem[] = props.selectItems;
 const curValue: string = props.curValue;
 const label: string = props.label;
 const onChange: Function = props.onChange;
+const innerProps: any = props.innerProps;
 
 const handleChange = (event: SelectChangeEvent) => {
     onChange(event.target.value as string);
@@ -28,6 +29,7 @@ return (
         value={curValue}
         label={label}
         onChange={handleChange}
+        {...innerProps}
     >
         {selectItems.map(e =>
         <MenuItem key={e.name} value={e.name}>{e.displayName}</MenuItem>

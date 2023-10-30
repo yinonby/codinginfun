@@ -98,7 +98,8 @@ function ChapterSelector(props: any) {
         selectItems={chapterNames}
         label="Chapter"
         onChange={handleChange}
-        curValue={chapterName} />;
+        curValue={chapterName}
+        innerProps={{disabled: ! courseName}} />;
 }
 
 function LessonSelector(props: any) {
@@ -124,7 +125,8 @@ function LessonSelector(props: any) {
         selectItems={lessonNames}
         label="Lesson"
         onChange={handleChange}
-        curValue={lessonName} />;
+        curValue={lessonName}
+        innerProps={{disabled: ! chapterName}} />;
 }
 
 function ExerciseSelector(props: any) {
@@ -150,5 +152,6 @@ function ExerciseSelector(props: any) {
         selectItems={exerciseNames}
         label="Exercise"
         onChange={handleChange}
-        curValue={exerciseName} />;
+        curValue={exerciseName}
+        innerProps={{disabled: ! lessonName}} />;
 }
