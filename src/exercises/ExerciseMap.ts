@@ -73,17 +73,17 @@ export default class ExerciseMap {
                             "displayName": "Variables basics",
                             "exercises": [
                                 {
-                                    "name": "bpts-vars-basics-1",
+                                    "name": "bpts-vars-basics-const",
                                     "exerciseInfo": new BptsVarsBasicConstExerciseInfo(),
                                     "exerciseTest": new BptsVarsBasicConstExerciseTest(),
                                 },
                                 {
-                                    "name": "bpts-vars-basics-2",
+                                    "name": "bpts-vars-basics-naming",
                                     "exerciseInfo": new BptsVarsBasicNamingExerciseInfo(),
                                     "exerciseTest": new BptsVarsBasicNamingExerciseTest(),
                                 },
                                 {
-                                    "name": "bpts-vars-basics-3",
+                                    "name": "bpts-vars-basics-let",
                                     "exerciseInfo": new BptsVarsBasicLetExerciseInfo(),
                                     "exerciseTest": new BptsVarsBasicLetExerciseTest(),
                                 }
