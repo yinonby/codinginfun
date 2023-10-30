@@ -11,46 +11,14 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { Routes, Route, useParams } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const exerciseMap = new ExerciseMap();
 
 export default function App() {
-  const search = useLocation().search;
-  const [searchParams, setSearchParams] = useSearchParams();
-  const urlSearchParams = new URLSearchParams(search);
-  const courseName: string | null = urlSearchParams.get("course");
-  const chapterName: string | null = urlSearchParams.get("chapter");
-  const lessonName: string | null = urlSearchParams.get("lesson");
-  const exerciseName: string | null = urlSearchParams.get("exercise");
-
-  /*
-
-  const actualFileName: string | null = urlSearchParams.get("file");
-  if (actualFileName === null) {
-    return <Box mx={2} className="app">No file name query param</Box>;
-  }
-
-  if (exerciseName === null) {
-    return <Box mx={2} className="app">No exercise name query param</Box>;
-  }
-  const actualFileNameParts: string[] = actualFileName.split("/");
-  const courseName: string = actualFileNameParts[3];
-  const exerciseName: string = actualFileNameParts[4];
-  const exerciseNameParts: string[] = exerciseName.split("-");
-  const courseName: string = exerciseNameParts[0];
-  const chapterName = exerciseNameParts[1];
-  const lessonName = exerciseNameParts[2];
-
-  const exerciseItem: ExerciseItem | null =
-    exerciseMap.getExerciseItem(courseName,chapterName,
-      lessonName, exerciseName);
-  if (! exerciseItem) {
-    return <Box mx={2} className="app">No exercise found</Box>;
-  }
-
-  const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
-  const exercieTest: ExerciseTestAdapter = exerciseItem.exerciseTest;
-  const exerciseTitle: string = exercieInfo.getTitle();*/
+  const { courseName, chapterName,
+    lessonName, exerciseName } = useParams();
 
   return (
       <Box mx={2} className="app">
@@ -66,22 +34,28 @@ export default function App() {
 }
 
 function SelectorArea() {
-  const search = useLocation().search;
-  const [searchParams, setSearchParams] = useSearchParams();
-  const urlSearchParams = new URLSearchParams(search);
-  const courseName: string | null = urlSearchParams.get("course") || "";
-  const chapterName: string | null = urlSearchParams.get("chapter") || "";
-  const lessonName: string | null = urlSearchParams.get("lesson") || "";
-  const exerciseName: string | null = urlSearchParams.get("exercise") || "";
+  const params = useParams();
+  const courseName: string = params.courseName || "";
+  const chapterName: string = params.chapterName || "";
+  const lessonName: string = params.lessonName || "";
+  const exerciseName: string = params.exerciseName || "";
+  const navigate = useNavigate();
 
   function handleChange(courseName: string, chapterName: string,
     lessonName: string, exerciseName: string) {
-    const urlSearchParams = new URLSearchParams(search);
-    searchParams.set("course", courseName);
-    searchParams.set("chapter", chapterName);
-    searchParams.set("lesson", lessonName);
-    searchParams.set("exercise", exerciseName);
-    setSearchParams(searchParams);
+    if (exerciseName) {
+      navigate("/exercises/" + courseName + "/" + chapterName + "/" +
+        lessonName + "/" + exerciseName);
+    } else if (lessonName) {
+      navigate("/exercises/" + courseName + "/" + chapterName + "/" +
+      lessonName);
+    } else if (chapterName) {
+      navigate("/exercises/" + courseName + "/" + chapterName);
+    } else if (courseName) {
+      navigate("/exercises/" + courseName);
+    } else {
+      navigate("/exercises/");
+    }
   }
 
   return (
