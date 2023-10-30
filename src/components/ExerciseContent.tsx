@@ -127,16 +127,24 @@ function TestResultView(props: any) {
 }
 
 function OK() {
+  const style = {
+    color: "green",
+  }
+
   return (
-    <div className="tests-ok">
+    <div style={style}>
       <h4>Your code is correct!</h4>
     </div>
   );
 }
 
 function MyError(props: any) {
+  const style = {
+    color: "red",
+  }
+
   return (
-    <div className="tests-fail">
+    <div style={style}>
       <h4>Error: {props.errMessage}</h4>
     </div>
   );

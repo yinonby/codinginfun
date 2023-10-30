@@ -1,11 +1,16 @@
 
-import Exercise from "./pages/Exercise";
+import ExercisePage from "./pages/ExercisePage";
 import { createRoot } from "react-dom/client";
+import Box from '@mui/material/Box';
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
 import ExerciseContent from "./components/ExerciseContent";
+
+const appStyle = {
+    fontFamily: "sans-serif",
+}
 
 const router = createBrowserRouter([
     {
@@ -14,32 +19,34 @@ const router = createBrowserRouter([
     },
     {
         path: "/exercises/:courseName/:chapterName/:lessonName/:exerciseName",
-        element: <Exercise />,
+        element: <ExercisePage />,
     },
     {
         path: "/exercises/:courseName/:chapterName/:lessonName",
-        element: <Exercise />,
+        element: <ExercisePage />,
     },
     {
         path: "/exercises/:courseName/:chapterName",
-        element: <Exercise />,
+        element: <ExercisePage />,
     },
     {
         path: "/exercises/:courseName",
-        element: <Exercise />,
+        element: <ExercisePage />,
     },
     {
         path: "/exercises",
-        element: <Exercise />,
+        element: <ExercisePage />,
     },
     {
         path: "/",
-        element: <Exercise />,
+        element: <ExercisePage />,
     },
 ]);
 
 createRoot(document.getElementById("root") !).render(
-    <RouterProvider router={router} />
+    <Box style={appStyle}>
+        <RouterProvider router={router} />
+    </Box>
   );
 
 /*
