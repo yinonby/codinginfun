@@ -1,7 +1,10 @@
 
-import BptsVarsBasic1ExerciseInfo from "./bpts/vars/basics/bpts-vars-basics-1/ExerciseInfo";
-import BptsVarsBasic1ExerciseTest from "./bpts/vars/basics/bpts-vars-basics-1/ExerciseTest";
-import BptsVarsBasic2ExerciseInfo from "./bpts/vars/basics/bpts-vars-basics-2/ExerciseInfo";
+import BptsVarsBasic1ExerciseInfo
+    from "./bpts/vars/basics/bpts-vars-basics-1/ExerciseInfo";
+import BptsVarsBasic1ExerciseTest
+    from "./bpts/vars/basics/bpts-vars-basics-1/ExerciseTest";
+import BptsVarsBasic2ExerciseInfo
+    from "./bpts/vars/basics/bpts-vars-basics-2/ExerciseInfo";
 import BptsVarsBasic2ExerciseTest from "./bpts/vars/basics/bpts-vars-basics-2/ExerciseTest";
 import BptsVarsBasic3ExerciseInfo from "./bpts/vars/basics/bpts-vars-basics-3/ExerciseInfo";
 import BptsVarsBasic3ExerciseTest from "./bpts/vars/basics/bpts-vars-basics-3/ExerciseTest";
@@ -105,22 +108,22 @@ export default class ExerciseMap {
         lessonName: string,
         exerciseName: string): ExerciseItem | null {
 
-        if (! this.map[courseName]) {
+        if (!this.map[courseName]) {
             console.log("no course found", courseName);
             return null;
         }
         const chapter = this.map[courseName].chapters.find(e => e.name == chapterName);
-        if (! chapter) {
+        if (!chapter) {
             console.log("no chapter found", courseName, chapterName);
             return null;
         }
         const lesson = chapter.lessons.find(e => e.name == lessonName);
-        if (! lesson) {
+        if (!lesson) {
             console.log("not lesson found", courseName, chapterName, lessonName);
             return null;
         }
         const exercise = lesson.exercises.find(e => e.name == exerciseName);
-        if (! exercise) {
+        if (!exercise) {
             console.log("not exercise found", courseName, chapterName, lessonName, exerciseName);
             return null;
         }

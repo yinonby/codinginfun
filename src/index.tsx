@@ -43,12 +43,9 @@ const router = createBrowserRouter([
     },
 ]);
 
-createRoot(document.getElementById("root") !).render(
+createRoot(document.getElementById("root")!).render(
     <Box style={appStyle}>
         <RouterProvider router={router} />
     </Box>
-  );
+);
 
-/*
-const rootElement = document.getElementById("root");
-render(<App />, rootElement);*/

@@ -1,8 +1,7 @@
 
 export default class Exercise {
     solution(): void {
-      // line 1
-      
+        // line 1
+
     }
-  }
-  
+}

@@ -7,24 +7,24 @@ import Exercise from "../components/ExerciseContent";
 import Header from "../components/Header";
 
 export default function ExercisePage(props: any) {
-  const { exerciseName } = useParams();
-  const { codesandbox } = props;
+    const { exerciseName } = useParams();
+    const { codesandbox } = props;
 
-  return (
-    <>
-      <Header/>
-      <Box mx={2} className="app">
-        {! codesandbox &&
-          <>
-            <h1 className="title">Students Exercises:</h1>
-            <Box mb={2}>
-              <ExerciseSelect/>
+    return (
+        <>
+            <Header />
+            <Box mx={2} className="app">
+                {!codesandbox &&
+                    <>
+                        <h1 className="title">Students Exercises:</h1>
+                        <Box mb={2}>
+                            <ExerciseSelect />
+                        </Box>
+                        {exerciseName && <CodeSandboxIFrame />}
+                    </>
+                }
+                {codesandbox && exerciseName && <Exercise />}
             </Box>
-            {exerciseName && <CodeSandboxIFrame />}
-          </>
-        }
-        { codesandbox && exerciseName && <Exercise />}
-      </Box>
-    </>
-  );
+        </>
+    );
 }
