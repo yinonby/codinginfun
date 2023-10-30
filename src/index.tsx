@@ -7,6 +7,7 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import ExerciseContent from "./components/ExerciseContent";
+import './index.css';
 
 const appStyle = {
     fontFamily: "sans-serif",

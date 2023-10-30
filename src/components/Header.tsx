@@ -7,19 +7,17 @@ export default function Header() {
         display: "flex",
         justifyContent: "center",
     }
-    const imgStyle = {
-        height: "100px",
-    }
 
     return (
         <Box style={boxStyle}>
-            <img
-                style={imgStyle}
-                srcSet="/img/logo-color-no-circle.png"
-                src="/img/logo-color-no-circle.png"
-                alt="logo"
-                loading="lazy"
-            />
+                <img
+                    style={{height: "100px", objectFit: "contain",
+                        maxWidth: "50%"}}
+                    srcSet="/img/logo-color-no-circle.png"
+                    src="/img/logo-color-no-circle.png"
+                    alt="logo"
+                    loading="lazy"
+                />
         </Box>
     );
 }
