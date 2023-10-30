@@ -62,13 +62,21 @@ function CodeSandbox() {
     overflow: "hidden",
   }
 
+  const boxStyle = {
+    height: "500px",
+    borderRight: "1px solid black",
+    borderRadius: "4px",
+  }
+
   return (
-    <iframe src={src}
-      style={style}
-      title="codinginfun"
-      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-    />
+    <Box style={boxStyle}>
+      <iframe src={src}
+        style={style}
+        title="codinginfun"
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+      />
+    </Box>
   );
 }
 
