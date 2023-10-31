@@ -3,8 +3,12 @@ import Exercise from "./Exercise";
 
 export default class Test implements ExerciseTestAdapter {
 
+    verify() {
+        this.verifySolution();
+    }
+
     run() {
-        this.verifyFoo();
+        this.runSolution();
     }
 
     solution(): void {
@@ -13,7 +17,17 @@ export default class Test implements ExerciseTestAdapter {
         console.log(bookName);
     }
 
-    verifyFoo() {
+    verifySolution() {
+        const exercise: Exercise = new Exercise();
+
+        if (exercise.solution.toString() !== this.solution.toString()) {
+            throw new Error(
+                "Did you declare the variable with the correct value?"
+            );
+        }
+    }
+
+    runSolution() {
         const exercise: Exercise = new Exercise();
 
         try {
@@ -21,12 +35,6 @@ export default class Test implements ExerciseTestAdapter {
         } catch (e) {
             throw new Error(
                 "Error running your code."
-            );
-        }
-
-        if (exercise.solution.toString() !== this.solution.toString()) {
-            throw new Error(
-                "Did you declare the variable with the correct value?"
             );
         }
     }

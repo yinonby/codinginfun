@@ -80,24 +80,44 @@ function TestSection(props: any) {
         let passed: boolean = true;
         let errorMessage: string = "";
 
+        console.clear();
+        console.log("Running all tests:");
+
         try {
-            console.clear();
-            console.log("Running your test...")
-            console.log("--- Output start ---")
-            exercieTest.run();
+            console.log("Verifying your code...")
+            exercieTest.verify();
+            console.log("Verifying your code... ok")
         } catch (e) {
             passed = false;
+            console.log("Verifying your code... failed")
             if (e instanceof Error) {
                 const err: Error = e;
                 errorMessage = err.message;
             }
         }
 
-        console.log("--- Output end -----")
         if (passed) {
-            console.log("Your test succeeded :)");
+            try {
+                console.log("Running your code...")
+                console.log("----- Output start -----")
+                exercieTest.run();
+                console.log("----- Output end -------")
+                console.log("Running your code... ok")
+            } catch (e) {
+                console.log("----- Output end -------")
+                console.log("Running your code... failed")
+                passed = false;
+                if (e instanceof Error) {
+                    const err: Error = e;
+                    errorMessage = err.message;
+                }
+            }
+        }
+
+        if (passed) {
+            console.log("All tests succeeded :)");
         } else {
-            console.log("Your test failed :(");
+            console.log("Some tests failed :(");
         }
 
         const tmpTestResult: TestResult = {
