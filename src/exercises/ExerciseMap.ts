@@ -15,6 +15,10 @@ import BptsVarsTypesStringExerciseInfo
     from "./bpts/vars/types/bpts-vars-types-string/ExerciseInfo";
 import BptsVarsTypesStringExerciseTest
     from "./bpts/vars/types/bpts-vars-types-string/ExerciseTest";
+import BptsVarsTypesBooleanExerciseInfo
+    from "./bpts/vars/types/bpts-vars-types-boolean/ExerciseInfo";
+import BptsVarsTypesBooleanExerciseTest
+    from "./bpts/vars/types/bpts-vars-types-boolean/ExerciseTest";
 import ExerciseInfoAdapter
     from "./ExerciseInfoAdapter";
 import ExerciseTestAdapter
@@ -97,6 +101,11 @@ export default class ExerciseMap {
                                     "name": "bpts-vars-types-string",
                                     "exerciseInfo": new BptsVarsTypesStringExerciseInfo(),
                                     "exerciseTest": new BptsVarsTypesStringExerciseTest(),
+                                },
+                                {
+                                    "name": "bpts-vars-types-boolean",
+                                    "exerciseInfo": new BptsVarsTypesBooleanExerciseInfo(),
+                                    "exerciseTest": new BptsVarsTypesBooleanExerciseTest(),
                                 },
                             ]
                         }
