@@ -1,4 +1,8 @@
 
+import ExerciseInfoAdapter
+    from "./ExerciseInfoAdapter";
+import ExerciseTestAdapter
+    from "./ExerciseTestAdapter";
 import BptsVarsBasicConstExerciseInfo
     from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseInfo";
 import BptsVarsBasicConstExerciseTest
@@ -19,10 +23,10 @@ import BptsVarsTypesBooleanExerciseInfo
     from "./bpts/vars/types/bpts-vars-types-boolean/ExerciseInfo";
 import BptsVarsTypesBooleanExerciseTest
     from "./bpts/vars/types/bpts-vars-types-boolean/ExerciseTest";
-import ExerciseInfoAdapter
-    from "./ExerciseInfoAdapter";
-import ExerciseTestAdapter
-    from "./ExerciseTestAdapter";
+import BptsVarsTypesArrayExerciseInfo
+    from "./bpts/vars/types/bpts-vars-types-array/ExerciseInfo";
+import BptsVarsTypesArrayExerciseTest
+    from "./bpts/vars/types/bpts-vars-types-array/ExerciseTest";
 
 type ExerciseMapItem = {
     [key: string]: CourseItem,
@@ -106,6 +110,11 @@ export default class ExerciseMap {
                                     "name": "bpts-vars-types-boolean",
                                     "exerciseInfo": new BptsVarsTypesBooleanExerciseInfo(),
                                     "exerciseTest": new BptsVarsTypesBooleanExerciseTest(),
+                                },
+                                {
+                                    "name": "bpts-vars-types-array",
+                                    "exerciseInfo": new BptsVarsTypesArrayExerciseInfo(),
+                                    "exerciseTest": new BptsVarsTypesArrayExerciseTest(),
                                 },
                             ]
                         }
