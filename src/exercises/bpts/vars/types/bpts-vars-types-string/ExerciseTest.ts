@@ -10,6 +10,7 @@ export default class Test implements ExerciseTestAdapter {
     solution(): void {
         // line 1
         const bookName: string = "Harry Potter";
+        console.log(bookName);
     }
 
     verifyFoo() {

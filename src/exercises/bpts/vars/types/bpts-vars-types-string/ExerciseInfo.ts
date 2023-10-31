@@ -13,6 +13,7 @@ export default class ExerciseInfo implements ExerciseInfoAdapter {
         return [
             "Your declaration should come in the line below 'line 1'.",
             "Declare a constant variable named 'bookName', of type string, and initialize its value to 'Harry Potter'.",
+            "Then, print the value of this variable to the output (console).",
         ];
     }
 }

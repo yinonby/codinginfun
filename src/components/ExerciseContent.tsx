@@ -81,6 +81,9 @@ function TestSection(props: any) {
         let errorMessage: string = "";
 
         try {
+            console.clear();
+            console.log("Running your test...")
+            console.log("---Output start---")
             exercieTest.run();
         } catch (e) {
             passed = false;
@@ -88,6 +91,13 @@ function TestSection(props: any) {
                 const err: Error = e;
                 errorMessage = err.message;
             }
+        }
+
+        console.log("---Output end---")
+        if (passed) {
+            console.log("Your test succeeded :)");
+        } else {
+            console.log("Your test failed :(");
         }
 
         const tmpTestResult: TestResult = {

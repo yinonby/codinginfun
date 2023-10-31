@@ -9,12 +9,11 @@ export default function CodeSandboxIFrame() {
     const exerciseName: string = params.exerciseName || "";
     const repo: string = "github/yinonby/codinginfun/tree/devel";
     const src: string = "https://codesandbox.io/embed/" + repo +
-        "/?fontsize=14&hidenavigation=1&theme=dark" +
+        "/?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark" +
         "&initialpath=codesandbox%2F" + courseName + "%2F" + chapterName +
         "%2F" + lessonName + "%2F" + exerciseName +
         "&module=%2Fsrc%2Fexercises%2F" + courseName + "%2F" + chapterName +
         "%2F" + lessonName + "%2F" + exerciseName + "%2FExercise.ts";
-
     const style = {
         width: "100%",
         height: "100%",
