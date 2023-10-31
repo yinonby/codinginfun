@@ -83,7 +83,7 @@ function TestSection(props: any) {
         try {
             console.clear();
             console.log("Running your test...")
-            console.log("---Output start---")
+            console.log("--- Output start ---")
             exercieTest.run();
         } catch (e) {
             passed = false;
@@ -93,7 +93,7 @@ function TestSection(props: any) {
             }
         }
 
-        console.log("---Output end---")
+        console.log("--- Output end -----")
         if (passed) {
             console.log("Your test succeeded :)");
         } else {

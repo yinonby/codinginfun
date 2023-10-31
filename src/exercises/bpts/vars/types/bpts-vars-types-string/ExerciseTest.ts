@@ -15,6 +15,15 @@ export default class Test implements ExerciseTestAdapter {
 
     verifyFoo() {
         const exercise: Exercise = new Exercise();
+
+        try {
+            exercise.solution();
+        } catch (e) {
+            throw new Error(
+                "Error running your code."
+            );
+        }
+
         if (exercise.solution.toString() !== this.solution.toString()) {
             throw new Error(
                 "Did you declare the variable with the correct value?"
