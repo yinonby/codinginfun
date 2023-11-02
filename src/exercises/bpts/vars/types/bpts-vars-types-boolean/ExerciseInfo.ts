@@ -1,6 +1,11 @@
-import ExerciseInfoAdapter from "../../../../ExerciseInfoAdapter";
+import ExerciseInfoAdapter, { EX_TYPE } from "../../../../ExerciseInfoAdapter";
 
 export default class ExerciseInfo implements ExerciseInfoAdapter {
+    
+    getType(): EX_TYPE {
+        return EX_TYPE.EX_TYPE_SANDBOX;
+    }
+
     getTitle(): string {
         return "Boolean variables";
     }
@@ -16,4 +21,5 @@ export default class ExerciseInfo implements ExerciseInfoAdapter {
             "Then, print the value of this variable to the output (console).",
         ];
     }
+
 }

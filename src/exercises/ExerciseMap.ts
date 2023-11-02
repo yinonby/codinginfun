@@ -27,6 +27,15 @@ import BptsVarsTypesArrayExerciseInfo
     from "./bpts/vars/types/bpts-vars-types-array/ExerciseInfo";
 import BptsVarsTypesArrayExerciseTest
     from "./bpts/vars/types/bpts-vars-types-array/ExerciseTest";
+import BptsVarsTypesConstVsLetExerciseInfo
+    from "./bpts/vars/types/bpts-vars-types-const-vs-let/ExerciseInfo";
+import BptsVarsTypesConstVsLetExerciseTest
+    from "./bpts/vars/types/bpts-vars-types-const-vs-let/ExerciseTest";
+import BptsMethodsBasicsDeclarationExerciseInfo
+    from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseInfo";
+import BptsMethodsBasicsDeclarationExerciseTest
+    from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseTest";
+import TextExerciseTestAdapter from "./TextExerciseTestAdapter";
 
 type ExerciseMapItem = {
     [key: string]: CourseItem,
@@ -53,7 +62,7 @@ type LessonItem = {
 export type ExerciseItem = {
     name: string,
     exerciseInfo: ExerciseInfoAdapter,
-    exerciseTest: ExerciseTestAdapter,
+    exerciseTest: ExerciseTestAdapter | TextExerciseTestAdapter,
 }
 
 export type NameItem = {
@@ -116,8 +125,30 @@ export default class ExerciseMap {
                                     "exerciseInfo": new BptsVarsTypesArrayExerciseInfo(),
                                     "exerciseTest": new BptsVarsTypesArrayExerciseTest(),
                                 },
+                                {
+                                    "name": "bpts-vars-types-const-vs-let",
+                                    "exerciseInfo": new BptsVarsTypesConstVsLetExerciseInfo(),
+                                    "exerciseTest": new BptsVarsTypesConstVsLetExerciseTest(),
+                                },
                             ]
                         }
+                    ]
+                },
+                {
+                    "name": "methods",
+                    "displayName": "Methods",
+                    "lessons": [
+                        {
+                            "name": "basics",
+                            "displayName": "Methods basics",
+                            "exercises": [
+                                {
+                                    "name": "bpts-methods-basics-declaration",
+                                    "exerciseInfo": new BptsMethodsBasicsDeclarationExerciseInfo(),
+                                    "exerciseTest": new BptsMethodsBasicsDeclarationExerciseTest(),
+                                },
+                            ]
+                        },
                     ]
                 }
             ]

@@ -1,6 +1,11 @@
-import ExerciseInfoAdapter from "../../../../ExerciseInfoAdapter";
+import ExerciseInfoAdapter, { EX_TYPE } from "../../../../ExerciseInfoAdapter";
 
 export default class ExerciseInfo implements ExerciseInfoAdapter {
+    
+    getType(): EX_TYPE {
+        return EX_TYPE.EX_TYPE_SANDBOX;
+    }
+
     getTitle(): string {
         return "Variables declaration";
     }
@@ -15,4 +20,5 @@ export default class ExerciseInfo implements ExerciseInfoAdapter {
             "Declare a constant variable named 'x', of type number, and initialize its value to 10.",
         ];
     }
+    
 }

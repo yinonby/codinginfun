@@ -3,9 +3,11 @@ import { useState } from "react";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ExerciseMap, { ExerciseItem } from "../exercises/ExerciseMap";
-import ExerciseInfoAdapter from "../exercises/ExerciseInfoAdapter";
+import ExerciseInfoAdapter, { EX_TYPE } from "../exercises/ExerciseInfoAdapter";
 import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
 import { useParams } from 'react-router-dom';
+import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
+import TextField from '@mui/material/TextField';
 
 const exerciseMap = new ExerciseMap();
 
@@ -29,7 +31,8 @@ export default function ExerciseContent(props: any) {
     }
 
     const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
-    const exercieTest: ExerciseTestAdapter = exerciseItem.exerciseTest;
+    const exercieTest: ExerciseTestAdapter | TextExerciseTestAdapter =
+        exerciseItem.exerciseTest;
     const exerciseTitle: string = exerciseItem.exerciseInfo.getTitle();
 
     return (
@@ -38,9 +41,16 @@ export default function ExerciseContent(props: any) {
             <Box mb={2}>
                 <Instructions exercieInfo={exercieInfo} />
             </Box>
-            <Box mb={2}>
-                <TestSection exercieTest={exercieTest} />
-            </Box>
+            {exercieInfo.getType() === EX_TYPE.EX_TYPE_TEXT &&
+                <Box mb={2}>
+                    <TextTestSection exercieTest={exercieTest} />
+                </Box>
+            }
+            {exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX &&
+                <Box mb={2}>
+                    <TestSection exercieTest={exercieTest} />
+                </Box>
+            }
         </Box>
     );
 }
@@ -66,6 +76,81 @@ type TestResult = {
     run: boolean,
     passed: boolean,
     errMessage: string,
+}
+
+function TextTestSection(props: any) {
+    const exercieTest: TextExerciseTestAdapter = props.exercieTest;
+    const [solutionText, setSolutionText] = useState("");
+    const [testResult, setTestResult] = useState({
+        run: false,
+        passed: false,
+        errMessage: "",
+    });
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSolutionText(event.target.value);
+    }
+
+    const handleClick = () => {
+        let passed: boolean = true;
+        let errorMessage: string = "";
+
+        console.clear();
+        console.log("Running all tests:");
+
+        try {
+            console.log("Verifying your code...")
+            exercieTest.verify(solutionText);
+            console.log("Verifying your code... ok")
+        } catch (e) {
+            passed = false;
+            console.log("Verifying your code... failed")
+            if (e instanceof Error) {
+                const err: Error = e;
+                errorMessage = err.message;
+            }
+        }
+
+        if (passed) {
+            console.log("All tests succeeded :)");
+        } else {
+            console.log("Some tests failed :(");
+        }
+
+        const tmpTestResult: TestResult = {
+            run: true,
+            passed: passed,
+            errMessage: "",
+        };
+        if (passed) {
+            tmpTestResult.errMessage = "";
+        } else {
+            tmpTestResult.errMessage = errorMessage;
+        }
+        setTestResult(tmpTestResult);
+
+    }
+
+    return (
+        <>
+            <Box mb={2}>
+                <TextField
+                    fullWidth
+                    maxRows={3}
+                    minRows={3}
+                    id="outlined-multiline-flexible"
+                    label="Solution"
+                    multiline
+                    value={solutionText}
+                    onChange={handleChange}
+                />
+            </Box>
+            <Box mb={2}>
+                <Button variant="contained" onClick={handleClick}>Run Tests</Button>
+            </Box>
+            <TestResultView testResult={testResult} />
+        </>
+    );
 }
 
 function TestSection(props: any) {
