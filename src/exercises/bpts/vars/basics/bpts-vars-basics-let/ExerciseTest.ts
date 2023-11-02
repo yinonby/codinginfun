@@ -11,6 +11,10 @@ export default class Test implements ExerciseTestAdapter {
         this.runSolution();
     }
 
+    getExpectedSolutionText(): string {
+        return this.solution.toString();
+    }
+
     solution(): void {
         // line 1
         let someValue: number = 3;

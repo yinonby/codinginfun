@@ -9,7 +9,7 @@ import ExerciseMap, { ExerciseItem } from "../exercises/ExerciseMap";
 import ExerciseInfoAdapter, { EX_TYPE } from "../exercises/ExerciseInfoAdapter";
 import ExerciseContent from '../components/ExerciseContent';
 
-const exerciseMap = new ExerciseMap();
+export const exerciseMap = new ExerciseMap();
 
 export default function ExercisePage(props: any) {
     const params = useParams();

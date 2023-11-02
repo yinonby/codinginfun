@@ -8,7 +8,7 @@ export default class ExerciseTest implements TextExerciseTestAdapter {
         this.verifySolution(solutionText);
     }
 
-    getExpectedSolutionText() {
+    getExpectedSolutionText(): string {
         return "" +
             "function foo() {\n" +
             "    console.log(\"Inside foo\");\n" +
