@@ -3,7 +3,7 @@ import ExerciseInfoAdapter, { EX_TYPE } from "../../../../ExerciseInfoAdapter";
 const md: string = `
 - Your declaration should come in the line below 'line 1'.
 
-- Declare a constant variable named 'zero', of type number, and initialize its value to 0.
+- Declare a constant variable named <<zero>>, of type <<number>>, and initialize its value to <<0>>.
 `;
 
 export default class ExerciseInfo implements ExerciseInfoAdapter {

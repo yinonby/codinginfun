@@ -2,7 +2,7 @@ import ExerciseInfoAdapter, { EX_TYPE } from "../../../../ExerciseInfoAdapter";
 
 const md: string = `
 - Your declaration should come in the line below 'line 1'.
-- Declare a constant variable named <<someOddNumbers>>, of type <<number[]>> (array of numbers), and initialize its value to <<[1, 3, 5]>>.
+- Declare a constant variable named <<someOddNumbers>>, of type <<number[]>> (array of numbers), and initialize its value to an array with the values <<1>>, <<3>>, and <<5>>.
 - Then, in the next line, print the value of the size of the array to the output (console).
 - Then, in the next line, print the first element of the array to the output (console).
 - Then, in the next line, print the second element of the array to the output (console).
