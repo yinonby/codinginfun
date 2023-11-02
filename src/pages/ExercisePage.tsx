@@ -8,6 +8,7 @@ import Header, { Content } from "../components/Header";
 import ExerciseMap, { ExerciseItem } from "../exercises/ExerciseMap";
 import ExerciseInfoAdapter, { EX_TYPE } from "../exercises/ExerciseInfoAdapter";
 import ExerciseContent from '../components/ExerciseContent';
+import SolutionButton from "../components/SolutionButton";
 
 export const exerciseMap = new ExerciseMap();
 
@@ -33,9 +34,18 @@ export default function ExercisePage(props: any) {
                     {!codesandbox &&
                         <Box sx={containerStyle}>
                             <h1>Students Exercises:</h1>
-                            <Box mb={2}>
+                            <Box mb={2} >
                                 <ExerciseSelect />
                             </Box>
+                            {exerciseName &&
+                                <Box mb={2} sx={{
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    justifyContent: "flex-end",
+                                }}>
+                                    <SolutionButton/>
+                                </Box>
+                            }
                             {exerciseName && <ActualContent
                                 courseName={courseName}
                                 chapterName={chapterName}

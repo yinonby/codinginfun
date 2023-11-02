@@ -9,7 +9,6 @@ import { useParams } from 'react-router-dom';
 import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
 import TextField from '@mui/material/TextField';
 import Markdown from 'react-markdown'
-import SolutionButton from "./SolutionButton";
 
 const exerciseMap = new ExerciseMap();
 
@@ -43,7 +42,6 @@ export default function ExerciseContent(props: any) {
                 <Box sx={{flex: 1}}>
                     <h3>{exerciseTitle}</h3>
                 </Box>
-                <SolutionButton/>
             </Box>
             <Box mb={2}>
                 <Instructions exercieInfo={exercieInfo} />
