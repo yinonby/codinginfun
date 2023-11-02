@@ -3,6 +3,7 @@ import ExerciseInfoAdapter
     from "./ExerciseInfoAdapter";
 import ExerciseTestAdapter
     from "./ExerciseTestAdapter";
+import TextExerciseTestAdapter from "./TextExerciseTestAdapter";
 import BptsVarsBasicConstExerciseInfo
     from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseInfo";
 import BptsVarsBasicConstExerciseTest
@@ -35,7 +36,10 @@ import BptsMethodsBasicsDeclarationExerciseInfo
     from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseInfo";
 import BptsMethodsBasicsDeclarationExerciseTest
     from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseTest";
-import TextExerciseTestAdapter from "./TextExerciseTestAdapter";
+import BptsMethodsBasicsCallingExerciseInfo
+    from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseInfo";
+import BptsMethodsBasicsCallingExerciseTest
+    from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseTest";
 
 type ExerciseMapItem = {
     [key: string]: CourseItem,
@@ -146,6 +150,11 @@ export default class ExerciseMap {
                                     "name": "bpts-methods-basics-declaration",
                                     "exerciseInfo": new BptsMethodsBasicsDeclarationExerciseInfo(),
                                     "exerciseTest": new BptsMethodsBasicsDeclarationExerciseTest(),
+                                },
+                                {
+                                    "name": "bpts-methods-basics-calling",
+                                    "exerciseInfo": new BptsMethodsBasicsCallingExerciseInfo(),
+                                    "exerciseTest": new BptsMethodsBasicsCallingExerciseTest(),
                                 },
                             ]
                         },

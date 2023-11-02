@@ -137,8 +137,8 @@ function TextTestSection(props: any) {
             <Box mb={2}>
                 <TextField
                     fullWidth
-                    maxRows={3}
-                    minRows={3}
+                    maxRows={exercieTest.getExpectedSolutionRowNum()}
+                    minRows={exercieTest.getExpectedSolutionRowNum()}
                     id="outlined-multiline-flexible"
                     label="Solution"
                     multiline
