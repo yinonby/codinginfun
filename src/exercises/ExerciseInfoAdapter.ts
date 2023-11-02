@@ -2,7 +2,7 @@ export default interface ExerciseInfoAdapter {
     getType(): EX_TYPE;
     getTitle(): string;
     getMainInstruction(): string;
-    getInstructions(): string[];
+    getMdInstructions(): string;
 }
 
 export enum EX_TYPE {

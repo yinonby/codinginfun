@@ -8,6 +8,7 @@ import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
 import { useParams } from 'react-router-dom';
 import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
 import TextField from '@mui/material/TextField';
+import Markdown from 'react-markdown'
 
 const exerciseMap = new ExerciseMap();
 
@@ -58,16 +59,16 @@ export default function ExerciseContent(props: any) {
 function Instructions(props: any) {
     const exercieInfo: ExerciseInfoAdapter = props.exercieInfo;
     const mainInstruction: string = exercieInfo.getMainInstruction();
-    const instructions: string[] = exercieInfo.getInstructions();
+    const md = exercieInfo.getMdInstructions()
+        .replaceAll("<<", "**`")
+        .replaceAll(">>", "`**");
 
     return (
         <>
             <Box mb={1}>{mainInstruction}</Box>
-            {instructions.map((e, idx) =>
-                <li key={idx}>
-                    {e}
-                </li>)
-            }
+            <Markdown>
+                {md}
+            </Markdown>
         </>
     );
 }

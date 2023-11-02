@@ -1,5 +1,11 @@
 import ExerciseInfoAdapter, { EX_TYPE } from "../../../../ExerciseInfoAdapter";
 
+const md: string = `
+- Your declaration should come in the line below 'line 1'.
+
+- Declare a constant variable named <<x>>, of type <<number>>, and initialize its value to <<10>>.
+`;
+
 export default class ExerciseInfo implements ExerciseInfoAdapter {
     
     getType(): EX_TYPE {
@@ -14,11 +20,8 @@ export default class ExerciseInfo implements ExerciseInfoAdapter {
         return "In this exercise, you need to declare a variable.";
     }
 
-    getInstructions(): string[] {
-        return [
-            "Your declaration should come in the line below 'line 1'.",
-            "Declare a constant variable named 'x', of type number, and initialize its value to 10.",
-        ];
+    getMdInstructions(): string {
+        return md;
     }
     
 }

@@ -1,5 +1,14 @@
 import ExerciseInfoAdapter, { EX_TYPE } from "../../../../ExerciseInfoAdapter";
 
+const md: string = `
+- Your declaration should come in the line below 'line 1'.
+- Declare a constant variable named <<someOddNumbers>>, of type <<number[]>> (array of numbers), and initialize its value to <<[1, 3, 5]>>.
+- Then, in the next line, print the value of the size of the array to the output (console).
+- Then, in the next line, print the first element of the array to the output (console).
+- Then, in the next line, print the second element of the array to the output (console).
+- Then, in the next line, print the third element of the array to the output (console).
+`;
+
 export default class ExerciseInfo implements ExerciseInfoAdapter {
     
     getType(): EX_TYPE {
@@ -14,14 +23,8 @@ export default class ExerciseInfo implements ExerciseInfoAdapter {
         return "In this exercise, you need to declare an array of numbers variable.";
     }
 
-    getInstructions(): string[] {
-        return [
-            "Your declaration should come in the line below 'line 1'.",
-            "Declare a constant variable named 'someOddNumbers', of type array of numbers (number[]), and initialize its value to '[1, 3, 5]'.",
-            "Then, in the next line, print the value of the size of the array to the output (console).",
-            "Then, in the next line, print the first element of the array to the output (console).",
-            "Then, in the next line, print the second element of the array to the output (console).",
-            "Then, in the next line, print the third element of the array to the output (console).",
-        ];
+    getMdInstructions(): string {
+        return md;
     }
+
 }
