@@ -12,7 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
 export default function DialogButton(props: any) {
-    const { dialogTitle, buttonText, onClose } = props;
+    const { dialogTitle, buttonText, onClose, dialogProps } = props;
     const [open, setOpen] = React.useState(false);
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -43,6 +43,7 @@ export default function DialogButton(props: any) {
                 {buttonText}
             </Button>
             <Dialog
+                {...dialogProps}
                 open={open}
                 fullScreen={fullScreen}
                 fullWidth

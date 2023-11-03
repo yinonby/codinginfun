@@ -42,6 +42,7 @@ export default function SolutionButton(props: any) {
 
     return (
         <DialogButton dialogTitle="Solution"
+            dialogProps={{maxWidth: "xl"}}
             buttonText="Show correct solution"
             onClose={handleClose}>
             <Box mb={2}>

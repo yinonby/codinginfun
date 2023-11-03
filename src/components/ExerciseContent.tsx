@@ -10,6 +10,7 @@ import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
 import Markdown from 'react-markdown'
 import SolutionButton from "./SolutionButton";
 import CodeEditor from "./CodeEditor";
+import { Grid } from "@mui/material";
 
 const exerciseMap = new ExerciseMap();
 
@@ -45,17 +46,16 @@ export default function ExerciseContent(props: any) {
                     <h3>{exerciseTitle}</h3>
                 </Box>
             </Box>
-            <Box mb={2} sx={{display: "flex", flexDirection: "row"}}>
-                <Box mr={2} sx={{flex: 1}}>
+            <Grid container spacing={2}>
+                <Grid item xs={12} sm={12} md={6}>
                     <Instructions exercieInfo={exercieInfo} />
-                </Box>
-                {exercieInfo.getType() === EX_TYPE.EX_TYPE_TEXT &&
-                    <Box mb={2} sx={{flex: 1}}>
-                        <TextTestSection exercieTest={exercieTest}
-                            showSolutionButton={showSolutionButton}/>
-                    </Box>
-                }
-            </Box>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6}>
+                    <TextTestSection exercieTest={exercieTest}
+                        showSolutionButton={showSolutionButton}/>
+                </Grid>
+            </Grid>
+
             {exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX &&
                 <Box mb={2}>
                     <TestSection exercieTest={exercieTest}
@@ -166,6 +166,7 @@ function TextTestSection(props: any) {
                         Run Tests
                     </Button>
                 </Box>
+                <Box sx={{flex: 1}}/>
                 {showSolutionButton && <SolutionButton
                     currentSolutionText={solutionText}
                 />}
