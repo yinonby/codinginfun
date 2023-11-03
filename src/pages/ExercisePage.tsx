@@ -37,21 +37,14 @@ export default function ExercisePage(props: any) {
                             <Box mb={2} >
                                 <ExerciseSelect />
                             </Box>
-                            {exerciseName &&
-                                <Box mb={2} sx={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    justifyContent: "flex-end",
-                                }}>
-                                    <SolutionButton/>
-                                </Box>
-                            }
-                            {exerciseName && <ActualContent
-                                courseName={courseName}
-                                chapterName={chapterName}
-                                lessonName={lessonName}
-                                exerciseName={exerciseName}
-                            />}
+                            <Box mb={2} sx ={{flex: 1}} >
+                                {exerciseName && <ActualContent
+                                    courseName={courseName}
+                                    chapterName={chapterName}
+                                    lessonName={lessonName}
+                                    exerciseName={exerciseName}
+                                />}
+                            </Box>
                         </Box>
                     }
                     {codesandbox && exerciseName && <Exercise />}
@@ -80,11 +73,19 @@ function ActualContent(props: any) {
     const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
 
     if (exercieInfo.getType() === EX_TYPE.EX_TYPE_TEXT) {
-        return <ExerciseContent />;
+        return <ExerciseContent showSolutionButton/>;
     } else {
         return (
-            <Box sx={codesandboxContainerStyle} mb={2}>
-                <CodeSandboxIFrame />
+            <Box sx={{display: "flex", flexDirection: "column", height: "100%"}}>
+                <Box sx={codesandboxContainerStyle} mb={2}>
+                    <CodeSandboxIFrame />
+                </Box>
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                }}>
+                    <SolutionButton/>
+                </Box>
             </Box>
         );
     }

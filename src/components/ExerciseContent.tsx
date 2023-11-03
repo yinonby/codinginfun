@@ -9,10 +9,12 @@ import { useParams } from 'react-router-dom';
 import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
 import TextField from '@mui/material/TextField';
 import Markdown from 'react-markdown'
+import SolutionButton from "./SolutionButton";
 
 const exerciseMap = new ExerciseMap();
 
 export default function ExerciseContent(props: any) {
+    const { showSolutionButton } = props;
     const params = useParams();
     const courseName: string = params.courseName || "";
     const chapterName: string = params.chapterName || "";
@@ -48,12 +50,14 @@ export default function ExerciseContent(props: any) {
             </Box>
             {exercieInfo.getType() === EX_TYPE.EX_TYPE_TEXT &&
                 <Box mb={2}>
-                    <TextTestSection exercieTest={exercieTest} />
+                    <TextTestSection exercieTest={exercieTest}
+                        showSolutionButton={showSolutionButton}/>
                 </Box>
             }
             {exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX &&
                 <Box mb={2}>
-                    <TestSection exercieTest={exercieTest} />
+                    <TestSection exercieTest={exercieTest}
+                        showSolutionButton={showSolutionButton}/>
                 </Box>
             }
         </Box>
@@ -84,6 +88,7 @@ type TestResult = {
 }
 
 function TextTestSection(props: any) {
+    const { showSolutionButton } = props;
     const exercieTest: TextExerciseTestAdapter = props.exercieTest;
     const [solutionText, setSolutionText] = useState("");
     const [testResult, setTestResult] = useState({
@@ -150,8 +155,14 @@ function TextTestSection(props: any) {
                     onChange={handleChange}
                 />
             </Box>
-            <Box mb={2}>
-                <Button variant="contained" onClick={handleClick}>Run Tests</Button>
+            <Box mb={2} sx={{display: "flex", flexDirection: "row"}}>
+                <Box mr={2}>
+                    <Button variant="contained" onClick={handleClick}
+                        size="small">
+                        Run Tests
+                    </Button>
+                </Box>
+                {showSolutionButton && <SolutionButton/>}
             </Box>
             <TestResultView testResult={testResult} />
         </>
@@ -159,6 +170,7 @@ function TextTestSection(props: any) {
 }
 
 function TestSection(props: any) {
+    const { showSolutionButton } = props;
     const exercieTest: ExerciseTestAdapter = props.exercieTest;
     const [testResult, setTestResult] = useState({
         run: false,
@@ -226,8 +238,14 @@ function TestSection(props: any) {
 
     return (
         <>
-            <Box mb={2}>
-                <Button variant="contained" onClick={handleClick}>Run Tests</Button>
+            <Box mb={2} sx={{display: "flex", flexDirection: "row"}}>
+                <Box mr={2}>
+                    <Button variant="contained" onClick={handleClick}
+                        size="small">
+                        Run Tests
+                    </Button>
+                </Box>
+                {showSolutionButton && <SolutionButton/>}
             </Box>
             <TestResultView testResult={testResult} />
         </>
