@@ -4,6 +4,7 @@ import ExerciseInfoAdapter
 import ExerciseTestAdapter
     from "./ExerciseTestAdapter";
 import TextExerciseTestAdapter from "./TextExerciseTestAdapter";
+
 import BptsVarsBasicConstExerciseInfo
     from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseInfo";
 import BptsVarsBasicConstExerciseTest

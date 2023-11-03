@@ -46,21 +46,29 @@ export default function ExerciseContent(props: any) {
                     <h3>{exerciseTitle}</h3>
                 </Box>
             </Box>
-            <Grid container spacing={2}>
-                <Grid item xs={12} sm={12} md={6}>
-                    <Instructions exercieInfo={exercieInfo} />
-                </Grid>
-                <Grid item xs={12} sm={12} md={6}>
-                    <TextTestSection exercieTest={exercieTest}
-                        showSolutionButton={showSolutionButton}/>
-                </Grid>
-            </Grid>
+
+            {exercieInfo.getType() === EX_TYPE.EX_TYPE_TEXT &&
+              <Grid container spacing={2}>
+                  <Grid item xs={12} sm={12} md={6}>
+                      <Instructions exercieInfo={exercieInfo} />
+                  </Grid>
+                  <Grid item xs={12} sm={12} md={6}>
+                      <TextTestSection exercieTest={exercieTest}
+                          showSolutionButton={showSolutionButton}/>
+                  </Grid>
+              </Grid>
+            }
 
             {exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX &&
-                <Box mb={2}>
-                    <TestSection exercieTest={exercieTest}
-                        showSolutionButton={showSolutionButton}/>
-                </Box>
+                <>
+                    <Box mb={2}>
+                        <Instructions exercieInfo={exercieInfo} />
+                    </Box>
+                    <Box mb={2}>
+                        <TestSection exercieTest={exercieTest}
+                            showSolutionButton={showSolutionButton}/>
+                    </Box>
+                </>
             }
         </Box>
     );
@@ -142,7 +150,6 @@ function TextTestSection(props: any) {
         setTestResult(tmpTestResult);
 
     }
-    const expectedSolutionText: string = exercieTest.getExpectedSolutionText();
     const rowNum: number = exercieTest.getExpectedSolutionRowNum();
     const height: number = 19 * rowNum;
 
