@@ -2,7 +2,7 @@
 import ExerciseInfoAdapter, { EX_TYPE } from "../../../../ExerciseInfoAdapter";
 
 const md: string = `
-- In the first line, Declare a method (function) named <<foo>>, followed by an opening bracket <<{>>.
+- In the first line, declare a method (function) named <<foo>>, followed by an opening bracket <<{>>.
 
 - Then, in the next line, begin with 4 spaces, then print "<<Inside foo>>" to the output (console). Don't forget a semicolon <<;>> at the end of the line.
 
