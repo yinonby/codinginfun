@@ -1,6 +1,5 @@
 
 import TextExerciseTestAdapter from "../../../../TextExerciseTestAdapter";
-import Solution from "./Exercise";
 
 export default class ExerciseTest implements TextExerciseTestAdapter {
 

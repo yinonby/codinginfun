@@ -40,6 +40,10 @@ import BptsMethodsBasicsCallingExerciseInfo
     from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseInfo";
 import BptsMethodsBasicsCallingExerciseTest
     from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseTest";
+    import BptsMethodsScopeOuterExerciseInfo
+        from "./bpts/methods/scope/bpts-methods-scope-outer/ExerciseInfo";
+    import BptsMethodsScopeOuterExerciseTest
+        from "./bpts/methods/scope/bpts-methods-scope-outer/ExerciseTest";
 
 type ExerciseMapItem = {
     [key: string]: CourseItem,
@@ -155,6 +159,17 @@ export default class ExerciseMap {
                                     "name": "bpts-methods-basics-calling",
                                     "exerciseInfo": new BptsMethodsBasicsCallingExerciseInfo(),
                                     "exerciseTest": new BptsMethodsBasicsCallingExerciseTest(),
+                                },
+                            ]
+                        },
+                        {
+                            "name": "scope",
+                            "displayName": "Methods scope",
+                            "exercises": [
+                                {
+                                    "name": "bpts-methods-scope-outer",
+                                    "exerciseInfo": new BptsMethodsScopeOuterExerciseInfo(),
+                                    "exerciseTest": new BptsMethodsScopeOuterExerciseTest(),
                                 },
                             ]
                         },

@@ -9,18 +9,20 @@ export default class ExerciseTest implements TextExerciseTestAdapter {
 
     getExpectedSolutionText(): string {
         return "" +
+            "const myName: string = \"John\";\n" +
+            "\n" +
             "function foo() {\n" +
-            "    console.log(\"Inside foo\");\n" +
+            "    console.log(\"Inside foo: myName is:\");\n" +
+            "    console.log(myName);\n" +
             "}\n" +
             "\n" +
-            "function boo() {\n" +
-            "    console.log(\"Inside boo\");\n" +
-            "    foo();\n" +
-            "}";
+            "console.log(\"Outside foo: myName is:\");\n" +
+            "console.log(myName);\n" +
+            "foo();";
     }
 
     getExpectedSolutionRowNum() {
-        return 8;
+        return this.getExpectedSolutionText().split(/\n/).length;
     }
 
     verifySolution(solutionText: string) {
@@ -28,7 +30,7 @@ export default class ExerciseTest implements TextExerciseTestAdapter {
         console.log(this.getExpectedSolutionText())
         if (solutionText !== this.getExpectedSolutionText()) {
             throw new Error(
-                "Did you declare the method with the correct value?"
+                "Did you follow all code conventions? Did you remember a semicolon at the end of lines?"
             );
         }
     }
