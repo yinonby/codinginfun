@@ -11,8 +11,8 @@ import { useTheme } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-export default function SolutionDialog(props: any) {
-    const { dialogContent } = props;
+export default function DialogButton(props: any) {
+    const { dialogTitle, buttonText, onClose } = props;
     const [open, setOpen] = React.useState(false);
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -23,6 +23,7 @@ export default function SolutionDialog(props: any) {
 
     const handleClose = () => {
         setOpen(false);
+        onClose();
     };
 
     const descriptionElementRef = React.useRef<HTMLElement>(null);
@@ -35,11 +36,11 @@ export default function SolutionDialog(props: any) {
         }
     }, [open]);
 
-    console.log(dialogContent)
     return (
         <React.Fragment>
             <Button onClick={handleClickOpen()} size="small"
-                variant="outlined" color="secondary">Show solution
+                variant="outlined" color="secondary">
+                {buttonText}
             </Button>
             <Dialog
                 open={open}
@@ -50,7 +51,7 @@ export default function SolutionDialog(props: any) {
                 aria-labelledby="scroll-dialog-title"
                 aria-describedby="scroll-dialog-description"
             >
-                <DialogTitle id="scroll-dialog-title">Solution</DialogTitle>
+                <DialogTitle id="scroll-dialog-title">{dialogTitle}</DialogTitle>
                 <IconButton
                     aria-label="close"
                     onClick={handleClose}
@@ -70,7 +71,7 @@ export default function SolutionDialog(props: any) {
                     tabIndex={-1}
                     style={{whiteSpace: "break-spaces", userSelect: "none"}}
                 >
-                    {dialogContent}
+                    {props.children}
                 </DialogContentText>
                 </DialogContent>
                 <DialogActions>

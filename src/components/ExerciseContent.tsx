@@ -7,9 +7,9 @@ import ExerciseInfoAdapter, { EX_TYPE } from "../exercises/ExerciseInfoAdapter";
 import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
 import { useParams } from 'react-router-dom';
 import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
-import TextField from '@mui/material/TextField';
 import Markdown from 'react-markdown'
 import SolutionButton from "./SolutionButton";
+import CodeEditor from "./CodeEditor";
 
 const exerciseMap = new ExerciseMap();
 
@@ -45,15 +45,17 @@ export default function ExerciseContent(props: any) {
                     <h3>{exerciseTitle}</h3>
                 </Box>
             </Box>
-            <Box mb={2}>
-                <Instructions exercieInfo={exercieInfo} />
-            </Box>
-            {exercieInfo.getType() === EX_TYPE.EX_TYPE_TEXT &&
-                <Box mb={2}>
-                    <TextTestSection exercieTest={exercieTest}
-                        showSolutionButton={showSolutionButton}/>
+            <Box mb={2} sx={{display: "flex", flexDirection: "row"}}>
+                <Box mr={2} sx={{flex: 1}}>
+                    <Instructions exercieInfo={exercieInfo} />
                 </Box>
-            }
+                {exercieInfo.getType() === EX_TYPE.EX_TYPE_TEXT &&
+                    <Box mb={2} sx={{flex: 1}}>
+                        <TextTestSection exercieTest={exercieTest}
+                            showSolutionButton={showSolutionButton}/>
+                    </Box>
+                }
+            </Box>
             {exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX &&
                 <Box mb={2}>
                     <TestSection exercieTest={exercieTest}
@@ -97,8 +99,8 @@ function TextTestSection(props: any) {
         errMessage: "",
     });
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSolutionText(event.target.value);
+    const handleEditorChange = (value: string) => {
+        setSolutionText(value);
     }
 
     const handleClick = () => {
@@ -140,20 +142,22 @@ function TextTestSection(props: any) {
         setTestResult(tmpTestResult);
 
     }
+    const expectedSolutionText: string = exercieTest.getExpectedSolutionText();
+    const rowNum: number = exercieTest.getExpectedSolutionRowNum();
+    const height: number = 19 * rowNum;
 
     return (
         <>
             <Box mb={2}>
-                <TextField
-                    fullWidth
-                    maxRows={exercieTest.getExpectedSolutionRowNum()}
-                    minRows={exercieTest.getExpectedSolutionRowNum()}
-                    id="outlined-multiline-flexible"
-                    label="Solution"
-                    multiline
-                    value={solutionText}
-                    onChange={handleChange}
-                />
+                <Box mb={2} sx={{ height: height + "px",
+                    borderRadius: "4px",
+                    overflow: "hidden"
+                }}>
+                    <CodeEditor value={solutionText}
+                        path="code.ts"
+                        onChange={handleEditorChange}
+                    />
+                </Box>
             </Box>
             <Box mb={2} sx={{display: "flex", flexDirection: "row"}}>
                 <Box mr={2}>
@@ -162,7 +166,9 @@ function TextTestSection(props: any) {
                         Run Tests
                     </Button>
                 </Box>
-                {showSolutionButton && <SolutionButton/>}
+                {showSolutionButton && <SolutionButton
+                    currentSolutionText={solutionText}
+                />}
             </Box>
             <TestResultView testResult={testResult} />
         </>

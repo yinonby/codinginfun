@@ -26,8 +26,6 @@ export default class ExerciseTest implements TextExerciseTestAdapter {
     }
 
     verifySolution(solutionText: string) {
-        console.log(solutionText)
-        console.log(this.getExpectedSolutionText())
         if (solutionText !== this.getExpectedSolutionText()) {
             throw new Error(
                 "Did you follow all code conventions? Did you remember a semicolon at the end of lines?"
