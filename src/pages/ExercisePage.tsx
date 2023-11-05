@@ -1,23 +1,48 @@
 
+import * as React from 'react';
 import Box from '@mui/material/Box';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import CodeSandboxIFrame from "../components/CodeSandboxIFrame";
 import ExerciseSelect from "../components/ExerciseSelect";
 import Exercise from "../components/ExerciseContent";
 import Header, { Content } from "../components/Header";
 import ExerciseMap, { ExerciseItem } from "../exercises/ExerciseMap";
-import ExerciseInfoAdapter, { EX_TYPE } from "../exercises/ExerciseInfoAdapter";
+import ExerciseInfoAbs, { EX_TYPE } from "../exercises/ExerciseInfoAbs";
 import ExerciseContent from '../components/ExerciseContent';
 import SolutionButton from "../components/SolutionButton";
+import ExerciseTask from '../exercises/ExerciseTask';
+import TaskSelect from '../components/TaskSelect';
+import ExerciseMgrAdapter from '../exercises/ExerciseMgrAbs';
 
 export const exerciseMap = new ExerciseMap();
 
 export default function ExercisePage(props: any) {
     const params = useParams();
+    const navigate = useNavigate();
     const courseName: string = params.courseName || "";
     const chapterName: string = params.chapterName || "";
     const lessonName: string = params.lessonName || "";
     const exerciseName: string = params.exerciseName || "";
+    const taskIdStr: string = params.taskId || "";
+    
+    React.useEffect(() => {
+        if (exerciseName && !taskIdStr) {
+            navigate("/exercises/" + courseName + "/" + chapterName + "/" +
+                lessonName + "/" + exerciseName + "/0");
+        }
+    });
+
+    if (exerciseName && !taskIdStr) {
+        return null;
+    }
+
+    const exerciseItem: ExerciseItem | null =
+        exerciseMap.getExerciseItem(courseName, chapterName,
+            lessonName, exerciseName);
+    if (!exerciseItem) {
+        return <Box mx={2} className="app">No exercise found</Box>;
+    }
+    const exerciseMgr: ExerciseMgrAdapter = exerciseItem.exerciseMgr;
 
     const { codesandbox } = props;
     const containerStyle = {
@@ -37,26 +62,30 @@ export default function ExercisePage(props: any) {
                             <Box mb={2} >
                                 <ExerciseSelect />
                             </Box>
+                            <h3>{exerciseMgr.getTitle()}</h3>
+                            <Box mb={2} >
+                                <TaskSelect />
+                            </Box>
                             <Box mb={2} sx ={{flex: 1}} >
-                                {exerciseName && <ActualContent
-                                    courseName={courseName}
-                                    chapterName={chapterName}
-                                    lessonName={lessonName}
-                                    exerciseName={exerciseName}
-                                />}
+                                {exerciseName && taskIdStr && <ActualContent />}
                             </Box>
                         </Box>
                     }
-                    {codesandbox && exerciseName && <Exercise />}
+                    {codesandbox && exerciseName && taskIdStr && <Exercise />}
                 </Box>
             </Content>
         </>
     );
 }
 
-function ActualContent(props: any) {
-    const { courseName, chapterName,
-        lessonName, exerciseName } = props;
+function ActualContent() {
+    const params = useParams();
+    const courseName: string = params.courseName || "";
+    const chapterName: string = params.chapterName || "";
+    const lessonName: string = params.lessonName || "";
+    const exerciseName: string = params.exerciseName || "";
+    const taskIdStr: string = params.taskId || "";
+    const taskId: number = Number(taskIdStr);
     const codesandboxContainerStyle = {
         borderRight: "1px solid black",
         borderRadius: "4px",
@@ -70,7 +99,9 @@ function ActualContent(props: any) {
         return <Box mx={2} className="app">No exercise found</Box>;
     }
 
-    const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
+    const exerciseTask: ExerciseTask =
+        exerciseItem.exerciseMgr.getTasks()[taskId];
+    const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
 
     if (exercieInfo.getType() === EX_TYPE.EX_TYPE_TEXT) {
         return <ExerciseContent showSolutionButton/>;

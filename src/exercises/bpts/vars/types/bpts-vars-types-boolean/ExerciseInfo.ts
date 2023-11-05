@@ -1,4 +1,4 @@
-import ExerciseInfoAdapter, { EX_TYPE } from "../../../../ExerciseInfoAdapter";
+import ExerciseInfoAbs, { EX_TYPE } from "../../../../ExerciseInfoAbs";
 
 const md: string = `
 - Your declaration should come in the line below 'line 1'.
@@ -8,17 +8,13 @@ const md: string = `
 - Then, print the value of this variable to the output (console).
 `;
 
-export default class ExerciseInfo implements ExerciseInfoAdapter {
+export default class ExerciseInfo extends ExerciseInfoAbs {
     
     getType(): EX_TYPE {
         return EX_TYPE.EX_TYPE_SANDBOX;
     }
 
-    getTitle(): string {
-        return "Boolean variables";
-    }
-
-    getMainInstruction(): string {
+    getDescription(): string {
         return "In this exercise, you need to declare a boolean variable.";
     }
 

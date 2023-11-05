@@ -1,54 +1,28 @@
 
-import ExerciseInfoAdapter
-    from "./ExerciseInfoAdapter";
-import ExerciseTestAdapter
-    from "./ExerciseTestAdapter";
-import TextExerciseTestAdapter from "./TextExerciseTestAdapter";
+import ExerciseMgrAdapter from "./ExerciseMgrAbs";
 
-import BptsVarsBasicConstExerciseInfo
-    from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseInfo";
-import BptsVarsBasicConstExerciseTest
-    from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseTest";
-import BptsVarsBasicNamingExerciseInfo
-    from "./bpts/vars/basics/bpts-vars-basics-naming/ExerciseInfo";
-import BptsVarsBasicNamingExerciseTest
-    from "./bpts/vars/basics/bpts-vars-basics-naming/ExerciseTest";
-import BptsVarsBasicLetExerciseInfo
-    from "./bpts/vars/basics/bpts-vars-basics-let/ExerciseInfo";
-import BptsVarsBasicLetExerciseTest
-    from "./bpts/vars/basics/bpts-vars-basics-let/ExerciseTest";
-import BptsVarsTypesStringExerciseInfo
-    from "./bpts/vars/types/bpts-vars-types-string/ExerciseInfo";
-import BptsVarsTypesStringExerciseTest
-    from "./bpts/vars/types/bpts-vars-types-string/ExerciseTest";
-import BptsVarsTypesBooleanExerciseInfo
-    from "./bpts/vars/types/bpts-vars-types-boolean/ExerciseInfo";
-import BptsVarsTypesBooleanExerciseTest
-    from "./bpts/vars/types/bpts-vars-types-boolean/ExerciseTest";
-import BptsVarsTypesArrayExerciseInfo
-    from "./bpts/vars/types/bpts-vars-types-array/ExerciseInfo";
-import BptsVarsTypesArrayExerciseTest
-    from "./bpts/vars/types/bpts-vars-types-array/ExerciseTest";
-import BptsVarsTypesConstVsLetExerciseInfo
-    from "./bpts/vars/types/bpts-vars-types-const-vs-let/ExerciseInfo";
-import BptsVarsTypesConstVsLetExerciseTest
-    from "./bpts/vars/types/bpts-vars-types-const-vs-let/ExerciseTest";
-import BptsMethodsBasicsDeclarationExerciseInfo
-    from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseInfo";
-import BptsMethodsBasicsDeclarationExerciseTest
-    from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseTest";
-import BptsMethodsBasicsCallingExerciseInfo
-    from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseInfo";
-import BptsMethodsBasicsCallingExerciseTest
-    from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseTest";
-import BptsMethodsScopeOuterExerciseInfo
-    from "./bpts/methods/scope/bpts-methods-scope-outer/ExerciseInfo";
-import BptsMethodsScopeOuterExerciseTest
-    from "./bpts/methods/scope/bpts-methods-scope-outer/ExerciseTest";
-import BptsMethodsScopeNestedExerciseInfo
-    from "./bpts/methods/scope/bpts-methods-scope-nested/ExerciseInfo";
-import BptsMethodsScopeNestedExerciseTest
-    from "./bpts/methods/scope/bpts-methods-scope-nested/ExerciseTest";
+import BptsVarsBasicConstExerciseMgr
+    from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseMgr";
+import BptsVarsBasicNamingExerciseMgr
+    from "./bpts/vars/basics/bpts-vars-basics-naming/ExerciseMgr";
+import BptsVarsBasicLetExerciseMgr
+    from "./bpts/vars/basics/bpts-vars-basics-let/ExerciseMgr";
+import BptsVarsTypesStringExerciseMgr
+    from "./bpts/vars/types/bpts-vars-types-string/ExerciseMgr";
+import BptsVarsTypesBooleanExerciseMgr
+    from "./bpts/vars/types/bpts-vars-types-boolean/ExerciseMgr";
+import BptsVarsTypesArrayExerciseMgr
+    from "./bpts/vars/types/bpts-vars-types-array/ExerciseMgr";
+import BptsVarsTypesConstVsLetExerciseMgr
+    from "./bpts/vars/types/bpts-vars-types-const-vs-let/ExerciseMgr";
+import BptsMethodsBasicsDeclarationExerciseMgr
+    from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseMgr";
+import BptsMethodsBasicsCallingExerciseMgr
+    from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseMgr";
+import BptsMethodsScopeOuterExerciseMgr
+    from "./bpts/methods/scope/bpts-methods-scope-outer/ExerciseMgr";
+import BptsMethodsScopeNestedExerciseMgr
+    from "./bpts/methods/scope/bpts-methods-scope-nested/ExerciseMgr";
 
 type ExerciseMapItem = {
     [key: string]: CourseItem,
@@ -74,8 +48,7 @@ type LessonItem = {
 
 export type ExerciseItem = {
     name: string,
-    exerciseInfo: ExerciseInfoAdapter,
-    exerciseTest: ExerciseTestAdapter | TextExerciseTestAdapter,
+    exerciseMgr: ExerciseMgrAdapter,
 }
 
 export type NameItem = {
@@ -104,18 +77,15 @@ export default class ExerciseMap {
                             "exercises": [
                                 {
                                     "name": "bpts-vars-basics-const",
-                                    "exerciseInfo": new BptsVarsBasicConstExerciseInfo(),
-                                    "exerciseTest": new BptsVarsBasicConstExerciseTest(),
+                                    "exerciseMgr": new BptsVarsBasicConstExerciseMgr(),
                                 },
                                 {
                                     "name": "bpts-vars-basics-naming",
-                                    "exerciseInfo": new BptsVarsBasicNamingExerciseInfo(),
-                                    "exerciseTest": new BptsVarsBasicNamingExerciseTest(),
+                                    "exerciseMgr": new BptsVarsBasicNamingExerciseMgr(),
                                 },
                                 {
                                     "name": "bpts-vars-basics-let",
-                                    "exerciseInfo": new BptsVarsBasicLetExerciseInfo(),
-                                    "exerciseTest": new BptsVarsBasicLetExerciseTest(),
+                                    "exerciseMgr": new BptsVarsBasicLetExerciseMgr(),
                                 }
                             ]
                         },
@@ -125,23 +95,19 @@ export default class ExerciseMap {
                             "exercises": [
                                 {
                                     "name": "bpts-vars-types-string",
-                                    "exerciseInfo": new BptsVarsTypesStringExerciseInfo(),
-                                    "exerciseTest": new BptsVarsTypesStringExerciseTest(),
+                                    "exerciseMgr": new BptsVarsTypesStringExerciseMgr(),
                                 },
                                 {
                                     "name": "bpts-vars-types-boolean",
-                                    "exerciseInfo": new BptsVarsTypesBooleanExerciseInfo(),
-                                    "exerciseTest": new BptsVarsTypesBooleanExerciseTest(),
+                                    "exerciseMgr": new BptsVarsTypesBooleanExerciseMgr(),
                                 },
                                 {
                                     "name": "bpts-vars-types-array",
-                                    "exerciseInfo": new BptsVarsTypesArrayExerciseInfo(),
-                                    "exerciseTest": new BptsVarsTypesArrayExerciseTest(),
+                                    "exerciseMgr": new BptsVarsTypesArrayExerciseMgr(),
                                 },
                                 {
                                     "name": "bpts-vars-types-const-vs-let",
-                                    "exerciseInfo": new BptsVarsTypesConstVsLetExerciseInfo(),
-                                    "exerciseTest": new BptsVarsTypesConstVsLetExerciseTest(),
+                                    "exerciseMgr": new BptsVarsTypesConstVsLetExerciseMgr(),
                                 },
                             ]
                         }
@@ -157,13 +123,11 @@ export default class ExerciseMap {
                             "exercises": [
                                 {
                                     "name": "bpts-methods-basics-declaration",
-                                    "exerciseInfo": new BptsMethodsBasicsDeclarationExerciseInfo(),
-                                    "exerciseTest": new BptsMethodsBasicsDeclarationExerciseTest(),
+                                    "exerciseMgr": new BptsMethodsBasicsDeclarationExerciseMgr(),
                                 },
                                 {
                                     "name": "bpts-methods-basics-calling",
-                                    "exerciseInfo": new BptsMethodsBasicsCallingExerciseInfo(),
-                                    "exerciseTest": new BptsMethodsBasicsCallingExerciseTest(),
+                                    "exerciseMgr": new BptsMethodsBasicsCallingExerciseMgr(),
                                 },
                             ]
                         },
@@ -173,13 +137,11 @@ export default class ExerciseMap {
                             "exercises": [
                                 {
                                     "name": "bpts-methods-scope-outer",
-                                    "exerciseInfo": new BptsMethodsScopeOuterExerciseInfo(),
-                                    "exerciseTest": new BptsMethodsScopeOuterExerciseTest(),
+                                    "exerciseMgr": new BptsMethodsScopeOuterExerciseMgr(),
                                 },
                                 {
                                     "name": "bpts-methods-scope-nested",
-                                    "exerciseInfo": new BptsMethodsScopeNestedExerciseInfo(),
-                                    "exerciseTest": new BptsMethodsScopeNestedExerciseTest(),
+                                    "exerciseMgr": new BptsMethodsScopeNestedExerciseMgr(),
                                 },
                             ]
                         },
@@ -245,7 +207,7 @@ export default class ExerciseMap {
             .find(e => e.name === lessonName)!.exercises
             .map(e => ({
                 name: e.name,
-                displayName: e.exerciseInfo.getTitle(),
+                displayName: e.exerciseMgr.getTitle(),
             }));
     }
 

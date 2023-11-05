@@ -3,7 +3,7 @@ import { useState } from "react";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ExerciseMap, { ExerciseItem } from "../exercises/ExerciseMap";
-import ExerciseInfoAdapter, { EX_TYPE } from "../exercises/ExerciseInfoAdapter";
+import ExerciseInfoAbs, { EX_TYPE } from "../exercises/ExerciseInfoAbs";
 import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
 import { useParams } from 'react-router-dom';
 import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
@@ -11,21 +11,30 @@ import Markdown from 'react-markdown'
 import SolutionButton from "./SolutionButton";
 import CodeEditor from "./CodeEditor";
 import { Grid } from "@mui/material";
+import ExerciseMgrAdapter from "../exercises/ExerciseMgrAbs";
+import ExerciseTask from "../exercises/ExerciseTask";
 
 const exerciseMap = new ExerciseMap();
 
 export default function ExerciseContent(props: any) {
     const { showSolutionButton } = props;
     const params = useParams();
+    const [currentTaskIdx, setCurrentTaskIdx] = useState(0);
     const courseName: string = params.courseName || "";
     const chapterName: string = params.chapterName || "";
     const lessonName: string = params.lessonName || "";
     const exerciseName: string = params.exerciseName || "";
+    const taskIdStr: string = params.taskId || "";
 
     if (!exerciseName) {
         console.error("missing exerciseName");
         return <div>Missing exerciseName</div>;
     }
+    if (!taskIdStr) {
+        console.error("missing taskId");
+        return <div>Missing taskId</div>;
+    }
+    const taskId: number = Number(taskIdStr);
 
     const exerciseItem: ExerciseItem | null =
         exerciseMap.getExerciseItem(courseName, chapterName,
@@ -34,19 +43,28 @@ export default function ExerciseContent(props: any) {
         return <Box mx={2} className="app">No exercise found</Box>;
     }
 
-    const exercieInfo: ExerciseInfoAdapter = exerciseItem.exerciseInfo;
-    const exercieTest: ExerciseTestAdapter | TextExerciseTestAdapter =
-        exerciseItem.exerciseTest;
-    const exerciseTitle: string = exerciseItem.exerciseInfo.getTitle();
+    const exercieMgr: ExerciseMgrAdapter = exerciseItem.exerciseMgr;
+    const exerciseTasks: ExerciseTask[] = exercieMgr.getTasks();
+    const exerciseTask: ExerciseTask = exerciseTasks[currentTaskIdx];
 
     return (
         <Box>
-            <Box mb={2} sx={{display: "flex", flexDirection: "row"}}>
-                <Box sx={{flex: 1}}>
-                    <h3>{exerciseTitle}</h3>
-                </Box>
-            </Box>
+            <TaskView exerciseTask={exerciseTask}
+                showSolutionButton={showSolutionButton} />
+        </Box>
+    );
+}
 
+function TaskView(props: any) {
+    const { exerciseTask, showSolutionButton } = props;
+    const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
+    const exercieTest: ExerciseTestAdapter | TextExerciseTestAdapter =
+        exerciseTask.getTest();
+    const taskTypeStr: string = exercieInfo.getTaskTypeStr();
+
+    return (
+        <Box>
+            <h4>{taskTypeStr}</h4>
             {exercieInfo.getType() === EX_TYPE.EX_TYPE_TEXT &&
               <Grid container spacing={2}>
                   <Grid item xs={12} sm={12} md={6}>
@@ -75,19 +93,15 @@ export default function ExerciseContent(props: any) {
 }
 
 function Instructions(props: any) {
-    const exercieInfo: ExerciseInfoAdapter = props.exercieInfo;
-    const mainInstruction: string = exercieInfo.getMainInstruction();
+    const exercieInfo: ExerciseInfoAbs = props.exercieInfo;
     const md = exercieInfo.getMdInstructions()
         .replaceAll("<<", "**`")
         .replaceAll(">>", "`**");
 
     return (
-        <>
-            <Box mb={1}>{mainInstruction}</Box>
-            <Markdown>
-                {md}
-            </Markdown>
-        </>
+        <Markdown>
+            {md}
+        </Markdown>
     );
 }
 
@@ -119,8 +133,9 @@ function TextTestSection(props: any) {
         console.log("Running all tests:");
 
         try {
+            const cleanSolutionText = solutionText.replaceAll("\r", "");
             console.log("Verifying your code...")
-            exercieTest.verify(solutionText);
+            exercieTest.verify(cleanSolutionText);
             console.log("Verifying your code... ok")
         } catch (e) {
             passed = false;

@@ -15,8 +15,12 @@ const appStyle = {
 
 const router = createBrowserRouter([
     {
-        path: "/codesandbox/:courseName/:chapterName/:lessonName/:exerciseName",
+        path: "/codesandbox/:courseName/:chapterName/:lessonName/:exerciseName/:taskId",
         element: <ExerciseContentPage />,
+    },
+    {
+        path: "/exercises/:courseName/:chapterName/:lessonName/:exerciseName/:taskId",
+        element: <ExercisePage />,
     },
     {
         path: "/exercises/:courseName/:chapterName/:lessonName/:exerciseName",

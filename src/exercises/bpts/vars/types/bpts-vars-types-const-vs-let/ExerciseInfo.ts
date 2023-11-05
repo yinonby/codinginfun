@@ -1,4 +1,4 @@
-import ExerciseInfoAdapter, { EX_TYPE } from "../../../../ExerciseInfoAdapter";
+import ExerciseInfoAbs, { EX_TYPE } from "../../../../ExerciseInfoAbs";
 const md: string = `
 - Your declaration should come in the line below 'line 1'.
 - Declare a constant variable named <<paiValue>>, of type number, and initialize its value to <<3.14>>.
@@ -9,17 +9,13 @@ const md: string = `
 - Then, in the next line, print the value of <<myAge>> to the output (console).
 `;
 
-export default class ExerciseInfo implements ExerciseInfoAdapter {
+export default class ExerciseInfo extends ExerciseInfoAbs {
     
     getType(): EX_TYPE {
         return EX_TYPE.EX_TYPE_SANDBOX;
     }
-    
-    getTitle(): string {
-        return "Constant vs non-constant variables";
-    }
 
-    getMainInstruction(): string {
+    getDescription(): string {
         return "In this exercise, you will declare both 'const' and 'let' variables.";
     }
 

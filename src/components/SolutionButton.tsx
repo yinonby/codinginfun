@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import Box from '@mui/material/Box';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { ExerciseItem } from "../exercises/ExerciseMap";
 import DialogButton from "./DialogButton";
 import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
@@ -10,14 +10,18 @@ import { exerciseMap } from '../pages/ExercisePage';
 import DiffCodeEditor from './DiffCodeEditor';
 import CodeEditor from './CodeEditor';
 import { Button } from '@mui/material';
+import ExerciseTask from "../exercises/ExerciseTask";
 
 export default function SolutionButton(props: any) {
     const params = useParams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const { currentSolutionText } = props;
     const courseName: string = params.courseName || "";
     const chapterName: string = params.chapterName || "";
     const lessonName: string = params.lessonName || "";
     const exerciseName: string = params.exerciseName || "";
+    const exerciseTaskIdxStr: string = searchParams.get("exTaskIdx") || "0";
+    const exerciseTaskIdx: number = Number(exerciseTaskIdxStr);
     const [showComparison, setShowComparison] = useState(false);
 
     if (!exerciseName) {
@@ -31,7 +35,10 @@ export default function SolutionButton(props: any) {
         return <Box mx={2} className="app">No exercise found</Box>;
     }
 
-    const exercieTest: ExerciseTestAdapter | TextExerciseTestAdapter = exerciseItem.exerciseTest;
+    const exerciseTask: ExerciseTask =
+        exerciseItem.exerciseMgr.getTasks()[exerciseTaskIdx];
+    const exercieTest: ExerciseTestAdapter | TextExerciseTestAdapter =
+        exerciseTask.getTest();
     const expectedSolutionText = exercieTest.getExpectedSolutionText();
     const handleClick = () => {
         setShowComparison(! showComparison);

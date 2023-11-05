@@ -1,5 +1,5 @@
 
-import ExerciseInfoAdapter, { EX_TYPE } from "../../../../ExerciseInfoAdapter";
+import ExerciseInfoAbs, { EX_TYPE } from "../../../../ExerciseInfoAbs";
 
 const md: string = `
 - In the first line, declare a constant variable named <<myName>>, of type <<string>>, and initialize its value to <<"John">>. Don't forget a semicolon <<;>> at the end of the line.
@@ -14,18 +14,14 @@ const md: string = `
 - Then, in the next line, call the method <<foo>>. Don't forget a semicolon <<;>> at the end of the line.
 `;
 
-export default class ExerciseInfo implements ExerciseInfoAdapter {
+export default class ExerciseInfo extends ExerciseInfoAbs {
 
     getType(): EX_TYPE {
         return EX_TYPE.EX_TYPE_TEXT;
     }
 
-    getTitle(): string {
-        return "Methods scope - outer variable";
-    }
-
-    getMainInstruction(): string {
-        return "In this exercise, we'll understand methods scope.";
+    getDescription(): string {
+        return "Method scope with an outer variable";
     }
 
     getMdInstructions(): string {

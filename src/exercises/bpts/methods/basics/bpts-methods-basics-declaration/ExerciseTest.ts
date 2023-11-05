@@ -21,7 +21,7 @@ export default class ExerciseTest implements TextExerciseTestAdapter {
     verifySolution(solutionText: string) {
         if (solutionText !== this.getExpectedSolutionText()) {
             throw new Error(
-                "Did you declare the method with the correct value?"
+                "Have you followed all code conventions?"
             );
         }
     }
