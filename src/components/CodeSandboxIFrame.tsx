@@ -7,11 +7,18 @@ export default function CodeSandboxIFrame() {
     const chapterName: string = params.chapterName || "";
     const lessonName: string = params.lessonName || "";
     const exerciseName: string = params.exerciseName || "";
+    const taskIdStr: string = params.taskId || "";
     const repo: string = "github/yinonby/codinginfun/tree/devel";
+
+    if (!taskIdStr) {
+        console.error("missing taskId in path");
+        return <div>Missing taskId</div>;
+    }
+
     const src: string = "https://codesandbox.io/embed/" + repo +
         "/?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark" +
         "&initialpath=codesandbox%2F" + courseName + "%2F" + chapterName +
-        "%2F" + lessonName + "%2F" + exerciseName +
+        "%2F" + lessonName + "%2F" + exerciseName + "%2F" + taskIdStr +
         "&module=%2Fsrc%2Fexercises%2F" + courseName + "%2F" + chapterName +
         "%2F" + lessonName + "%2F" + exerciseName + "%2FExercise.ts";
     const style = {
