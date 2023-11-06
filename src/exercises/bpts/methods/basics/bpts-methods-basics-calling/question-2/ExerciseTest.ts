@@ -2,10 +2,15 @@
 import QuestionExerciseTestAdapter from "../../../../../QuestionExerciseTestAdapter";
 
 const output: string = `
+"Inside foo"
+"Inside boo"
+"Inside foo"
 `;
 
 const explanation: string = `
-Look carefually at the code.
+The method 'foo' is called first, directly.
+Then the method 'boo' is called, and 'boo' is calling 'foo'.
+Notice that the quotes are included in the output;
 `;
 
 export default class ExerciseTest implements QuestionExerciseTestAdapter {

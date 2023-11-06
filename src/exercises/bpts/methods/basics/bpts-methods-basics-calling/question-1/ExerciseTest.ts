@@ -2,10 +2,12 @@
 import QuestionExerciseTestAdapter from "../../../../../QuestionExerciseTestAdapter";
 
 const output: string = `
+"Inside foo"
 `;
 
 const explanation: string = `
-Look carefually at the code.
+The method 'foo' is called directly. There is no call to 'boo'.
+Notice that the quotes are included in the output;
 `;
 
 export default class ExerciseTest implements QuestionExerciseTestAdapter {
