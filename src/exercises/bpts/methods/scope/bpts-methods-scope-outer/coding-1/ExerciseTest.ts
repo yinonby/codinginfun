@@ -1,5 +1,5 @@
 
-import TextExerciseTestAdapter from "../../../../TextExerciseTestAdapter";
+import TextExerciseTestAdapter from "../../../../../TextExerciseTestAdapter";
 
 export default class ExerciseTest implements TextExerciseTestAdapter {
 
@@ -12,7 +12,6 @@ export default class ExerciseTest implements TextExerciseTestAdapter {
             "const myName: string = \"John\";\n" +
             "\n" +
             "function foo() {\n" +
-            "    const myName: string = \"Bob\";\n" +
             "    console.log(\"Inside foo: myName is:\");\n" +
             "    console.log(myName);\n" +
             "}\n" +

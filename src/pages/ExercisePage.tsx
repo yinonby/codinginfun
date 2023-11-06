@@ -36,14 +36,6 @@ export default function ExercisePage(props: any) {
         return null;
     }
 
-    const exerciseItem: ExerciseItem | null =
-        exerciseMap.getExerciseItem(courseName, chapterName,
-            lessonName, exerciseName);
-    if (!exerciseItem) {
-        return <Box mx={2} className="app">No exercise found</Box>;
-    }
-    const exerciseMgr: ExerciseMgrAdapter = exerciseItem.exerciseMgr;
-
     const { codesandbox } = props;
     const containerStyle = {
         height: "100%",
@@ -62,19 +54,43 @@ export default function ExercisePage(props: any) {
                             <Box mb={2} >
                                 <ExerciseSelect />
                             </Box>
-                            <h3>{exerciseMgr.getTitle()}</h3>
-                            <Box mb={2} >
-                                <TaskSelect />
-                            </Box>
-                            <Box mb={2} sx ={{flex: 1}} >
-                                {exerciseName && taskIdStr && <ActualContent />}
-                            </Box>
+                            {exerciseName && taskIdStr && 
+                                <>
+                                    <ExerciseTitle />
+                                    <Box mb={2} >
+                                        <TaskSelect />
+                                    </Box>
+                                    <Box mb={2} sx ={{flex: 1}} >
+                                        {exerciseName && taskIdStr && <ActualContent />}
+                                    </Box>
+                                </>
+                            }
                         </Box>
                     }
                     {codesandbox && exerciseName && taskIdStr && <Exercise />}
                 </Box>
             </Content>
         </>
+    );
+}
+
+function ExerciseTitle() {
+    const params = useParams();
+    const courseName: string = params.courseName || "";
+    const chapterName: string = params.chapterName || "";
+    const lessonName: string = params.lessonName || "";
+    const exerciseName: string = params.exerciseName || "";
+    
+    const exerciseItem: ExerciseItem | null =
+        exerciseMap.getExerciseItem(courseName, chapterName,
+            lessonName, exerciseName);
+    if (!exerciseItem) {
+        return <Box mx={2} className="app">No exercise found</Box>;
+    }
+    const exerciseMgr: ExerciseMgrAdapter = exerciseItem.exerciseMgr;
+
+    return (
+        <h3>{exerciseMgr.getTitle()}</h3>
     );
 }
 

@@ -1,5 +1,5 @@
 
-import TextExerciseTestAdapter from "../../../../TextExerciseTestAdapter";
+import TextExerciseTestAdapter from "../../../../../TextExerciseTestAdapter";
 
 export default class ExerciseTest implements TextExerciseTestAdapter {
 

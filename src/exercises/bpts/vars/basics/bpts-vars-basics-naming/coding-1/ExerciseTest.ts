@@ -1,5 +1,5 @@
-import ExerciseTestAdapter from "../../../../ExerciseTestAdapter";
-import Exercise from "./Exercise";
+import ExerciseTestAdapter from "../../../../../ExerciseTestAdapter";
+import Exercise from "../Exercise";
 
 export default class Test implements ExerciseTestAdapter {
 
@@ -17,8 +17,7 @@ export default class Test implements ExerciseTestAdapter {
 
     solution(): void {
         // line 1
-        const bookName: string = "Harry Potter";
-        console.log(bookName);
+        const zero: number = 0;
     }
 
     verifySolution() {
@@ -42,4 +41,5 @@ export default class Test implements ExerciseTestAdapter {
             );
         }
     }
+
 }

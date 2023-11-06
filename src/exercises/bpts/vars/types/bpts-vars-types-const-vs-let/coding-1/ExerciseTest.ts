@@ -1,5 +1,5 @@
-import ExerciseTestAdapter from "../../../../ExerciseTestAdapter";
-import Exercise from "./Exercise";
+import ExerciseTestAdapter from "../../../../../ExerciseTestAdapter";
+import Exercise from "../Exercise";
 
 export default class Test implements ExerciseTestAdapter {
 
@@ -17,8 +17,12 @@ export default class Test implements ExerciseTestAdapter {
 
     solution(): void {
         // line 1
-        let someValue: number = 3;
-        someValue = 8;
+        const paiValue: number = 3.14;
+        console.log(paiValue);
+        let myAge: number = 35;
+        console.log(myAge);
+        myAge = 36;
+        console.log(myAge);
     }
 
     verifySolution() {
@@ -26,7 +30,7 @@ export default class Test implements ExerciseTestAdapter {
 
         if (exercise.solution.toString() !== this.solution.toString()) {
             throw new Error(
-                "Did you declare the variable with the correct value? Did you change it to the new value?"
+                "Did you declare the variable with the correct value?"
             );
         }
     }
@@ -42,5 +46,4 @@ export default class Test implements ExerciseTestAdapter {
             );
         }
     }
-
 }

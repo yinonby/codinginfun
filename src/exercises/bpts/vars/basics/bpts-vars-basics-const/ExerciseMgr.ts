@@ -1,8 +1,8 @@
 
 import ExerciseMgrAbs from "../../../../ExerciseMgrAbs";
 import ExerciseTask from "../../../../ExerciseTask";
-import ExerciseInfo from "./ExerciseInfo";
-import ExerciseTest from "./ExerciseTest";
+import ExerciseInfo from "./coding-1/ExerciseInfo";
+import ExerciseTest from "./coding-1/ExerciseTest";
 
 export default class ExerciseMgr extends ExerciseMgrAbs {
     private exerciseTasks: ExerciseTask[] = [];

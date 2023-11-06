@@ -1,4 +1,4 @@
-import ExerciseInfoAbs, { EX_TYPE } from "../../../../ExerciseInfoAbs";
+import ExerciseInfoAbs, { EX_TYPE } from "../../../../../ExerciseInfoAbs";
 const md: string = `
 - Your declaration should come in the line below 'line 1'.
 - Declare a constant variable named <<paiValue>>, of type number, and initialize its value to <<3.14>>.

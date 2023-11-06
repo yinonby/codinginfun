@@ -1,11 +1,10 @@
 
-import ExerciseInfoAbs, { EX_TYPE } from "../../../../ExerciseInfoAbs";
+import ExerciseInfoAbs, { EX_TYPE } from "../../../../../ExerciseInfoAbs";
 
 const md: string = `
 - In the first line, declare a constant variable named <<myName>>, of type <<string>>, and initialize its value to <<"John">>. Don't forget a semicolon <<;>> at the end of the line.
 - Then, leave the next line empty.
 - Then, in the next line, declare a method (function) named <<foo>>, followed by an opening bracket <<{>>.
-- Then, in the next line, declare a constant variable named <<myName>>, of type <<string>>, and initialize its value to <<"Bob">>. Don't forget a semicolon <<;>> at the end of the line.
 - Then, in the next line, begin with 4 spaces, then print <<"Inside foo: myName is:">> to the output (console). Don't forget a semicolon <<;>> at the end of the line.
 - Then, in the next line, begin with 4 spaces, then print <<myName>> to the output (console). Don't forget a semicolon <<;>> at the end of the line.
 - Then, in the next line, close the method using a closing bracket <<}>>.
@@ -22,7 +21,7 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     }
 
     getDescription(): string {
-        return "Method scope with nested variables";
+        return "Method scope with an outer variable";
     }
 
     getMdInstructions(): string {
