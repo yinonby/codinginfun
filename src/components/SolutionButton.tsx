@@ -2,11 +2,10 @@
 import { useState } from "react";
 import Box from '@mui/material/Box';
 import { useParams, useSearchParams } from 'react-router-dom';
-import { ExerciseItem } from "../exercises/ExerciseMap";
+import ExerciseMap, { ExerciseItem } from "../exercises/ExerciseMap";
 import DialogButton from "./DialogButton";
 import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
 import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
-import { exerciseMap } from '../pages/ExercisePage';
 import DiffCodeEditor from './DiffCodeEditor';
 import CodeEditor from './CodeEditor';
 import { Button } from '@mui/material';
@@ -29,6 +28,7 @@ export default function SolutionButton(props: any) {
         return <div>Missing exerciseName</div>;
     }
 
+    const exerciseMap = new ExerciseMap();
     const exerciseItem: ExerciseItem | null = exerciseMap.getExerciseItem(courseName, chapterName,
         lessonName, exerciseName);
     if (!exerciseItem) {

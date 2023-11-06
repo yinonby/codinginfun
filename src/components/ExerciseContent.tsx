@@ -14,12 +14,9 @@ import { Grid } from "@mui/material";
 import ExerciseMgrAdapter from "../exercises/ExerciseMgrAbs";
 import ExerciseTask from "../exercises/ExerciseTask";
 
-const exerciseMap = new ExerciseMap();
-
 export default function ExerciseContent(props: any) {
     const { showSolutionButton } = props;
     const params = useParams();
-    const [currentTaskIdx, setCurrentTaskIdx] = useState(0);
     const courseName: string = params.courseName || "";
     const chapterName: string = params.chapterName || "";
     const lessonName: string = params.lessonName || "";
@@ -36,6 +33,7 @@ export default function ExerciseContent(props: any) {
     }
     const taskId: number = Number(taskIdStr);
 
+    const exerciseMap = new ExerciseMap();
     const exerciseItem: ExerciseItem | null =
         exerciseMap.getExerciseItem(courseName, chapterName,
             lessonName, exerciseName);
@@ -45,7 +43,7 @@ export default function ExerciseContent(props: any) {
 
     const exercieMgr: ExerciseMgrAdapter = exerciseItem.exerciseMgr;
     const exerciseTasks: ExerciseTask[] = exercieMgr.getTasks();
-    const exerciseTask: ExerciseTask = exerciseTasks[currentTaskIdx];
+    const exerciseTask: ExerciseTask = exerciseTasks[taskId];
 
     return (
         <Box>

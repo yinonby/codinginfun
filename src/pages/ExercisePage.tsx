@@ -14,8 +14,6 @@ import ExerciseTask from '../exercises/ExerciseTask';
 import TaskSelect from '../components/TaskSelect';
 import ExerciseMgrAdapter from '../exercises/ExerciseMgrAbs';
 
-export const exerciseMap = new ExerciseMap();
-
 export default function ExercisePage(props: any) {
     const params = useParams();
     const navigate = useNavigate();
@@ -81,6 +79,8 @@ function ExerciseTitle() {
     const lessonName: string = params.lessonName || "";
     const exerciseName: string = params.exerciseName || "";
     
+    const exerciseMap = new ExerciseMap();
+
     const exerciseItem: ExerciseItem | null =
         exerciseMap.getExerciseItem(courseName, chapterName,
             lessonName, exerciseName);
@@ -108,6 +108,7 @@ function ActualContent() {
         flex: 1,
     }
 
+    const exerciseMap = new ExerciseMap();
     const exerciseItem: ExerciseItem | null =
         exerciseMap.getExerciseItem(courseName, chapterName,
             lessonName, exerciseName);
