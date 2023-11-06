@@ -1,6 +1,7 @@
 
 import ExerciseInfoAbs, { EX_TYPE } from "./ExerciseInfoAbs";
 import ExerciseTestAdapter from "./ExerciseTestAdapter";
+import QuestionExerciseTestAdapter from "./QuestionExerciseTestAdapter";
 import TextExerciseTestAdapter from "./TextExerciseTestAdapter";
 
 export default class ExerciseTask {
@@ -17,7 +18,8 @@ export default class ExerciseTask {
         return this.exerciseInfo;
     }
 
-    getTest(): ExerciseTestAdapter | TextExerciseTestAdapter {
+    getTest(): ExerciseTestAdapter | TextExerciseTestAdapter |
+        QuestionExerciseTestAdapter {
         return this.exerciseTestAdapter;
     }
 

@@ -9,8 +9,10 @@ export default abstract class ExerciseInfoAbs {
             return "Sandbox coding exercise";
         } else if (this.getType() === EX_TYPE.EX_TYPE_CODING) {
             return "Coding exercise";
+        } else if (this.getType() === EX_TYPE.EX_TYPE_QUESTION) {
+            return "Coding question";
         } else {
-            return "Coding exercise";
+            throw new Error("Unsupported type");
         }
     }
 }
@@ -18,4 +20,5 @@ export default abstract class ExerciseInfoAbs {
 export enum EX_TYPE {
     EX_TYPE_CODING,
     EX_TYPE_SANDBOX,
+    EX_TYPE_QUESTION,
 }

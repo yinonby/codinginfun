@@ -1,15 +1,16 @@
 import { useState } from "react";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
 import SolutionButton from "./SolutionButton";
-import CodeEditor from "./CodeEditor";
 import { TestResult } from "./TestResultView";
 import TestResultView from './TestResultView';
+import QuestionExerciseTestAdapter from "../exercises/QuestionExerciseTestAdapter";
+import { TextField } from "@mui/material";
+import AnswerButton from "./AnswerButton";
 
-export function CodingTaskView(props: any) {
+export function QuestionTaskView(props: any) {
     const { showSolutionButton } = props;
-    const exercieTest: TextExerciseTestAdapter = props.exercieTest;
+    const exercieTest: QuestionExerciseTestAdapter = props.exercieTest;
     const [solutionText, setSolutionText] = useState("");
     const [testResult, setTestResult] = useState({
         run: false,
@@ -17,9 +18,9 @@ export function CodingTaskView(props: any) {
         errMessage: "",
     });
 
-    const handleEditorChange = (value: string) => {
-        setSolutionText(value);
-    };
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSolutionText(event.target.value);
+    }
 
     const handleClick = () => {
         let passed: boolean = true;
@@ -30,12 +31,12 @@ export function CodingTaskView(props: any) {
 
         try {
             const cleanSolutionText = solutionText.replaceAll("\r", "");
-            console.log("Verifying your code...");
+            console.log("Verifying your answer...");
             exercieTest.verify(cleanSolutionText);
-            console.log("Verifying your code... ok");
+            console.log("Verifying your answer... ok");
         } catch (e) {
             passed = false;
-            console.log("Verifying your code... failed");
+            console.log("Verifying your answer... failed");
             if (e instanceof Error) {
                 const err: Error = e;
                 errorMessage = err.message;
@@ -43,9 +44,9 @@ export function CodingTaskView(props: any) {
         }
 
         if (passed) {
-            console.log("All tests succeeded :)");
+            console.log("All answers are correct :)");
         } else {
-            console.log("Some tests failed :(");
+            console.log("Some answers are incorrect :(");
         }
 
         const tmpTestResult: TestResult = {
@@ -62,34 +63,32 @@ export function CodingTaskView(props: any) {
 
     };
     const rowNum: number = exercieTest.getExpectedSolutionRowNum();
-    const height: number = 19 * rowNum;
 
     return (
         <>
             <Box mb={2}>
-                <Box mb={2} sx={{
-                    height: height + "px",
-                    borderRadius: "4px",
-                    overflow: "hidden"
-                }}>
-                    <CodeEditor value={solutionText}
-                        path="code.ts"
-                        onChange={handleEditorChange} />
+                <Box mb={2} >
+                    <TextField
+                        id="coding-question-text-field"
+                        label="Answer"
+                        multiline
+                        rows={rowNum}
+                        value={solutionText}
+                        onChange={handleChange} />
                 </Box>
             </Box>
             <Box mb={2} sx={{ display: "flex", flexDirection: "row" }}>
                 <Box mr={2}>
                     <Button variant="contained" onClick={handleClick}
                         size="small">
-                        Run Tests
+                        Check your answer
                     </Button>
                 </Box>
-                <Box sx={{ flex: 1 }} />
-                {showSolutionButton && <SolutionButton
+                {showSolutionButton && <AnswerButton
                     currentSolutionText={solutionText} />}
             </Box>
-            <TestResultView okMessage="Your code is correct!"
-                errPrefix="Error"
+            <TestResultView okMessage="Your answer is correct!"
+                errPrefix="Wrong answer"
                 testResult={testResult} />
         </>
     );

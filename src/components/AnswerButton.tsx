@@ -8,10 +8,11 @@ import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
 import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
 import DiffCodeEditor from './DiffCodeEditor';
 import CodeEditor from './CodeEditor';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import ExerciseTask from "../exercises/ExerciseTask";
+import QuestionExerciseTestAdapter from "../exercises/QuestionExerciseTestAdapter";
 
-export default function SolutionButton(props: any) {
+export default function AnswerButton(props: any) {
     const params = useParams();
     const [searchParams, setSearchParams] = useSearchParams();
     const { currentSolutionText } = props;
@@ -41,9 +42,11 @@ export default function SolutionButton(props: any) {
 
     const exerciseTask: ExerciseTask =
         exerciseItem.exerciseMgr.getTask(taskId);
-    const exercieTest: ExerciseTestAdapter | TextExerciseTestAdapter =
-        exerciseTask.getTest();
+    const exercieTest: QuestionExerciseTestAdapter =
+        exerciseTask.getTest() as QuestionExerciseTestAdapter;
     const expectedSolutionText = exercieTest.getExpectedSolutionText();
+    const expectedSolutionExplanation =
+        exercieTest.getExpectedSolutionExplanation();
     const handleClick = () => {
         setShowComparison(! showComparison);
     }
@@ -52,34 +55,24 @@ export default function SolutionButton(props: any) {
     }
 
     return (
-        <DialogButton dialogTitle="Solution"
+        <DialogButton dialogTitle="Answer"
             dialogProps={{maxWidth: "xl"}}
-            buttonText="Show correct solution"
+            buttonText="Show correct answer"
             onClose={handleClose}>
-            <Box mb={2}>
-                <Button variant="outlined" onClick={handleClick}
-                    size="small">
-                    {showComparison ? "Show correct solution only" :
-                        "Compare this correct solution to my code"}
-                </Button>
-            </Box>
-            <Box sx={{
-                height: "300px",
-                border: "1px solid black",
-                borderRadius: "4px",
-            }}>
-                {! showComparison &&
-                    <CodeEditor value={expectedSolutionText}
-                        path="current-code.ts"
-                        readOnly
-                    />
-                }
-                {showComparison &&
-                    <DiffCodeEditor original={expectedSolutionText}
-                        modified={currentSolutionText}
-                    />
-                }
-            </Box>
+            {expectedSolutionText &&
+                <>
+                    <Box sx={{typography: "subtitle1", fontWeight: "bold"}}>
+                        Correct answer:
+                    </Box>
+                    <Box mb={2}>
+                        {expectedSolutionText}
+                    </Box>
+                    <Box sx={{typography: "subtitle1", fontWeight: "bold"}}>
+                        Explanation:
+                    </Box>
+                </>
+            }
+            {expectedSolutionExplanation}
         </DialogButton>
     );
 }

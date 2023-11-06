@@ -5,12 +5,13 @@ import ExerciseInfoAbs, { EX_TYPE } from "../exercises/ExerciseInfoAbs";
 import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
 import { useParams } from 'react-router-dom';
 import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
-import Markdown from 'react-markdown'
+import Markdown from "./Markdown";
 import { Grid } from "@mui/material";
 import ExerciseMgrAdapter from "../exercises/ExerciseMgrAbs";
 import ExerciseTask from "../exercises/ExerciseTask";
 import { CodingTaskView } from "./CodingTaskView";
 import { CodesandboxTaskView } from "./CodesandboxTaskView";
+import { QuestionTaskView } from './QuestionTaskView';
 
 export default function ExerciseContent(props: any) {
     const { showSolutionButton } = props;
@@ -84,6 +85,18 @@ function TaskView(props: any) {
                     </Box>
                 </>
             }
+
+            {exercieInfo.getType() === EX_TYPE.EX_TYPE_QUESTION &&
+                <>
+                    <Box mb={2}>
+                        <Instructions exercieInfo={exercieInfo} />
+                    </Box>
+                    <Box mb={2}>
+                        <QuestionTaskView exercieTest={exercieTest}
+                            showSolutionButton={showSolutionButton}/>
+                    </Box>
+                </>
+            }
         </Box>
     );
 }
@@ -98,35 +111,5 @@ function Instructions(props: any) {
         <Markdown>
             {md}
         </Markdown>
-    );
-}
-
-export type TestResult = {
-    run: boolean,
-    passed: boolean,
-    errMessage: string,
-}
-
-export function OK() {
-    const style = {
-        color: "green",
-    }
-
-    return (
-        <div style={style}>
-            <h4>Your code is correct!</h4>
-        </div>
-    );
-}
-
-export function MyError(props: any) {
-    const style = {
-        color: "red",
-    }
-
-    return (
-        <div style={style}>
-            <h4>Error: {props.errMessage}</h4>
-        </div>
     );
 }

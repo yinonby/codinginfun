@@ -84,7 +84,9 @@ export function CodesandboxTaskView(props: any) {
                 </Box>
                 {showSolutionButton && <SolutionButton />}
             </Box>
-            <TestResultView testResult={testResult} />
+            <TestResultView okMessage="Your code is correct!"
+                errPrefix="Error"
+                testResult={testResult} />
         </>
     );
 }
