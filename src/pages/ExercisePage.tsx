@@ -120,7 +120,7 @@ function ActualContent() {
         exerciseItem.exerciseMgr.getTasks()[taskId];
     const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
 
-    if (exercieInfo.getType() === EX_TYPE.EX_TYPE_TEXT) {
+    if (exercieInfo.getType() === EX_TYPE.EX_TYPE_CODING) {
         return <ExerciseContent showSolutionButton/>;
     } else {
         return (

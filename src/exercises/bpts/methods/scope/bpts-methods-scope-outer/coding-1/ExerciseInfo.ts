@@ -17,7 +17,7 @@ const md: string = `
 export default class ExerciseInfo extends ExerciseInfoAbs {
 
     getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_TEXT;
+        return EX_TYPE.EX_TYPE_CODING;
     }
 
     getDescription(): string {

@@ -7,7 +7,7 @@ export default abstract class ExerciseInfoAbs {
     getTaskTypeStr(): string {
         if (this.getType() === EX_TYPE.EX_TYPE_SANDBOX) {
             return "Sandbox coding exercise";
-        } else if (this.getType() === EX_TYPE.EX_TYPE_TEXT) {
+        } else if (this.getType() === EX_TYPE.EX_TYPE_CODING) {
             return "Coding exercise";
         } else {
             return "Coding exercise";
@@ -16,6 +16,6 @@ export default abstract class ExerciseInfoAbs {
 }
 
 export enum EX_TYPE {
-    EX_TYPE_TEXT,
+    EX_TYPE_CODING,
     EX_TYPE_SANDBOX,
 }
