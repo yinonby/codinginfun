@@ -5,8 +5,8 @@ const initialSolutionText: string = `
 `;
 
 const expectedSolutionText: string = `
-function multiplyAndPrint(x: number, y: number) {
-    const result: number = x * y;
+function multiplyAndPrint(x: number, y: number, z: number) {
+    const result: number = x * y * z;
     console.log(result);
 }
 `;

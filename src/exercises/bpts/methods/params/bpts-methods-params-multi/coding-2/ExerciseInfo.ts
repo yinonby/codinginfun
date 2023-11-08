@@ -4,14 +4,16 @@ import ExerciseInfoAbs, { EX_TYPE } from "../../../../../../infra/info/ExerciseI
 const md: string = `
 - Write a method <<multiplyAndPrint>>.
 
-- The method is given 2 parameters.
+- The method is given 3 parameters.
 
 - The first parameter <<x>> is of type <<number>>.
 
 - The second parameter <<y>> is of type <<number>>.
 
+- The third parameter <<z>> is of type <<number>>.
+
 - The method declares a new <<const>> variable <<result>> of type <<number>>,
-and initializes it with the result of <<x * y>>.
+and initializes it with the result of <<x * y * z>>.
 
 - Then, the method prints <<result>> to the output (console).
 

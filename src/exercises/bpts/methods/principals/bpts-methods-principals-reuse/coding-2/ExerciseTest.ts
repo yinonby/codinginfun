@@ -45,10 +45,6 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
         return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
     }
 
-    getExpectedSolutionRowNum() {
-        return this.getExpectedSolutionText().split(/\n/).length;
-    }
-
     verifySolution(solutionText: string) {
         if (solutionText !== this.getExpectedSolutionText()) {
             throw new Error(
