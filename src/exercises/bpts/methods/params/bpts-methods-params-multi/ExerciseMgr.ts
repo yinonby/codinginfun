@@ -28,7 +28,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
     }
 
     getTitle(): string {
-        return "Passing a single parameter to methods";
+        return "Passing multiple parameters to methods";
     }
 
     getTasks(): ExerciseTask[] {

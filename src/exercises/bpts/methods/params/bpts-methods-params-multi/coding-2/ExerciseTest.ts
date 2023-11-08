@@ -5,8 +5,9 @@ const initialSolutionText: string = `
 `;
 
 const expectedSolutionText: string = `
-function printNumber(x: number) {
-    console.log(x);
+function multiplyAndPrint(x: number, y: number) {
+    const result: number = x * y;
+    console.log(result);
 }
 `;
 
@@ -31,7 +32,7 @@ export default class ExerciseTest implements TextExerciseTestAdapter {
     verifySolution(solutionText: string) {
         if (solutionText !== this.getExpectedSolutionText()) {
             throw new Error(
-                "Did you follow code conventions?"
+                "Did you declare a new variable called 'result'? Did you follow code conventions?"
             );
         }
     }

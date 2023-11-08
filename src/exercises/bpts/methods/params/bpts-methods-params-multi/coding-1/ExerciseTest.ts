@@ -5,8 +5,8 @@ const initialSolutionText: string = `
 `;
 
 const expectedSolutionText: string = `
-function printNumber(x: number) {
-    console.log(x);
+function printFullName(firstName: string, lastName; string) {
+    console.log(firstName + " " + lastName);
 }
 `;
 

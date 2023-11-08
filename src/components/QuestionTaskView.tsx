@@ -69,6 +69,7 @@ export function QuestionTaskView(props: any) {
             <Box mb={2}>
                 <Box mb={2} >
                     <TextField
+                        fullWidth
                         id="coding-question-text-field"
                         label="Answer"
                         multiline

@@ -25,6 +25,8 @@ import BptsMethodsScopeNestedExerciseMgr
     from "./bpts/methods/scope/bpts-methods-scope-nested/ExerciseMgr";
 import BptsMethodsParamsSingleExerciseMgr
     from "./bpts/methods/params/bpts-methods-params-single/ExerciseMgr";
+import BptsMethodsParamsMultiExerciseMgr
+    from "./bpts/methods/params/bpts-methods-params-multi/ExerciseMgr";
 import BptsMethodsPrincipalsReuseExerciseMgr
     from "./bpts/methods/principals/bpts-methods-principals-reuse/ExerciseMgr";
 
@@ -156,6 +158,10 @@ export default class ExerciseMap {
                                 {
                                     "name": "bpts-methods-params-single",
                                     "exerciseMgr": new BptsMethodsParamsSingleExerciseMgr(),
+                                },
+                                {
+                                    "name": "bpts-methods-params-multi",
+                                    "exerciseMgr": new BptsMethodsParamsMultiExerciseMgr(),
                                 },
                             ]
                         },

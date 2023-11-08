@@ -48,7 +48,7 @@ export default function ExercisePage(props: any) {
                 <Box mx={2} sx={{height: "100%"}}>
                     {!codesandbox &&
                         <Box sx={containerStyle}>
-                            <h1>Students Exercises:</h1>
+                            <h1>Student Exercises:</h1>
                             <Box mb={2} >
                                 <ExerciseSelect />
                             </Box>
