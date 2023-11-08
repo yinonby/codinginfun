@@ -10,7 +10,8 @@ import TestResultView from './TestResultView';
 export function CodingTaskView(props: any) {
     const { showSolutionButton } = props;
     const exercieTest: TextExerciseTestAdapter = props.exercieTest;
-    const [solutionText, setSolutionText] = useState("");
+    const initialSolutionText: string = exercieTest.getInitialSolutionText();
+    const [solutionText, setSolutionText] = useState(initialSolutionText);
     const [testResult, setTestResult] = useState({
         run: false,
         passed: false,

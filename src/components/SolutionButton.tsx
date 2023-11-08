@@ -10,6 +10,7 @@ import DiffCodeEditor from './DiffCodeEditor';
 import CodeEditor from './CodeEditor';
 import { Button } from '@mui/material';
 import ExerciseTask from "../exercises/ExerciseTask";
+import QuestionExerciseTestAdapter from "../exercises/QuestionExerciseTestAdapter";
 
 export default function SolutionButton(props: any) {
     const params = useParams();
@@ -41,8 +42,8 @@ export default function SolutionButton(props: any) {
 
     const exerciseTask: ExerciseTask =
         exerciseItem.exerciseMgr.getTask(taskId);
-    const exercieTest: ExerciseTestAdapter | TextExerciseTestAdapter =
-        exerciseTask.getTest();
+    const exercieTest: ExerciseTestAdapter | TextExerciseTestAdapter |
+        QuestionExerciseTestAdapter = exerciseTask.getTest();
     const expectedSolutionText = exercieTest.getExpectedSolutionText();
     const handleClick = () => {
         setShowComparison(! showComparison);

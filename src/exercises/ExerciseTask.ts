@@ -6,10 +6,12 @@ import TextExerciseTestAdapter from "./TextExerciseTestAdapter";
 
 export default class ExerciseTask {
     private exerciseInfo: ExerciseInfoAbs;
-    private exerciseTestAdapter: ExerciseTestAdapter | TextExerciseTestAdapter;
+    private exerciseTestAdapter: ExerciseTestAdapter | TextExerciseTestAdapter |
+        QuestionExerciseTestAdapter;
 
     constructor(exerciseInfo: ExerciseInfoAbs,
-        exerciseTestAdapter: ExerciseTestAdapter | TextExerciseTestAdapter) {
+        exerciseTestAdapter: ExerciseTestAdapter | TextExerciseTestAdapter |
+            QuestionExerciseTestAdapter) {
         this.exerciseInfo = exerciseInfo;
         this.exerciseTestAdapter = exerciseTestAdapter;
     }

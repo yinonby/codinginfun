@@ -19,6 +19,8 @@ import BptsMethodsBasicsDeclarationExerciseMgr
     from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseMgr";
 import BptsMethodsBasicsCallingExerciseMgr
     from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseMgr";
+import BptsMethodsPrincipalsReuseExerciseMgr
+    from "./bpts/methods/principals/bpts-methods-principals-reuse/ExerciseMgr";
 import BptsMethodsScopeOuterExerciseMgr
     from "./bpts/methods/scope/bpts-methods-scope-outer/ExerciseMgr";
 import BptsMethodsScopeNestedExerciseMgr
@@ -142,6 +144,16 @@ export default class ExerciseMap {
                                 {
                                     "name": "bpts-methods-scope-nested",
                                     "exerciseMgr": new BptsMethodsScopeNestedExerciseMgr(),
+                                },
+                            ]
+                        },
+                        {
+                            "name": "principals",
+                            "displayName": "Methods coding principals",
+                            "exercises": [
+                                {
+                                    "name": "bpts-methods-basics-reuse",
+                                    "exerciseMgr": new BptsMethodsPrincipalsReuseExerciseMgr(),
                                 },
                             ]
                         },

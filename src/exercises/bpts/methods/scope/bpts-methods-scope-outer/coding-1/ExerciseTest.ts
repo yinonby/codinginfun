@@ -7,6 +7,10 @@ export default class ExerciseTest implements TextExerciseTestAdapter {
         this.verifySolution(solutionText);
     }
 
+    getInitialSolutionText(): string {
+        return "";
+    }
+
     getExpectedSolutionText(): string {
         return "" +
             "const myName: string = \"John\";\n" +
