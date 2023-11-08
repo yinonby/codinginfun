@@ -2,15 +2,15 @@
 import { useState } from "react";
 import Box from '@mui/material/Box';
 import { useParams, useSearchParams } from 'react-router-dom';
-import ExerciseMap, { ExerciseItem } from "../exercises/ExerciseMap";
+import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
 import DialogButton from "./DialogButton";
-import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
-import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
+import RunnableCodingExerciseTestAbs from "../../infra/test/RunnableCodingExerciseTestAbs";
+import CodingExerciseTestAbs from "../../infra/test/CodingExerciseTestAbs";
 import DiffCodeEditor from './DiffCodeEditor';
 import CodeEditor from './CodeEditor';
 import { Button, Typography } from '@mui/material';
-import ExerciseTask from "../exercises/ExerciseTask";
-import QuestionExerciseTestAdapter from "../exercises/QuestionExerciseTestAdapter";
+import ExerciseTask from "../../infra/task/ExerciseTask";
+import QuestionExerciseTestAbs from "../../infra/test/QuestionExerciseTestAbs";
 
 export default function AnswerButton(props: any) {
     const params = useParams();
@@ -42,8 +42,8 @@ export default function AnswerButton(props: any) {
 
     const exerciseTask: ExerciseTask =
         exerciseItem.exerciseMgr.getTask(taskId);
-    const exercieTest: QuestionExerciseTestAdapter =
-        exerciseTask.getTest() as QuestionExerciseTestAdapter;
+    const exercieTest: QuestionExerciseTestAbs =
+        exerciseTask.getTest() as QuestionExerciseTestAbs;
     const expectedSolutionText = exercieTest.getExpectedSolutionText();
     const expectedSolutionExplanation =
         exercieTest.getExpectedSolutionExplanation();

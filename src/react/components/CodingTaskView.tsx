@@ -1,19 +1,26 @@
 import { useState } from "react";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
+import CodingExerciseTestAbs from "../../infra/test/CodingExerciseTestAbs";
 import SolutionButton from "./SolutionButton";
+import CodeEditor from "./CodeEditor";
 import { TestResult } from "./TestResultView";
 import TestResultView from './TestResultView';
 
-export function CodesandboxTaskView(props: any) {
+export function CodingTaskView(props: any) {
     const { showSolutionButton } = props;
-    const exercieTest: ExerciseTestAdapter = props.exercieTest;
+    const exercieTest: CodingExerciseTestAbs = props.exercieTest;
+    const initialSolutionText: string = exercieTest.getInitialSolutionText();
+    const [solutionText, setSolutionText] = useState(initialSolutionText);
     const [testResult, setTestResult] = useState({
         run: false,
         passed: false,
         errMessage: "",
     });
+
+    const handleEditorChange = (value: string) => {
+        setSolutionText(value);
+    };
 
     const handleClick = () => {
         let passed: boolean = true;
@@ -23,8 +30,9 @@ export function CodesandboxTaskView(props: any) {
         console.log("Running all tests:");
 
         try {
+            const cleanSolutionText = solutionText.replaceAll("\r", "");
             console.log("Verifying your code...");
-            exercieTest.verify();
+            exercieTest.verify(cleanSolutionText);
             console.log("Verifying your code... ok");
         } catch (e) {
             passed = false;
@@ -32,24 +40,6 @@ export function CodesandboxTaskView(props: any) {
             if (e instanceof Error) {
                 const err: Error = e;
                 errorMessage = err.message;
-            }
-        }
-
-        if (passed) {
-            try {
-                console.log("Running your code...");
-                console.log("----- Output start -----");
-                exercieTest.run();
-                console.log("----- Output end -------");
-                console.log("Running your code... ok");
-            } catch (e) {
-                console.log("----- Output end -------");
-                console.log("Running your code... failed");
-                passed = false;
-                if (e instanceof Error) {
-                    const err: Error = e;
-                    errorMessage = err.message;
-                }
             }
         }
 
@@ -72,9 +62,22 @@ export function CodesandboxTaskView(props: any) {
         setTestResult(tmpTestResult);
 
     };
+    const rowNum: number = exercieTest.getExpectedSolutionRowNum();
+    const height: number = 19 * rowNum;
 
     return (
         <>
+            <Box mb={2}>
+                <Box mb={2} sx={{
+                    height: height + "px",
+                    borderRadius: "4px",
+                    overflow: "hidden"
+                }}>
+                    <CodeEditor value={solutionText}
+                        path="code.ts"
+                        onChange={handleEditorChange} />
+                </Box>
+            </Box>
             <Box mb={2} sx={{ display: "flex", flexDirection: "row" }}>
                 <Box mr={2}>
                     <Button variant="contained" onClick={handleClick}
@@ -82,7 +85,9 @@ export function CodesandboxTaskView(props: any) {
                         Run Tests
                     </Button>
                 </Box>
-                {showSolutionButton && <SolutionButton />}
+                <Box sx={{ flex: 1 }} />
+                {showSolutionButton && <SolutionButton
+                    currentSolutionText={solutionText} />}
             </Box>
             <TestResultView okMessage="Your code is correct!"
                 errPrefix="Error"

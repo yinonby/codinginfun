@@ -1,5 +1,5 @@
 
-import QuestionExerciseTestAdapter from "../../../../../QuestionExerciseTestAdapter";
+import QuestionExerciseTestAbs from "../../../../../../infra/test/QuestionExerciseTestAbs";
 
 const output: string = `
 "Inside foo"
@@ -11,7 +11,7 @@ The method is called twice, therefore we expect the output twice.
 Notice that the quotes are included in the output;
 `;
 
-export default class ExerciseTest implements QuestionExerciseTestAdapter {
+export default class ExerciseTest extends QuestionExerciseTestAbs {
 
     verify(solutionText: string) {
         this.verifySolution(solutionText);
@@ -19,10 +19,6 @@ export default class ExerciseTest implements QuestionExerciseTestAdapter {
 
     getExpectedSolutionText(): string {
         return output.replace(/^\s+|\s+$/g, '');
-    }
-
-    getExpectedSolutionRowNum(): number {
-        return this.getExpectedSolutionText().split(/\n/).length;
     }
 
     getExpectedSolutionExplanation(): string {

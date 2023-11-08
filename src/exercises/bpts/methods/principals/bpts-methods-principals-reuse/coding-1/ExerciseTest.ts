@@ -1,5 +1,5 @@
 
-import TextExerciseTestAdapter from "../../../../../TextExerciseTestAdapter";
+import CodingExerciseTestAbs from "../../../../../../infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
 const squareOfTwo: number = 2 * 2;
@@ -21,7 +21,7 @@ function square(x: number): number {
 }
 `;
 
-export default class ExerciseTest implements TextExerciseTestAdapter {
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
     verify(solutionText: string) {
         this.verifySolution(solutionText);

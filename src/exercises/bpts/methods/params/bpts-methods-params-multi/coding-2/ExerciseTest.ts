@@ -1,5 +1,5 @@
 
-import TextExerciseTestAdapter from "../../../../../TextExerciseTestAdapter";
+import CodingExerciseTestAbs from "../../../../../../infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
 `;
@@ -11,7 +11,7 @@ function multiplyAndPrint(x: number, y: number) {
 }
 `;
 
-export default class ExerciseTest implements TextExerciseTestAdapter {
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
     verify(solutionText: string) {
         this.verifySolution(solutionText);

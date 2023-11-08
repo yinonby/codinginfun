@@ -6,13 +6,13 @@ import CodeSandboxIFrame from "../components/CodeSandboxIFrame";
 import ExerciseSelect from "../components/ExerciseSelect";
 import Exercise from "../components/ExerciseContent";
 import Header, { Content } from "../components/Header";
-import ExerciseMap, { ExerciseItem } from "../exercises/ExerciseMap";
-import ExerciseInfoAbs, { EX_TYPE } from "../exercises/ExerciseInfoAbs";
+import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
+import ExerciseInfoAbs, { EX_TYPE } from "../../infra/info/ExerciseInfoAbs";
 import ExerciseContent from '../components/ExerciseContent';
 import SolutionButton from "../components/SolutionButton";
-import ExerciseTask from '../exercises/ExerciseTask';
+import ExerciseTask from '../../infra/task/ExerciseTask';
 import TaskSelect from '../components/TaskSelect';
-import ExerciseMgrAdapter from '../exercises/ExerciseMgrAbs';
+import ExerciseMgrAdapter from '../../infra/mgr/ExerciseMgrAbs';
 
 export default function ExercisePage(props: any) {
     const params = useParams();

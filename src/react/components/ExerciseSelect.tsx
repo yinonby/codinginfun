@@ -1,6 +1,6 @@
 
 import Box from '@mui/material/Box';
-import ExerciseMap from "../exercises/ExerciseMap";
+import ExerciseMap from "../../exercises/ExerciseMap";
 import BaseSelect, { SelectItem } from "./BaseSelect"
 import { useParams } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";

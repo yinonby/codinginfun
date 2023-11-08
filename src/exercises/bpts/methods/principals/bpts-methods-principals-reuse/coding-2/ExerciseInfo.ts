@@ -1,5 +1,5 @@
 
-import ExerciseInfoAbs, { EX_TYPE } from "../../../../../ExerciseInfoAbs";
+import ExerciseInfoAbs, { EX_TYPE } from "../../../../../../infra/info/ExerciseInfoAbs";
 
 const md: string = `
 - In the first part, there is a demonstration of code duplication.

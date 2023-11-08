@@ -1,20 +1,20 @@
 
 import { useState } from "react";
 import Box from '@mui/material/Box';
-import { useParams, useSearchParams } from 'react-router-dom';
-import ExerciseMap, { ExerciseItem } from "../exercises/ExerciseMap";
+import { useParams } from 'react-router-dom';
+import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
 import DialogButton from "./DialogButton";
-import ExerciseTestAdapter from "../exercises/ExerciseTestAdapter";
-import TextExerciseTestAdapter from "../exercises/TextExerciseTestAdapter";
+import RunnableCodingExerciseTestAbs from "../../infra/test/RunnableCodingExerciseTestAbs";
+import CodingExerciseTestAbs from "../../infra/test/CodingExerciseTestAbs";
 import DiffCodeEditor from './DiffCodeEditor';
 import CodeEditor from './CodeEditor';
 import { Button } from '@mui/material';
-import ExerciseTask from "../exercises/ExerciseTask";
-import QuestionExerciseTestAdapter from "../exercises/QuestionExerciseTestAdapter";
+import ExerciseTask from "../../infra/task/ExerciseTask";
+import QuestionExerciseTestAbs from "../../infra/test/QuestionExerciseTestAbs";
+import ExerciseTestAbs from "../../infra/test/ExerciseTestAbs";
 
 export default function SolutionButton(props: any) {
     const params = useParams();
-    const [searchParams, setSearchParams] = useSearchParams();
     const { currentSolutionText } = props;
     const courseName: string = params.courseName || "";
     const chapterName: string = params.chapterName || "";
@@ -42,8 +42,7 @@ export default function SolutionButton(props: any) {
 
     const exerciseTask: ExerciseTask =
         exerciseItem.exerciseMgr.getTask(taskId);
-    const exercieTest: ExerciseTestAdapter | TextExerciseTestAdapter |
-        QuestionExerciseTestAdapter = exerciseTask.getTest();
+    const exercieTest: ExerciseTestAbs = exerciseTask.getTest();
     const expectedSolutionText = exercieTest.getExpectedSolutionText();
     const handleClick = () => {
         setShowComparison(! showComparison);

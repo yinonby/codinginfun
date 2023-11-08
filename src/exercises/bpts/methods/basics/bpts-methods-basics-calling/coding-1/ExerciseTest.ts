@@ -1,7 +1,7 @@
 
-import TextExerciseTestAdapter from "../../../../../TextExerciseTestAdapter";
+import CodingExerciseTestAbs from "../../../../../../infra/test/CodingExerciseTestAbs";
 
-export default class ExerciseTest implements TextExerciseTestAdapter {
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
     verify(solutionText: string) {
         this.verifySolution(solutionText);

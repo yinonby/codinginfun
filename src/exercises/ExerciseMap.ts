@@ -1,5 +1,5 @@
 
-import ExerciseMgrAdapter from "./ExerciseMgrAbs";
+import ExerciseMgrAdapter from "../infra/mgr/ExerciseMgrAbs";
 
 import BptsVarsBasicConstExerciseMgr
     from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseMgr";

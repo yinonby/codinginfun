@@ -1,5 +1,5 @@
 
-import QuestionExerciseTestAdapter from "../../../../../QuestionExerciseTestAdapter";
+import QuestionExerciseTestAbs from "../../../../../../infra/test/QuestionExerciseTestAbs";
 
 const output: string = `
 `;
@@ -8,7 +8,7 @@ const explanation: string = `
 Look carefually at the code.
 `;
 
-export default class ExerciseTest implements QuestionExerciseTestAdapter {
+export default class ExerciseTest extends QuestionExerciseTestAbs {
 
     verify(solutionText: string) {
         this.verifySolution(solutionText);
@@ -16,10 +16,6 @@ export default class ExerciseTest implements QuestionExerciseTestAdapter {
 
     getExpectedSolutionText(): string {
         return output.replace(/^\s+|\s+$/g, '');
-    }
-
-    getExpectedSolutionRowNum(): number {
-        return this.getExpectedSolutionText().split(/\n/).length;
     }
 
     getExpectedSolutionExplanation(): string {

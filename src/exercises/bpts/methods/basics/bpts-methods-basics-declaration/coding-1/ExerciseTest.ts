@@ -1,7 +1,7 @@
 
-import TextExerciseTestAdapter from "../../../../../TextExerciseTestAdapter";
+import CodingExerciseTestAbs from "../../../../../../infra/test/CodingExerciseTestAbs";
 
-export default class ExerciseTest implements TextExerciseTestAdapter {
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
     verify(solutionText: string) {
         this.verifySolution(solutionText);
@@ -16,10 +16,6 @@ export default class ExerciseTest implements TextExerciseTestAdapter {
             "function foo() {\n" +
             "    console.log(\"Inside foo\");\n" +
             "}";
-    }
-
-    getExpectedSolutionRowNum(): number {
-        return 3;
     }
 
     verifySolution(solutionText: string) {

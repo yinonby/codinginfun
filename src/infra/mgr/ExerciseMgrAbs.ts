@@ -1,5 +1,5 @@
 
-import ExerciseTask from "./ExerciseTask";
+import ExerciseTask from "../task/ExerciseTask";
 
 export default abstract class ExerciseMgrAbs {
     abstract getTitle(): string;

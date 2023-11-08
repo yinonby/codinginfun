@@ -3,8 +3,8 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useParams, useNavigate } from 'react-router-dom';
-import ExerciseMap, { ExerciseItem } from '../exercises/ExerciseMap';
-import ExerciseTask from '../exercises/ExerciseTask';
+import ExerciseMap, { ExerciseItem } from '../../exercises/ExerciseMap';
+import ExerciseTask from '../../infra/task/ExerciseTask';
 
 export const exerciseMap = new ExerciseMap();
 

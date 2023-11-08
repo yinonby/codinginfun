@@ -1,12 +1,12 @@
 
-import ExercisePage from "./pages/ExercisePage";
+import ExercisePage from "./react/pages/ExercisePage";
 import { createRoot } from "react-dom/client";
 import Box from '@mui/material/Box';
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import ExerciseContentPage from "./pages/ExerciseContentPage";
+import ExerciseContentPage from "./react/pages/ExerciseContentPage";
 import './index.css';
 
 const appStyle = {

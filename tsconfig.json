@@ -22,6 +22,6 @@
     },
     "include": [
       "src"
-, "src/components/BaseSelect.tsx"    ]
+, "src/react/components/BaseSelect.tsx"    ]
   }
   

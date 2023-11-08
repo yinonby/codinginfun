@@ -1,16 +1,15 @@
 import { useState } from "react";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import SolutionButton from "./SolutionButton";
 import { TestResult } from "./TestResultView";
 import TestResultView from './TestResultView';
-import QuestionExerciseTestAdapter from "../exercises/QuestionExerciseTestAdapter";
+import QuestionExerciseTestAbs from "../../infra/test/QuestionExerciseTestAbs";
 import { TextField } from "@mui/material";
 import AnswerButton from "./AnswerButton";
 
 export function QuestionTaskView(props: any) {
     const { showSolutionButton } = props;
-    const exercieTest: QuestionExerciseTestAdapter = props.exercieTest;
+    const exercieTest: QuestionExerciseTestAbs = props.exercieTest;
     const [solutionText, setSolutionText] = useState("");
     const [testResult, setTestResult] = useState({
         run: false,

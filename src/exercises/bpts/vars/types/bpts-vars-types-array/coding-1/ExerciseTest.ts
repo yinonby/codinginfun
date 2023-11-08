@@ -1,7 +1,7 @@
-import ExerciseTestAdapter from "../../../../../ExerciseTestAdapter";
+import RunnableCodingExerciseTestAbs from "../../../../../../infra/test/RunnableCodingExerciseTestAbs";
 import Exercise from "../Exercise";
 
-export default class Test implements ExerciseTestAdapter {
+export default class Test extends RunnableCodingExerciseTestAbs {
 
     verify() {
         this.verifySolution();
