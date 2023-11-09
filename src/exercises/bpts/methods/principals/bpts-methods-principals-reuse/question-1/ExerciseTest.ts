@@ -11,8 +11,9 @@ const output: string = `
 `;
 
 const explanation: string = `
-The output is equal between the 2 sections.
-In the second section we use a method to calculate the median, instead of repeating the same calculation every time it is required.
+- The output is equal between the 2 sections.
+- In the second section we use a method <<getMedian>> to calculate the median, \
+instead of repeating the same calculation every time it is required.
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {

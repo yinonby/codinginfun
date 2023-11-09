@@ -103,13 +103,9 @@ function TaskView(props: any) {
 
 function Instructions(props: any) {
     const exercieInfo: ExerciseInfoAbs = props.exercieInfo;
-    const md = exercieInfo.getMdInstructions()
-        .replaceAll("<<", "**`")
-        .replaceAll(">>", "`**");
-
+    const md = exercieInfo.getMdInstructions();
+        
     return (
-        <Markdown>
-            {md}
-        </Markdown>
+        <Markdown md={md}/>
     );
 }

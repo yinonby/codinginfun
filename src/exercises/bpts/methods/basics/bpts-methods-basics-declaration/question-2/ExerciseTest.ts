@@ -7,8 +7,8 @@ const output: string = `
 `;
 
 const explanation: string = `
-The method is called twice, therefore we expect the output twice.
-Notice that the quotes are included in the output;
+- The method <<foo>> is called twice, therefore we expect the output twice.
+- Notice that the quotes are included in the output;
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {

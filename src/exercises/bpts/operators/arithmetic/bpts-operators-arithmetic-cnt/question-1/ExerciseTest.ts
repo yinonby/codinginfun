@@ -8,11 +8,12 @@ const output: string = `
 `;
 
 const explanation: string = `
-<<x>> is initialized with <<9>>, and incremented in the next line, therefore
-its end value is <<10>>.
-<<y>> is initialized with the the value of <<x>> after it was incremented
-(<<10>>), and is decremented in the next line, therefore its end value is <<9>>.
-<<z>> is initialized with the value of <<y>> before it is decremented,
+- <<x>> is initialized with <<9>>, and incremented in the next line, \
+therefore its end value is <<10>>.
+- <<y>> is initialized with the the value of <<x>> after it was \
+incremented (<<10>>), and is decremented in the next line, \
+therefore its end value is <<9>>.
+- <<z>> is initialized with the value of <<y>> before it is decremented, \
 therefore its value is <<10>>.
 `;
 

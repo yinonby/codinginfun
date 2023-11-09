@@ -7,10 +7,10 @@ const output: string = `
 `;
 
 const explanation: string = `
-<<x>> is initialized with the result of <<4 * 5>>.
-<<y>> is initialized with the result of <<x % 3>>, and since <<x>> is equal
-to <<20>> at this point, then the <<y>> is evaluated to <<20 % 3>> (the
-remiander of <<20>> divided by <<3>>).
+- <<x>> is initialized with the result of <<4 * 5>> (= <<20>>).
+- <<y>> is initialized with the result of <<x % 3>>, and since <<x>> is equal \
+to <<20>> at this point, then the <<y>> is evaluated to <<20 % 3>>, which is \
+the remiander of <<20>> divided by <<3>> (= <<2>>).
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {

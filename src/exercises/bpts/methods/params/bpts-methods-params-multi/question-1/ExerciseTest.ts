@@ -7,8 +7,8 @@ const output: string = `
 `;
 
 const explanation: string = `
-The method prints to the output a single string which is built from the
-input parameters.
+- The method <<printCarDetails>> prints to the output a single string \
+which is built from the input parameters.
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {

@@ -8,9 +8,9 @@ const output: string = `
 `;
 
 const explanation: string = `
-The method 'foo' is called first, directly.
-Then the method 'boo' is called, and 'boo' is calling 'foo'.
-Notice that the quotes are included in the output;
+- The method <<foo>> is called first, directly.
+- Then the method <<boo>> is called, and <<boo>> is calling <<foo>>.
+- Notice that the quotes are included in the output;
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {

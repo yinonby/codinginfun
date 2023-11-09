@@ -11,6 +11,7 @@ import CodeEditor from './CodeEditor';
 import { Button, Typography } from '@mui/material';
 import ExerciseTask from "../../infra/task/ExerciseTask";
 import QuestionExerciseTestAbs from "../../infra/test/QuestionExerciseTestAbs";
+import Markdown from "./Markdown";
 
 export default function AnswerButton(props: any) {
     const params = useParams();
@@ -72,7 +73,7 @@ export default function AnswerButton(props: any) {
                     </Box>
                 </>
             }
-            {expectedSolutionExplanation}
+            <Markdown md={expectedSolutionExplanation}/>
         </DialogButton>
     );
 }
