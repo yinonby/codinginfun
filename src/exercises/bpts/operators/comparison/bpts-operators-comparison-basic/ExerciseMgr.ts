@@ -40,7 +40,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
     }
 
     getTitle(): string {
-        return "Comparison operators";
+        return "Basic comparison operators";
     }
 
     getTasks(): ExerciseTask[] {

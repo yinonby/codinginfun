@@ -26,6 +26,8 @@ import BptsOperatorsComparisonBasicExerciseMgr
     from "./bpts/operators/comparison/bpts-operators-comparison-basic/ExerciseMgr";
 import BptsOperatorsLogicalBasicExerciseMgr
     from "./bpts/operators/logical/bpts-operators-logical-basic/ExerciseMgr";
+import BptsOperatorsStringsConcatExerciseMgr
+    from "./bpts/operators/strings/bpts-operators-strings-concat/ExerciseMgr";
 
     import BptsMethodsBasicsDeclarationExerciseMgr
     from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseMgr";
@@ -176,6 +178,16 @@ export default class ExerciseMap {
                                 {
                                     "name": "bpts-operators-logical-basic",
                                     "exerciseMgr": new BptsOperatorsLogicalBasicExerciseMgr(),
+                                },
+                            ]
+                        },
+                        {
+                            "name": "strings",
+                            "displayName": "Strings operators",
+                            "exercises": [
+                                {
+                                    "name": "bpts-operators-strings-conact",
+                                    "exerciseMgr": new BptsOperatorsStringsConcatExerciseMgr(),
                                 },
                             ]
                         },

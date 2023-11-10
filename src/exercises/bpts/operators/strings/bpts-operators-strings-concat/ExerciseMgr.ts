@@ -3,8 +3,6 @@ import ExerciseMgrAbs from "../../../../../infra/mgr/ExerciseMgrAbs";
 import ExerciseTask from "../../../../../infra/task/ExerciseTask";
 import ExerciseInfo from "./coding-1/ExerciseInfo";
 import ExerciseTest from "./coding-1/ExerciseTest";
-import Coding2ExerciseInfo from "./coding-2/ExerciseInfo";
-import Coding2ExerciseTest from "./coding-2/ExerciseTest";
 import Question1ExerciseInfo from "./question-1/ExerciseInfo";
 import Question1ExerciseTest from "./question-1/ExerciseTest";
 import Question2ExerciseInfo from "./question-2/ExerciseInfo";
@@ -20,10 +18,6 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
             new ExerciseTest(),
         ));
         this.exerciseTasks.push(new ExerciseTask(
-            new Coding2ExerciseInfo(),
-            new Coding2ExerciseTest(),
-        ));
-        this.exerciseTasks.push(new ExerciseTask(
             new Question1ExerciseInfo(),
             new Question1ExerciseTest(),
         ));
@@ -34,7 +28,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
     }
 
     getTitle(): string {
-        return "Basic logical operators";
+        return "String concatenation operators";
     }
 
     getTasks(): ExerciseTask[] {
