@@ -24,6 +24,8 @@ import BptsOperatorsAssignmentBasicExerciseMgr
     from "./bpts/operators/assignment/bpts-operators-assignment-basic/ExerciseMgr";
 import BptsOperatorsComparisonBasicExerciseMgr
     from "./bpts/operators/comparison/bpts-operators-comparison-basic/ExerciseMgr";
+import BptsOperatorsLogicalBasicExerciseMgr
+    from "./bpts/operators/logical/bpts-operators-logical-basic/ExerciseMgr";
 
     import BptsMethodsBasicsDeclarationExerciseMgr
     from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseMgr";
@@ -164,6 +166,16 @@ export default class ExerciseMap {
                                 {
                                     "name": "bpts-operators-comparison-basic",
                                     "exerciseMgr": new BptsOperatorsComparisonBasicExerciseMgr(),
+                                },
+                            ]
+                        },
+                        {
+                            "name": "logical",
+                            "displayName": "Logical operators",
+                            "exercises": [
+                                {
+                                    "name": "bpts-operators-logical-basic",
+                                    "exerciseMgr": new BptsOperatorsLogicalBasicExerciseMgr(),
                                 },
                             ]
                         },
