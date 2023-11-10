@@ -44,6 +44,9 @@ import BptsMethodsParamsMultiExerciseMgr
 import BptsMethodsPrincipalsReuseExerciseMgr
     from "./bpts/methods/principals/bpts-methods-principals-reuse/ExerciseMgr";
 
+import BptsLoopsForBasicExerciseMgr
+    from "./bpts/loops/for/bpts-loops-for-basic/ExerciseMgr";
+
 type ExerciseMapItem = {
     [key: string]: CourseItem,
 }
@@ -250,7 +253,23 @@ export default class ExerciseMap {
                             ]
                         },
                     ]
-                }
+                },
+                {
+                    "name": "loops",
+                    "displayName": "Loops",
+                    "lessons": [
+                        {
+                            "name": "for",
+                            "displayName": "'For' loops",
+                            "exercises": [
+                                {
+                                    "name": "bpts-loops-for-basic",
+                                    "exerciseMgr": new BptsLoopsForBasicExerciseMgr(),
+                                },
+                            ]
+                        },
+                    ]
+                },
             ]
         }
     }

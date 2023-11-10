@@ -4,10 +4,11 @@ import ExerciseInfoAbs, { EX_TYPE } from "../../../../../../infra/info/ExerciseI
 const md: string = `
 What is the expected output of the following code?
 
-> const isFast: boolean = true;
-const isFurious: boolean = false;
-const isSlowOrFurious: boolean = !isFast || isFurious;
-console.log(isSlowOrFurious);
+> console.log("begin");
+for (let i: number = 0; i < 0; i++) {
+    console.log(i);
+}
+console.log("end");
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
@@ -17,7 +18,7 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     }
 
     getDescription(): string {
-        return "Assignment operators";
+        return "'For' loops";
     }
 
     getMdInstructions(): string {
