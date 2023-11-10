@@ -66,7 +66,7 @@ export default function AnswerButton(props: any) {
                         Correct answer:
                     </Box>
                     <Box mb={2}>
-                        {expectedSolutionText}
+                        <Markdown md={expectedSolutionText}/>
                     </Box>
                     <Box sx={{typography: "subtitle1", fontWeight: "bold"}}>
                         Explanation:

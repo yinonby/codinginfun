@@ -15,11 +15,15 @@ import BptsVarsTypesArrayExerciseMgr
     from "./bpts/vars/types/bpts-vars-types-array/ExerciseMgr";
 import BptsVarsTypesConstVsLetExerciseMgr
     from "./bpts/vars/types/bpts-vars-types-const-vs-let/ExerciseMgr";
-import BptsOperatorsArithmeticBasicExerciseMgr
+
+    import BptsOperatorsArithmeticBasicExerciseMgr
     from "./bpts/operators/arithmetic/bpts-operators-arithmetic-basic/ExerciseMgr";
 import BptsOperatorsArithmeticCntExerciseMgr
     from "./bpts/operators/arithmetic/bpts-operators-arithmetic-cnt/ExerciseMgr";
-import BptsMethodsBasicsDeclarationExerciseMgr
+import BptsOperatorsAssignmentBasicExerciseMgr
+    from "./bpts/operators/assignment/bpts-operators-assignment-basic/ExerciseMgr";
+
+    import BptsMethodsBasicsDeclarationExerciseMgr
     from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseMgr";
 import BptsMethodsBasicsCallingExerciseMgr
     from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseMgr";
@@ -138,6 +142,16 @@ export default class ExerciseMap {
                                 {
                                     "name": "bpts-operators-arithmetic-cnt",
                                     "exerciseMgr": new BptsOperatorsArithmeticCntExerciseMgr(),
+                                },
+                            ]
+                        },
+                        {
+                            "name": "assignment",
+                            "displayName": "Assignment operators",
+                            "exercises": [
+                                {
+                                    "name": "bpts-operators-assignment-basic",
+                                    "exerciseMgr": new BptsOperatorsAssignmentBasicExerciseMgr(),
                                 },
                             ]
                         },

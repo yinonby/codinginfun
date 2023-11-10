@@ -2,11 +2,11 @@
 import ExerciseInfoAbs, { EX_TYPE } from "../../../../../../infra/info/ExerciseInfoAbs";
 
 const md: string = `
-- Declare a constant variable named <<result>> of type <<number>>,
-and initialize it with <<3 + 6>>.
+- We declared a non-constant variable named <<x>> of type <<number>>,
+and initialized it with <<3>>.
 
-- Note that we are **not** asked to initialize <<result>> with the value <<9>>
-explicitly, but rather to use the expression: <<3 + 6>>.
+- Your task is to replace the question mark <<?>>: add <<4>> to <<x>>,
+and assign the result back to <<x>> (use Addition-Assignment <<+=>> operator).
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
@@ -16,7 +16,7 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     }
 
     getDescription(): string {
-        return "Addition operator";
+        return "Assignment operators";
     }
 
     getMdInstructions(): string {
