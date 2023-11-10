@@ -4,9 +4,9 @@ import ExerciseInfoAbs, { EX_TYPE } from "../../../../../../infra/info/ExerciseI
 const md: string = `
 What is the expected output of the following code?
 
-> const str1: string = "Hello";
-const str2: string = "Helo;
-console.log(str1 !== str2);
+> const str1: string = "aaa";
+const str2: string = "baa";
+console.log(str1 < str2);
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

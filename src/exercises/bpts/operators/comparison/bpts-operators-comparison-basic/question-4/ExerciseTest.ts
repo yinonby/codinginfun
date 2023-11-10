@@ -6,8 +6,12 @@ true
 `;
 
 const explanation: string = `
-- <<str1>> and <<str2>> are initialized with different strings.
-- Therefore, the Strict Inequality operator <<!==>> evaluates to <<true>>.
+- The first character in <<str1>> is <<a>>, while the first character \
+in <<str2>> is <<b>>.
+- The character <<a>> has an Ascii value lower than the character <<b>>. \
+We don't need to know the actual values - \
+it's enough to remember that characters that appear later in the alphabet \
+have a higher value than characters that appear earlier in the alphabet.
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {
