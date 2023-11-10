@@ -22,6 +22,8 @@ import BptsOperatorsArithmeticCntExerciseMgr
     from "./bpts/operators/arithmetic/bpts-operators-arithmetic-cnt/ExerciseMgr";
 import BptsOperatorsAssignmentBasicExerciseMgr
     from "./bpts/operators/assignment/bpts-operators-assignment-basic/ExerciseMgr";
+import BptsOperatorsComparisonBasicExerciseMgr
+    from "./bpts/operators/comparison/bpts-operators-comparison-basic/ExerciseMgr";
 
     import BptsMethodsBasicsDeclarationExerciseMgr
     from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseMgr";
@@ -152,6 +154,16 @@ export default class ExerciseMap {
                                 {
                                     "name": "bpts-operators-assignment-basic",
                                     "exerciseMgr": new BptsOperatorsAssignmentBasicExerciseMgr(),
+                                },
+                            ]
+                        },
+                        {
+                            "name": "comparison",
+                            "displayName": "Comparison operators",
+                            "exercises": [
+                                {
+                                    "name": "bpts-operators-comparison-basic",
+                                    "exerciseMgr": new BptsOperatorsComparisonBasicExerciseMgr(),
                                 },
                             ]
                         },
