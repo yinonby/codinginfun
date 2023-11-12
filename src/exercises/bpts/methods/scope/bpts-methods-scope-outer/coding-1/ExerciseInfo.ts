@@ -1,5 +1,5 @@
 
-import ExerciseInfoAbs, { EX_TYPE } from "../../../../../../infra/info/ExerciseInfoAbs";
+import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
 - In the first line, declare a constant variable named <<myName>>, of type <<string>>, and initialize its value to <<"John">>. Don't forget a semicolon <<;>> at the end of the line.

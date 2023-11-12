@@ -1,5 +1,5 @@
 
-import CodingExerciseTestAbs from "../../../../../../infra/test/CodingExerciseTestAbs";
+import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
 // Code is duplicated

@@ -1,6 +1,6 @@
 
-import ExerciseMgrAbs from "../../../../../infra/mgr/ExerciseMgrAbs";
-import ExerciseTask from "../../../../../infra/task/ExerciseTask";
+import ExerciseMgrAbs from "#infra/mgr/ExerciseMgrAbs";
+import ExerciseTask from "#infra/task/ExerciseTask";
 import Question1ExerciseInfo from "./question-1/ExerciseInfo";
 import Question1ExerciseTest from "./question-1/ExerciseTest";
 import Question2ExerciseInfo from "./question-2/ExerciseInfo";

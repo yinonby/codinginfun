@@ -1,14 +1,14 @@
 
 import Box from '@mui/material/Box';
 import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
-import ExerciseInfoAbs, { EX_TYPE } from "../../infra/info/ExerciseInfoAbs";
-import RunnableCodingExerciseTestAbs from "../../infra/test/RunnableCodingExerciseTestAbs";
+import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
+import RunnableCodingExerciseTestAbs from "#infra/test/RunnableCodingExerciseTestAbs";
 import { useParams } from 'react-router-dom';
-import CodingExerciseTestAbs from "../../infra/test/CodingExerciseTestAbs";
+import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 import Markdown from "./Markdown";
 import { Grid } from "@mui/material";
-import ExerciseMgrAdapter from "../../infra/mgr/ExerciseMgrAbs";
-import ExerciseTask from "../../infra/task/ExerciseTask";
+import ExerciseMgrAdapter from "#infra/mgr/ExerciseMgrAbs";
+import ExerciseTask from "#infra/task/ExerciseTask";
 import { CodingTaskView } from "./CodingTaskView";
 import { CodesandboxTaskView } from "./CodesandboxTaskView";
 import { QuestionTaskView } from './QuestionTaskView';

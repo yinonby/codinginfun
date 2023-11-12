@@ -1,5 +1,5 @@
 
-import QuestionExerciseTestAbs from "../../../../../../infra/test/QuestionExerciseTestAbs";
+import QuestionExerciseTestAbs from "#infra/test/QuestionExerciseTestAbs";
 
 const output: string = `
 "This Mazda is of model 3"

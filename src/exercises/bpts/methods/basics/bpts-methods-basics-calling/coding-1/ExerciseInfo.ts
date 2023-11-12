@@ -1,5 +1,5 @@
 
-import ExerciseInfoAbs, { EX_TYPE } from "../../../../../../infra/info/ExerciseInfoAbs";
+import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
 - In the first line, declare a method (function) named <<foo>>, followed by an opening bracket <<{>>.

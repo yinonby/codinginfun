@@ -1,5 +1,5 @@
 
-import ExerciseInfoAbs, { EX_TYPE } from "../../../../../../infra/info/ExerciseInfoAbs";
+import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
 - We declared a constant variable named <<isFast>> of type <<boolean>>,

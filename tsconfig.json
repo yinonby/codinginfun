@@ -6,6 +6,9 @@
         "dom.iterable",
         "esnext"
       ],
+      "paths": {
+        "#infra/*": ["./src/infra/*"]
+      },
       "allowJs": true,
       "skipLibCheck": true,
       "esModuleInterop": true,
@@ -14,14 +17,16 @@
       "forceConsistentCasingInFileNames": true,
       "noFallthroughCasesInSwitch": true,
       "module": "esnext",
-      "moduleResolution": "node",
+      "moduleResolution": "bundler",
+      "resolvePackageJsonImports": true,
       "resolveJsonModule": true,
       "isolatedModules": true,
       "noEmit": true,
       "jsx": "react-jsx"
     },
     "include": [
-      "src"
-, "src/react/components/BaseSelect.tsx"    ]
+      "src",
+      "src/react/components/BaseSelect.tsx"
+    ]
   }
   

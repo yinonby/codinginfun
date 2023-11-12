@@ -7,7 +7,7 @@ import ExerciseSelect from "../components/ExerciseSelect";
 import Exercise from "../components/ExerciseContent";
 import Header, { Content } from "../components/Header";
 import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
-import ExerciseInfoAbs, { EX_TYPE } from "../../infra/info/ExerciseInfoAbs";
+import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 import ExerciseContent from '../components/ExerciseContent';
 import SolutionButton from "../components/SolutionButton";
 import ExerciseTask from '../../infra/task/ExerciseTask';

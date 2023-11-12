@@ -26,6 +26,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "imports": {
+    "#infra/*": "./src/infra/*"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

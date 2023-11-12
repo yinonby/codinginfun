@@ -1,4 +1,4 @@
-import RunnableCodingExerciseTestAbs from "../../../../../../infra/test/RunnableCodingExerciseTestAbs";
+import RunnableCodingExerciseTestAbs from "#infra/test/RunnableCodingExerciseTestAbs";
 import Exercise from "../Exercise";
 
 export default class Test extends RunnableCodingExerciseTestAbs {

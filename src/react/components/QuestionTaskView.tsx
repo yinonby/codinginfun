@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { TestResult } from "./TestResultView";
 import TestResultView from './TestResultView';
-import QuestionExerciseTestAbs from "../../infra/test/QuestionExerciseTestAbs";
+import QuestionExerciseTestAbs from "#infra/test/QuestionExerciseTestAbs";
 import { TextField } from "@mui/material";
 import AnswerButton from "./AnswerButton";
 

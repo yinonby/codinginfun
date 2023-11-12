@@ -1,5 +1,5 @@
 
-import CodingExerciseTestAbs from "../../../../../../infra/test/CodingExerciseTestAbs";
+import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
 

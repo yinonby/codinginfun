@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import CodingExerciseTestAbs from "../../infra/test/CodingExerciseTestAbs";
+import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 import SolutionButton from "./SolutionButton";
 import CodeEditor from "./CodeEditor";
 import { TestResult } from "./TestResultView";
