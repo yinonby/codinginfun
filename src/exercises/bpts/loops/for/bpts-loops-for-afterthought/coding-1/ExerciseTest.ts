@@ -5,14 +5,14 @@ const initialSolutionText: string = `
 `;
 
 const expectedSolutionText: string = `
-for (let i: number = 0; i < 5; i++) {
+for (let i: number = 0; i < 5; i += 2) {
     console.log(i);
 }
 `;
 
 const explanationText = `
 - We declared the loop as requested, following all code conventions.
-- Note we were asked to use a Less Than operator <<<>>.
+- Note we were asked to increment <<i>> by <<2>>.
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {

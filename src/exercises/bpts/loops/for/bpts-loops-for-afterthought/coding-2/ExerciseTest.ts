@@ -5,14 +5,17 @@ const initialSolutionText: string = `
 `;
 
 const expectedSolutionText: string = `
-for (let i: number = 0; i < 5; i++) {
-    console.log(i);
+for (let i: number = 3; i <= 4;) {
+    console.log(i++);
 }
 `;
 
 const explanationText = `
 - We declared the loop as requested, following all code conventions.
-- Note we were asked to use a Less Than operator <<<>>.
+- We left the loop's afterthought empty, and incremented the variable \
+<<i>> from within the loop.
+- Note that when we leave the afterthought empty, we must \
+still place a semicolon <<;>> at the end of the condition <<i <= 4;>>.
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {

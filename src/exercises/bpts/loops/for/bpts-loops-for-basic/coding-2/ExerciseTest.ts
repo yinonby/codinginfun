@@ -11,8 +11,8 @@ for (let i: number = 3; i <= 4; i++) {
 `;
 
 const explanationText = `
-- We declared the loop as requested, following all code conventions. \
-Note we were asked to use a Less Than or Equal operator <<<=>>.
+- We declared the loop as requested, following all code conventions.
+- Note we were asked to use a Less Than or Equal operator <<<=>>.
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {

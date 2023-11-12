@@ -6,8 +6,8 @@ Declare a <<for>> loop as follows:
 - **Initialization**: a non-constant variable <<i>> of type <<number>>, initialized
 to <<0>>.
 - **Condition**: continue as long as <<i>> is less than <<5>>.
-- **Instruction**: increment <<i>> by <<1>>.
-- **Content**: print the value of <<i>> to the output.
+- **Afterthought**: increment <<i>> by <<1>>.
+- **Statement**: print the value of <<i>> to the output.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
