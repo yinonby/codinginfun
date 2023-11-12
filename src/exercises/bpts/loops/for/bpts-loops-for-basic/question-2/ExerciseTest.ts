@@ -22,24 +22,24 @@ the condition <<i <= 0>> is not met and the loop ends.
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {
 
-    verify(solutionText: string) {
-        this.verifySolution(solutionText);
-    }
+  verify(solutionText: string) {
+    this.verifySolution(solutionText);
+  }
 
-    getExpectedSolutionText(): string {
-        return output.replace(/^\s+|\s+$/g, '');
-    }
+  getExpectedSolutionText(): string {
+    return output.replace(/^\s+|\s+$/g, '');
+  }
 
-    getExpectedSolutionExplanation(): string {
-        return explanation.replace(/^\s+|\s+$/g, '');
-    }
+  getExpectedSolutionExplanation(): string {
+    return explanation.replace(/^\s+|\s+$/g, '');
+  }
 
-    verifySolution(solutionText: string) {
-        if (solutionText !== this.getExpectedSolutionText()) {
-            throw new Error(
-                "Look carefually at the code."
-            );
-        }
+  verifySolution(solutionText: string) {
+    if (solutionText !== this.getExpectedSolutionText()) {
+      throw new Error(
+        "Look carefually at the code."
+      );
     }
+  }
 
 }

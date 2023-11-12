@@ -13,38 +13,38 @@ import Question5ExerciseInfo from "./question-5/ExerciseInfo";
 import Question5ExerciseTest from "./question-5/ExerciseTest";
 
 export default class ExerciseMgr extends ExerciseMgrAbs {
-    private exerciseTasks: ExerciseTask[] = [];
+  private exerciseTasks: ExerciseTask[] = [];
 
-    constructor() {
-        super();
-        this.exerciseTasks.push(new ExerciseTask(
-            new Question1ExerciseInfo(),
-            new Question1ExerciseTest(),
-        ));
-        this.exerciseTasks.push(new ExerciseTask(
-            new Question2ExerciseInfo(),
-            new Question2ExerciseTest(),
-        ));
-        this.exerciseTasks.push(new ExerciseTask(
-            new Question3ExerciseInfo(),
-            new Question3ExerciseTest(),
-        ));
-        this.exerciseTasks.push(new ExerciseTask(
-            new Question4ExerciseInfo(),
-            new Question4ExerciseTest(),
-        ));
-        this.exerciseTasks.push(new ExerciseTask(
-            new Question5ExerciseInfo(),
-            new Question5ExerciseTest(),
-        ));
-    }
+  constructor() {
+    super();
+    this.exerciseTasks.push(new ExerciseTask(
+      new Question1ExerciseInfo(),
+      new Question1ExerciseTest(),
+    ));
+    this.exerciseTasks.push(new ExerciseTask(
+      new Question2ExerciseInfo(),
+      new Question2ExerciseTest(),
+    ));
+    this.exerciseTasks.push(new ExerciseTask(
+      new Question3ExerciseInfo(),
+      new Question3ExerciseTest(),
+    ));
+    this.exerciseTasks.push(new ExerciseTask(
+      new Question4ExerciseInfo(),
+      new Question4ExerciseTest(),
+    ));
+    this.exerciseTasks.push(new ExerciseTask(
+      new Question5ExerciseInfo(),
+      new Question5ExerciseTest(),
+    ));
+  }
 
-    getTitle(): string {
-        return "Basic comparison operators";
-    }
+  getTitle(): string {
+    return "Basic comparison operators";
+  }
 
-    getTasks(): ExerciseTask[] {
-        return this.exerciseTasks;
-    }
+  getTasks(): ExerciseTask[] {
+    return this.exerciseTasks;
+  }
 
 }

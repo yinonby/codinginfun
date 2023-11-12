@@ -7,17 +7,17 @@ const md: string = `
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
-    
-    getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_SANDBOX;
-    }
 
-    getDescription(): string {
-        return "Giving variables meaningful names";
-    }   
+  getType(): EX_TYPE {
+    return EX_TYPE.EX_TYPE_SANDBOX;
+  }
 
-    getMdInstructions(): string {
-        return md;
-    }
+  getDescription(): string {
+    return "Giving variables meaningful names";
+  }
+
+  getMdInstructions(): string {
+    return md;
+  }
 
 }

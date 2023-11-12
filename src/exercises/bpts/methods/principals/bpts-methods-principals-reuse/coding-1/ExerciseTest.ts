@@ -23,28 +23,28 @@ function square(x: number): number {
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
 
-    verify(solutionText: string) {
-        this.verifySolution(solutionText);
-    }
+  verify(solutionText: string) {
+    this.verifySolution(solutionText);
+  }
 
-    getInitialSolutionText(): string {
-        return initialSolutionText.replace(/^\s+|\s+$/g, '');;
-    }
-    
-    getExpectedSolutionText(): string {
-        return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
-    }
+  getInitialSolutionText(): string {
+    return initialSolutionText.replace(/^\s+|\s+$/g, '');;
+  }
 
-    getExpectedSolutionRowNum() {
-        return this.getExpectedSolutionText().split(/\n/).length;
-    }
+  getExpectedSolutionText(): string {
+    return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
+  }
 
-    verifySolution(solutionText: string) {
-        if (solutionText !== this.getExpectedSolutionText()) {
-            throw new Error(
-                "Remember that 'square' should return the arithmetic square of 'x', and be used to initialize the 3 variables."
-            );
-        }
+  getExpectedSolutionRowNum() {
+    return this.getExpectedSolutionText().split(/\n/).length;
+  }
+
+  verifySolution(solutionText: string) {
+    if (solutionText !== this.getExpectedSolutionText()) {
+      throw new Error(
+        "Remember that 'square' should return the arithmetic square of 'x', and be used to initialize the 3 variables."
+      );
     }
+  }
 
 }

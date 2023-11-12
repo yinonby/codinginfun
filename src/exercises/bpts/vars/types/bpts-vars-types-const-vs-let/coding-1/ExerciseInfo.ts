@@ -10,16 +10,16 @@ const md: string = `
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
-    
-    getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_SANDBOX;
-    }
 
-    getDescription(): string {
-        return "In this exercise, you will declare both 'const' and 'let' variables.";
-    }
+  getType(): EX_TYPE {
+    return EX_TYPE.EX_TYPE_SANDBOX;
+  }
 
-    getMdInstructions(): string {
-        return md;
-    }
+  getDescription(): string {
+    return "In this exercise, you will declare both 'const' and 'let' variables.";
+  }
+
+  getMdInstructions(): string {
+    return md;
+  }
 }

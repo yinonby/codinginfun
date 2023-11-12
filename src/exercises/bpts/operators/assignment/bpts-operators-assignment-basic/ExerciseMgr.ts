@@ -9,30 +9,30 @@ import Question1ExerciseInfo from "./question-1/ExerciseInfo";
 import Question1ExerciseTest from "./question-1/ExerciseTest";
 
 export default class ExerciseMgr extends ExerciseMgrAbs {
-    private exerciseTasks: ExerciseTask[] = [];
+  private exerciseTasks: ExerciseTask[] = [];
 
-    constructor() {
-        super();
-        this.exerciseTasks.push(new ExerciseTask(
-            new ExerciseInfo(),
-            new ExerciseTest(),
-        ));
-        this.exerciseTasks.push(new ExerciseTask(
-            new Coding2ExerciseInfo(),
-            new Coding2ExerciseTest(),
-        ));
-        this.exerciseTasks.push(new ExerciseTask(
-            new Question1ExerciseInfo(),
-            new Question1ExerciseTest(),
-        ));
-    }
+  constructor() {
+    super();
+    this.exerciseTasks.push(new ExerciseTask(
+      new ExerciseInfo(),
+      new ExerciseTest(),
+    ));
+    this.exerciseTasks.push(new ExerciseTask(
+      new Coding2ExerciseInfo(),
+      new Coding2ExerciseTest(),
+    ));
+    this.exerciseTasks.push(new ExerciseTask(
+      new Question1ExerciseInfo(),
+      new Question1ExerciseTest(),
+    ));
+  }
 
-    getTitle(): string {
-        return "Arithmetic assignment operators";
-    }
+  getTitle(): string {
+    return "Arithmetic assignment operators";
+  }
 
-    getTasks(): ExerciseTask[] {
-        return this.exerciseTasks;
-    }
+  getTasks(): ExerciseTask[] {
+    return this.exerciseTasks;
+  }
 
 }

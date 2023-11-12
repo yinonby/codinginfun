@@ -18,16 +18,16 @@ name and the last name are separated by a space (<<" ">>).
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
 
-    getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_CODING;
-    }
+  getType(): EX_TYPE {
+    return EX_TYPE.EX_TYPE_CODING;
+  }
 
-    getDescription(): string {
-        return "Single method parameter";
-    }
+  getDescription(): string {
+    return "Single method parameter";
+  }
 
-    getMdInstructions(): string {
-        return md;
-    }
-    
+  getMdInstructions(): string {
+    return md;
+  }
+
 }

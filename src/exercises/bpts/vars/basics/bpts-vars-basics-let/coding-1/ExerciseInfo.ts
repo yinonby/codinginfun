@@ -9,17 +9,17 @@ const md: string = `
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
-    
-    getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_SANDBOX;
-    }
 
-    getDescription(): string {
-        return "In this exercise, you need to declare a variable and then change its value.";
-    }
+  getType(): EX_TYPE {
+    return EX_TYPE.EX_TYPE_SANDBOX;
+  }
 
-    getMdInstructions(): string {
-        return md;
-    }
+  getDescription(): string {
+    return "In this exercise, you need to declare a variable and then change its value.";
+  }
+
+  getMdInstructions(): string {
+    return md;
+  }
 
 }

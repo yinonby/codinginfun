@@ -14,16 +14,16 @@ assign the result back to <<x>> (use the Division-Assignment operator <</=>>).
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
 
-    getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_CODING;
-    }
+  getType(): EX_TYPE {
+    return EX_TYPE.EX_TYPE_CODING;
+  }
 
-    getDescription(): string {
-        return "Assignment operators";
-    }
+  getDescription(): string {
+    return "Assignment operators";
+  }
 
-    getMdInstructions(): string {
-        return md;
-    }
-    
+  getMdInstructions(): string {
+    return md;
+  }
+
 }

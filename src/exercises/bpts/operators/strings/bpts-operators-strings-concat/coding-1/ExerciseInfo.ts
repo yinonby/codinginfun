@@ -15,16 +15,16 @@ using the variables above.
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
 
-    getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_CODING;
-    }
+  getType(): EX_TYPE {
+    return EX_TYPE.EX_TYPE_CODING;
+  }
 
-    getDescription(): string {
-        return "String concatenation operators";
-    }
+  getDescription(): string {
+    return "String concatenation operators";
+  }
 
-    getMdInstructions(): string {
-        return md;
-    }
-    
+  getMdInstructions(): string {
+    return md;
+  }
+
 }

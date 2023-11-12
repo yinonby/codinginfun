@@ -13,24 +13,24 @@ const explanation: string = `
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {
 
-    verify(solutionText: string) {
-        this.verifySolution(solutionText);
-    }
+  verify(solutionText: string) {
+    this.verifySolution(solutionText);
+  }
 
-    getExpectedSolutionText(): string {
-        return output.replace(/^\s+|\s+$/g, '');
-    }
+  getExpectedSolutionText(): string {
+    return output.replace(/^\s+|\s+$/g, '');
+  }
 
-    getExpectedSolutionExplanation(): string {
-        return explanation.replace(/^\s+|\s+$/g, '');
-    }
+  getExpectedSolutionExplanation(): string {
+    return explanation.replace(/^\s+|\s+$/g, '');
+  }
 
-    verifySolution(solutionText: string) {
-        if (solutionText !== this.getExpectedSolutionText()) {
-            throw new Error(
-                "Note how many times the method is called. Also note the quotes are included in the output."
-            );
-        }
+  verifySolution(solutionText: string) {
+    if (solutionText !== this.getExpectedSolutionText()) {
+      throw new Error(
+        "Note how many times the method is called. Also note the quotes are included in the output."
+      );
     }
+  }
 
 }

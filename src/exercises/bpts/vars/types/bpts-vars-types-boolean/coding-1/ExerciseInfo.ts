@@ -9,17 +9,17 @@ const md: string = `
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
-    
-    getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_SANDBOX;
-    }
 
-    getDescription(): string {
-        return "In this exercise, you need to declare a boolean variable.";
-    }
+  getType(): EX_TYPE {
+    return EX_TYPE.EX_TYPE_SANDBOX;
+  }
 
-    getMdInstructions(): string {
-        return md;
-    }
+  getDescription(): string {
+    return "In this exercise, you need to declare a boolean variable.";
+  }
+
+  getMdInstructions(): string {
+    return md;
+  }
 
 }

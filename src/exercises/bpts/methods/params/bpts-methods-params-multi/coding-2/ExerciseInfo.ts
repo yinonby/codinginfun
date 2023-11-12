@@ -22,16 +22,16 @@ and initializes it with the result of <<x * y * z>>.
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
 
-    getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_CODING;
-    }
+  getType(): EX_TYPE {
+    return EX_TYPE.EX_TYPE_CODING;
+  }
 
-    getDescription(): string {
-        return "Method call with multiple parameters";
-    }
+  getDescription(): string {
+    return "Method call with multiple parameters";
+  }
 
-    getMdInstructions(): string {
-        return md;
-    }
-    
+  getMdInstructions(): string {
+    return md;
+  }
+
 }

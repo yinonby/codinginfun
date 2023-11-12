@@ -11,16 +11,16 @@ explicitly, but rather to use the expression: <<3 + 6>>.
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
 
-    getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_CODING;
-    }
+  getType(): EX_TYPE {
+    return EX_TYPE.EX_TYPE_CODING;
+  }
 
-    getDescription(): string {
-        return "Addition operator";
-    }
+  getDescription(): string {
+    return "Addition operator";
+  }
 
-    getMdInstructions(): string {
-        return md;
-    }
-    
+  getMdInstructions(): string {
+    return md;
+  }
+
 }

@@ -14,34 +14,36 @@ const HeaderContainer = styled('div')(({ theme }) => ({
 }));
 
 export const Content = styled('div')(({ theme }) => ({
-    padding: "0 8px",
-    [theme.breakpoints.down('sm')]: {
-      height: "calc(100vh - 50px - 16px)",
-    },
-    [theme.breakpoints.up('sm')]: {
-      height: "calc(100vh - 80px - 16px)",
-    },
-  }));
+  padding: "0 8px",
+  [theme.breakpoints.down('sm')]: {
+    height: "calc(100vh - 50px - 16px)",
+  },
+  [theme.breakpoints.up('sm')]: {
+    height: "calc(100vh - 80px - 16px)",
+  },
+}));
 
 export default function Header() {
-    const boxStyle = {
-        display: "flex",
-        height: "100%",
-        justifyContent: "center",
-    }
+  const boxStyle = {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+  }
 
-    return (
-        <HeaderContainer>
-            <Box style={boxStyle}>
-                <img
-                    style={{height: "100%", objectFit: "contain",
-                        maxWidth: "50%"}}
-                    srcSet="/img/logo-color-no-circle.png"
-                    src="/img/logo-color-no-circle.png"
-                    alt="logo"
-                    loading="lazy"
-                />
-            </Box>
-        </HeaderContainer>
-    );
+  return (
+    <HeaderContainer>
+      <Box style={boxStyle}>
+        <img
+          style={{
+            height: "100%", objectFit: "contain",
+            maxWidth: "50%"
+          }}
+          srcSet="/img/logo-color-no-circle.png"
+          src="/img/logo-color-no-circle.png"
+          alt="logo"
+          loading="lazy"
+        />
+      </Box>
+    </HeaderContainer>
+  );
 }

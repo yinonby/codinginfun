@@ -33,24 +33,24 @@ printMyName("Lisa");
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
 
-    verify(solutionText: string) {
-        this.verifySolution(solutionText);
-    }
+  verify(solutionText: string) {
+    this.verifySolution(solutionText);
+  }
 
-    getInitialSolutionText(): string {
-        return initialSolutionText.replace(/^\s+|\s+$/g, '');;
-    }
-    
-    getExpectedSolutionText(): string {
-        return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
-    }
+  getInitialSolutionText(): string {
+    return initialSolutionText.replace(/^\s+|\s+$/g, '');;
+  }
 
-    verifySolution(solutionText: string) {
-        if (solutionText !== this.getExpectedSolutionText()) {
-            throw new Error(
-                "Did you replace all question marks? Did you follow code conventions?"
-            );
-        }
+  getExpectedSolutionText(): string {
+    return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
+  }
+
+  verifySolution(solutionText: string) {
+    if (solutionText !== this.getExpectedSolutionText()) {
+      throw new Error(
+        "Did you replace all question marks? Did you follow code conventions?"
+      );
     }
+  }
 
 }

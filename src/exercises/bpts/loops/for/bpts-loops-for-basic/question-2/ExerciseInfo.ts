@@ -6,23 +6,23 @@ What is the expected output of the following code?
 
 > console.log("begin");
 for (let i: number = -2; i <= 0; i++) {
-    console.log(i);
+  console.log(i);
 }
 console.log("end");
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
 
-    getType(): EX_TYPE {
-        return EX_TYPE.EX_TYPE_QUESTION;
-    }
+  getType(): EX_TYPE {
+    return EX_TYPE.EX_TYPE_QUESTION;
+  }
 
-    getDescription(): string {
-        return "'For' loops";
-    }
+  getDescription(): string {
+    return "'For' loops";
+  }
 
-    getMdInstructions(): string {
-        return md;
-    }
-    
+  getMdInstructions(): string {
+    return md;
+  }
+
 }

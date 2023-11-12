@@ -5,22 +5,22 @@ import ExerciseInfo from "./coding-1/ExerciseInfo";
 import ExerciseTest from "./coding-1/ExerciseTest";
 
 export default class ExerciseMgr extends ExerciseMgrAbs {
-    private exerciseTasks: ExerciseTask[] = [];
+  private exerciseTasks: ExerciseTask[] = [];
 
-    constructor() {
-        super();
-        this.exerciseTasks.push(new ExerciseTask(
-            new ExerciseInfo(),
-            new ExerciseTest(),
-        ));
-    }
+  constructor() {
+    super();
+    this.exerciseTasks.push(new ExerciseTask(
+      new ExerciseInfo(),
+      new ExerciseTest(),
+    ));
+  }
 
-    getTitle(): string {
-        return "Changing variables' values";
-    }
+  getTitle(): string {
+    return "Changing variables' values";
+  }
 
-    getTasks(): ExerciseTask[] {
-        return this.exerciseTasks;
-    }
+  getTasks(): ExerciseTask[] {
+    return this.exerciseTasks;
+  }
 
 }

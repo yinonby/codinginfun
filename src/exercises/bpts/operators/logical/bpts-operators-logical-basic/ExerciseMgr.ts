@@ -11,34 +11,34 @@ import Question2ExerciseInfo from "./question-2/ExerciseInfo";
 import Question2ExerciseTest from "./question-2/ExerciseTest";
 
 export default class ExerciseMgr extends ExerciseMgrAbs {
-    private exerciseTasks: ExerciseTask[] = [];
+  private exerciseTasks: ExerciseTask[] = [];
 
-    constructor() {
-        super();
-        this.exerciseTasks.push(new ExerciseTask(
-            new ExerciseInfo(),
-            new ExerciseTest(),
-        ));
-        this.exerciseTasks.push(new ExerciseTask(
-            new Coding2ExerciseInfo(),
-            new Coding2ExerciseTest(),
-        ));
-        this.exerciseTasks.push(new ExerciseTask(
-            new Question1ExerciseInfo(),
-            new Question1ExerciseTest(),
-        ));
-        this.exerciseTasks.push(new ExerciseTask(
-            new Question2ExerciseInfo(),
-            new Question2ExerciseTest(),
-        ));
-    }
+  constructor() {
+    super();
+    this.exerciseTasks.push(new ExerciseTask(
+      new ExerciseInfo(),
+      new ExerciseTest(),
+    ));
+    this.exerciseTasks.push(new ExerciseTask(
+      new Coding2ExerciseInfo(),
+      new Coding2ExerciseTest(),
+    ));
+    this.exerciseTasks.push(new ExerciseTask(
+      new Question1ExerciseInfo(),
+      new Question1ExerciseTest(),
+    ));
+    this.exerciseTasks.push(new ExerciseTask(
+      new Question2ExerciseInfo(),
+      new Question2ExerciseTest(),
+    ));
+  }
 
-    getTitle(): string {
-        return "Basic logical operators";
-    }
+  getTitle(): string {
+    return "Basic logical operators";
+  }
 
-    getTasks(): ExerciseTask[] {
-        return this.exerciseTasks;
-    }
+  getTasks(): ExerciseTask[] {
+    return this.exerciseTasks;
+  }
 
 }
