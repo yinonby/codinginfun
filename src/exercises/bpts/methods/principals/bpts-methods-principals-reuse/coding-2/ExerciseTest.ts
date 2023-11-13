@@ -9,7 +9,7 @@ console.log("My name is Lisa");
 
 // Code is not duplicated
 function printMyName(myName: string): void {
-    console.log("My name is " + ?);
+  console.log("My name is " + ?);
 }
 printMyName(?);
 printMyName(?);
@@ -24,7 +24,7 @@ console.log("My name is Lisa");
 
 // Code is not duplicated
 function printMyName(myName: string): void {
-    console.log("My name is " + myName);
+  console.log("My name is " + myName);
 }
 printMyName("Jessica");
 printMyName("Bob");

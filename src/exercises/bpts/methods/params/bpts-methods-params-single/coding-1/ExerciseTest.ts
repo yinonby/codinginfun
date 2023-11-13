@@ -6,7 +6,7 @@ const initialSolutionText: string = `
 
 const expectedSolutionText: string = `
 function printNumber(x: number) {
-    console.log(x);
+  console.log(x);
 }
 `;
 

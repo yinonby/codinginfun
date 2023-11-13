@@ -6,7 +6,7 @@ const initialSolutionText: string = `
 
 const expectedSolutionText: string = `
 function printFullName(firstName: string, lastName; string) {
-    console.log(firstName + " " + lastName);
+  console.log(firstName + " " + lastName);
 }
 `;
 

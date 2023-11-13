@@ -6,7 +6,7 @@ const initialSolutionText: string = `
 
 const expectedSolutionText: string = `
 function printName(firstName: string) {
-    console.log("First name is " + firstName);
+  console.log("First name is " + firstName);
 }
 `;
 

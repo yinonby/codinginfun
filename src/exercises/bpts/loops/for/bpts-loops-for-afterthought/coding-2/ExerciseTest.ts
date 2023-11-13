@@ -6,7 +6,7 @@ const initialSolutionText: string = `
 
 const expectedSolutionText: string = `
 for (let i: number = 3; i <= 4;) {
-    console.log(i++);
+  console.log(i++);
 }
 `;
 
