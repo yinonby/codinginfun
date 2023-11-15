@@ -50,6 +50,8 @@ import BptsLoopsForAfterthoughtExerciseMgr
   from "./bpts/loops/for/bpts-loops-for-afterthought/ExerciseMgr";
 import BptsLoopsForArraysExerciseMgr
   from "./bpts/loops/for/bpts-loops-for-arrays/ExerciseMgr";
+import BptsLoopsForMethodsExerciseMgr
+  from "./bpts/loops/for/bpts-loops-for-methods/ExerciseMgr";
 
 type ExerciseMapItem = {
   [key: string]: CourseItem,
@@ -278,8 +280,11 @@ export default class ExerciseMap {
                   "name": "bpts-loops-for-arrays",
                   "exerciseMgr": new BptsLoopsForArraysExerciseMgr(),
                 },
+                {
+                  "name": "bpts-loops-for-methods",
+                  "exerciseMgr": new BptsLoopsForMethodsExerciseMgr(),
+                },
               ]
-            },
           ]
         },
       ]
