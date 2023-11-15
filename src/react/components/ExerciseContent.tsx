@@ -9,9 +9,10 @@ import Markdown from "./Markdown";
 import { Grid } from "@mui/material";
 import ExerciseMgrAdapter from "#infra/mgr/ExerciseMgrAbs";
 import ExerciseTask from "#infra/task/ExerciseTask";
-import { CodingTaskView } from "./CodingTaskView";
-import { CodesandboxTaskView } from "./CodesandboxTaskView";
-import { QuestionTaskView } from './QuestionTaskView';
+import { CodingTaskView } from "./task-view/CodingTaskView";
+import { CodesandboxTaskView } from "./task-view/CodesandboxTaskView";
+import { QuestionTaskView } from './task-view/QuestionTaskView';
+import { MultiChoiceTaskView } from './task-view/MultiChoiceTaskView';
 
 export default function ExerciseContent(props: any) {
   const { showSolutionButton } = props;
@@ -94,6 +95,17 @@ function TaskView(props: any) {
           <Box mb={2}>
             <QuestionTaskView exercieTest={exercieTest}
               showSolutionButton={showSolutionButton} />
+          </Box>
+        </>
+      }
+
+      {exercieInfo.getType() === EX_TYPE.EX_TYPE_MULTICHOICE &&
+        <>
+          <Box mb={2}>
+            <Instructions exercieInfo={exercieInfo} />
+          </Box>
+          <Box mb={2}>
+            <MultiChoiceTaskView exercieTest={exercieTest} />
           </Box>
         </>
       }

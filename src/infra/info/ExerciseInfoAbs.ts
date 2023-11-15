@@ -11,6 +11,8 @@ export default abstract class ExerciseInfoAbs {
       return "Coding exercise";
     } else if (this.getType() === EX_TYPE.EX_TYPE_QUESTION) {
       return "Coding question";
+    } else if (this.getType() === EX_TYPE.EX_TYPE_MULTICHOICE) {
+      return "Multiple choice question";
     } else {
       throw new Error("Unsupported type");
     }
@@ -21,4 +23,5 @@ export enum EX_TYPE {
   EX_TYPE_CODING,
   EX_TYPE_SANDBOX,
   EX_TYPE_QUESTION,
+  EX_TYPE_MULTICHOICE,
 }

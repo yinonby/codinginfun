@@ -285,6 +285,7 @@ export default class ExerciseMap {
                   "exerciseMgr": new BptsLoopsForMethodsExerciseMgr(),
                 },
               ]
+            }
           ]
         },
       ]
