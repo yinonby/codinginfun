@@ -33,14 +33,16 @@ import BptsMethodsBasicsDeclarationExerciseMgr
   from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseMgr";
 import BptsMethodsBasicsCallingExerciseMgr
   from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseMgr";
-import BptsMethodsScopeOuterExerciseMgr
-  from "./bpts/methods/scope/bpts-methods-scope-outer/ExerciseMgr";
-import BptsMethodsScopeNestedExerciseMgr
-  from "./bpts/methods/scope/bpts-methods-scope-nested/ExerciseMgr";
 import BptsMethodsParamsSingleExerciseMgr
   from "./bpts/methods/params/bpts-methods-params-single/ExerciseMgr";
 import BptsMethodsParamsMultiExerciseMgr
   from "./bpts/methods/params/bpts-methods-params-multi/ExerciseMgr";
+import BptsMethodsReturnBasicExerciseMgr
+  from "./bpts/methods/return/bpts-methods-return-basic/ExerciseMgr";
+import BptsMethodsScopeOuterExerciseMgr
+  from "./bpts/methods/scope/bpts-methods-scope-outer/ExerciseMgr";
+import BptsMethodsScopeNestedExerciseMgr
+  from "./bpts/methods/scope/bpts-methods-scope-nested/ExerciseMgr";
 import BptsMethodsPrincipalsReuseExerciseMgr
   from "./bpts/methods/principals/bpts-methods-principals-reuse/ExerciseMgr";
 
@@ -221,20 +223,6 @@ export default class ExerciseMap {
               ]
             },
             {
-              "name": "scope",
-              "displayName": "Methods scope",
-              "exercises": [
-                {
-                  "name": "bpts-methods-scope-outer",
-                  "exerciseMgr": new BptsMethodsScopeOuterExerciseMgr(),
-                },
-                {
-                  "name": "bpts-methods-scope-nested",
-                  "exerciseMgr": new BptsMethodsScopeNestedExerciseMgr(),
-                },
-              ]
-            },
-            {
               "name": "params",
               "displayName": "Methods parameters",
               "exercises": [
@@ -245,6 +233,30 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-methods-params-multi",
                   "exerciseMgr": new BptsMethodsParamsMultiExerciseMgr(),
+                },
+              ]
+            },
+            {
+              "name": "return",
+              "displayName": "Methods return-value",
+              "exercises": [
+                {
+                  "name": "bpts-methods-return-basic",
+                  "exerciseMgr": new BptsMethodsReturnBasicExerciseMgr(),
+                },
+              ]
+            },
+            {
+              "name": "scope",
+              "displayName": "Methods scope",
+              "exercises": [
+                {
+                  "name": "bpts-methods-scope-outer",
+                  "exerciseMgr": new BptsMethodsScopeOuterExerciseMgr(),
+                },
+                {
+                  "name": "bpts-methods-scope-nested",
+                  "exerciseMgr": new BptsMethodsScopeNestedExerciseMgr(),
                 },
               ]
             },
