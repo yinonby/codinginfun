@@ -46,6 +46,9 @@ import BptsMethodsScopeNestedExerciseMgr
 import BptsMethodsPrincipalsReuseExerciseMgr
   from "./bpts/methods/principals/bpts-methods-principals-reuse/ExerciseMgr";
 
+import BptsConditionalIfBasicExerciseMgr
+  from "./bpts/conditionals/if/bpts-conditionals-if-basic/ExerciseMgr";
+
 import BptsLoopsForBasicExerciseMgr
   from "./bpts/loops/for/bpts-loops-for-basic/ExerciseMgr";
 import BptsLoopsForAfterthoughtExerciseMgr
@@ -267,6 +270,22 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-methods-basics-reuse",
                   "exerciseMgr": new BptsMethodsPrincipalsReuseExerciseMgr(),
+                },
+              ]
+            },
+          ]
+        },
+        {
+          "name": "conditionals",
+          "displayName": "Conditionals",
+          "lessons": [
+            {
+              "name": "if",
+              "displayName": "'if...else' statements",
+              "exercises": [
+                {
+                  "name": "bpts-conditionals-if-basic",
+                  "exerciseMgr": new BptsConditionalIfBasicExerciseMgr(),
                 },
               ]
             },
