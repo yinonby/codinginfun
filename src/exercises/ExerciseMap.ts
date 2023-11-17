@@ -48,6 +48,8 @@ import BptsMethodsPrincipalsReuseExerciseMgr
 
 import BptsConditionalIfBasicExerciseMgr
   from "./bpts/conditionals/if/bpts-conditionals-if-basic/ExerciseMgr";
+import BptsConditionalIfElseExerciseMgr
+  from "./bpts/conditionals/if/bpts-conditionals-if-else/ExerciseMgr";
 
 import BptsLoopsForBasicExerciseMgr
   from "./bpts/loops/for/bpts-loops-for-basic/ExerciseMgr";
@@ -281,11 +283,15 @@ export default class ExerciseMap {
           "lessons": [
             {
               "name": "if",
-              "displayName": "'if...else' statements",
+              "displayName": "'if...else' conditionals",
               "exercises": [
                 {
                   "name": "bpts-conditionals-if-basic",
                   "exerciseMgr": new BptsConditionalIfBasicExerciseMgr(),
+                },
+                {
+                  "name": "bpts-conditionals-if-else",
+                  "exerciseMgr": new BptsConditionalIfElseExerciseMgr(),
                 },
               ]
             },
