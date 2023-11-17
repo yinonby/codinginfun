@@ -58,43 +58,45 @@ export function MultiChoiceTaskView(props: any) {
       explanation: exercieTest.getMcAnswerExplanationMd(selectedIdx!),
     };
     setExplainedTestResult(tmpExplainedTestResult);
-
   };
 
   return (
     <>
-
-      <Box mb={2}>
-        <FormControl>
-          <FormLabel id="demo-controlled-radio-buttons-group">
-            Your answer
-          </FormLabel>
-          <RadioGroup
-            aria-labelledby="demo-controlled-radio-buttons-group"
-            name="controlled-radio-buttons-group"
-            value={selectedIdx}
-            onChange={handleChange}
-          >
-            {mcAnswers.map((e, index) => 
-              <FormControlLabel key={index}
-                value={index} control={<Radio />} label={e.mcAnswerMd} />
-            )}
-          </RadioGroup>
-        </FormControl>
-      </Box>
-
-      <Box mb={2}>
+      <Box sx={{display: "flex", flexDirection: "row"}}>
         <Box mr={2}>
-          <Button variant="contained" onClick={handleClick}
-            size="small" disabled={selectedIdx === null}>
-            Check your answer
-          </Button>
+          <Box mb={2}>
+            <FormControl>
+              <FormLabel id="demo-controlled-radio-buttons-group">
+                Your answer
+              </FormLabel>
+              <RadioGroup
+                aria-labelledby="demo-controlled-radio-buttons-group"
+                name="controlled-radio-buttons-group"
+                value={selectedIdx}
+                onChange={handleChange}
+              >
+                {mcAnswers.map((e, index) => 
+                  <FormControlLabel key={index}
+                    value={index} control={<Radio />} label={e.mcAnswerMd} />
+                )}
+              </RadioGroup>
+            </FormControl>
+          </Box>
+
+          <Box mr={2}>
+            <Button variant="contained" onClick={handleClick}
+              size="small" disabled={selectedIdx === null}>
+              Check your answer
+            </Button>
+          </Box>
+        </Box>
+
+        <Box sx={{flex: 1}}>
+          <ExplainedTestResultView okMessage="Your answer is correct :)"
+            errPrefix="Wrong answer :("
+            explainedTestResult={explainedTestResult} />
         </Box>
       </Box>
-
-      <ExplainedTestResultView okMessage="Your answer is correct :)"
-        errPrefix="Wrong answer :("
-        explainedTestResult={explainedTestResult} />
     </>
   );
 }

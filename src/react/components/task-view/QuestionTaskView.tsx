@@ -59,8 +59,8 @@ export function QuestionTaskView(props: any) {
       tmpTestResult.errMessage = errorMessage;
     }
     setTestResult(tmpTestResult);
-
   };
+
   const rowNum: number = exercieTest.getExpectedSolutionRowNum();
 
   return (

@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import Markdown from "./Markdown";
 
 export default function ExplainedTestResultView(props: any) {
@@ -21,16 +22,16 @@ export type ExplainedTestResult = {
 }
 
 function OK(props: any) {
-  const style = {
-    color: "green",
-  }
-
   return (
     <div>
-      <h4 style={style}>{props.okMessage}</h4>
+      <Box mb={2} sx={{typography: "subtitle1", color: "green"}}>
+        {props.okMessage}
+      </Box>
       {props.explanation &&
         <>
-          <h4>Explanation:</h4>
+          <Box sx={{typography: "subtitle2", fontWeight: "bold"}}>
+            Explanation:
+          </Box>
           <Markdown md={props.explanation} />
         </>
       }
@@ -45,10 +46,14 @@ function MyError(props: any) {
 
   return (
     <div>
-      <h4 style={style}>{props.errPrefix}</h4>
+      <Box mb={2} sx={{typography: "subtitle1", color: "red"}}>
+        {props.errPrefix}
+      </Box>
       {props.explanation &&
         <>
-          <h4>Explanation:</h4>
+          <Box sx={{typography: "subtitle2", fontWeight: "bold"}}>
+            Explanation:
+          </Box>
           <Markdown md={props.explanation} />
         </>
       }
