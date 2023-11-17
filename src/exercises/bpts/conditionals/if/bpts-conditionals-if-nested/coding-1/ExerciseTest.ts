@@ -8,12 +8,14 @@ const availableMilkshakes: string[] = ["Chocolate", "Vanilla",
 // Method to return a milkshake taste according to 2 choices, if available,
 // or the first available choice if none of the choices is available
 function getMilkshake(firstChoice: string, secondChoice: string): string {
-  if (#1#) {
+  #1# (availableMilkshakes.includes(firstChoice)) {
     return firstChoice;
-  } #2# (availableMilkshakes.includes(secondChoice)) {
-    return secondChoice;
-  } else {
-    return availableMilkshakes[0];
+  } #2# {
+    #3# (availableMilkshakes.includes(secondChoice)) {
+      return secondChoice;
+    } #4# {
+      return availableMilkshakes[0];
+    }
   }
 }
 `;
@@ -27,10 +29,12 @@ const availableMilkshakes: string[] = ["Chocolate", "Vanilla",
 function getMilkshake(firstChoice: string, secondChoice: string): string {
   if (availableMilkshakes.includes(firstChoice)) {
     return firstChoice;
-  } else if (availableMilkshakes.includes(secondChoice)) {
-    return secondChoice;
   } else {
-    return availableMilkshakes[0];
+    if (availableMilkshakes.includes(secondChoice)) {
+      return secondChoice;
+    } else {
+      return availableMilkshakes[0];
+    }
   }
 }
 `;
