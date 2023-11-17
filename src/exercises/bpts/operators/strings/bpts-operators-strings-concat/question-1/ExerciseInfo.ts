@@ -17,10 +17,6 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     return EX_TYPE.EX_TYPE_QUESTION;
   }
 
-  getDescription(): string {
-    return "Assignment operators";
-  }
-
   getMdInstructions(): string {
     return md;
   }

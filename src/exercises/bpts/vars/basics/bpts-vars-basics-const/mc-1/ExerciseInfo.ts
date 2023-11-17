@@ -13,10 +13,6 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     return EX_TYPE.EX_TYPE_MULTICHOICE;
   }
 
-  getDescription(): string {
-    return "'For' loops";
-  }
-
   getMdInstructions(): string {
     return md;
   }

@@ -17,10 +17,6 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     return EX_TYPE.EX_TYPE_CODING;
   }
 
-  getDescription(): string {
-    return "Single method parameter";
-  }
-
   getMdInstructions(): string {
     return md;
   }

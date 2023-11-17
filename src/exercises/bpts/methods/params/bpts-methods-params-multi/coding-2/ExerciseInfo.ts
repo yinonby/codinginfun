@@ -26,10 +26,6 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     return EX_TYPE.EX_TYPE_CODING;
   }
 
-  getDescription(): string {
-    return "Method call with multiple parameters";
-  }
-
   getMdInstructions(): string {
     return md;
   }

@@ -12,10 +12,6 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     return EX_TYPE.EX_TYPE_SANDBOX;
   }
 
-  getDescription(): string {
-    return "Giving variables meaningful names";
-  }
-
   getMdInstructions(): string {
     return md;
   }

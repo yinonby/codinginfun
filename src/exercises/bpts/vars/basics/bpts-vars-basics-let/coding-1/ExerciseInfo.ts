@@ -14,10 +14,6 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     return EX_TYPE.EX_TYPE_SANDBOX;
   }
 
-  getDescription(): string {
-    return "In this exercise, you need to declare a variable and then change its value.";
-  }
-
   getMdInstructions(): string {
     return md;
   }

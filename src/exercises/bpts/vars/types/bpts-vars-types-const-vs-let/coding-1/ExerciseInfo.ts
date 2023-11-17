@@ -15,10 +15,6 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     return EX_TYPE.EX_TYPE_SANDBOX;
   }
 
-  getDescription(): string {
-    return "In this exercise, you will declare both 'const' and 'let' variables.";
-  }
-
   getMdInstructions(): string {
     return md;
   }

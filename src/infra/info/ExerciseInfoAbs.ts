@@ -1,7 +1,6 @@
 
 export default abstract class ExerciseInfoAbs {
   abstract getType(): EX_TYPE;
-  abstract getDescription(): string;
   abstract getMdInstructions(): string;
 
   getTaskTypeStr(): string {
