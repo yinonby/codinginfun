@@ -5,11 +5,11 @@ const md: string = `
 What is the expected output of the following code?
 
 > let x: number = 9;
-let y: number = ++x;
-let z: number = y--;
-console.log(x);
-console.log(y);
-console.log(z);
+> let y: number = ++x;
+> let z: number = y--;
+> console.log(x);
+> console.log(y);
+> console.log(z);
 
 Remember that each print to output (console) is printed on a separate line.
 `;

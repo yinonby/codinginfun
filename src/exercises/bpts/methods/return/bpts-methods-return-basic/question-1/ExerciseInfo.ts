@@ -5,15 +5,15 @@ const md: string = `
 What is the expected output of the following code?
 
 > function getMyName(): string {
-  return "Lisa";
-}
- 
-function getMyAge(): number {
-  return 24;
-}
- 
-console.log(getMyName());
-console.log(getMyAge());
+>   return "Lisa";
+> }
+>
+> function getMyAge(): number {
+>   return 24;
+> }
+>
+> console.log(getMyName());
+> console.log(getMyAge());
 
 Remember that each print to output (console) is printed on a separate line.
 `;

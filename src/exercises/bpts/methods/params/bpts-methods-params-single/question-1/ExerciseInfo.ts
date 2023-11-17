@@ -5,10 +5,11 @@ const md: string = `
 What is the expected output of the following code?
 
 > function printSquare(x: number) {
-  console.log(x * x);
-}
-printSquare(2);
-printSquare(5);
+>   console.log(x * x);
+> }
+>
+> printSquare(2);
+> printSquare(5);
 
 Remember that each print to output (console) is printed on a separate line.
 `;

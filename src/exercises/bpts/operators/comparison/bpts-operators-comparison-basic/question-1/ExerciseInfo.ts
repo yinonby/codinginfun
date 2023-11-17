@@ -5,8 +5,8 @@ const md: string = `
 What is the expected output of the following code?
 
 > const x: number = 4;
-const y: number = 4;
-console.log(x === y);
+> const y: number = 4;
+> console.log(x === y);
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

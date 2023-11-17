@@ -5,9 +5,9 @@ const md: string = `
 What is the expected output of the following code?
 
 > const isFast: boolean = true;
-const isFurious: boolean = false;
-const isSlowOrFurious: boolean = !isFast || isFurious;
-console.log(isSlowOrFurious);
+> const isFurious: boolean = false;
+> const isSlowOrFurious: boolean = !isFast || isFurious;
+> console.log(isSlowOrFurious);
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

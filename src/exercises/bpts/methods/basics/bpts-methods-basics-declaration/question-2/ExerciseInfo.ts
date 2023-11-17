@@ -5,10 +5,11 @@ const md: string = `
 What is the expected output of the following code?
 
 > function foo() {
-  console.log("Inside foo");
-}
-foo();
-foo();
+>   console.log("Inside foo");
+> }
+>
+> foo();
+> foo();
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

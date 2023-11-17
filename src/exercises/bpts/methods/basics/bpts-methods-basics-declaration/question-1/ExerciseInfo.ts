@@ -5,8 +5,8 @@ const md: string = `
 What is the expected output of the following code?
 
 > function foo() {
-  console.log("Inside foo");
-}
+>   console.log("Inside foo");
+> }
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

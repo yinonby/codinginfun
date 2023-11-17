@@ -5,16 +5,16 @@ const md: string = `
 What is the expected output of the following code?
 
 > const firstName: string = "Bob";
-const isAustralian: boolean = false;
-const isSoccerPlayer: boolean = true;
- 
-if (isAustralian && isSoccerPlayer) {
-  console.log(firstName + " is from Australia and plays soccer");
-}
- 
-if (isSoccerPlayer) {
-  console.log(firstName + " plays soccer");
-}
+> const isAustralian: boolean = false;
+> const isSoccerPlayer: boolean = true;
+>
+> if (isAustralian && isSoccerPlayer) {
+>   console.log(firstName + " is from Australia and plays soccer");
+> }
+>
+> if (isSoccerPlayer) {
+>   console.log(firstName + " plays soccer");
+> }
 
 Remember that each print to output (console) is printed on a separate line.
 `;

@@ -5,9 +5,9 @@ const md: string = `
 What is the expected output of the following code?
 
 > let str: string = "abba";
-str += str;
-str += str;
-console.log(str);
+> str += str;
+> str += str;
+> console.log(str);
 
 Remember that each print to output (console) is printed on a separate line.
 `;

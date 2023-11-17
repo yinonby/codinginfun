@@ -5,9 +5,9 @@ const md: string = `
 Is the following code valid?
 
 > const flag: boolean = true;
-if flag {
-  console.log("flag is true");
-}
+> if flag {
+>   console.log("flag is true");
+> }
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

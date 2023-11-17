@@ -5,10 +5,10 @@ const md: string = `
 What is the expected output of the following code?
 
 > console.log("begin");
-for (let i: number = 0; i < 0; i++) {
-  console.log(i);
-}
-console.log("end");
+> for (let i: number = 0; i < 0; i++) {
+>   console.log(i);
+> }
+> console.log("end");
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

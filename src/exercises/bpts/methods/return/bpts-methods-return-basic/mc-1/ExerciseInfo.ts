@@ -5,9 +5,9 @@ const md: string = `
 Is the following code valid?
 
 > function alwaysTrue(): void {
-  console.log("Inside foo()");
-  return true;
-}
+>   console.log("Inside foo()");
+>   return true;
+> }
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
