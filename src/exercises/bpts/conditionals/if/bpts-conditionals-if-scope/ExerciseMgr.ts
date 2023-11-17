@@ -28,7 +28,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "'if...else if...else' statements";
+    return "'if' statements scope";
   }
 
   getTasks(): ExerciseTask[] {
