@@ -11,17 +11,17 @@ the <<includes()>> method.
 
 For example:
 > const brightEyeColors: string[] = ["Green", "Blue"];
-console.log(brightEyeColors.includes("Green")); // output: true
-console.log(brightEyeColors.includes("Brown")); // output: false
+> console.log(brightEyeColors.includes("Green")); // output: true
+> console.log(brightEyeColors.includes("Brown")); // output: false
 
 Is the following code valid?
 
 > function isPersonEyesBright(personEyesColor: string): boolean {
-  const brightEyeColors: string[] = ["Green", "Blue"];
-  if (brightEyeColors.includes(personEyesColor)) {
-    return true;
-  }
-}
+>   const brightEyeColors: string[] = ["Green", "Blue"];
+>   if (brightEyeColors.includes(personEyesColor)) {
+>     return true;
+>   }
+> }
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

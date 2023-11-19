@@ -67,6 +67,8 @@ import BptsLoopsForArraysExerciseMgr
   from "./bpts/loops/for/bpts-loops-for-arrays/ExerciseMgr";
 import BptsLoopsForMethodsExerciseMgr
   from "./bpts/loops/for/bpts-loops-for-methods/ExerciseMgr";
+import BptsLoopsForOfBasicExerciseMgr
+  from "./bpts/loops/for-of/bpts-loops-for-of-basic/ExerciseMgr";
 
 type ExerciseMapItem = {
   [key: string]: CourseItem,
@@ -327,7 +329,7 @@ export default class ExerciseMap {
           "lessons": [
             {
               "name": "for",
-              "displayName": "'For' loops",
+              "displayName": "'for' loops",
               "exercises": [
                 {
                   "name": "bpts-loops-for-basic",
@@ -344,6 +346,16 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-loops-for-methods",
                   "exerciseMgr": new BptsLoopsForMethodsExerciseMgr(),
+                },
+              ]
+            },
+            {
+              "name": "for-of",
+              "displayName": "'for...of' loops",
+              "exercises": [
+                {
+                  "name": "bpts-loops-for-of-basic",
+                  "exerciseMgr": new BptsLoopsForOfBasicExerciseMgr(),
                 },
               ]
             }

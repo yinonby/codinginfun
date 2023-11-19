@@ -5,21 +5,21 @@ const md: string = `
 What is the expected output of the following code?
 
 > function isChristmas(monthName: string, dayOfMonth: number): boolean {
-  if (monthName === "December" && dayOfMonth === 25) {
-    return true;
-  }
-    return false;
-}
- 
-function isNewYearsDay(monthName: string, dayOfMonth: number): boolean {
-  if (monthName === "January" && dayOfMonth === 1) {
-    return true;
-  }
-    return false;
-}
- 
-console.log(isChristmas("December", 24));
-console.log(isNewYearsDay("January", 1));
+>   if (monthName === "December" && dayOfMonth === 25) {
+>     return true;
+>   }
+>   return false;
+> }
+> 
+> function isNewYearsDay(monthName: string, dayOfMonth: number): boolean {
+>   if (monthName === "January" && dayOfMonth === 1) {
+>     return true;
+>   }
+>   return false;
+> }
+> 
+> console.log(isChristmas("December", 24));
+> console.log(isNewYearsDay("January", 1));
 
 Remember that each print to output (console) is printed on a separate line.
 `;
