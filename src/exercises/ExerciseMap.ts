@@ -69,6 +69,8 @@ import BptsLoopsForMethodsExerciseMgr
   from "./bpts/loops/for/bpts-loops-for-methods/ExerciseMgr";
 import BptsLoopsForOfBasicExerciseMgr
   from "./bpts/loops/for-of/bpts-loops-for-of-basic/ExerciseMgr";
+import BptsLoopsWhileBasicExerciseMgr
+  from "./bpts/loops/while/bpts-loops-while-basic/ExerciseMgr";
 
 type ExerciseMapItem = {
   [key: string]: CourseItem,
@@ -358,7 +360,17 @@ export default class ExerciseMap {
                   "exerciseMgr": new BptsLoopsForOfBasicExerciseMgr(),
                 },
               ]
-            }
+            },
+            {
+              "name": "while",
+              "displayName": "'while' loops",
+              "exercises": [
+                {
+                  "name": "bpts-loops-while-basic",
+                  "exerciseMgr": new BptsLoopsWhileBasicExerciseMgr(),
+                },
+              ]
+            },
           ]
         },
       ]
