@@ -29,22 +29,22 @@ import BptsOperatorsLogicalBasicExerciseMgr
 import BptsOperatorsStringsConcatExerciseMgr
   from "./bpts/operators/strings/bpts-operators-strings-concat/ExerciseMgr";
 
-import BptsMethodsBasicsDeclarationExerciseMgr
-  from "./bpts/methods/basics/bpts-methods-basics-declaration/ExerciseMgr";
-import BptsMethodsBasicsCallingExerciseMgr
-  from "./bpts/methods/basics/bpts-methods-basics-calling/ExerciseMgr";
-import BptsMethodsParamsSingleExerciseMgr
-  from "./bpts/methods/params/bpts-methods-params-single/ExerciseMgr";
-import BptsMethodsParamsMultiExerciseMgr
-  from "./bpts/methods/params/bpts-methods-params-multi/ExerciseMgr";
-import BptsMethodsReturnBasicExerciseMgr
-  from "./bpts/methods/return/bpts-methods-return-basic/ExerciseMgr";
-import BptsMethodsScopeOuterExerciseMgr
-  from "./bpts/methods/scope/bpts-methods-scope-outer/ExerciseMgr";
-import BptsMethodsScopeNestedExerciseMgr
-  from "./bpts/methods/scope/bpts-methods-scope-nested/ExerciseMgr";
-import BptsMethodsPrincipalsReuseExerciseMgr
-  from "./bpts/methods/principals/bpts-methods-principals-reuse/ExerciseMgr";
+import BptsFunctionsBasicsDeclarationExerciseMgr
+  from "./bpts/functions/basics/bpts-functions-basics-declaration/ExerciseMgr";
+import BptsFunctionsBasicsCallingExerciseMgr
+  from "./bpts/functions/basics/bpts-functions-basics-calling/ExerciseMgr";
+import BptsFunctionsParamsSingleExerciseMgr
+  from "./bpts/functions/params/bpts-functions-params-single/ExerciseMgr";
+import BptsFunctionsParamsMultiExerciseMgr
+  from "./bpts/functions/params/bpts-functions-params-multi/ExerciseMgr";
+import BptsFunctionsReturnBasicExerciseMgr
+  from "./bpts/functions/return/bpts-functions-return-basic/ExerciseMgr";
+import BptsFunctionsScopeOuterExerciseMgr
+  from "./bpts/functions/scope/bpts-functions-scope-outer/ExerciseMgr";
+import BptsFunctionsScopeNestedExerciseMgr
+  from "./bpts/functions/scope/bpts-functions-scope-nested/ExerciseMgr";
+import BptsFunctionsPrincipalsReuseExerciseMgr
+  from "./bpts/functions/principals/bpts-functions-principals-reuse/ExerciseMgr";
 
 import BptsConditionalIfBasicExerciseMgr
   from "./bpts/conditionals/if/bpts-conditionals-if-basic/ExerciseMgr";
@@ -65,8 +65,8 @@ import BptsLoopsForAfterthoughtExerciseMgr
   from "./bpts/loops/for/bpts-loops-for-afterthought/ExerciseMgr";
 import BptsLoopsForArraysExerciseMgr
   from "./bpts/loops/for/bpts-loops-for-arrays/ExerciseMgr";
-import BptsLoopsForMethodsExerciseMgr
-  from "./bpts/loops/for/bpts-loops-for-methods/ExerciseMgr";
+import BptsLoopsForFunctionsExerciseMgr
+  from "./bpts/loops/for/bpts-loops-for-functions/ExerciseMgr";
 import BptsLoopsForOfBasicExerciseMgr
   from "./bpts/loops/for-of/bpts-loops-for-of-basic/ExerciseMgr";
 import BptsLoopsWhileBasicExerciseMgr
@@ -222,68 +222,68 @@ export default class ExerciseMap {
           ]
         },
         {
-          "name": "methods",
-          "displayName": "Methods",
+          "name": "functions",
+          "displayName": "Functions",
           "lessons": [
             {
               "name": "basics",
-              "displayName": "Methods basics",
+              "displayName": "Functions basics",
               "exercises": [
                 {
-                  "name": "bpts-methods-basics-declaration",
-                  "exerciseMgr": new BptsMethodsBasicsDeclarationExerciseMgr(),
+                  "name": "bpts-functions-basics-declaration",
+                  "exerciseMgr": new BptsFunctionsBasicsDeclarationExerciseMgr(),
                 },
                 {
-                  "name": "bpts-methods-basics-calling",
-                  "exerciseMgr": new BptsMethodsBasicsCallingExerciseMgr(),
+                  "name": "bpts-functions-basics-calling",
+                  "exerciseMgr": new BptsFunctionsBasicsCallingExerciseMgr(),
                 },
               ]
             },
             {
               "name": "params",
-              "displayName": "Methods parameters",
+              "displayName": "Functions parameters",
               "exercises": [
                 {
-                  "name": "bpts-methods-params-single",
-                  "exerciseMgr": new BptsMethodsParamsSingleExerciseMgr(),
+                  "name": "bpts-functions-params-single",
+                  "exerciseMgr": new BptsFunctionsParamsSingleExerciseMgr(),
                 },
                 {
-                  "name": "bpts-methods-params-multi",
-                  "exerciseMgr": new BptsMethodsParamsMultiExerciseMgr(),
+                  "name": "bpts-functions-params-multi",
+                  "exerciseMgr": new BptsFunctionsParamsMultiExerciseMgr(),
                 },
               ]
             },
             {
               "name": "return",
-              "displayName": "Methods return-value",
+              "displayName": "Functions return-value",
               "exercises": [
                 {
-                  "name": "bpts-methods-return-basic",
-                  "exerciseMgr": new BptsMethodsReturnBasicExerciseMgr(),
+                  "name": "bpts-functions-return-basic",
+                  "exerciseMgr": new BptsFunctionsReturnBasicExerciseMgr(),
                 },
               ]
             },
             {
               "name": "scope",
-              "displayName": "Methods scope",
+              "displayName": "Functions scope",
               "exercises": [
                 {
-                  "name": "bpts-methods-scope-outer",
-                  "exerciseMgr": new BptsMethodsScopeOuterExerciseMgr(),
+                  "name": "bpts-functions-scope-outer",
+                  "exerciseMgr": new BptsFunctionsScopeOuterExerciseMgr(),
                 },
                 {
-                  "name": "bpts-methods-scope-nested",
-                  "exerciseMgr": new BptsMethodsScopeNestedExerciseMgr(),
+                  "name": "bpts-functions-scope-nested",
+                  "exerciseMgr": new BptsFunctionsScopeNestedExerciseMgr(),
                 },
               ]
             },
             {
               "name": "principals",
-              "displayName": "Methods coding principals",
+              "displayName": "Functions coding principals",
               "exercises": [
                 {
-                  "name": "bpts-methods-basics-reuse",
-                  "exerciseMgr": new BptsMethodsPrincipalsReuseExerciseMgr(),
+                  "name": "bpts-functions-basics-reuse",
+                  "exerciseMgr": new BptsFunctionsPrincipalsReuseExerciseMgr(),
                 },
               ]
             },
@@ -346,8 +346,8 @@ export default class ExerciseMap {
                   "exerciseMgr": new BptsLoopsForArraysExerciseMgr(),
                 },
                 {
-                  "name": "bpts-loops-for-methods",
-                  "exerciseMgr": new BptsLoopsForMethodsExerciseMgr(),
+                  "name": "bpts-loops-for-functions",
+                  "exerciseMgr": new BptsLoopsForFunctionsExerciseMgr(),
                 },
               ]
             },
