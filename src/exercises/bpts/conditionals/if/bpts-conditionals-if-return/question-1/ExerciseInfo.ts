@@ -30,10 +30,6 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
     return EX_TYPE.EX_TYPE_QUESTION;
   }
 
-  getDescription(): string {
-    return "Simple function declaration";
-  }
-
   getMdInstructions(): string {
     return md;
   }
