@@ -7,9 +7,9 @@ const mcAnswerMd1: string = `
 `;
 const mcExplanationMd1: string = `
 - The code keeps prompting the user for input, until the user inputs a
-non-empty string. If the user clicks <<Cancel>>, the method <<prompt()>>
+non-empty string. If the user clicks <<Cancel>>, the function <<prompt()>>
 returns <<null>>, and if the user clicks <<OK>> without any input,
-the method <<prompt()>> returns an empty string (= <<"">>).
+the function <<prompt()>> returns an empty string (= <<"">>).
 `;
 
 const mcAnswerMd2: string = `

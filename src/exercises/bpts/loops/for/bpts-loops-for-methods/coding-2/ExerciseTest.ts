@@ -28,7 +28,7 @@ function doesFruitExist(fruitName: string): boolean {
 const explanationText = `
 - When we iterate over an array, the last element is always the array size \
 minus <<1>>, therefore we use the Less-Than operator <<<>>.
-- If we find a fruit with the name requested, the method should return \
+- If we find a fruit with the name requested, the function should return \
 <<true>>.
 - Otherwise, if we iterated through the whole array and haven't \
 found a matching fruit, then we return false.

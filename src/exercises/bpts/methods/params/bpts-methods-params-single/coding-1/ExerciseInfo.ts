@@ -2,11 +2,11 @@
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
-- Write a method <<printNumber>>.
+- Write a function <<printNumber>>.
 
-- The method is given a parameter <<x>> of type <<number>>.
+- The function is given a parameter <<x>> of type <<number>>.
 
-- The method prints the number to the output (console).
+- The function prints the number to the output (console).
 
 - Don't forget to follow code conventions.
 `;

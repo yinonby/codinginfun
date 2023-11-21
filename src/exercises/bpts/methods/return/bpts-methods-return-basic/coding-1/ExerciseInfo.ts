@@ -2,7 +2,7 @@
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
-- We declared a method <<getSubtraction>> the receives 2 parameters
+- We declared a function <<getSubtraction()>> the receives 2 parameters
 of type <<number>>.
 
 Tasks:

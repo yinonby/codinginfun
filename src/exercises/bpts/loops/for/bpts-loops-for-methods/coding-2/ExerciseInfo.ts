@@ -3,7 +3,7 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
 - We declared an array <<fruitNames>>, containing names of fruits.
-- Then, we declared a method <<doesFruitExist>> that has an input
+- Then, we declared a function <<doesFruitExist>> that has an input
 parameter <<fruitName>> of type <<string>>, and return value type
 of <<boolean>>.
 
@@ -11,11 +11,11 @@ of <<boolean>>.
 - Replace the first placeholder <<#1#>> with
 an operator, so that <<doesFruitExist>> iterates over all elements
 of the <<fruitNames>> array.
-- Then, replace the second placeholder <<#2#>> so that the method
+- Then, replace the second placeholder <<#2#>> so that the function
 returns <<true>> if an array element was found with the same value as
 the input parameter <<fruitName>>.
 - Then, replace the third placeholder <<#3#>>, so that if no such
-element is found, the method returns <<false>>.
+element is found, the function returns <<false>>.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

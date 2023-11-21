@@ -8,11 +8,11 @@ const md: string = `
 
 - In the second part, there is no code duplication.
 
-- Your goal is to finish the implementation of the method <<printMyName>> and use it to print the names like in the first section.
+- Your goal is to finish the implementation of the function <<printMyName>> and use it to print the names like in the first section.
 
 - Replace the question mark <<?>> that is inside <<printMyName>>, with the variable <<myName>>.
 
-- Replace the 3 question marks when calling the method <<printMyName>> with the 3 names from the first section.
+- Replace the 3 question marks when calling the function <<printMyName>> with the 3 names from the first section.
 
 - Don't forget to follow code conventions.
 `;

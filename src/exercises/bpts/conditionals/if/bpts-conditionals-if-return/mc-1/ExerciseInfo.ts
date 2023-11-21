@@ -2,12 +2,12 @@
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
-Each variable of type array has a built-in <<includes()>> method.
+Each variable of type array has a built-in <<includes()>> function.
 
-When calling this method with some value,
+When calling this function with some value,
 <<true>> is returned if and only if the array
 contains an element whose value is equal to the parameter passed to
-the <<includes()>> method.
+the <<includes()>> function.
 
 For example:
 > const brightEyeColors: string[] = ["Green", "Blue"];

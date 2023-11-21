@@ -16,7 +16,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "Methods scope - outer variable";
+    return "Functions scope - outer variable";
   }
 
   getTasks(): ExerciseTask[] {

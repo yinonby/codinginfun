@@ -6,7 +6,7 @@ const mcAnswerMd1: string = `
 Yes
 `;
 const mcExplanationMd1: string = `
-The method return-type is <<void>>, meaning the method is not allowed
+The function return-type is <<void>>, meaning the function is not allowed
 to return a value.
 `;
 

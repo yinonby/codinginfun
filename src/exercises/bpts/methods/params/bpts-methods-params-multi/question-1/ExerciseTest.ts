@@ -7,7 +7,7 @@ const output: string = `
 `;
 
 const explanation: string = `
-- The method <<printCarDetails>> prints to the output a single string \
+- The function <<printCarDetails>> prints to the output a single string \
 which is built from the input parameters.
 `;
 

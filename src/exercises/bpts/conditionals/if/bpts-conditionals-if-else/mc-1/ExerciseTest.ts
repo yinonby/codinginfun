@@ -6,7 +6,7 @@ const mcAnswerMd1: string = `
 false
 `;
 const mcExplanationMd1: string = `
-- The method <<isOddNumber>> is called with the parameter <<x>> equal
+- The function <<isOddNumber>> is called with the parameter <<x>> equal
 to <<0>>. The <<if>> condition is met (since the remainder of <<0>>
   divided by <<2>> is <<0>>), and <<false>> is returned.
 `;

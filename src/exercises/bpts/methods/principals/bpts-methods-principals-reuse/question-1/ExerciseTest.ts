@@ -12,7 +12,7 @@ const output: string = `
 
 const explanation: string = `
 - The output is equal between the 2 sections.
-- In the second section we use a method <<getMedian>> to calculate the median, \
+- In the second section we use a function <<getMedian()>> to calculate the median, \
 instead of repeating the same calculation every time it is required.
 `;
 

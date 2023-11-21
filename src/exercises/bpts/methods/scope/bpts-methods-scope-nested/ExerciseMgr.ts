@@ -16,7 +16,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "Methods scope - nested variable";
+    return "Functions scope - nested variable";
   }
 
   getTasks(): ExerciseTask[] {

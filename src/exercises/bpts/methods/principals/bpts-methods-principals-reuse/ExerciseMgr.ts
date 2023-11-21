@@ -28,7 +28,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "Using methods to avoid code duplication";
+    return "Using functions to avoid code duplication";
   }
 
   getTasks(): ExerciseTask[] {

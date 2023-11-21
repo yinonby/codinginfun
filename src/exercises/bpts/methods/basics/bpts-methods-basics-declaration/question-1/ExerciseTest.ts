@@ -5,7 +5,7 @@ const output: string = `
 `;
 
 const explanation: string = `
-The method <<foo>> is declared but never called.
+The function <<foo>> is declared but never called.
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {

@@ -6,7 +6,7 @@ const output: string = `
 `;
 
 const explanation: string = `
-- The method <<foo>> is called directly. There is no call to <<boo>>.
+- The function <<foo>> is called directly. There is no call to <<boo>>.
 - Notice that the quotes are included in the output;
 `;
 

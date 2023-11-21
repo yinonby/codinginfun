@@ -28,7 +28,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "Calling methods";
+    return "Calling functions";
   }
 
   getTasks(): ExerciseTask[] {

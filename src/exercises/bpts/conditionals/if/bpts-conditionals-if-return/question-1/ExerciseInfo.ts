@@ -31,7 +31,7 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
   }
 
   getDescription(): string {
-    return "Simple method declaration";
+    return "Simple function declaration";
   }
 
   getMdInstructions(): string {

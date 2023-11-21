@@ -7,7 +7,7 @@ const output: string = `
 `;
 
 const explanation: string = `
-- The method <<foo>> is called twice, therefore we expect the output twice.
+- The function <<foo>> is called twice, therefore we expect the output twice.
 - Notice that the quotes are included in the output;
 `;
 
@@ -28,7 +28,7 @@ export default class ExerciseTest extends QuestionExerciseTestAbs {
   verifySolution(solutionText: string) {
     if (solutionText !== this.getExpectedSolutionText()) {
       throw new Error(
-        "Note how many times the method is called. Also note the quotes are included in the output."
+        "Note how many times the function is called. Also note the quotes are included in the output."
       );
     }
   }

@@ -28,7 +28,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "'if' statements and methods return-value";
+    return "'if' statements and functions return-value";
   }
 
   getTasks(): ExerciseTask[] {

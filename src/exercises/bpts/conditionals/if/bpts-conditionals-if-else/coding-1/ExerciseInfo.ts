@@ -2,7 +2,7 @@
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
-- We declared a method <<printSunStatus()>> that receives a variable
+- We declared a function <<printSunStatus()>> that receives a variable
 <<isSunShining>> of type <<boolean>>.
 
 Tasks:

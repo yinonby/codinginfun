@@ -2,11 +2,11 @@
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
-- Write a method <<printName>>.
+- Write a function <<printName>>.
 
-- The method is given a parameter <<firstName>> of type <<number>>.
+- The function is given a parameter <<firstName>> of type <<number>>.
 
-- The method prints to the output (console) the value of <<firstName>>,
+- The function prints to the output (console) the value of <<firstName>>,
 preceded by <<"First name is ">>.
 
 - Remember that in order to concatenate strings, we use the plus sign <<+>>.

@@ -5,7 +5,7 @@ const initialSolutionText: string = `
 const availableMilkshakes: string[] = ["Chocolate", "Vanilla",
   "Strawberry-Chocolate"];
 
-// Method to return a milkshake taste according to 2 choices, if available,
+// Function to return a milkshake taste according to 2 choices, if available,
 // or the first available choice if none of the choices is available
 function getMilkshake(firstChoice: string, secondChoice: string): string {
   #1# (availableMilkshakes.includes(firstChoice)) {
@@ -24,7 +24,7 @@ const expectedSolutionText: string = `
 const availableMilkshakes: string[] = ["Chocolate", "Vanilla",
   "Strawberry-Chocolate"];
 
-// Method to return a milkshake taste according to 2 choices, if available,
+// Function to return a milkshake taste according to 2 choices, if available,
 // or the first available choice if none of the choices is available
 function getMilkshake(firstChoice: string, secondChoice: string): string {
   if (availableMilkshakes.includes(firstChoice)) {

@@ -7,7 +7,7 @@ const output: string = `
 `;
 
 const explanation: string = `
-- The method <<printSquare>> prints the arithmetic square of the given \
+- The function <<printSquare>> prints the arithmetic square of the given \
 number parameter.
 2 * 2 = 4.
 5 * 5 = 25.

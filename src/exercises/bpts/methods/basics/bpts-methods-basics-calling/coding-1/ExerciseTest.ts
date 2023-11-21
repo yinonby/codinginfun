@@ -30,7 +30,7 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
   verifySolution(solutionText: string) {
     if (solutionText !== this.getExpectedSolutionText()) {
       throw new Error(
-        "Did you declare the method with the correct value?"
+        "Did you declare the function with the correct value?"
       );
     }
   }

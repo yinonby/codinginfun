@@ -2,11 +2,11 @@
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
-Array variables have a built-in method called [<<includes()>>](
+Array variables have a built-in function called [<<includes()>>](
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 ).
-This method returns <<true>> if and only if the array contains an item
-whose value is equal to the parameter passed to the <<includes()>> method.
+This function returns <<true>> if and only if the array contains an item
+whose value is equal to the parameter passed to the <<includes()>> function.
 
 For example:
 > const arr: number[] = [1, 2, 3];

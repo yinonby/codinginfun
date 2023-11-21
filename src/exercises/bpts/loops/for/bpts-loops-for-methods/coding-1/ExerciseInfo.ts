@@ -2,7 +2,7 @@
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
-- We declared a method <<printZeroTillNum>> that has an input
+- We declared a function <<printZeroTillNum>> that has an input
 parameter <<n>> of type <<number>>.
 
 **Your tasks:**

@@ -2,7 +2,7 @@
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
-- We declared a method <<isPersonTall>> that accepts a parameter
+- We declared a function <<isPersonTall>> that accepts a parameter
 <<personHeightCm>> of type <<number>>.
 
 Tasks:
@@ -20,7 +20,7 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
   }
 
   getDescription(): string {
-    return "Single method parameter";
+    return "Single function parameter";
   }
 
   getMdInstructions(): string {
