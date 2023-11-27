@@ -78,8 +78,12 @@ import BptsClassesBasicsConstructorExerciseMgr
   from "./bpts/classes/basics/bpts-classes-basics-constructor/ExerciseMgr";
 import BptsClassesBasicsConstructorParamsExerciseMgr
   from "./bpts/classes/basics/bpts-classes-basics-constructor-params/ExerciseMgr";
-  import BptsClassesBasicsPropsExerciseMgr
-    from "./bpts/classes/basics/bpts-classes-basics-props/ExerciseMgr";
+import BptsClassesBasicsPropsExerciseMgr
+  from "./bpts/classes/basics/bpts-classes-basics-props/ExerciseMgr";
+import BptsClassesBasicsThisExerciseMgr
+  from "./bpts/classes/basics/bpts-classes-basics-this/ExerciseMgr";
+import BptsClassesBasicsPropsInitExerciseMgr
+  from "./bpts/classes/basics/bpts-classes-basics-props-init/ExerciseMgr";
 
 type ExerciseMapItem = {
   [key: string]: CourseItem,
@@ -405,6 +409,14 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-classes-basics-props",
                   "exerciseMgr": new BptsClassesBasicsPropsExerciseMgr(),
+                },
+                {
+                  "name": "bpts-classes-basics-this",
+                  "exerciseMgr": new BptsClassesBasicsThisExerciseMgr(),
+                },
+                {
+                  "name": "bpts-classes-basics-props-init",
+                  "exerciseMgr": new BptsClassesBasicsPropsInitExerciseMgr(),
                 },
               ]
             },

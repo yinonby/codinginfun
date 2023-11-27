@@ -3,9 +3,9 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
 Tasks:
-- Replace the placeholder <<#1#>> with an accessibility
-modifier that allows access to this property from outside
-the class.
+- Replace the placeholder <<#1#>> with the correct expression
+so that the member property <<creationMessage>> is printed
+to the output when creating a new instance.
 
 - Don't forget to follow code conventions.
 `;

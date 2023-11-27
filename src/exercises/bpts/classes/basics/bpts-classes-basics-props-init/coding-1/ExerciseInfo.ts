@@ -3,9 +3,9 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
 Tasks:
-- Replace the placeholder <<#1#>> with an accessibility
-modifier that allows access to this property from outside
-the class.
+- Replace the placeholder <<#1#>> with the correct expression, so
+that the member property <<foodType>> is initializaed with the value
+of the constructor parameter <<foodType>>.
 
 - Don't forget to follow code conventions.
 `;

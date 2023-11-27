@@ -3,13 +3,21 @@ import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
 class Restaurant {
-  #1# message: string = "I'm a restaurant!";
+  public creationMessage: string = "A new restaurant has been created!";
+
+  constructor() {
+    console.log(#1#);
+  }
 }
 `;
 
 const expectedSolutionText: string = `
 class Restaurant {
-  public message: string = "I'm a restaurant!";
+  public creationMessage: string = "A new restaurant has been created!";
+
+  constructor() {
+    console.log(this.creationMessage);
+  }
 }
 `;
 

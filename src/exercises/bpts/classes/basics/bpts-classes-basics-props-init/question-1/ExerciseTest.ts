@@ -7,7 +7,7 @@ const output: string = `
 
 const explanation: string = `
 - The variable <<restaurant>> is an instance of the class <<Restaurant>>.
-Since <<foodType>> is defined <<public>>, we can access it from
+Since <<foodType>> is defined as <<public>>, we can access it from
 outside the class.
 `;
 

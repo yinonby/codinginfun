@@ -6,8 +6,7 @@ const mcAnswerMd1: string = `
 Yes
 `;
 const mcExplanationMd1: string = `
-The keyword <<this>> is only used inside the class in order
-to access its members.
+The member property <<message>> is uninitialized.
 `;
 
 const mcAnswerMd2: string = `

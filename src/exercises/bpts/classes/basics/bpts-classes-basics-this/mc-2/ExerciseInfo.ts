@@ -8,8 +8,8 @@ Is the following code valid?
 >   public message: string = "I'm a restaurant!";
 > }
 >
-> const restaurant: Restaurant = new Restaurant();
-> console.log(restaurant.message);
+> const restaurant: Restaurant = new Restaurant("Italian");
+> console.log(this.message);
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

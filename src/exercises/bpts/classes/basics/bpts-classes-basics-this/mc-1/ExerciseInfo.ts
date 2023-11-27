@@ -5,11 +5,12 @@ const md: string = `
 Is the following code valid?
 
 > class Restaurant {
->   public message: string = "I'm a restaurant!";
-> }
+>   public creationMessage: string = "A new restaurant has been created!";
 >
-> const restaurant: Restaurant = new Restaurant();
-> console.log(restaurant.message);
+>   constructor() {
+>     console.log(creationMessage);
+>   }
+> }
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

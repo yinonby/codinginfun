@@ -6,8 +6,8 @@ const mcAnswerMd1: string = `
 Yes
 `;
 const mcExplanationMd1: string = `
-The member property <<message>> has <<public>> access,
-therefore it can be accessed from outside the class.
+Class constructor is trying to access member property <<creationMessage>>,
+but missing the keyword <<this>>.
 `;
 
 const mcAnswerMd2: string = `
@@ -23,12 +23,12 @@ export default class ExerciseTest extends MultiChoiceExerciseTestAbs {
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd1.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd1,
-      isCorrect: true,
+      isCorrect: false,
     });
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd2.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd2,
-      isCorrect: false,
+      isCorrect: true,
     });
 
     return mcAnswers;

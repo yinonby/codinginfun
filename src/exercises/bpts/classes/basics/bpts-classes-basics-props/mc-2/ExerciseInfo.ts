@@ -5,15 +5,8 @@ const md: string = `
 Is the following code valid?
 
 > class Restaurant {
->   public foodType: string;
->
->   constructor(foodType: string) {
->     this.foodType = foodType;
->   }
+>   public message: string;
 > }
->
-> const italianRestaurant: Restaurant = new Restaurant("Italian");
-> console.log(this.foodType);
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
