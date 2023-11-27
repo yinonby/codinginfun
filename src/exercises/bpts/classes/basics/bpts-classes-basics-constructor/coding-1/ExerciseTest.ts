@@ -2,13 +2,23 @@
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
-#1# Restaurant {}
-const restaurant: Restaurant = #2# Restaurant();
+class Restaurant {
+  #1#() {
+    console.log("A new restaurant has been created!");
+  }
+}
+
+const restaurant: Restaurant = new #2#(); // output: "A new restaurant has been created!"
 `;
 
 const expectedSolutionText: string = `
-class Restaurant {}
-const restaurant: Restaurant = new Restaurant();
+class Restaurant {
+  constructor() {
+    console.log("A new restaurant has been created!");
+  }
+}
+
+const restaurant: Restaurant = new Restaurant(); // output: "A new restaurant has been created!"
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
