@@ -34,7 +34,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "Class constructor";
+    return "Class constructor with parameters";
   }
 
   getTasks(): ExerciseTask[] {
