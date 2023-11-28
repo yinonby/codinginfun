@@ -86,6 +86,8 @@ import BptsClassesBasicsPropsInitExerciseMgr
   from "./bpts/classes/basics/bpts-classes-basics-props-init/ExerciseMgr";
 import BptsClassesBasicsMethodsExerciseMgr
   from "./bpts/classes/basics/bpts-classes-basics-methods/ExerciseMgr";
+import BptsClassesBasicsMethodsMembersExerciseMgr
+  from "./bpts/classes/basics/bpts-classes-basics-methods-members/ExerciseMgr";
 
 type ExerciseMapItem = {
   [key: string]: CourseItem,
@@ -423,6 +425,10 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-classes-basics-methods",
                   "exerciseMgr": new BptsClassesBasicsMethodsExerciseMgr(),
+                },
+                {
+                  "name": "bpts-classes-basics-methods-members",
+                  "exerciseMgr": new BptsClassesBasicsMethodsMembersExerciseMgr(),
                 },
               ]
             },
