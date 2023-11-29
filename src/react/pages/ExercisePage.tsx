@@ -1,18 +1,17 @@
 
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import { useParams, useNavigate } from 'react-router-dom';
-import CodeSandboxIFrame from "../components/CodeSandboxIFrame";
-import ExerciseSelect from "../components/ExerciseSelect";
-import Exercise from "../components/ExerciseContent";
-import Header, { Content } from "../components/Header";
-import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
-import ExerciseContent from '../components/ExerciseContent';
-import SolutionButton from "../components/SolutionButton";
-import ExerciseTask from '../../infra/task/ExerciseTask';
-import TaskSelect from '../components/TaskSelect';
+import Box from '@mui/material/Box';
+import * as React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
 import ExerciseMgrAdapter from '../../infra/mgr/ExerciseMgrAbs';
+import ExerciseTask from '../../infra/task/ExerciseTask';
+import CodeSandboxIFrame from "../components/CodeSandboxIFrame";
+import ExerciseContent from "../components/ExerciseContent";
+import ExerciseSelect from "../components/ExerciseSelect";
+import Header, { Content } from "../components/Header";
+import SolutionButton from "../components/SolutionButton";
+import TaskSelect from '../components/TaskSelect';
 
 export default function ExercisePage(props: any) {
   const params = useParams();
@@ -34,7 +33,7 @@ export default function ExercisePage(props: any) {
     return null;
   }
 
-  const { codesandbox } = props;
+  const { isCodesandboxPath } = props;
   const containerStyle = {
     height: "100%",
     display: "flex",
@@ -46,7 +45,7 @@ export default function ExercisePage(props: any) {
       <Header />
       <Content>
         <Box mx={2} sx={{ height: "100%" }}>
-          {!codesandbox &&
+          {!isCodesandboxPath &&
             <Box sx={containerStyle}>
               <h1>Student Exercises:</h1>
               <Box mb={2} >
@@ -65,7 +64,9 @@ export default function ExercisePage(props: any) {
               }
             </Box>
           }
-          {codesandbox && exerciseName && taskIdStr && <Exercise />}
+          {isCodesandboxPath && exerciseName && taskIdStr &&
+            <ExerciseContent />
+          }
         </Box>
       </Content>
     </>

@@ -1,18 +1,18 @@
 
-import Box from '@mui/material/Box';
-import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
-import RunnableCodingExerciseTestAbs from "#infra/test/RunnableCodingExerciseTestAbs";
-import { useParams } from 'react-router-dom';
-import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
-import Markdown from "./Markdown";
-import { Grid } from "@mui/material";
 import ExerciseMgrAdapter from "#infra/mgr/ExerciseMgrAbs";
 import ExerciseTask from "#infra/task/ExerciseTask";
-import { CodingTaskView } from "./task-view/CodingTaskView";
+import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
+import RunnableCodingExerciseTestAbs from "#infra/test/RunnableCodingExerciseTestAbs";
+import { Grid } from "@mui/material";
+import Box from '@mui/material/Box';
+import { useParams } from 'react-router-dom';
+import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
+import Markdown from "./Markdown";
 import { CodesandboxTaskView } from "./task-view/CodesandboxTaskView";
-import { QuestionTaskView } from './task-view/QuestionTaskView';
+import { CodingTaskView } from "./task-view/CodingTaskView";
 import { MultiChoiceTaskView } from './task-view/MultiChoiceTaskView';
+import { QuestionTaskView } from './task-view/QuestionTaskView';
 
 export default function ExerciseContent(props: any) {
   const params = useParams();
@@ -43,10 +43,20 @@ export default function ExerciseContent(props: any) {
   const exercieMgr: ExerciseMgrAdapter = exerciseItem.exerciseMgr;
   const exerciseTasks: ExerciseTask[] = exercieMgr.getTasks();
   const exerciseTask: ExerciseTask = exerciseTasks[taskId];
+  const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
+  const taskTypeStr: string = exercieInfo.getTaskTypeStr();
 
   return (
     <Box>
-      <TaskView exerciseTask={exerciseTask} />
+      <h4>{taskTypeStr}</h4>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={12} md={6}>
+          <Instructions exercieInfo={exercieInfo} />
+        </Grid>
+        <Grid item xs={12} sm={12} md={6}>
+          <TaskView exerciseTask={exerciseTask} />
+        </Grid>
+      </Grid>
     </Box>
   );
 }
@@ -60,49 +70,20 @@ function TaskView(props: any) {
 
   return (
     <Box>
-      <h4>{taskTypeStr}</h4>
       {exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX &&
-        <>
-          <Box mb={2}>
-            <Instructions exercieInfo={exercieInfo} />
-          </Box>
-          <Box mb={2}>
-            <CodesandboxTaskView exercieTest={exercieTest} />
-          </Box>
-        </>
+        <CodesandboxTaskView exercieTest={exercieTest} />
       }
 
       {exercieInfo.getType() === EX_TYPE.EX_TYPE_CODING &&
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={12} md={6}>
-            <Instructions exercieInfo={exercieInfo} />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6}>
-            <CodingTaskView exercieTest={exercieTest} />
-          </Grid>
-        </Grid>
+        <CodingTaskView exercieTest={exercieTest} />
       }
 
       {exercieInfo.getType() === EX_TYPE.EX_TYPE_QUESTION &&
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={12} md={6}>
-            <Instructions exercieInfo={exercieInfo} />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6}>
-            <QuestionTaskView exercieTest={exercieTest} />
-          </Grid>
-        </Grid>
+        <QuestionTaskView exercieTest={exercieTest} />
       }
 
       {exercieInfo.getType() === EX_TYPE.EX_TYPE_MULTICHOICE &&
-        <>
-          <Box mb={2}>
-            <Instructions exercieInfo={exercieInfo} />
-          </Box>
-          <Box mb={2}>
-            <MultiChoiceTaskView exercieTest={exercieTest} />
-          </Box>
-        </>
+        <MultiChoiceTaskView exercieTest={exercieTest} />
       }
     </Box>
   );

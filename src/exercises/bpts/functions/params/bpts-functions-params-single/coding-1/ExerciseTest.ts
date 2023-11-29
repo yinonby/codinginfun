@@ -17,11 +17,11 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
   }
 
   getInitialSolutionText(): string {
-    return initialSolutionText.replace(/^\s+|\s+$/g, '');;
+    return initialSolutionText.replace(/^\s+|\s+$/g, '');
   }
 
   getExpectedSolutionText(): string {
-    return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
+    return expectedSolutionText.replace(/^\s+|\s+$/g, '');
   }
 
   getExpectedSolutionRowNum() {

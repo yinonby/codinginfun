@@ -9,7 +9,9 @@ export default function ExplainedTestResultView(props: any) {
     return <OK okMessage={props.okMessage}
       explanation={explainedTestResult.explanation} />;
     } else {
-    return <MyError errPrefix={props.errPrefix}
+    return <MyError
+      isBlockquote={props.isBlockquote}
+      errPrefix={props.errPrefix}
       expectedSolutionText={explainedTestResult.expectedSolutionText}
       explanation={explainedTestResult.explanation}
     />;
@@ -43,10 +45,16 @@ function OK(props: any) {
 }
 
 function MyError(props: any) {
-  const style = {
-    color: "red",
+  const expectedSolutionMd = props.isBlockquote ?
+    props.expectedSolutionText.replace(/^/gm, '> ') :
+    props.expectedSolutionText;
+  const expectedSolutionStyle = {
+    userSelect: "none",
+    whiteSpace: "",
   }
-  console.log(props.explanation)
+  if (! props.isBlockquote) {
+    expectedSolutionStyle.whiteSpace = "break-spaces";
+  }
 
   return (
     <div>
@@ -54,14 +62,14 @@ function MyError(props: any) {
         {props.errPrefix}
       </Box>
       {props.expectedSolutionText &&
-        <>
-          <Box sx={{typography: "subtitle2", fontWeight: "bold"}}>
+        <Box mb={2}>
+          <Box mb={1} sx={{typography: "subtitle2", fontWeight: "bold"}}>
             Correct solution:
           </Box>
-          <Box sx={{whiteSpace: "break-spaces", userSelect: "none"}}>
-            <Markdown md={props.expectedSolutionText} />
+          <Box sx={expectedSolutionStyle}>
+            <Markdown md={expectedSolutionMd} />
           </Box>
-        </>
+        </Box>
       }
       {props.explanation &&
         <>

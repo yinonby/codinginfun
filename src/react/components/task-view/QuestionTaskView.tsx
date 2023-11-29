@@ -8,12 +8,6 @@ import { ExplainedTestResult } from "../ExplainedTestResultView";
 export function QuestionTaskView(props: any) {
   const exercieTest: QuestionExerciseTestAbs = props.exercieTest;
   const [solutionText, setSolutionText] = useState("");
-  const [explainedTestResult, setExplainedTestResult] = useState({
-    run: false,
-    passed: false,
-    expectedSolutionText: "",
-    explanation: "",
-  });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSolutionText(event.target.value);
@@ -72,6 +66,7 @@ export function QuestionTaskView(props: any) {
       <Grid item xs={12} sm={12} md={12}>
         <Box sx={{ display: "flex", flexDirection: "row" }}>
           <CheckAnswerButton
+            isBlockquote
             buttonText="Check your answer"
             onCheckAnswer={handleCheckAnswer}
             currentSolutionText={solutionText}

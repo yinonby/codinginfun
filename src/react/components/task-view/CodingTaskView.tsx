@@ -1,26 +1,22 @@
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
+import { Grid } from "@mui/material";
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import { useState } from "react";
+import CheckAnswerButton from "../CheckAnswerButton";
 import CodeEditor from "../CodeEditor";
+import { ExplainedTestResult } from "../ExplainedTestResultView";
 import SolutionButton from "../SolutionButton";
-import TestResultView, { TestResult } from '../TestResultView';
 
 export function CodingTaskView(props: any) {
   const exercieTest: CodingExerciseTestAbs = props.exercieTest;
   const initialSolutionText: string = exercieTest.getInitialSolutionText();
   const [solutionText, setSolutionText] = useState(initialSolutionText);
-  const [testResult, setTestResult] = useState({
-    run: false,
-    passed: false,
-    errMessage: "",
-  });
 
   const handleEditorChange = (value: string) => {
     setSolutionText(value);
   };
 
-  const handleClick = () => {
+  const handleCheckAnswer = () => {
     let passed: boolean = true;
     let errorMessage: string = "";
 
@@ -47,25 +43,21 @@ export function CodingTaskView(props: any) {
       console.log("Some tests failed :(");
     }
 
-    const tmpTestResult: TestResult = {
+    const tmpExplainedTestResult: ExplainedTestResult = {
       run: true,
       passed: passed,
-      errMessage: "",
+      expectedSolutionText: exercieTest.getExpectedSolutionText(),
+      explanation: errorMessage,
     };
-    if (passed) {
-      tmpTestResult.errMessage = "";
-    } else {
-      tmpTestResult.errMessage = errorMessage;
-    }
-    setTestResult(tmpTestResult);
+    return tmpExplainedTestResult;
 
   };
   const rowNum: number = exercieTest.getExpectedSolutionRowNum();
   const height: number = 19 * rowNum;
 
   return (
-    <>
-      <Box mb={2}>
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={12} md={12}>
         <Box mb={2} sx={{
           height: height + "px",
           borderRadius: "4px",
@@ -75,20 +67,23 @@ export function CodingTaskView(props: any) {
             path="code.ts"
             onChange={handleEditorChange} />
         </Box>
-      </Box>
-      <Box mb={2} sx={{ display: "flex", flexDirection: "row" }}>
-        <Box mr={2}>
-          <Button variant="contained" onClick={handleClick}
-            size="small">
-            Run Tests
-          </Button>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12}>
+        <Box mr={2} sx={{ display: "flex", flexDirection: "row" }}>
+          <Box mr={2} >
+            <CheckAnswerButton
+              isBlockquote
+              buttonText="Check your solution"
+              onCheckAnswer={handleCheckAnswer}
+              currentSolutionText=""
+              okMessage="Your solution is correct!"
+              errPrefix="Your solution is incorrect"
+            />
+          </Box>
+          <SolutionButton currentSolutionText={solutionText} />
+          <Box sx={{ flex: 1 }} />
         </Box>
-        <Box sx={{ flex: 1 }} />
-        <SolutionButton currentSolutionText={solutionText} />
-      </Box>
-      <TestResultView okMessage="Your code is correct!"
-        errPrefix="Error"
-        testResult={testResult} />
-    </>
+      </Grid>
+    </Grid>
   );
 }

@@ -52,16 +52,20 @@ export default function CheckAnswerButton(props: any) {
   return (
     <DialogButton
       dialogTitle="Your Answer"
-      dialogProps={{ maxWidth: "xl" }}
+      dialogProps={{
+        maxWidth: "xl",
+      }}
       buttonText={buttonText}
       buttonProps={{
         size: "small",
         variant: "contained",
         color: "primary",
+        disabled: props.disabled,
       }}
       onClose={handleClose}
       onClick={handleClick}>
       <ExplainedTestResultView
+        isBlockquote={props.isBlockquote}
         okMessage="Your answer is correct!"
         errPrefix="Wrong answer"
         explainedTestResult={explainedTestResult}
