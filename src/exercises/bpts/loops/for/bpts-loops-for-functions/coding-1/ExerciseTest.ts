@@ -20,9 +20,9 @@ printZeroTillNum(543);
 `;
 
 const explanationText = `
-- The task was to implement <<printZeroTillNum>> so that it prints \
-all numbers from <<0>> to the value of <<n>>, **including** <<n>>. \
-Therefore, we must use a Less-Than-or-Equal operator <<<=>> in order \
+- The task was to implement <<printZeroTillNum>> so that it prints
+all numbers from <<0>> to the value of <<n>>, **including** <<n>>.
+Therefore, we must use a Less-Than-or-Equal operator <<<=>> in order
 to include the value of <<n>>.
 `;
 

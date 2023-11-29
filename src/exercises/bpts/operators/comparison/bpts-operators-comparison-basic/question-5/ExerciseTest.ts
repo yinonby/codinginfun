@@ -6,11 +6,11 @@ false
 `;
 
 const explanation: string = `
-- The first character in <<str1>> is <<str2>>, while the first character \
+- The first character in <<str1>> is <<str2>>, while the first character
 in <<y>> is <<A>>.
-- The character <<a>> has an Ascii value higher than the character <<A>>. \
-We don't need to know the actual values - \
-it's enough to remember that characters that uppercase letters have a lower \
+- The character <<a>> has an Ascii value higher than the character <<A>>.
+We don't need to know the actual values -
+it's enough to remember that characters that uppercase letters have a lower
 Ascii value than lowercase letters.
 `;
 

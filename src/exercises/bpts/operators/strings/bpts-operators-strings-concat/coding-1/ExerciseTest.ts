@@ -14,9 +14,9 @@ const fullName: string = firstName + " " + lastName;
 `;
 
 const explanationText = `
-- We declared a constant variable <<fullName>> of type <<string>>, \
-and initialized its value to <<"Marco Polo">> by concatenating <<firstName>> \
-with a space <<" ">> and <<lastName>>. Note that without the space <<" ">> \
+- We declared a constant variable <<fullName>> of type <<string>>,
+and initialized its value to <<"Marco Polo">> by concatenating <<firstName>>
+with a space <<" ">> and <<lastName>>. Note that without the space <<" ">>
 we would get <<"MarcoPolo">>.
 `;
 

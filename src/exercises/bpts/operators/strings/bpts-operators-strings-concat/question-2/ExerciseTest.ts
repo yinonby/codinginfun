@@ -6,11 +6,11 @@ const output: string = `
 `;
 
 const explanation: string = `
-- We declared a non-constant variable <<str>> of type <<string>>, and \
+- We declared a non-constant variable <<str>> of type <<string>>, and
 initialized it with <<"abba">>.
-- Then, we concatenated the value of <<x>> (now <<"abba">>) to itself, \
+- Then, we concatenated the value of <<x>> (now <<"abba">>) to itself,
 resulting in <<"abbaabba">>, and assigned it back to <<x>>.
-- Then, we concatenated the value of <<x>> (now <<"abbaabba">>) to itself, \
+- Then, we concatenated the value of <<x>> (now <<"abbaabba">>) to itself,
 resulting in <<"abbaabbaabbaabba">>, and assigned it back to <<x>>.
 `;
 

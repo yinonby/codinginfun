@@ -7,11 +7,11 @@ const output: string = `
 `;
 
 const explanation: string = `
-- The first print concatenates the string <<" ABC">> to the value of \
+- The first print concatenates the string <<" ABC">> to the value of
 <<x>> (<<"ABC">>), resulting in <<"ABC ABC">>.
-- The second print concatenates the string <<"DEF">> to the value of \
-<<x>> (<<"ABC">>), resulting in <<"ABCDEF">>; then, the value of \
-<<x>> (<<"ABC">>) is concatenated to <<"ABCDEF">>, resulting in \
+- The second print concatenates the string <<"DEF">> to the value of
+<<x>> (<<"ABC">>), resulting in <<"ABCDEF">>; then, the value of
+<<x>> (<<"ABC">>) is concatenated to <<"ABCDEF">>, resulting in
 <<"ABCDEFABC">>.
 `;
 

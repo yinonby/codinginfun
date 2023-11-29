@@ -14,9 +14,9 @@ const isSlowOrFurious: boolean = !isFast || isFurious;
 `;
 
 const explanationText = `
-- We added a declaration of a constant variable <<isSlowOrFurious>> of \
-type <<boolean>> and initialized as requested. The value of \
-<<isSlowOrFurious>> is <<true>> because the value of <<!isFast>> is \
+- We added a declaration of a constant variable <<isSlowOrFurious>> of
+type <<boolean>> and initialized as requested. The value of
+<<isSlowOrFurious>> is <<true>> because the value of <<!isFast>> is
 <<true>>.
 `;
 

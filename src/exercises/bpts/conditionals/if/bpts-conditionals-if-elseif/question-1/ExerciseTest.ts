@@ -6,8 +6,8 @@ const output: string = `
 `;
 
 const explanation: string = `
-- The value of <<x + y>> is <<8>>. Therefore, the first 2 conditions \
-are not met, while the 3rd condition <<x + y > 7>> is met, and \
+- The value of <<x + y>> is <<8>>. Therefore, the first 2 conditions
+are not met, while the 3rd condition <<x + y > 7>> is met, and
 <<"option 3">> is printed to the output.
 `;
 

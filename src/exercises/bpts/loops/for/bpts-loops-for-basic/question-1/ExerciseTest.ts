@@ -7,7 +7,7 @@ const output: string = `
 `;
 
 const explanation: string = `
-- There is no output from the loop, since the variable <<i>> is \
+- There is no output from the loop, since the variable <<i>> is
 initialized with <<0>>, and the condition <<i < 0>> is never met.
 `;
 

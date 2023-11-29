@@ -7,7 +7,7 @@ const md: string = `
 
 Tasks:
 - Replace the placeholder <<#1#>> with the correct keyword,
-so that <<"The sun has set!">> is printed to the output \
+so that <<"The sun has set!">> is printed to the output
 if and only if the value of <<isSunShining>> is <<false>>.
 
 - Don't forget to follow code conventions.

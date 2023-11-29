@@ -1,27 +1,25 @@
-import { useState } from "react";
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import { TestResult } from "../TestResultView";
-import TestResultView from '../TestResultView';
 import QuestionExerciseTestAbs from "#infra/test/QuestionExerciseTestAbs";
-import { TextField } from "@mui/material";
-import AnswerButton from "../AnswerButton";
+import { Grid, TextField } from "@mui/material";
+import Box from '@mui/material/Box';
+import { useState } from "react";
+import CheckAnswerButton from "../CheckAnswerButton";
+import { ExplainedTestResult } from "../ExplainedTestResultView";
 
 export function QuestionTaskView(props: any) {
-  const { showSolutionButton } = props;
   const exercieTest: QuestionExerciseTestAbs = props.exercieTest;
   const [solutionText, setSolutionText] = useState("");
-  const [testResult, setTestResult] = useState({
+  const [explainedTestResult, setExplainedTestResult] = useState({
     run: false,
     passed: false,
-    errMessage: "",
+    expectedSolutionText: "",
+    explanation: "",
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSolutionText(event.target.value);
   }
 
-  const handleClick = () => {
+  const handleCheckAnswer = () => {
     let passed: boolean = true;
     let errorMessage: string = "";
 
@@ -48,48 +46,40 @@ export function QuestionTaskView(props: any) {
       console.log("Some answers are incorrect :(");
     }
 
-    const tmpTestResult: TestResult = {
+    const tmpExplainedTestResult: ExplainedTestResult = {
       run: true,
       passed: passed,
-      errMessage: "",
+      expectedSolutionText: exercieTest.getExpectedSolutionText(),
+      explanation: exercieTest.getExpectedSolutionExplanation(),
     };
-    if (passed) {
-      tmpTestResult.errMessage = "";
-    } else {
-      tmpTestResult.errMessage = errorMessage;
-    }
-    setTestResult(tmpTestResult);
+    return tmpExplainedTestResult;
   };
 
   const rowNum: number = exercieTest.getExpectedSolutionRowNum();
 
   return (
-    <>
-      <Box mb={2}>
-        <Box mb={2} >
-          <TextField
-            fullWidth
-            id="coding-question-text-field"
-            label="Answer"
-            multiline
-            rows={rowNum}
-            value={solutionText}
-            onChange={handleChange} />
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={12} md={12}>
+        <TextField
+          fullWidth
+          id="coding-question-text-field"
+          label="Your Answer"
+          multiline
+          rows={rowNum}
+          value={solutionText}
+          onChange={handleChange} />
+      </Grid>
+      <Grid item xs={12} sm={12} md={12}>
+        <Box sx={{ display: "flex", flexDirection: "row" }}>
+          <CheckAnswerButton
+            buttonText="Check your answer"
+            onCheckAnswer={handleCheckAnswer}
+            currentSolutionText={solutionText}
+            okMessage="Your answer is correct!"
+            errPrefix="Wrong answer"
+          />
         </Box>
-      </Box>
-      <Box mb={2} sx={{ display: "flex", flexDirection: "row" }}>
-        <Box mr={2}>
-          <Button variant="contained" onClick={handleClick}
-            size="small">
-            Check your answer
-          </Button>
-        </Box>
-        {showSolutionButton && <AnswerButton
-          currentSolutionText={solutionText} />}
-      </Box>
-      <TestResultView okMessage="Your answer is correct!"
-        errPrefix="Wrong answer"
-        testResult={testResult} />
-    </>
+      </Grid>
+    </Grid>
   );
 }

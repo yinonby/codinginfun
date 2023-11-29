@@ -12,9 +12,9 @@ for (let i: number = 3; i <= 4;) {
 
 const explanationText = `
 - We declared the loop as requested, following all code conventions.
-- We left the loop's afterthought empty, and incremented the variable \
+- We left the loop's afterthought empty, and incremented the variable
 <<i>> from within the loop.
-- Note that when we leave the afterthought empty, we must \
+- Note that when we leave the afterthought empty, we must
 still place a semicolon <<;>> at the end of the condition <<i <= 4;>>.
 `;
 

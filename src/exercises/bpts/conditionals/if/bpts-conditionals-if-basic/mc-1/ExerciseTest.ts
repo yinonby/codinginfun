@@ -1,14 +1,13 @@
 
-import MultiChoiceExerciseTestAbs, { MultiChoiceAnswer }
-  from "#infra/test/MultiChoiceExerciseTestAbs";
+import MultiChoiceExerciseTestAbs, { MultiChoiceAnswer } from "#infra/test/MultiChoiceExerciseTestAbs";
 
 const mcAnswerMd1: string = `
 Yes
 `;
 const mcExplanationMd1: string = `
-The <<if>> condition must be surrounded by parentheses <<()>>. In \
-this case, the variable <<flag>> must be surrounded by parentheses <<()>>: \
-<<if (flag)>>.
+The <<if>> condition must be surrounded by parentheses <<()>>. In
+this case, the variable <<flag>> must be surrounded by parentheses <<()>>,
+so that the first line would look like this: <<if (flag) {>>.
 `;
 
 const mcAnswerMd2: string = `

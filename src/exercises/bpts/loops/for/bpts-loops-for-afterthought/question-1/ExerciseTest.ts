@@ -8,9 +8,9 @@ const output: string = `
 `;
 
 const explanation: string = `
-- In the first iteration, <<i>> equals <<0>>, therefore the \
+- In the first iteration, <<i>> equals <<0>>, therefore the
 statement is executed.
-- In the second iteration, <<i>> equals <<2>> (note that we increment \
+- In the second iteration, <<i>> equals <<2>> (note that we increment
 by 2), therefore the condition is not met, and the loop exists.
 `;
 

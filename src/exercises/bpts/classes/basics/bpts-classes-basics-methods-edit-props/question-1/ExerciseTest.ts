@@ -9,7 +9,7 @@ const output: string = `
 const explanation: string = `
 - The member method <<addStudents()>> changes the value of the
 member property <<studentsNum>> by adding the value given by
-the parameter <<studentsNumToAdd>>, using an Addition Assignment
+the parameter <<studentsNumToAdd>>, using an Addition-Assignment
 operator <<+=>>.
 `;
 
@@ -24,6 +24,7 @@ export default class ExerciseTest extends QuestionExerciseTestAbs {
   }
 
   getExpectedSolutionExplanation(): string {
+    console.log(explanation)
     return explanation.replace(/^\s+|\s+$/g, '');
   }
 

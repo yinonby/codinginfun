@@ -1,14 +1,12 @@
-import { useState } from "react";
+import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
-import SolutionButton from "../SolutionButton";
+import { useState } from "react";
 import CodeEditor from "../CodeEditor";
-import { TestResult } from "../TestResultView";
-import TestResultView from '../TestResultView';
+import SolutionButton from "../SolutionButton";
+import TestResultView, { TestResult } from '../TestResultView';
 
 export function CodingTaskView(props: any) {
-  const { showSolutionButton } = props;
   const exercieTest: CodingExerciseTestAbs = props.exercieTest;
   const initialSolutionText: string = exercieTest.getInitialSolutionText();
   const [solutionText, setSolutionText] = useState(initialSolutionText);
@@ -86,8 +84,7 @@ export function CodingTaskView(props: any) {
           </Button>
         </Box>
         <Box sx={{ flex: 1 }} />
-        {showSolutionButton && <SolutionButton
-          currentSolutionText={solutionText} />}
+        <SolutionButton currentSolutionText={solutionText} />
       </Box>
       <TestResultView okMessage="Your code is correct!"
         errPrefix="Error"

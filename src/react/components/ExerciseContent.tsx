@@ -15,7 +15,6 @@ import { QuestionTaskView } from './task-view/QuestionTaskView';
 import { MultiChoiceTaskView } from './task-view/MultiChoiceTaskView';
 
 export default function ExerciseContent(props: any) {
-  const { showSolutionButton } = props;
   const params = useParams();
   const courseName: string = params.courseName || "";
   const chapterName: string = params.chapterName || "";
@@ -47,14 +46,13 @@ export default function ExerciseContent(props: any) {
 
   return (
     <Box>
-      <TaskView exerciseTask={exerciseTask}
-        showSolutionButton={showSolutionButton} />
+      <TaskView exerciseTask={exerciseTask} />
     </Box>
   );
 }
 
 function TaskView(props: any) {
-  const { exerciseTask, showSolutionButton } = props;
+  const { exerciseTask } = props;
   const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
   const exercieTest: RunnableCodingExerciseTestAbs | CodingExerciseTestAbs =
     exerciseTask.getTest();
@@ -63,40 +61,37 @@ function TaskView(props: any) {
   return (
     <Box>
       <h4>{taskTypeStr}</h4>
-      {exercieInfo.getType() === EX_TYPE.EX_TYPE_CODING &&
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={12} md={6}>
-            <Instructions exercieInfo={exercieInfo} />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6}>
-            <CodingTaskView exercieTest={exercieTest}
-              showSolutionButton={showSolutionButton} />
-          </Grid>
-        </Grid>
-      }
-
       {exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX &&
         <>
           <Box mb={2}>
             <Instructions exercieInfo={exercieInfo} />
           </Box>
           <Box mb={2}>
-            <CodesandboxTaskView exercieTest={exercieTest}
-              showSolutionButton={showSolutionButton} />
+            <CodesandboxTaskView exercieTest={exercieTest} />
           </Box>
         </>
       }
 
-      {exercieInfo.getType() === EX_TYPE.EX_TYPE_QUESTION &&
-        <>
-          <Box mb={2}>
+      {exercieInfo.getType() === EX_TYPE.EX_TYPE_CODING &&
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={12} md={6}>
             <Instructions exercieInfo={exercieInfo} />
-          </Box>
-          <Box mb={2}>
-            <QuestionTaskView exercieTest={exercieTest}
-              showSolutionButton={showSolutionButton} />
-          </Box>
-        </>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6}>
+            <CodingTaskView exercieTest={exercieTest} />
+          </Grid>
+        </Grid>
+      }
+
+      {exercieInfo.getType() === EX_TYPE.EX_TYPE_QUESTION &&
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={12} md={6}>
+            <Instructions exercieInfo={exercieInfo} />
+          </Grid>
+          <Grid item xs={12} sm={12} md={6}>
+            <QuestionTaskView exercieTest={exercieTest} />
+          </Grid>
+        </Grid>
       }
 
       {exercieInfo.getType() === EX_TYPE.EX_TYPE_MULTICHOICE &&

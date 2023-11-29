@@ -10,7 +10,9 @@ export default function ExplainedTestResultView(props: any) {
       explanation={explainedTestResult.explanation} />;
     } else {
     return <MyError errPrefix={props.errPrefix}
-      explanation={explainedTestResult.explanation} />;
+      expectedSolutionText={explainedTestResult.expectedSolutionText}
+      explanation={explainedTestResult.explanation}
+    />;
   }
 
 }
@@ -18,6 +20,7 @@ export default function ExplainedTestResultView(props: any) {
 export type ExplainedTestResult = {
   run: boolean,
   passed: boolean,
+  expectedSolutionText: string,
   explanation: string,
 }
 
@@ -43,12 +46,23 @@ function MyError(props: any) {
   const style = {
     color: "red",
   }
+  console.log(props.explanation)
 
   return (
     <div>
       <Box mb={2} sx={{typography: "subtitle1", color: "red"}}>
         {props.errPrefix}
       </Box>
+      {props.expectedSolutionText &&
+        <>
+          <Box sx={{typography: "subtitle2", fontWeight: "bold"}}>
+            Correct solution:
+          </Box>
+          <Box sx={{whiteSpace: "break-spaces", userSelect: "none"}}>
+            <Markdown md={props.expectedSolutionText} />
+          </Box>
+        </>
+      }
       {props.explanation &&
         <>
           <Box sx={{typography: "subtitle2", fontWeight: "bold"}}>

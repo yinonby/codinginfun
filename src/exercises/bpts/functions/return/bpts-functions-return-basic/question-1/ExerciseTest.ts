@@ -7,9 +7,9 @@ const output: string = `
 `;
 
 const explanation: string = `
-- The call to <<getMyName()>> returns the string <<"Lisa">>, and it \
+- The call to <<getMyName()>> returns the string <<"Lisa">>, and it
 is printed to the output.
-- The call to <<getMyAge()>> returns the number <<24>>, and it \
+- The call to <<getMyAge()>> returns the number <<24>>, and it
 is printed to the output.
 `;
 

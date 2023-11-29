@@ -12,8 +12,8 @@ false
 const explanation: string = `
 - <<x>> is initialized with the value <<4>>.
 - <<y>> is initialized with the value <<5>>.
-- The only operators that are evaluated to <<true>> are the Less Than \
-operator <<<>> and the Less Than or Equal operator <<<=>>, because the value \
+- The only operators that are evaluated to <<true>> are the Less Than
+operator <<<>> and the Less Than or Equal operator <<<=>>, because the value
 of <<x>> (<<4>>) is less than the value of <<y>> (<<5>>).
 `;
 

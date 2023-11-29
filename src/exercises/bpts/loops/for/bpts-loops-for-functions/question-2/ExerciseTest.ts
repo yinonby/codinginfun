@@ -6,10 +6,10 @@ false
 `;
 
 const explanation: string = `
-- Note that the loop condition is <<i < fruitNames.length - 1>>, \
-meaning that the last array element to be searched is the element \
-with index <<fruitNames.length - 2>> and the value <<"Apple">> - \
-which is the element before the last element. \
+- Note that the loop condition is <<i < fruitNames.length - 1>>,
+meaning that the last array element to be searched is the element
+with index <<fruitNames.length - 2>> and the value <<"Apple">> -
+which is the element before the last element.
 Therefore, the last element with the value <<"Mango">> is never searched.
 `;
 

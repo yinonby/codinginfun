@@ -1,23 +1,27 @@
 
-import * as React from 'react';
+import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import * as React from 'react';
 
 export default function DialogButton(props: any) {
-  const { dialogTitle, buttonText, onClose, dialogProps } = props;
+  const { dialogTitle, buttonText, onClose, dialogProps, onClick,
+    buttonProps } = props;
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleClickOpen = () => () => {
+    if (onClick) {
+      onClick();
+    }
     setOpen(true);
   };
 
@@ -39,7 +43,7 @@ export default function DialogButton(props: any) {
   return (
     <React.Fragment>
       <Button onClick={handleClickOpen()} size="small"
-        variant="outlined" color="secondary">
+        variant="outlined" color="secondary" {...buttonProps}>
         {buttonText}
       </Button>
       <Dialog
@@ -70,7 +74,6 @@ export default function DialogButton(props: any) {
             id="scroll-dialog-description"
             ref={descriptionElementRef}
             tabIndex={-1}
-            style={{ whiteSpace: "break-spaces", userSelect: "none" }}
           >
             {props.children}
           </DialogContentText>

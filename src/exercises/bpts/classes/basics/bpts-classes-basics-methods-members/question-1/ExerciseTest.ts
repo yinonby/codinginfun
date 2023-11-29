@@ -13,6 +13,7 @@ the value of the member property <<counter>> is <<0>>. Therefore, the
 printed to the output, and <<this.counter>> is incremented by <<1>>.
 Remember that member properties are saved inside the instance and
 they preservce their value for the same instance.
+
 - In the second call to the member method <<printMessage()>>,
 the value of the member property <<counter>> is <<1>>. Therefore, the
 <<if>> condition is met, and the value returned by the member

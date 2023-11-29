@@ -7,10 +7,10 @@ false
 `;
 
 const explanation: string = `
-- The array contains an element with a value "Apple" (<<fruitNames[2]), \
+- The array contains an element with a value "Apple" (<<fruitNames[2]),
 therefore <<true>> is returned.
-- The array doesn't contain an element with a value <<"banana">> (note \
-that here <<"banana">> is not capitalized), therefore <<false>> \
+- The array doesn't contain an element with a value <<"banana">> (note
+that here <<"banana">> is not capitalized), therefore <<false>>
 is returned.
 `;
 

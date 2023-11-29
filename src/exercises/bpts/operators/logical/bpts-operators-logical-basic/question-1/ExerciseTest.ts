@@ -6,9 +6,9 @@ false
 `;
 
 const explanation: string = `
-- The expression <<!isFast>> evaluates to <<!true>>, which evaluates \
+- The expression <<!isFast>> evaluates to <<!true>>, which evaluates
 to <<false>>.
-- The expression <<!isFast || isFurious>> evaluates to <<false || false>>, \
+- The expression <<!isFast || isFurious>> evaluates to <<false || false>>,
 which evaluates to <<false>>.
 `;
 

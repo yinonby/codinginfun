@@ -7,7 +7,6 @@ import { TestResult } from "../TestResultView";
 import TestResultView from '../TestResultView';
 
 export function CodesandboxTaskView(props: any) {
-  const { showSolutionButton } = props;
   const exercieTest: RunnableCodingExerciseTestAbs = props.exercieTest;
   const [testResult, setTestResult] = useState({
     run: false,
@@ -82,7 +81,7 @@ export function CodesandboxTaskView(props: any) {
             Run Tests
           </Button>
         </Box>
-        {showSolutionButton && <SolutionButton />}
+        <SolutionButton />
       </Box>
       <TestResultView okMessage="Your code is correct!"
         errPrefix="Error"

@@ -6,9 +6,9 @@ const output: string = `
 `;
 
 const explanation: string = `
-- The first <<if>> condition is not met since the condition \
+- The first <<if>> condition is not met since the condition
 <<isAustralian && isSoccerPlayer>> evaluates to <<false>>.
-- The second <<if>> condition is met since the condition \
+- The second <<if>> condition is met since the condition
 <<isSoccerPlayer>> evaluates to <<true>>.
 `;
 

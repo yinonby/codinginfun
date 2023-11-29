@@ -14,9 +14,9 @@ const isFastAndFurious: boolean = isFast && isFurious;
 `;
 
 const explanationText = `
-- We added a declaration of a constant variable <<isFastAndFurious>> of \
-type <<boolean>> and initialized as requested. The value of \
-<<isFastAndFurious>> is <<false>> because the value of <<isFurious>> is \
+- We added a declaration of a constant variable <<isFastAndFurious>> of
+type <<boolean>> and initialized as requested. The value of
+<<isFastAndFurious>> is <<false>> because the value of <<isFurious>> is
 <<false>>.
 `;
 

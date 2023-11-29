@@ -7,13 +7,13 @@ const output: string = `
 
 const explanation: string = `
 - <<x>> is initialized with the value <<4>>.
-- <<x>> (now <<4>>) is divided by <<4>>, and the result (<<1>>) is assigned \
+- <<x>> (now <<4>>) is divided by <<4>>, and the result (<<1>>) is assigned
 back to x.
-- <<13>> is added to <<x>> (now <<1>>), and the result (<<14>>) is assigned \
+- <<13>> is added to <<x>> (now <<1>>), and the result (<<14>>) is assigned
 back to x.
-- <<x>> (now <<14>>) is divided by <<3>>, and the remainder (<<2>>) is \
+- <<x>> (now <<14>>) is divided by <<3>>, and the remainder (<<2>>) is
 assigned back to x.
-- <<2>> is subtracted from <<x>> (now <<2>>), and the result (<<0>>) is \
+- <<2>> is subtracted from <<x>> (now <<2>>), and the result (<<0>>) is
 assigned back to x.
 `;
 

@@ -121,7 +121,7 @@ function ActualContent() {
   const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
 
   if (exercieInfo.getType() !== EX_TYPE.EX_TYPE_SANDBOX) {
-    return <ExerciseContent showSolutionButton />;
+    return <ExerciseContent />;
   } else {
     return (
       <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>

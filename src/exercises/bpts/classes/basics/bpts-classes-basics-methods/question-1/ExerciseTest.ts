@@ -9,6 +9,7 @@ const output: string = `
 const explanation: string = `
 - First, the member method <<printMenu()>> prints
 <<"This restaurant offers a buffet!">> to the output.
+
 - Then, it returns the string <<"This is a nice restaurant!">> which is
 printed to the output by the built-in method <<console.log()>>.
 `;
