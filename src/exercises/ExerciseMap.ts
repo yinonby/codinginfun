@@ -40,6 +40,7 @@ import BptsLoopsForFunctionsExerciseMgr from "./bpts/loops/for/bpts-loops-for-fu
 import BptsLoopsWhileBasicExerciseMgr from "./bpts/loops/while/bpts-loops-while-basic/ExerciseMgr";
   
 import BptsClassesApiExternalVsInternalExerciseMgr from "./bpts/classes/api/bpts-classes-api-external-vs-internal/ExerciseMgr";
+import BptsClassesApiGettersSettersExerciseMgr from "./bpts/classes/api/bpts-classes-api-getters-setters/ExerciseMgr";
 import BptsClassesApiPrivateExerciseMgr from "./bpts/classes/api/bpts-classes-api-private/ExerciseMgr";
 
 import BptsClassesBasicsConstructorParamsExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-constructor-params/ExerciseMgr";
@@ -410,6 +411,10 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-classes-api-external-vs-internal",
                   "exerciseMgr": new BptsClassesApiExternalVsInternalExerciseMgr(),
+                },
+                {
+                  "name": "bpts-classes-api-getters-setters",
+                  "exerciseMgr": new BptsClassesApiGettersSettersExerciseMgr(),
                 },
               ]
             },
