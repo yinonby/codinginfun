@@ -1,95 +1,55 @@
 
 import ExerciseMgrAdapter from "#infra/mgr/ExerciseMgrAbs";
 
-import BptsVarsBasicConstExerciseMgr
-  from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseMgr";
-import BptsVarsBasicNamingExerciseMgr
-  from "./bpts/vars/basics/bpts-vars-basics-naming/ExerciseMgr";
-import BptsVarsBasicLetExerciseMgr
-  from "./bpts/vars/basics/bpts-vars-basics-let/ExerciseMgr";
-import BptsVarsTypesStringExerciseMgr
-  from "./bpts/vars/types/bpts-vars-types-string/ExerciseMgr";
-import BptsVarsTypesBooleanExerciseMgr
-  from "./bpts/vars/types/bpts-vars-types-boolean/ExerciseMgr";
-import BptsVarsTypesArrayExerciseMgr
-  from "./bpts/vars/types/bpts-vars-types-array/ExerciseMgr";
-import BptsVarsTypesConstVsLetExerciseMgr
-  from "./bpts/vars/types/bpts-vars-types-const-vs-let/ExerciseMgr";
+import BptsVarsBasicConstExerciseMgr from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseMgr";
+import BptsVarsBasicLetExerciseMgr from "./bpts/vars/basics/bpts-vars-basics-let/ExerciseMgr";
+import BptsVarsBasicNamingExerciseMgr from "./bpts/vars/basics/bpts-vars-basics-naming/ExerciseMgr";
+import BptsVarsTypesArrayExerciseMgr from "./bpts/vars/types/bpts-vars-types-array/ExerciseMgr";
+import BptsVarsTypesBooleanExerciseMgr from "./bpts/vars/types/bpts-vars-types-boolean/ExerciseMgr";
+import BptsVarsTypesConstVsLetExerciseMgr from "./bpts/vars/types/bpts-vars-types-const-vs-let/ExerciseMgr";
+import BptsVarsTypesStringExerciseMgr from "./bpts/vars/types/bpts-vars-types-string/ExerciseMgr";
 
-import BptsOperatorsArithmeticBasicExerciseMgr
-  from "./bpts/operators/arithmetic/bpts-operators-arithmetic-basic/ExerciseMgr";
-import BptsOperatorsArithmeticCntExerciseMgr
-  from "./bpts/operators/arithmetic/bpts-operators-arithmetic-cnt/ExerciseMgr";
-import BptsOperatorsAssignmentBasicExerciseMgr
-  from "./bpts/operators/assignment/bpts-operators-assignment-basic/ExerciseMgr";
-import BptsOperatorsComparisonBasicExerciseMgr
-  from "./bpts/operators/comparison/bpts-operators-comparison-basic/ExerciseMgr";
-import BptsOperatorsLogicalBasicExerciseMgr
-  from "./bpts/operators/logical/bpts-operators-logical-basic/ExerciseMgr";
-import BptsOperatorsStringsConcatExerciseMgr
-  from "./bpts/operators/strings/bpts-operators-strings-concat/ExerciseMgr";
+import BptsOperatorsArithmeticBasicExerciseMgr from "./bpts/operators/arithmetic/bpts-operators-arithmetic-basic/ExerciseMgr";
+import BptsOperatorsArithmeticCntExerciseMgr from "./bpts/operators/arithmetic/bpts-operators-arithmetic-cnt/ExerciseMgr";
+import BptsOperatorsAssignmentBasicExerciseMgr from "./bpts/operators/assignment/bpts-operators-assignment-basic/ExerciseMgr";
+import BptsOperatorsComparisonBasicExerciseMgr from "./bpts/operators/comparison/bpts-operators-comparison-basic/ExerciseMgr";
+import BptsOperatorsLogicalBasicExerciseMgr from "./bpts/operators/logical/bpts-operators-logical-basic/ExerciseMgr";
+import BptsOperatorsStringsConcatExerciseMgr from "./bpts/operators/strings/bpts-operators-strings-concat/ExerciseMgr";
 
-import BptsFunctionsBasicsDeclarationExerciseMgr
-  from "./bpts/functions/basics/bpts-functions-basics-declaration/ExerciseMgr";
-import BptsFunctionsBasicsCallingExerciseMgr
-  from "./bpts/functions/basics/bpts-functions-basics-calling/ExerciseMgr";
-import BptsFunctionsParamsSingleExerciseMgr
-  from "./bpts/functions/params/bpts-functions-params-single/ExerciseMgr";
-import BptsFunctionsParamsMultiExerciseMgr
-  from "./bpts/functions/params/bpts-functions-params-multi/ExerciseMgr";
-import BptsFunctionsReturnBasicExerciseMgr
-  from "./bpts/functions/return/bpts-functions-return-basic/ExerciseMgr";
-import BptsFunctionsScopeOuterExerciseMgr
-  from "./bpts/functions/scope/bpts-functions-scope-outer/ExerciseMgr";
-import BptsFunctionsScopeNestedExerciseMgr
-  from "./bpts/functions/scope/bpts-functions-scope-nested/ExerciseMgr";
-import BptsFunctionsPrincipalsReuseExerciseMgr
-  from "./bpts/functions/principals/bpts-functions-principals-reuse/ExerciseMgr";
+import BptsFunctionsBasicsCallingExerciseMgr from "./bpts/functions/basics/bpts-functions-basics-calling/ExerciseMgr";
+import BptsFunctionsBasicsDeclarationExerciseMgr from "./bpts/functions/basics/bpts-functions-basics-declaration/ExerciseMgr";
+import BptsFunctionsParamsMultiExerciseMgr from "./bpts/functions/params/bpts-functions-params-multi/ExerciseMgr";
+import BptsFunctionsParamsSingleExerciseMgr from "./bpts/functions/params/bpts-functions-params-single/ExerciseMgr";
+import BptsFunctionsPrincipalsReuseExerciseMgr from "./bpts/functions/principals/bpts-functions-principals-reuse/ExerciseMgr";
+import BptsFunctionsReturnBasicExerciseMgr from "./bpts/functions/return/bpts-functions-return-basic/ExerciseMgr";
+import BptsFunctionsScopeNestedExerciseMgr from "./bpts/functions/scope/bpts-functions-scope-nested/ExerciseMgr";
+import BptsFunctionsScopeOuterExerciseMgr from "./bpts/functions/scope/bpts-functions-scope-outer/ExerciseMgr";
 
-import BptsConditionalIfBasicExerciseMgr
-  from "./bpts/conditionals/if/bpts-conditionals-if-basic/ExerciseMgr";
-import BptsConditionalIfReturnExerciseMgr
-  from "./bpts/conditionals/if/bpts-conditionals-if-return/ExerciseMgr";
-import BptsConditionalIfElseExerciseMgr
-  from "./bpts/conditionals/if/bpts-conditionals-if-else/ExerciseMgr";
-import BptsConditionalIfElseifExerciseMgr
-  from "./bpts/conditionals/if/bpts-conditionals-if-elseif/ExerciseMgr";
-import BptsConditionalIfNestedExerciseMgr
-  from "./bpts/conditionals/if/bpts-conditionals-if-nested/ExerciseMgr";
-import BptsConditionalIfScopeExerciseMgr
-  from "./bpts/conditionals/if/bpts-conditionals-if-scope/ExerciseMgr";
+import BptsConditionalIfBasicExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-basic/ExerciseMgr";
+import BptsConditionalIfElseExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-else/ExerciseMgr";
+import BptsConditionalIfElseifExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-elseif/ExerciseMgr";
+import BptsConditionalIfNestedExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-nested/ExerciseMgr";
+import BptsConditionalIfReturnExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-return/ExerciseMgr";
+import BptsConditionalIfScopeExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-scope/ExerciseMgr";
 
-import BptsLoopsForBasicExerciseMgr
-  from "./bpts/loops/for/bpts-loops-for-basic/ExerciseMgr";
-import BptsLoopsForAfterthoughtExerciseMgr
-  from "./bpts/loops/for/bpts-loops-for-afterthought/ExerciseMgr";
-import BptsLoopsForArraysExerciseMgr
-  from "./bpts/loops/for/bpts-loops-for-arrays/ExerciseMgr";
-import BptsLoopsForFunctionsExerciseMgr
-  from "./bpts/loops/for/bpts-loops-for-functions/ExerciseMgr";
-import BptsLoopsForOfBasicExerciseMgr
-  from "./bpts/loops/for-of/bpts-loops-for-of-basic/ExerciseMgr";
-import BptsLoopsWhileBasicExerciseMgr
-  from "./bpts/loops/while/bpts-loops-while-basic/ExerciseMgr";
+import BptsLoopsForOfBasicExerciseMgr from "./bpts/loops/for-of/bpts-loops-for-of-basic/ExerciseMgr";
+import BptsLoopsForAfterthoughtExerciseMgr from "./bpts/loops/for/bpts-loops-for-afterthought/ExerciseMgr";
+import BptsLoopsForArraysExerciseMgr from "./bpts/loops/for/bpts-loops-for-arrays/ExerciseMgr";
+import BptsLoopsForBasicExerciseMgr from "./bpts/loops/for/bpts-loops-for-basic/ExerciseMgr";
+import BptsLoopsForFunctionsExerciseMgr from "./bpts/loops/for/bpts-loops-for-functions/ExerciseMgr";
+import BptsLoopsWhileBasicExerciseMgr from "./bpts/loops/while/bpts-loops-while-basic/ExerciseMgr";
   
-import BptsClassesBasicsDefinitionExerciseMgr
-  from "./bpts/classes/basics/bpts-classes-basics-definition/ExerciseMgr";
-import BptsClassesBasicsConstructorExerciseMgr
-  from "./bpts/classes/basics/bpts-classes-basics-constructor/ExerciseMgr";
-import BptsClassesBasicsConstructorParamsExerciseMgr
-  from "./bpts/classes/basics/bpts-classes-basics-constructor-params/ExerciseMgr";
-import BptsClassesBasicsPropsExerciseMgr
-  from "./bpts/classes/basics/bpts-classes-basics-props/ExerciseMgr";
-import BptsClassesBasicsThisExerciseMgr
-  from "./bpts/classes/basics/bpts-classes-basics-this/ExerciseMgr";
-import BptsClassesBasicsPropsInitExerciseMgr
-  from "./bpts/classes/basics/bpts-classes-basics-props-init/ExerciseMgr";
-import BptsClassesBasicsMethodsExerciseMgr
-  from "./bpts/classes/basics/bpts-classes-basics-methods/ExerciseMgr";
-import BptsClassesBasicsMethodsMembersExerciseMgr
-  from "./bpts/classes/basics/bpts-classes-basics-methods-members/ExerciseMgr";
-import BptsClassesBasicsMethodsEditPropsExerciseMgr
-  from "./bpts/classes/basics/bpts-classes-basics-methods-edit-props/ExerciseMgr";
+import BptsClassesApiPrivateExerciseMgr from "./bpts/classes/api/bpts-classes-api-private/ExerciseMgr";
+import BptsClassesBasicsConstructorParamsExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-constructor-params/ExerciseMgr";
+import BptsClassesBasicsConstructorExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-constructor/ExerciseMgr";
+import BptsClassesBasicsDefinitionExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-definition/ExerciseMgr";
+import BptsClassesBasicsMethodsEditPropsExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-methods-edit-props/ExerciseMgr";
+import BptsClassesBasicsMethodsMembersExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-methods-members/ExerciseMgr";
+import BptsClassesBasicsMethodsExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-methods/ExerciseMgr";
+import BptsClassesBasicsPropsInitExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-props-init/ExerciseMgr";
+import BptsClassesBasicsPropsExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-props/ExerciseMgr";
+
+import BptsClassesBasicsThisExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-this/ExerciseMgr";
 
 type ExerciseMapItem = {
   [key: string]: CourseItem,
@@ -435,6 +395,16 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-classes-basics-methods-edit-props",
                   "exerciseMgr": new BptsClassesBasicsMethodsEditPropsExerciseMgr(),
+                },
+              ]
+            },
+            {
+              "name": "api",
+              "displayName": "API",
+              "exercises": [
+                {
+                  "name": "bpts-classes-api-private",
+                  "exerciseMgr": new BptsClassesApiPrivateExerciseMgr(),
                 },
               ]
             },
