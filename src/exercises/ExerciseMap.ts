@@ -39,7 +39,9 @@ import BptsLoopsForBasicExerciseMgr from "./bpts/loops/for/bpts-loops-for-basic/
 import BptsLoopsForFunctionsExerciseMgr from "./bpts/loops/for/bpts-loops-for-functions/ExerciseMgr";
 import BptsLoopsWhileBasicExerciseMgr from "./bpts/loops/while/bpts-loops-while-basic/ExerciseMgr";
   
+import BptsClassesApiExternalVsInternalExerciseMgr from "./bpts/classes/api/bpts-classes-api-external-vs-internal/ExerciseMgr";
 import BptsClassesApiPrivateExerciseMgr from "./bpts/classes/api/bpts-classes-api-private/ExerciseMgr";
+
 import BptsClassesBasicsConstructorParamsExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-constructor-params/ExerciseMgr";
 import BptsClassesBasicsConstructorExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-constructor/ExerciseMgr";
 import BptsClassesBasicsDefinitionExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-definition/ExerciseMgr";
@@ -48,7 +50,6 @@ import BptsClassesBasicsMethodsMembersExerciseMgr from "./bpts/classes/basics/bp
 import BptsClassesBasicsMethodsExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-methods/ExerciseMgr";
 import BptsClassesBasicsPropsInitExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-props-init/ExerciseMgr";
 import BptsClassesBasicsPropsExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-props/ExerciseMgr";
-
 import BptsClassesBasicsThisExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-this/ExerciseMgr";
 
 type ExerciseMapItem = {
@@ -405,6 +406,10 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-classes-api-private",
                   "exerciseMgr": new BptsClassesApiPrivateExerciseMgr(),
+                },
+                {
+                  "name": "bpts-classes-api-external-vs-internal",
+                  "exerciseMgr": new BptsClassesApiExternalVsInternalExerciseMgr(),
                 },
               ]
             },
