@@ -53,6 +53,8 @@ import BptsClassesBasicsPropsInitExerciseMgr from "./bpts/classes/basics/bpts-cl
 import BptsClassesBasicsPropsExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-props/ExerciseMgr";
 import BptsClassesBasicsThisExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-this/ExerciseMgr";
 
+import BptsClassesInheritanceBasicExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-basic/ExerciseMgr";
+
 type ExerciseMapItem = {
   [key: string]: CourseItem,
 }
@@ -415,6 +417,16 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-classes-api-getters-setters",
                   "exerciseMgr": new BptsClassesApiGettersSettersExerciseMgr(),
+                },
+              ]
+            },
+            {
+              "name": "inheritance",
+              "displayName": "Inheritance",
+              "exercises": [
+                {
+                  "name": "bpts-classes-inheritance-basic",
+                  "exerciseMgr": new BptsClassesInheritanceBasicExerciseMgr(),
                 },
               ]
             },
