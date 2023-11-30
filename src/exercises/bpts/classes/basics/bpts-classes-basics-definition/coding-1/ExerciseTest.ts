@@ -11,11 +11,12 @@ class Restaurant {}
 const restaurant: Restaurant = new Restaurant();
 `;
 
-export default class ExerciseTest extends CodingExerciseTestAbs {
+const explanationMd = `
+We use the keyword <<class>> to define <<Restaurant>>, and the keyword
+<<new>> to create a new instance.
+`;
 
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
   getInitialSolutionText(): string {
     return initialSolutionText.replace(/^\s+|\s+$/g, '');;
@@ -25,12 +26,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
     return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
   }
 
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you use the keyword <<class>> to define <<Restaurant>>? Did you use the keyword <<new>> to instantiate a new instance?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

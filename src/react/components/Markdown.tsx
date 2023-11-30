@@ -4,7 +4,6 @@ import ReactMarkdown from 'react-markdown';
 function addBlockQuotes(md: string): string {
   const lines: string[] = md.split("\n");
   let newMd: string = "";
-  console.log(lines)
   let isBlockQuote: boolean = false;
   for (const line of lines) {
     if (line === ">>>>") {

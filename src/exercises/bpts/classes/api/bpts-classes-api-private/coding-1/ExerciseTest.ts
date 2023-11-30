@@ -25,11 +25,13 @@ class Spy {
 }
 `;
 
-export default class ExerciseTest extends CodingExerciseTestAbs {
+const explanationMd = `
+The member method <<getName()>> should be declared <<private>> so
+that it is not accessible from outside the class, while <<getInitial()>>
+should be declared <<public>>.
+`;
 
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
   getInitialSolutionText(): string {
     return initialSolutionText.replace(/^\s+|\s+$/g, '');;
@@ -39,12 +41,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
     return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
   }
 
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you follow all code conventions?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

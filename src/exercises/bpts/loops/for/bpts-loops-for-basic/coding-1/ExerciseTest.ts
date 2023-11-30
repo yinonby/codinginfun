@@ -10,16 +10,12 @@ for (let i: number = 0; i < 5; i++) {
 }
 `;
 
-const explanationText = `
+const explanationMd = `
 - We declared the loop as requested, following all code conventions.
 - Note we were asked to use a Less Than operator <<<>>.
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
-
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
 
   getInitialSolutionText(): string {
     return initialSolutionText.replace(/^\s+|\s+$/g, '');;
@@ -33,12 +29,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
     return this.getExpectedSolutionText().split(/\n/).length;
   }
 
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you follow code conventions?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

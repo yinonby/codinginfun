@@ -18,7 +18,6 @@ export function CodingTaskView(props: any) {
 
   const handleCheckAnswer = () => {
     let passed: boolean = true;
-    let errorMessage: string = "";
 
     console.clear();
     console.log("Running all tests:");
@@ -31,10 +30,6 @@ export function CodingTaskView(props: any) {
     } catch (e) {
       passed = false;
       console.log("Verifying your code... failed");
-      if (e instanceof Error) {
-        const err: Error = e;
-        errorMessage = err.message;
-      }
     }
 
     if (passed) {
@@ -47,7 +42,7 @@ export function CodingTaskView(props: any) {
       run: true,
       passed: passed,
       expectedSolutionText: exercieTest.getExpectedSolutionText(),
-      explanation: errorMessage,
+      explanation: exercieTest.getExpectedExplanationMd(),
     };
     return tmpExplainedTestResult;
 

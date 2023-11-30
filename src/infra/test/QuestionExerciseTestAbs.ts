@@ -2,5 +2,5 @@ import ExerciseTestAbs from "./ExerciseTestAbs";
 
 export default abstract class QuestionExerciseTestAbs extends ExerciseTestAbs {
   abstract verify(solutionText: string | undefined): void;
-  abstract getExpectedSolutionExplanation(): string;
+  abstract getExpectedExplanationMd(): string;
 }

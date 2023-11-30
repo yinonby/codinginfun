@@ -13,7 +13,7 @@ const isFurious: boolean = false;
 const isSlowOrFurious: boolean = !isFast || isFurious;
 `;
 
-const explanationText = `
+const explanationMd = `
 - We added a declaration of a constant variable <<isSlowOrFurious>> of
 type <<boolean>> and initialized as requested. The value of
 <<isSlowOrFurious>> is <<true>> because the value of <<!isFast>> is
@@ -21,10 +21,6 @@ type <<boolean>> and initialized as requested. The value of
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
-
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
 
   getInitialSolutionText(): string {
     return initialSolutionText.replace(/^\s+|\s+$/g, '');;
@@ -34,16 +30,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
     return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
   }
 
-  getExpectedSolutionRowNum() {
-    return this.getExpectedSolutionText().split(/\n/).length;
-  }
-
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you follow code conventions?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

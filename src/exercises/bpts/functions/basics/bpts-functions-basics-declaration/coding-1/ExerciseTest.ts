@@ -1,11 +1,10 @@
 
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
-export default class ExerciseTest extends CodingExerciseTestAbs {
+const explanationMd = `
+`;
 
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
   getInitialSolutionText(): string {
     return "";
@@ -18,12 +17,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
       "}";
   }
 
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Have you followed all code conventions?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

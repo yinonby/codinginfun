@@ -44,7 +44,7 @@ export function QuestionTaskView(props: any) {
       run: true,
       passed: passed,
       expectedSolutionText: exercieTest.getExpectedSolutionText(),
-      explanation: exercieTest.getExpectedSolutionExplanation(),
+      explanation: exercieTest.getExpectedExplanationMd(),
     };
     return tmpExplainedTestResult;
   };

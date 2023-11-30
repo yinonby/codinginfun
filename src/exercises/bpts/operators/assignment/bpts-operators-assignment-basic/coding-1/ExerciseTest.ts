@@ -13,16 +13,12 @@ x += 4;
 console.log(x); // output: 7
 `;
 
-const explanationText = `
+const explanationMd = `
 - In the expression <<x += 4>> we used the Addition-Assignment operator <<+=>>
 to add <<4>> to <<x>>, and assign the result (<<7>>) back to <<x>>.
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
-
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
 
   getInitialSolutionText(): string {
     return initialSolutionText.replace(/^\s+|\s+$/g, '');;
@@ -36,12 +32,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
     return this.getExpectedSolutionText().split(/\n/).length;
   }
 
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you follow code conventions?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

@@ -1,11 +1,10 @@
 
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
-export default class ExerciseTest extends CodingExerciseTestAbs {
+const explanationMd = `
+`;
 
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
   getInitialSolutionText(): string {
     return "";
@@ -25,16 +24,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
       "foo();";
   }
 
-  getExpectedSolutionRowNum() {
-    return this.getExpectedSolutionText().split(/\n/).length;
-  }
-
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you follow all code conventions? Did you remember a semicolon at the end of lines?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

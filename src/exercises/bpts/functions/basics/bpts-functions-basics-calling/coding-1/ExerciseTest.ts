@@ -1,11 +1,10 @@
 
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
-export default class ExerciseTest extends CodingExerciseTestAbs {
+const explanationMd = `
+`;
 
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
   getInitialSolutionText(): string {
     return "";
@@ -23,16 +22,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
       "}";
   }
 
-  getExpectedSolutionRowNum() {
-    return 8;
-  }
-
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you declare the function with the correct value?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

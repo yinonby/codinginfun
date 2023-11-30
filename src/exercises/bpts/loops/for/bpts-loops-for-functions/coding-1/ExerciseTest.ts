@@ -19,7 +19,7 @@ function printZeroTillNum(n: number): void {
 printZeroTillNum(543);
 `;
 
-const explanationText = `
+const explanationMd = `
 - The task was to implement <<printZeroTillNum>> so that it prints
 all numbers from <<0>> to the value of <<n>>, **including** <<n>>.
 Therefore, we must use a Less-Than-or-Equal operator <<<=>> in order
@@ -27,10 +27,6 @@ to include the value of <<n>>.
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
-
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
 
   getInitialSolutionText(): string {
     return initialSolutionText.replace(/^\s+|\s+$/g, '');;
@@ -44,12 +40,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
     return this.getExpectedSolutionText().split(/\n/).length;
   }
 
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you make sure to include 'n'? Did you follow code conventions?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

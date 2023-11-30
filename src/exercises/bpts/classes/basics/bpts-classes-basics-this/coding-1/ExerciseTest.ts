@@ -21,11 +21,10 @@ class Restaurant {
 }
 `;
 
-export default class ExerciseTest extends CodingExerciseTestAbs {
+const explanationMd = `
+`;
 
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
   getInitialSolutionText(): string {
     return initialSolutionText.replace(/^\s+|\s+$/g, '');;
@@ -35,12 +34,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
     return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
   }
 
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you follow all code conventions?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

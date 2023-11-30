@@ -21,11 +21,10 @@ function square(x: number): number {
 }
 `;
 
-export default class ExerciseTest extends CodingExerciseTestAbs {
+const explanationMd = `
+`;
 
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
   getInitialSolutionText(): string {
     return initialSolutionText.replace(/^\s+|\s+$/g, '');;
@@ -39,12 +38,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
     return this.getExpectedSolutionText().split(/\n/).length;
   }
 
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Remember that 'square' should return the arithmetic square of 'x', and be used to initialize the 3 variables."
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

@@ -15,7 +15,7 @@ for (let i: number = 0; i < fruits.length; i++) {
 }
 `;
 
-const explanationText = `
+const explanationMd = `
 - The loop condition is <<i < fruits.length>>. The length of the
 <<fruits>> array is <<4>>, so when <<i>> equals 0, 1, 2, and 3,
 the condition is met and the statement is executed. And when <<i>>
@@ -29,10 +29,6 @@ last element at an index of <<3>> (<<fruits.length - 1>>).
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
 
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
-
   getInitialSolutionText(): string {
     return initialSolutionText.replace(/^\s+|\s+$/g, '');;
   }
@@ -45,12 +41,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
     return this.getExpectedSolutionText().split(/\n/).length;
   }
 
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you follow code conventions?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

@@ -21,11 +21,10 @@ function isPersonTall(personHeightCm: number): boolean {
 }
 `;
 
-export default class ExerciseTest extends CodingExerciseTestAbs {
+const explanationMd = `
+`;
 
-  verify(solutionText: string) {
-    this.verifySolution(solutionText);
-  }
+export default class ExerciseTest extends CodingExerciseTestAbs {
 
   getInitialSolutionText(): string {
     return initialSolutionText.replace(/^\s+|\s+$/g, '');;
@@ -35,16 +34,8 @@ export default class ExerciseTest extends CodingExerciseTestAbs {
     return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
   }
 
-  getExpectedSolutionRowNum() {
-    return this.getExpectedSolutionText().split(/\n/).length;
-  }
-
-  verifySolution(solutionText: string) {
-    if (solutionText !== this.getExpectedSolutionText()) {
-      throw new Error(
-        "Did you match the return-type to the type of the return-value?"
-      );
-    }
+  getExpectedExplanationMd(): string {
+    return explanationMd.replace(/^\s+|\s+$/g, '');
   }
 
 }

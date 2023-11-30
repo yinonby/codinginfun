@@ -25,7 +25,7 @@ export default class ExerciseTest extends QuestionExerciseTestAbs {
     return output.replace(/^\s+|\s+$/g, '');
   }
 
-  getExpectedSolutionExplanation(): string {
+  getExpectedExplanationMd(): string {
     return explanation.replace(/^\s+|\s+$/g, '');
   }
 
