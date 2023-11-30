@@ -4,10 +4,12 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 const md: string = `
 Is the following code valid?
 
-> function alwaysTrue(): void {
->   console.log("Inside foo()");
->   return true;
-> }
+>>>>
+function alwaysTrue(): void {
+  console.log("Inside foo()");
+  return true;
+}
+<<<<
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

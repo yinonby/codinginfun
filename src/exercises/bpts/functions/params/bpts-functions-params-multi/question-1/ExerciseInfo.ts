@@ -4,12 +4,14 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 const md: string = `
 What is the expected output of the following code?
 
-> function printCarDetails(brand: string, model: string) {
->   console.log("This " + brand + " is of " + model + " model");
-> }
->
-> printCarDetails("Mazda", "3");
-> printCarDetails("Ford", "Focus");
+>>>>
+function printCarDetails(brand: string, model: string) {
+  console.log("This " + brand + " is of " + model + " model");
+}
+
+printCarDetails("Mazda", "3");
+printCarDetails("Ford", "Focus");
+<<<<
 
 Remember that each print to output (console) is printed on a separate line.
 `;

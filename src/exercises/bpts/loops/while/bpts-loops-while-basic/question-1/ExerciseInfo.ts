@@ -4,11 +4,13 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 const md: string = `
 What is the output of the following code?
 
-> const oceanNames: string[] = ["Atlantic", "Pacific"];
-> let i: number = 0;
-> while (i < oceanNames.length) {
->   console.log(oceanNames[++i]);
-> }
+>>>>
+const oceanNames: string[] = ["Atlantic", "Pacific"];
+let i: number = 0;
+while (i < oceanNames.length) {
+  console.log(oceanNames[++i]);
+}
+<<<<
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

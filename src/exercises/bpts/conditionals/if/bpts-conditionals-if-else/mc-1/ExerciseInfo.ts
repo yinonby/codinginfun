@@ -4,15 +4,17 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 const md: string = `
 What is the output of the following code?
 
-> function isOddNumber(x: number): boolean {
->   if (x % 2 === 0) {
->     return false;
->   } else {
->     return true;
->   }
-> }
->
-> console.log(isOddNumber(0));
+>>>>
+function isOddNumber(x: number): boolean {
+  if (x % 2 === 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+console.log(isOddNumber(0));
+<<<<
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

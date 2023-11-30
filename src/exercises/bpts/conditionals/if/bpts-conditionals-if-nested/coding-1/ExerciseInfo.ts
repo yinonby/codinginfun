@@ -9,9 +9,11 @@ This function returns <<true>> if and only if the array contains an item
 whose value is equal to the parameter passed to the <<includes()>> function.
 
 For example:
-> const arr: number[] = [1, 2, 3];
-> console.log(arr.includes(1)); // output: true
-> console.log(arr.includes(4)); // output: false
+>>>>
+const arr: number[] = [1, 2, 3];
+console.log(arr.includes(1)); // output: true
+console.log(arr.includes(4)); // output: false
+<<<<
 
 Tasks:
 - Replace all placeholders <<#1#>>, <<#2#>>, <<#3#>>, and <<#4#>>

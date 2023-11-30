@@ -4,7 +4,9 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 const md: string = `
 Is the following code valid?
 
-> const restaurant: Restaurant = new Restaurant();
+>>>>
+const restaurant: Restaurant = new Restaurant();
+<<<<
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

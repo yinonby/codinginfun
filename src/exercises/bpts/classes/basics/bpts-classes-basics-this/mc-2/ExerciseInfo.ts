@@ -4,12 +4,14 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 const md: string = `
 Is the following code valid?
 
-> class Restaurant {
->   public message: string = "I'm a restaurant!";
-> }
->
-> const restaurant: Restaurant = new Restaurant("Italian");
-> console.log(this.message);
+>>>>
+class Restaurant {
+  public message: string = "I'm a restaurant!";
+}
+
+const restaurant: Restaurant = new Restaurant("Italian");
+console.log(this.message);
+<<<<
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

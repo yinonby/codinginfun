@@ -4,16 +4,18 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 const md: string = `
 What is the expected output of the following code?
 
-> function getMyName(): string {
->   return "Lisa";
-> }
->
-> function getMyAge(): number {
->   return 24;
-> }
->
-> console.log(getMyName());
-> console.log(getMyAge());
+>>>>
+function getMyName(): string {
+  return "Lisa";
+}
+
+function getMyAge(): number {
+  return 24;
+}
+
+console.log(getMyName());
+console.log(getMyAge());
+<<<<
 
 Remember that each print to output (console) is printed on a separate line.
 `;
