@@ -5,11 +5,17 @@ const mcAnswerMd1: string = `
 Yes
 `;
 const mcExplanationMd1: string = `
-- Every child class must call the parent constructor from
-within its own constructor.
-- In this example, class <<Shape>> doesn't define a constructor, so
-it is provided a default constructor by the language.
-- Class <<Square>> must call the parent constructor using <<super()>>.
+- Child class <<Restaurant>> doesn't provide a constructor. Therefore,
+the language provides a default constructor with the same signature
+as the parent constructor:
+>>>>
+class Restaurant extends Company {
+  constructor(companyName: string) {
+    super(companyName);
+  }
+}
+<<<<
+- Therefore, class <<Restaurant>> only accepts 1 constructor parameter, not 2.
 `;
 
 const mcAnswerMd2: string = `

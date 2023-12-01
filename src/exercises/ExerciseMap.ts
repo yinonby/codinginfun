@@ -54,6 +54,7 @@ import BptsClassesBasicsPropsExerciseMgr from "./bpts/classes/basics/bpts-classe
 import BptsClassesBasicsThisExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-this/ExerciseMgr";
 
 import BptsClassesInheritanceBasicExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-basic/ExerciseMgr";
+import BptsClassesInheritanceSuperParamsExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-super-params/ExerciseMgr";
 import BptsClassesInheritanceSuperExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-super/ExerciseMgr";
 
 type ExerciseMapItem = {
@@ -432,6 +433,10 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-classes-inheritance-super",
                   "exerciseMgr": new BptsClassesInheritanceSuperExerciseMgr(),
+                },
+                {
+                  "name": "bpts-classes-inheritance-super-params",
+                  "exerciseMgr": new BptsClassesInheritanceSuperParamsExerciseMgr(),
                 },
               ]
             },

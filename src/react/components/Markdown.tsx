@@ -10,6 +10,7 @@ function addBlockQuotes(md: string): string {
       isBlockQuote = true;
     } else if (line === "<<<<") {
       isBlockQuote = false;
+      newMd += "\n";
     } else {
       if (isBlockQuote) {
         newMd += "> ";
