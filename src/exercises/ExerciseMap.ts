@@ -41,8 +41,9 @@ import BptsLoopsWhileBasicExerciseMgr from "./bpts/loops/while/bpts-loops-while-
   
 import BptsClassesApiExternalVsInternalExerciseMgr from "./bpts/classes/api/bpts-classes-api-external-vs-internal/ExerciseMgr";
 import BptsClassesApiGettersSettersExerciseMgr from "./bpts/classes/api/bpts-classes-api-getters-setters/ExerciseMgr";
+import BptsClassesApiMethodsAccessRuleExerciseMgr from "./bpts/classes/api/bpts-classes-api-methods-access-rule/ExerciseMgr";
 import BptsClassesApiPrivateExerciseMgr from "./bpts/classes/api/bpts-classes-api-private/ExerciseMgr";
-import BptsClassesApiPropertyRuleExerciseMgr from "./bpts/classes/api/bpts-classes-api-property-rule/ExerciseMgr";
+import BptsClassesApiPropertiesAccessRuleExerciseMgr from "./bpts/classes/api/bpts-classes-api-properties-access-rule/ExerciseMgr";
 
 import BptsClassesBasicsConstructorParamsExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-constructor-params/ExerciseMgr";
 import BptsClassesBasicsConstructorExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-constructor/ExerciseMgr";
@@ -424,8 +425,12 @@ export default class ExerciseMap {
                   "exerciseMgr": new BptsClassesApiGettersSettersExerciseMgr(),
                 },
                 {
-                  "name": "bpts-classes-api-property-rule",
-                  "exerciseMgr": new BptsClassesApiPropertyRuleExerciseMgr(),
+                  "name": "bpts-classes-api-properties-access-rule",
+                  "exerciseMgr": new BptsClassesApiPropertiesAccessRuleExerciseMgr(),
+                },
+                {
+                  "name": "bpts-classes-api-methods-access-rule",
+                  "exerciseMgr": new BptsClassesApiMethodsAccessRuleExerciseMgr(),
                 },
               ]
             },

@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Markdown from "./Markdown";
 
 export default function ExplainedTestResultView(props: any) {
@@ -61,24 +61,26 @@ function MyError(props: any) {
       <Box mb={2} sx={{typography: "subtitle1", color: "red"}}>
         {props.errPrefix}
       </Box>
-      {props.expectedSolutionText &&
-        <Box mb={2}>
-          <Box mb={1} sx={{typography: "subtitle2", fontWeight: "bold"}}>
-            Correct solution:
-          </Box>
-          <Box sx={expectedSolutionStyle}>
-            <Markdown md={expectedSolutionMd} />
-          </Box>
-        </Box>
-      }
-      {props.explanation &&
-        <>
-          <Box sx={{typography: "subtitle2", fontWeight: "bold"}}>
-            Explanation:
-          </Box>
-          <Markdown md={props.explanation} />
-        </>
-      }
+      <Grid container spacing={2}>
+        {props.expectedSolutionText &&
+          <Grid item xs={12} sm={12} md={6}>
+            <Box mb={1} sx={{typography: "subtitle2", fontWeight: "bold"}}>
+              Correct solution:
+            </Box>
+            <Box sx={expectedSolutionStyle}>
+              <Markdown md={expectedSolutionMd} />
+            </Box>
+          </Grid>
+        }
+        {props.explanation &&
+          <Grid item xs={12} sm={12} md={6}>
+            <Box sx={{typography: "subtitle2", fontWeight: "bold"}}>
+              Explanation:
+            </Box>
+            <Markdown md={props.explanation} />
+          </Grid>
+        }
+        </Grid>
     </div>
   );
 }
