@@ -2,17 +2,27 @@
 import MultiChoiceExerciseTestAbs, { MultiChoiceAnswer } from "#infra/test/MultiChoiceExerciseTestAbs";
 
 const mcAnswerMd1: string = `
-Yes
+Read access (getter method only)
 `;
 const mcExplanationMd1: string = `
-Member method <<getCompanyName()>> is declared <<private>>.
-Therefore, it cannot be accessed from outside the class.
+Member property <<employeeNames>> is internal and therefore shouldn't
+be accessible outside the class.
 `;
 
 const mcAnswerMd2: string = `
-No
+Write access (setter method only)
 `;
 const mcExplanationMd2: string = mcExplanationMd1;
+
+const mcAnswerMd3: string = `
+Read+write access (getter+setter methods)
+`;
+const mcExplanationMd3: string = mcExplanationMd1;
+
+const mcAnswerMd4: string = `
+No access (neither getter nor setter)
+`;
+const mcExplanationMd4: string = mcExplanationMd1;
 
 export default class ExerciseTest extends MultiChoiceExerciseTestAbs {
 
@@ -27,6 +37,16 @@ export default class ExerciseTest extends MultiChoiceExerciseTestAbs {
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd2.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd2,
+      isCorrect: false,
+    });
+    mcAnswers.push({
+      mcAnswerMd: mcAnswerMd3.replace(/^\s+|\s+$/g, ''),
+      mcExplanationMd: mcExplanationMd3,
+      isCorrect: false,
+    });
+    mcAnswers.push({
+      mcAnswerMd: mcAnswerMd4.replace(/^\s+|\s+$/g, ''),
+      mcExplanationMd: mcExplanationMd4,
       isCorrect: true,
     });
 
