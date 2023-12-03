@@ -19,7 +19,7 @@ class Restaurant extends Company {
     super(companyName);
   }
 
-  printSummary(): void {
+  public printSummary(): void {
     console.log(this.getCompanyName(), this.foodType);
   }
 }

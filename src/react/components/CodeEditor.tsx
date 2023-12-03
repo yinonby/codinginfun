@@ -21,6 +21,7 @@ export default function CodeEditor(props: any) {
     <Editor height="100%"
       defaultLanguage="typescript"
       defaultValue={value}
+      value={value}
       path={path}
       onChange={handleChange}
       theme="vs-dark"

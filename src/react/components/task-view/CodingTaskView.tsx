@@ -1,5 +1,5 @@
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import Box from '@mui/material/Box';
 import { useState } from "react";
 import CheckAnswerButton from "../CheckAnswerButton";
@@ -47,6 +47,11 @@ export function CodingTaskView(props: any) {
     return tmpExplainedTestResult;
 
   };
+
+  const handleReset = () => {
+    setSolutionText(initialSolutionText);
+  }
+
   const rowNum: number = exercieTest.getExpectedSolutionRowNum();
   const height: number = 19 * rowNum;
 
@@ -64,7 +69,7 @@ export function CodingTaskView(props: any) {
         </Box>
       </Grid>
       <Grid item xs={12} sm={12} md={12}>
-        <Box mr={2} sx={{ display: "flex", flexDirection: "row" }}>
+        <Box sx={{ display: "flex", flexDirection: "row" }}>
           <Box mr={2} >
             <CheckAnswerButton
               isBlockquote
@@ -77,6 +82,10 @@ export function CodingTaskView(props: any) {
           </Box>
           <SolutionButton currentSolutionText={solutionText} />
           <Box sx={{ flex: 1 }} />
+          <Button onClick={handleReset} variant="contained" size="small"
+            color="warning">
+            Reset
+          </Button>
         </Box>
       </Grid>
     </Grid>
