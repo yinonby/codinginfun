@@ -31,8 +31,8 @@ export default class SampleAnimalSanctuary {
     animalSanctuary.printSummary();
 
     // change an animal's living space
-    animalSanctuary.changeAnimalLivingSpace(dog1, "Primary location",
-      "cage C-1", "Primary location", "patio P-1");
+    animalSanctuary.changeAnimalLivingSpace(dog1.getAnimalId(),
+      "Primary location", "cage C-1", "Primary location", "patio P-1");
     animalSanctuary.printSummary();
 
     // remove an animal from the sanctuary

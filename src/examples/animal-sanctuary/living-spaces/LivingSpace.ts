@@ -10,6 +10,8 @@ export default class LivingSpace {
     this.animals = [];
   }
 
+  // getters/setters
+
   public getLivingSpaceName(): string {
     return this.livingSpaceName;
   }
@@ -22,7 +24,7 @@ export default class LivingSpace {
     return this.animals;
   }
 
-  // service methods
+  // API
 
   public findAnimal(animalId: string): Animal | null {
     const animal: Animal | undefined =

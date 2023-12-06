@@ -11,6 +11,8 @@ export default class AnimalSanctuaryLocation {
     this.livingSpaces = [];
   }
 
+  // getters/setters
+
   public getLocationName(): string {
     return this.locationName;
   }
@@ -23,7 +25,7 @@ export default class AnimalSanctuaryLocation {
     return this.livingSpaces;
   }
 
-  // service methods
+  // API
 
   public findLivingSpace(livingSpaceName: string): LivingSpace | null {
     const livingSpace: LivingSpace | undefined = this.getLivingSpaces().find(

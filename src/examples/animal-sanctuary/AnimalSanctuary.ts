@@ -1,7 +1,6 @@
 import Animal from "./animals/Animal";
 import AnimalSanctuaryLocation from "./AnimalSanctuaryLocation";
 import CageLivingSpace from "./living-spaces/CageLivingSpace";
-import LivingSpace from "./living-spaces/LivingSpace";
 import PatioLivingSpace from "./living-spaces/PatioLivingSpace";
 import RoomLivingSpace from "./living-spaces/RoomLivingSpace";
 
@@ -12,6 +11,8 @@ export default class AnimalSanctuary {
     this.locations = [];
   }
 
+  // getters/setters
+
   public getAsName(): string {
     return this.asName;
   }
@@ -20,7 +21,7 @@ export default class AnimalSanctuary {
     return this.locations;
   }
 
-  // service methods
+  // API
 
   public printSummary(): void {
     console.log("Animal Sanctuary: " + this.getAsName());
@@ -99,7 +100,7 @@ export default class AnimalSanctuary {
     return location.addAnimal(animal, livingSpaceName);
   }
 
-  public changeAnimalLivingSpace(animal: Animal,
+  public changeAnimalLivingSpace(animalId: string,
     currentLocationName: string, currentlivingSpaceName: string,
     newLocationName: string, newlivingSpaceName: string):
     AnimalSanctuaryLocation | null {
@@ -131,13 +132,13 @@ export default class AnimalSanctuary {
 
     // remove the animal from the current space
     const removedAnimal: Animal | null = currentLocation.removeAnimal(
-      animal.getAnimalId(), currentlivingSpaceName);
+      animalId, currentlivingSpaceName);
     if (!removedAnimal) {
-      console.error("error removing animal", animal.getAnimalId());
+      console.error("error removing animal", animalId);
       return null;
     }
 
-    newLocation.addAnimal(animal, newlivingSpaceName);
+    newLocation.addAnimal(removedAnimal, newlivingSpaceName);
 
     return newLocation;
   }

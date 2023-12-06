@@ -10,6 +10,8 @@ export default class Animal {
     private isDomesticFlag: boolean) {
   }
 
+  // getters/setters
+  
   public getAnimalName(): string {
     return this.animalName;
   }
