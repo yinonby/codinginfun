@@ -73,7 +73,7 @@ function MyError(props: any) {
           </Grid>
         }
         {props.explanation &&
-          <Grid item xs={12} sm={12} md={6}>
+          <Grid item xs={12} sm={12} md={props.expectedSolutionText ? 6 : 12}>
             <Box sx={{typography: "subtitle2", fontWeight: "bold"}}>
               Explanation:
             </Box>

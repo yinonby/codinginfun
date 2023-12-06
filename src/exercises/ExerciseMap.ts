@@ -56,6 +56,7 @@ import BptsClassesBasicsPropsExerciseMgr from "./bpts/classes/basics/bpts-classe
 import BptsClassesBasicsThisExerciseMgr from "./bpts/classes/basics/bpts-classes-basics-this/ExerciseMgr";
 
 import BptsClassesInheritanceBasicExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-basic/ExerciseMgr";
+import BptsClassesInheritanceOverrideExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-override/ExerciseMgr";
 import BptsClassesInheritancePrivateExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-private/ExerciseMgr";
 import BptsClassesInheritanceProtectedExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-protected/ExerciseMgr";
 import BptsClassesInheritanceSuperAccessExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-super-access/ExerciseMgr";
@@ -458,6 +459,10 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-classes-inheritance-protected",
                   "exerciseMgr": new BptsClassesInheritanceProtectedExerciseMgr(),
+                },
+                {
+                  "name": "bpts-classes-inheritance-override",
+                  "exerciseMgr": new BptsClassesInheritanceOverrideExerciseMgr(),
                 },
                 {
                   "name": "bpts-classes-inheritance-super-access",
