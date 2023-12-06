@@ -58,6 +58,7 @@ import BptsClassesBasicsThisExerciseMgr from "./bpts/classes/basics/bpts-classes
 import BptsClassesInheritanceBasicExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-basic/ExerciseMgr";
 import BptsClassesInheritancePrivateExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-private/ExerciseMgr";
 import BptsClassesInheritanceProtectedExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-protected/ExerciseMgr";
+import BptsClassesInheritanceSuperAccessExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-super-access/ExerciseMgr";
 import BptsClassesInheritanceSuperParamsExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-super-params/ExerciseMgr";
 import BptsClassesInheritanceSuperExerciseMgr from "./bpts/classes/inheritance/bpts-classes-inheritance-super/ExerciseMgr";
 
@@ -457,6 +458,10 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-classes-inheritance-protected",
                   "exerciseMgr": new BptsClassesInheritanceProtectedExerciseMgr(),
+                },
+                {
+                  "name": "bpts-classes-inheritance-super-access",
+                  "exerciseMgr": new BptsClassesInheritanceSuperAccessExerciseMgr(),
                 },
               ]
             },
