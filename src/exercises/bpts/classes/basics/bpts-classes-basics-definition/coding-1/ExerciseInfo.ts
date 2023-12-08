@@ -8,7 +8,7 @@ that a new class named <<Restaurant>> is defined.
 - Replace the second placeholder <<#2#>> with the correct keyword, so
 that a new instance of class <<Restaurant>> is created.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

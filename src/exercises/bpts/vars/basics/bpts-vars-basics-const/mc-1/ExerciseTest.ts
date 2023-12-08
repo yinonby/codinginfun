@@ -1,6 +1,5 @@
 
-import MultiChoiceExerciseTestAbs, { MultiChoiceAnswer }
-  from "#infra/test/MultiChoiceExerciseTestAbs";
+import MultiChoiceExerciseTestAbs, { MultiChoiceAnswer } from "#infra/test/MultiChoiceExerciseTestAbs";
 
 const mcAnswerMd1: string = `
 Yes
@@ -22,12 +21,12 @@ export default class ExerciseTest extends MultiChoiceExerciseTestAbs {
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd1.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd1,
-      isCorrect: true,
+      isCorrect: false,
     });
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd2.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd2,
-      isCorrect: false,
+      isCorrect: true,
     });
 
     return mcAnswers;

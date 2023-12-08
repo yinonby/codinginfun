@@ -21,7 +21,7 @@ and the second placeholder <<#2#>> with the correct variable,
 so that a loop keeps prompting the user for input,
 until they submit <<"Hello">>.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

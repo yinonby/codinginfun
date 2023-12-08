@@ -10,7 +10,7 @@ Tasks:
 so that <<"The sun has set!">> is printed to the output
 if and only if the value of <<isSunShining>> is <<false>>.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

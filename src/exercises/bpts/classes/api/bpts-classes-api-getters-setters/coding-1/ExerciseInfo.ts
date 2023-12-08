@@ -10,7 +10,7 @@ returns the value of member property <<companyName>>.
 changes the value of member property <<companyName>> to
 the given parameter.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

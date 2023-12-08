@@ -20,14 +20,13 @@ Tasks:
 so that <<firstChoice>> is returned if and only if the array
 <<availableMilkshakes>> contains an item whose value is equal to the
 value of <<firstChoice>>.
-
 - Replace the second placeholder <<#2#>> with the correct keywords,
 so that <<secondChoice>> is returned if and only if the array
 <<availableMilkshakes>> doesn't contain an item whose value is
 equal to the value of <<firstChoice>>, but does contain an item
 whose value is equal to the value of <<secondChoice>>.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

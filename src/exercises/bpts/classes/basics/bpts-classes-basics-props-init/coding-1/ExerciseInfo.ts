@@ -7,7 +7,7 @@ Tasks:
 that the member property <<foodType>> is initializaed with the value
 of the constructor parameter <<foodType>>.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

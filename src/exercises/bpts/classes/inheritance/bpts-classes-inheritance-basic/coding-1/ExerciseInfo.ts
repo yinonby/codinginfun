@@ -6,7 +6,7 @@ Tasks:
 - Replace the placeholder <<#1#>> so that the class <<Triangle>>
 inherits from class <<Shape>>.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

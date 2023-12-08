@@ -8,7 +8,7 @@ that member method <<printMessage()>> prints to the output the
 message given by member method <<getMessage()>> defined in
 the parent class.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

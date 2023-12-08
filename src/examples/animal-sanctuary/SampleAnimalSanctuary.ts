@@ -17,7 +17,7 @@ export default class SampleAnimalSanctuary {
     animalSanctuary.createRoomLivingSpace("Primary location", "room R-2");
     animalSanctuary.createRoomLivingSpace("Primary location", "room R-3");
     animalSanctuary.createPatioLivingSpace("Primary location", "patio P-1");
-    
+     
     const dog1 = new Dog("Lola", "0001-1234-0000", "Galego", "2020-02-26");
     const dog2 = new Dog("Micky", "0001-1234-1111", "Mastin", "2018-05-02");
     const cat1 = new Cat("Mika", "0001-1234-2222", "Mezcla", "2020-01-05");

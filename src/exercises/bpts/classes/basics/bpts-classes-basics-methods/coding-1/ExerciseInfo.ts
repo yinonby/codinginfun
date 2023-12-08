@@ -9,7 +9,7 @@ return-type (<<void>>);
 - Replace the second placeholder <<#2#>> with a call to the
 member method <<printMenu()>>.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

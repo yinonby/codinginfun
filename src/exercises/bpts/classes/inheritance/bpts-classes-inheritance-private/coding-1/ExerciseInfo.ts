@@ -7,7 +7,7 @@ Tasks:
 that member method <<getEmployeeNames()>> is **not** accessible
 in child class <<Restaurant>>.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

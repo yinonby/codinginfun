@@ -10,7 +10,7 @@ Tasks:
 - Replace the 2nd placeholder <<#2#>> with the correct return-value.
 - Replace the 3rd placeholder <<#3#>> with the correct return-value.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

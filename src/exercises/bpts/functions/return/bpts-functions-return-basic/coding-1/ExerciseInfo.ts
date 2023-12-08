@@ -8,7 +8,7 @@ of type <<number>>.
 Tasks:
 - Replace the placeholder <<#1#>> with the correct return-type.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

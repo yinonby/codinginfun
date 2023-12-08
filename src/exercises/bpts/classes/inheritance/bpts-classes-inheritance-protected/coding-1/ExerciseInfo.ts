@@ -7,7 +7,7 @@ Tasks:
 that member method <<getEmployeeNamesAsString()>> can only be accessed
 in the parent class and its child class.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

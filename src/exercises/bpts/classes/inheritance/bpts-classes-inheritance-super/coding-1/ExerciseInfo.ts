@@ -7,7 +7,7 @@ Tasks:
 call the constructor of the parent class, so that the constructor of class
 <<Shape>> is called.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

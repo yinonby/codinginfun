@@ -27,7 +27,7 @@ value of <<firstChoice>>.
 whose value is equal to the value of <<secondChoice>>
   - Otherwise, the first item of the <<availableMilkshakes>> array is returned.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

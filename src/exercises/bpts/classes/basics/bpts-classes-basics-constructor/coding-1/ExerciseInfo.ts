@@ -9,7 +9,7 @@ that when an instance of class <<Restaurant>> is created, the message
 - Replace the second placeholder <<#2#>> with the correct class name, so
 that a new instance of class <<Restaurant>> is created.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

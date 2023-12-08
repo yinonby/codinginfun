@@ -1,17 +1,19 @@
+
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
-- Your declaration should come in the line below 'line 1'.
+Tasks:
+- Declare a non-constant variable named <<someValue>>, of type <<number>>,
+and initialize its value to <<3>>.
+- Then, in a new line, change the variable value to <<8>>.
 
-- Declare a non-constant variable named <<someValue>>, of type <<number>>, and initialize its value to <<3>>.
-
-- Then, move to a new line (by pressing Enter), and change the variable value to <<8>>.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
 
   getType(): EX_TYPE {
-    return EX_TYPE.EX_TYPE_SANDBOX;
+    return EX_TYPE.EX_TYPE_CODING;
   }
 
   getMdInstructions(): string {

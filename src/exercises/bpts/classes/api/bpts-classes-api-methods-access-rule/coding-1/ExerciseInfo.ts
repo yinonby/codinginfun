@@ -7,7 +7,7 @@ Tasks:
 the correct accessibility modifier so that getter/setter methods and API
 methods are accessible outside the class, and internal methods aren't.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

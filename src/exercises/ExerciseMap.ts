@@ -97,11 +97,6 @@ export type NameItem = {
 
 export default class ExerciseMap {
   private map: ExerciseMapItem = {
-    "test": {
-      "name": "test",
-      "displayName": "Test",
-      "chapters": [],
-    },
     "bpts": {
       "name": "bpts",
       "displayName": "Basic Programming with TypeScript",

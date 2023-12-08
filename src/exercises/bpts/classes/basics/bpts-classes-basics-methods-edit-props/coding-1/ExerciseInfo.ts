@@ -12,7 +12,7 @@ the parameter <<newRestaurantName>>.
 so that the restaurant represented by the variable <<restaurant>>
 changes its name to <<"Pizza Italy">>.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

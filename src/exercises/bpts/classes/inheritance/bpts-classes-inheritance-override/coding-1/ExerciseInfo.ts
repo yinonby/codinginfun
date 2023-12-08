@@ -7,7 +7,7 @@ Tasks:
 so that this method will override the method <<getMessage()>> defined
 in the parent class <<Shape>>.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

@@ -10,7 +10,7 @@ Tasks:
 using the variable <<isSunShining>>, so that <<"The sun is shining!">>
 is printed to the output.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

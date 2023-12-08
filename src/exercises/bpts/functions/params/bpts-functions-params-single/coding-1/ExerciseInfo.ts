@@ -3,12 +3,10 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
 - Write a function <<printNumber>>.
-
 - The function is given a parameter <<x>> of type <<number>>.
-
 - The function prints the number to the output (console).
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

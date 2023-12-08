@@ -14,7 +14,7 @@ Tasks:
 that the parent class <<Shape>> is initialized with the value of
 the area of the square.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

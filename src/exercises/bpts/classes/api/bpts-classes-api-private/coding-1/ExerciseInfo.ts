@@ -6,7 +6,7 @@ Tasks:
 - Replace the placeholders so that an instance of class <<Spy>> exposes
 the spy's initial, but not its name.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

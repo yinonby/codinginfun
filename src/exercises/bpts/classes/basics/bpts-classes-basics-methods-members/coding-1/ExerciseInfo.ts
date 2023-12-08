@@ -10,7 +10,7 @@ the member property <<foodType>>.
 <<public>> member method <<getFoodType()>>, so that the
 result is printed to the output.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

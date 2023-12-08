@@ -1,19 +1,15 @@
-
 import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
-Tasks:
-- Replace the placeholder <<#1#>> with an accessibility
-modifier that allows access to this property from outside
-the class.
+- Your declaration should come in the line below 'line 1'.
 
-Don't forget to follow code conventions.
+- Declare a constant variable named <<x>>, of type <<number>>, and initialize its value to <<10>>.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
 
   getType(): EX_TYPE {
-    return EX_TYPE.EX_TYPE_CODING;
+    return EX_TYPE.EX_TYPE_SANDBOX;
   }
 
   getMdInstructions(): string {

@@ -7,7 +7,7 @@ Tasks:
 so that the member property <<creationMessage>> is printed
 to the output when creating a new instance.
 
-- Don't forget to follow code conventions.
+Don't forget to follow code conventions.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {
