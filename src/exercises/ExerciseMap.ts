@@ -4,7 +4,6 @@ import ExerciseMgrAdapter from "#infra/mgr/ExerciseMgrAbs";
 import BptsVarsBasicConstExerciseMgr from "./bpts/vars/basics/bpts-vars-basics-const/ExerciseMgr";
 import BptsVarsBasicLetExerciseMgr from "./bpts/vars/basics/bpts-vars-basics-let/ExerciseMgr";
 import BptsVarsBasicNamingExerciseMgr from "./bpts/vars/basics/bpts-vars-basics-naming/ExerciseMgr";
-import BptsVarsTypesArrayExerciseMgr from "./bpts/vars/types/bpts-vars-types-array/ExerciseMgr";
 import BptsVarsTypesBooleanExerciseMgr from "./bpts/vars/types/bpts-vars-types-boolean/ExerciseMgr";
 import BptsVarsTypesConstVsLetExerciseMgr from "./bpts/vars/types/bpts-vars-types-const-vs-let/ExerciseMgr";
 import BptsVarsTypesStringExerciseMgr from "./bpts/vars/types/bpts-vars-types-string/ExerciseMgr";
@@ -16,8 +15,8 @@ import BptsOperatorsComparisonBasicExerciseMgr from "./bpts/operators/comparison
 import BptsOperatorsLogicalBasicExerciseMgr from "./bpts/operators/logical/bpts-operators-logical-basic/ExerciseMgr";
 import BptsOperatorsStringsConcatExerciseMgr from "./bpts/operators/strings/bpts-operators-strings-concat/ExerciseMgr";
 
-import BptsFunctionsBasicsCallingExerciseMgr from "./bpts/functions/basics/bpts-functions-basics-calling/ExerciseMgr";
 import BptsFunctionsBasicsDeclarationExerciseMgr from "./bpts/functions/basics/bpts-functions-basics-declaration/ExerciseMgr";
+import BptsFunctionsBasicsInvocationExerciseMgr from "./bpts/functions/basics/bpts-functions-basics-invocation/ExerciseMgr";
 import BptsFunctionsParamsMultiExerciseMgr from "./bpts/functions/params/bpts-functions-params-multi/ExerciseMgr";
 import BptsFunctionsParamsSingleExerciseMgr from "./bpts/functions/params/bpts-functions-params-single/ExerciseMgr";
 import BptsFunctionsPrincipalsReuseExerciseMgr from "./bpts/functions/principals/bpts-functions-principals-reuse/ExerciseMgr";
@@ -31,6 +30,8 @@ import BptsConditionalIfElseifExerciseMgr from "./bpts/conditionals/if/bpts-cond
 import BptsConditionalIfNestedExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-nested/ExerciseMgr";
 import BptsConditionalIfReturnExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-return/ExerciseMgr";
 import BptsConditionalIfScopeExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-scope/ExerciseMgr";
+
+import BptsArraysBasicsDeclarationExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-declaration/ExerciseMgr";
 
 import BptsLoopsForOfBasicExerciseMgr from "./bpts/loops/for-of/bpts-loops-for-of-basic/ExerciseMgr";
 import BptsLoopsForAfterthoughtExerciseMgr from "./bpts/loops/for/bpts-loops-for-afterthought/ExerciseMgr";
@@ -136,10 +137,6 @@ export default class ExerciseMap {
                   "exerciseMgr": new BptsVarsTypesBooleanExerciseMgr(),
                 },
                 {
-                  "name": "bpts-vars-types-array",
-                  "exerciseMgr": new BptsVarsTypesArrayExerciseMgr(),
-                },
-                {
                   "name": "bpts-vars-types-const-vs-let",
                   "exerciseMgr": new BptsVarsTypesConstVsLetExerciseMgr(),
                 },
@@ -220,8 +217,8 @@ export default class ExerciseMap {
                   "exerciseMgr": new BptsFunctionsBasicsDeclarationExerciseMgr(),
                 },
                 {
-                  "name": "bpts-functions-basics-calling",
-                  "exerciseMgr": new BptsFunctionsBasicsCallingExerciseMgr(),
+                  "name": "bpts-functions-basics-invocation",
+                  "exerciseMgr": new BptsFunctionsBasicsInvocationExerciseMgr(),
                 },
               ]
             },
@@ -309,6 +306,22 @@ export default class ExerciseMap {
                 },
               ]
             },
+          ]
+        },
+        {
+          "name": "arrays",
+          "displayName": "Arrays",
+          "lessons": [
+            {
+              "name": "basics",
+              "displayName": "Basic Arrays",
+              "exercises": [
+                {
+                  "name": "bpts-arrays-basics-declaration",
+                  "exerciseMgr": new BptsArraysBasicsDeclarationExerciseMgr(),
+                },
+              ]
+            }
           ]
         },
         {

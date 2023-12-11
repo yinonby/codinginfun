@@ -16,7 +16,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "Array variables";
+    return "Array variables declaration";
   }
 
   getTasks(): ExerciseTask[] {
