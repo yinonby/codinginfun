@@ -32,7 +32,10 @@ import BptsConditionalIfReturnExerciseMgr from "./bpts/conditionals/if/bpts-cond
 import BptsConditionalIfScopeExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-scope/ExerciseMgr";
 
 import BptsArraysBasicsAccessExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-access/ExerciseMgr";
+import BptsArraysBasicsAddExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-add/ExerciseMgr";
 import BptsArraysBasicsDeclarationExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-declaration/ExerciseMgr";
+import BptsArraysBasicsIncludesExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-includes/ExerciseMgr";
+import BptsArraysBasicsRemoveExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-remove/ExerciseMgr";
 import BptsArraysBasicsSizeExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-size/ExerciseMgr";
 
 import BptsLoopsForOfBasicExerciseMgr from "./bpts/loops/for-of/bpts-loops-for-of-basic/ExerciseMgr";
@@ -329,6 +332,18 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-arrays-basics-access",
                   "exerciseMgr": new BptsArraysBasicsAccessExerciseMgr(),
+                },
+                {
+                  "name": "bpts-arrays-basics-add",
+                  "exerciseMgr": new BptsArraysBasicsAddExerciseMgr(),
+                },
+                {
+                  "name": "bpts-arrays-basics-remove",
+                  "exerciseMgr": new BptsArraysBasicsRemoveExerciseMgr(),
+                },
+                {
+                  "name": "bpts-arrays-basics-includes",
+                  "exerciseMgr": new BptsArraysBasicsIncludesExerciseMgr(),
                 },
               ]
             }

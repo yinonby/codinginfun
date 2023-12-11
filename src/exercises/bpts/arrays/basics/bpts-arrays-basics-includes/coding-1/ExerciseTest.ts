@@ -3,12 +3,12 @@ import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
 const vegetables: string[] = ["Cucumber", "Carrot", "Pepper"];
-console.log(vegetables[#1#]);
+console.log(vegetables.#1#("Cucumber"));
 `;
 
 const expectedSolutionText: string = `
 const vegetables: string[] = ["Cucumber", "Carrot", "Pepper"];
-console.log(vegetables[0]);
+console.log(vegetables.includes("Cucumber"));
 `;
 
 const explanationMd = `

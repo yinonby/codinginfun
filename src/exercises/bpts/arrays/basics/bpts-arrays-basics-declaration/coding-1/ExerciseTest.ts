@@ -5,7 +5,7 @@ const initialSolutionText: string = `
 `;
 
 const expectedSolutionText: string = `
-const vegetables: string[] = ["Cucumber", "Carrot", "Pepper"]; 
+const vegetables: string[] = ["Cucumber", "Carrot", "Pepper"];
 `;
 
 const explanationMd = `
