@@ -3,9 +3,8 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
 Tasks:
-- Declare a constant variable named <<vegetables>>,
-of type <<string[]>> (array of strings), and initialize its value
-with an array of the following values: "Cucumber", "Carrot", and "Pepper".
+- Replace the placeholder <<#1#>> with the correct array index so
+that the last array item <<"Pepper">> is printed to the output.
 
 Don't forget to follow code conventions.
 `;
