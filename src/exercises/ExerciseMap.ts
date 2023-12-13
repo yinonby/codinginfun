@@ -31,12 +31,13 @@ import BptsFunctionsReturnWithConditionalsExerciseMgr from "./bpts/functions/ret
 import BptsFunctionsScopeNestedExerciseMgr from "./bpts/functions/scope/bpts-functions-scope-nested/ExerciseMgr";
 import BptsFunctionsScopeOuterExerciseMgr from "./bpts/functions/scope/bpts-functions-scope-outer/ExerciseMgr";
 
-import BptsArraysBasicsAccessExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-access/ExerciseMgr";
 import BptsArraysBasicsAddExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-add/ExerciseMgr";
 import BptsArraysBasicsDeclarationExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-declaration/ExerciseMgr";
 import BptsArraysBasicsIncludesExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-includes/ExerciseMgr";
+import BptsArraysBasicsReadItemExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-read-item/ExerciseMgr";
 import BptsArraysBasicsRemoveExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-remove/ExerciseMgr";
 import BptsArraysBasicsSizeExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-size/ExerciseMgr";
+import BptsArraysBasicsWriteItemExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-write-item/ExerciseMgr";
 
 import BptsLoopsForOfBasicExerciseMgr from "./bpts/loops/for-of/bpts-loops-for-of-basic/ExerciseMgr";
 import BptsLoopsForAfterthoughtExerciseMgr from "./bpts/loops/for/bpts-loops-for-afterthought/ExerciseMgr";
@@ -330,8 +331,12 @@ export default class ExerciseMap {
                   "exerciseMgr": new BptsArraysBasicsSizeExerciseMgr(),
                 },
                 {
-                  "name": "bpts-arrays-basics-access",
-                  "exerciseMgr": new BptsArraysBasicsAccessExerciseMgr(),
+                  "name": "bpts-arrays-basics-read-item",
+                  "exerciseMgr": new BptsArraysBasicsReadItemExerciseMgr(),
+                },
+                {
+                  "name": "bpts-arrays-basics-write-item",
+                  "exerciseMgr": new BptsArraysBasicsWriteItemExerciseMgr(),
                 },
                 {
                   "name": "bpts-arrays-basics-add",
