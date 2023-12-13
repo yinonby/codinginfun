@@ -5,20 +5,15 @@ const md: string = `
 What is the output of the following code?
 
 >>>>
-const availableMilkshakes: string[] = ["Chocolate", "Vanilla",
-  "Strawberry-Chocolate"];
+const x: number = 9;
 
-function getMilkshake(firstChoice: string, secondChoice: string): string {
-  if (availableMilkshakes.includes(firstChoice)) {
-    return firstChoice;
-  } else if (availableMilkshakes.includes(secondChoice)) {
-    return secondChoice;
-  } else {
-    return availableMilkshakes[0];
-  }
+if (x % 2 === 0) {
+  console.log("Even number!");
+} else if (x > 0) {
+  console.log("Positive odd number!");
+} else {
+  console.log("Negative odd number!");
 }
-
-console.log(getMilkshake("chocolate", "Vanilla"));
 <<<<
 `;
 

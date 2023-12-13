@@ -2,13 +2,15 @@
 import QuestionExerciseTestAbs from "#infra/test/QuestionExerciseTestAbs";
 
 const output: string = `
-"option 3"
+"Cold planet!"
 `;
 
 const explanation: string = `
-- The value of <<x + y>> is <<8>>. Therefore, the first 2 conditions
-are not met, while the 3rd condition <<x + y > 7>> is met, and
-<<"option 3">> is printed to the output.
+- The <<if>> condition is not met because the value of <<plantName>>
+is neither "Venus" nor "Mercury".
+- The <<else if>> condition is not met because the value of <<plantName>>
+is neither "Earth" nor "Mars".
+- Therefore, the <<else>> statement is executed.
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {

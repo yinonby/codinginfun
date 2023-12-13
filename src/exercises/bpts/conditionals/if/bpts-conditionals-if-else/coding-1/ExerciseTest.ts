@@ -2,22 +2,22 @@
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
-function printSunStatus(isSunShining: boolean): void {
-  if (isSunShining) {
-    console.log("The sun is shining!");
-  } #1# {
-    console.log("The sun has set!");
-  }
+const isSunShining: boolean = true;
+
+if (isSunShining) {
+  console.log("The sun is shining!");
+} #1# {
+  console.log("The sun has set!");
 }
 `;
 
 const expectedSolutionText: string = `
-function printSunStatus(isSunShining: boolean): void {
-  if (isSunShining) {
-    console.log("The sun is shining!");
-  } else {
-    console.log("The sun has set!");
-  }
+const isSunShining: boolean = true;
+
+if (isSunShining) {
+  console.log("The sun is shining!");
+} else {
+  console.log("The sun has set!");
 }
 `;
 

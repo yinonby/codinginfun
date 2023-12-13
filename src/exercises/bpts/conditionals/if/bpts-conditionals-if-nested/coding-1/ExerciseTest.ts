@@ -2,39 +2,31 @@
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
-const availableMilkshakes: string[] = ["Chocolate", "Vanilla",
-  "Strawberry-Chocolate"];
+const isSunShining: boolean = false;
+const isMoonUp: boolean = true;
 
-// Function to return a milkshake taste according to 2 choices, if available,
-// or the first available choice if none of the choices is available
-function getMilkshake(firstChoice: string, secondChoice: string): string {
-  #1# (availableMilkshakes.includes(firstChoice)) {
-    return firstChoice;
-  } #2# {
-    #3# (availableMilkshakes.includes(secondChoice)) {
-      return secondChoice;
-    } #4# {
-      return availableMilkshakes[0];
-    }
+if (#1#) {
+  console.log("The sun is shining!");
+} else {
+  if (#2#) {
+    console.log("The moon is up!");
+  } else {
+    console.log("There is darkness!");
   }
 }
 `;
 
 const expectedSolutionText: string = `
-const availableMilkshakes: string[] = ["Chocolate", "Vanilla",
-  "Strawberry-Chocolate"];
+const isSunShining: boolean = false;
+const isMoonUp: boolean = true;
 
-// Function to return a milkshake taste according to 2 choices, if available,
-// or the first available choice if none of the choices is available
-function getMilkshake(firstChoice: string, secondChoice: string): string {
-  if (availableMilkshakes.includes(firstChoice)) {
-    return firstChoice;
+if (isSunShining) {
+  console.log("The sun is shining!");
+} else {
+  if (isMoonUp) {
+    console.log("The moon is up!");
   } else {
-    if (availableMilkshakes.includes(secondChoice)) {
-      return secondChoice;
-    } else {
-      return availableMilkshakes[0];
-    }
+    console.log("There is darkness!");
   }
 }
 `;

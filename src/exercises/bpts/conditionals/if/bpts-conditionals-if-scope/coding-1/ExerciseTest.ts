@@ -2,35 +2,27 @@
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
-function printSomeNumbers(flag: boolean): void {
+const flag: boolean = true;
+const x: number = 10;
+
+if (flag) {
   const x: number = #1#;
-
-  if (flag) {
-    const x: number = #2#;
-    console.log(x);
-  } else {
-    console.log(x);
-  }
+  console.log(x);
+} else {
+  console.log(x);
 }
-
-printSomeNumbers(true);
-printSomeNumbers(false);
 `;
 
 const expectedSolutionText: string = `
-function printSomeNumbers(flag: boolean): void {
-  const x: number = 10;
+const flag: boolean = true;
+const x: number = 10;
 
-  if (flag) {
-    const x: number = 20;
-    console.log(x);
-  } else {
-    console.log(x);
-  }
+if (flag) {
+  const x: number = 20;
+  console.log(x);
+} else {
+  console.log(x);
 }
-
-printSomeNumbers(true);
-printSomeNumbers(false);
 `;
 
 const explanationMd = `

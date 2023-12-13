@@ -3,10 +3,10 @@ import ExerciseMgrAbs from "#infra/mgr/ExerciseMgrAbs";
 import ExerciseTask from "#infra/task/ExerciseTask";
 import ExerciseInfo from "./coding-1/ExerciseInfo";
 import ExerciseTest from "./coding-1/ExerciseTest";
-import Question1ExerciseInfo from "./question-1/ExerciseInfo";
-import Question1ExerciseTest from "./question-1/ExerciseTest";
 import Mc1ExerciseInfo from "./mc-1/ExerciseInfo";
 import Mc1ExerciseTest from "./mc-1/ExerciseTest";
+import Question1ExerciseInfo from "./question-1/ExerciseInfo";
+import Question1ExerciseTest from "./question-1/ExerciseTest";
 
 export default class ExerciseMgr extends ExerciseMgrAbs {
   private exerciseTasks: ExerciseTask[] = [];
@@ -28,7 +28,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "'if' statements and functions return-value";
+    return "Functions return-value when using conditionals";
   }
 
   getTasks(): ExerciseTask[] {

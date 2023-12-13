@@ -5,15 +5,18 @@ const md: string = `
 What is the output of the following code?
 
 >>>>
-function printSongFromSpotify(genre: string, language: string): void {
-  if (genre === "Salsa") {
-    if (language === "Spanish") {
-      console.log("Despacito");
-    }
+const areAllPassengersInside: boolean = false;
+const areAllDoorsClosed: boolean = false;
+
+if (areAllPassengersInside) {
+  console.log("Cannot start driving, waiting for passengers!");
+} else {
+  if (areAllDoorsClosed) {
+    console.log("Cannot start driving, not all doors are closed!");
+  } else {
+    console.log("Can start driving!");
   }
 }
-
-printSongFromSpotify("Salsa", "French");
 <<<<
 `;
 

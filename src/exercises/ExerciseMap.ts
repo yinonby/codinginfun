@@ -15,21 +15,21 @@ import BptsOperatorsComparisonBasicExerciseMgr from "./bpts/operators/comparison
 import BptsOperatorsLogicalBasicExerciseMgr from "./bpts/operators/logical/bpts-operators-logical-basic/ExerciseMgr";
 import BptsOperatorsStringsConcatExerciseMgr from "./bpts/operators/strings/bpts-operators-strings-concat/ExerciseMgr";
 
+import BptsConditionalIfBasicExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-basic/ExerciseMgr";
+import BptsConditionalIfElseExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-else/ExerciseMgr";
+import BptsConditionalIfElseifExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-elseif/ExerciseMgr";
+import BptsConditionalIfNestedExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-nested/ExerciseMgr";
+import BptsConditionalIfScopeExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-scope/ExerciseMgr";
+
 import BptsFunctionsBasicsDeclarationExerciseMgr from "./bpts/functions/basics/bpts-functions-basics-declaration/ExerciseMgr";
 import BptsFunctionsBasicsInvocationExerciseMgr from "./bpts/functions/basics/bpts-functions-basics-invocation/ExerciseMgr";
 import BptsFunctionsParamsMultiExerciseMgr from "./bpts/functions/params/bpts-functions-params-multi/ExerciseMgr";
 import BptsFunctionsParamsSingleExerciseMgr from "./bpts/functions/params/bpts-functions-params-single/ExerciseMgr";
 import BptsFunctionsPrincipalsReuseExerciseMgr from "./bpts/functions/principals/bpts-functions-principals-reuse/ExerciseMgr";
 import BptsFunctionsReturnBasicExerciseMgr from "./bpts/functions/return/bpts-functions-return-basic/ExerciseMgr";
+import BptsFunctionsReturnWithConditionalsExerciseMgr from "./bpts/functions/return/bpts-functions-return-with-conditionals/ExerciseMgr";
 import BptsFunctionsScopeNestedExerciseMgr from "./bpts/functions/scope/bpts-functions-scope-nested/ExerciseMgr";
 import BptsFunctionsScopeOuterExerciseMgr from "./bpts/functions/scope/bpts-functions-scope-outer/ExerciseMgr";
-
-import BptsConditionalIfBasicExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-basic/ExerciseMgr";
-import BptsConditionalIfElseExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-else/ExerciseMgr";
-import BptsConditionalIfElseifExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-elseif/ExerciseMgr";
-import BptsConditionalIfNestedExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-nested/ExerciseMgr";
-import BptsConditionalIfReturnExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-return/ExerciseMgr";
-import BptsConditionalIfScopeExerciseMgr from "./bpts/conditionals/if/bpts-conditionals-if-scope/ExerciseMgr";
 
 import BptsArraysBasicsAccessExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-access/ExerciseMgr";
 import BptsArraysBasicsAddExerciseMgr from "./bpts/arrays/basics/bpts-arrays-basics-add/ExerciseMgr";
@@ -210,6 +210,38 @@ export default class ExerciseMap {
           ]
         },
         {
+          "name": "conditionals",
+          "displayName": "Conditionals",
+          "lessons": [
+            {
+              "name": "if",
+              "displayName": "'if...else' conditionals",
+              "exercises": [
+                {
+                  "name": "bpts-conditionals-if-basic",
+                  "exerciseMgr": new BptsConditionalIfBasicExerciseMgr(),
+                },
+                {
+                  "name": "bpts-conditionals-if-else",
+                  "exerciseMgr": new BptsConditionalIfElseExerciseMgr(),
+                },
+                {
+                  "name": "bpts-conditionals-if-elseif",
+                  "exerciseMgr": new BptsConditionalIfElseifExerciseMgr(),
+                },
+                {
+                  "name": "bpts-conditionals-if-nested",
+                  "exerciseMgr": new BptsConditionalIfNestedExerciseMgr(),
+                },
+                {
+                  "name": "bpts-conditionals-if-scope",
+                  "exerciseMgr": new BptsConditionalIfScopeExerciseMgr(),
+                },
+              ]
+            },
+          ]
+        },
+        {
           "name": "functions",
           "displayName": "Functions",
           "lessons": [
@@ -249,6 +281,10 @@ export default class ExerciseMap {
                   "name": "bpts-functions-return-basic",
                   "exerciseMgr": new BptsFunctionsReturnBasicExerciseMgr(),
                 },
+                {
+                  "name": "bpts-functions-return-with-conditionals",
+                  "exerciseMgr": new BptsFunctionsReturnWithConditionalsExerciseMgr(),
+                },
               ]
             },
             {
@@ -272,42 +308,6 @@ export default class ExerciseMap {
                 {
                   "name": "bpts-functions-basics-reuse",
                   "exerciseMgr": new BptsFunctionsPrincipalsReuseExerciseMgr(),
-                },
-              ]
-            },
-          ]
-        },
-        {
-          "name": "conditionals",
-          "displayName": "Conditionals",
-          "lessons": [
-            {
-              "name": "if",
-              "displayName": "'if...else' conditionals",
-              "exercises": [
-                {
-                  "name": "bpts-conditionals-if-basic",
-                  "exerciseMgr": new BptsConditionalIfBasicExerciseMgr(),
-                },
-                {
-                  "name": "bpts-conditionals-if-return",
-                  "exerciseMgr": new BptsConditionalIfReturnExerciseMgr(),
-                },
-                {
-                  "name": "bpts-conditionals-if-else",
-                  "exerciseMgr": new BptsConditionalIfElseExerciseMgr(),
-                },
-                {
-                  "name": "bpts-conditionals-if-elseif",
-                  "exerciseMgr": new BptsConditionalIfElseifExerciseMgr(),
-                },
-                {
-                  "name": "bpts-conditionals-if-nested",
-                  "exerciseMgr": new BptsConditionalIfNestedExerciseMgr(),
-                },
-                {
-                  "name": "bpts-conditionals-if-scope",
-                  "exerciseMgr": new BptsConditionalIfScopeExerciseMgr(),
                 },
               ]
             },

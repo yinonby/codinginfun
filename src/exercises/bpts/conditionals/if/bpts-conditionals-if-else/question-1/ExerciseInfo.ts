@@ -5,20 +5,14 @@ const md: string = `
 What is the output of the following code?
 
 >>>>
-function isCloserToTheSunThanEarth(plantName: string): boolean {
-  if (plantName === "Venus" || plantName === "Mercury") {
-    return true;
-  } else {
-    return false;
-  }
+const plantName: string = "Earth";
+
+if (plantName === "Venus" || plantName === "Mercury") {
+  console.log("Hot planet!");
+} else {
+  console.log("Not a hot planet!");
 }
-
-console.log(isCloserToTheSunThanEarth("Earth"));
-console.log(isCloserToTheSunThanEarth("Jupiter"));
-console.log(isCloserToTheSunThanEarth("Mercury"));
 <<<<
-
-Remember that each print to output (console) is printed on a separate line.
 `;
 
 export default class ExerciseInfo extends ExerciseInfoAbs {

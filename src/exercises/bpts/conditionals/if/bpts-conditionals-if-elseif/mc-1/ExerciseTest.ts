@@ -1,31 +1,25 @@
 
-import MultiChoiceExerciseTestAbs, { MultiChoiceAnswer }
-  from "#infra/test/MultiChoiceExerciseTestAbs";
+import MultiChoiceExerciseTestAbs, { MultiChoiceAnswer } from "#infra/test/MultiChoiceExerciseTestAbs";
 
 const mcAnswerMd1: string = `
-"chocolate"
+"Even number!"
 `;
 const mcExplanationMd1: string = `
-- The parameter passed as <<firstChoice>> starts with a lowercase <<'c'>>,
-and therefore is not present in the array <<availableMilkshakes>>.
-- The parameter passed as <<secondChoice>> is present in the array,
-and therefore it is returned.
+- The 1st <<if>> condition is not met because the value of <<x>>
+is not an even number.
+- The <<else if>> statement is met because the value of <<x>>
+is positive.
 `;
 
 const mcAnswerMd2: string = `
-"Chocolate"
+"Positive odd number!"
 `;
 const mcExplanationMd2: string = mcExplanationMd1;
 
 const mcAnswerMd3: string = `
-"Vanilla"
+"Negative odd number!"
 `;
 const mcExplanationMd3: string = mcExplanationMd1;
-
-const mcAnswerMd4: string = `
-"Strawberry-Chocolate"
-`;
-const mcExplanationMd4: string = mcExplanationMd1;
 
 export default class ExerciseTest extends MultiChoiceExerciseTestAbs {
 
@@ -40,16 +34,11 @@ export default class ExerciseTest extends MultiChoiceExerciseTestAbs {
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd2.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd2,
-      isCorrect: false,
+      isCorrect: true,
     });
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd3.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd3,
-      isCorrect: true,
-    });
-    mcAnswers.push({
-      mcAnswerMd: mcAnswerMd4.replace(/^\s+|\s+$/g, ''),
-      mcExplanationMd: mcExplanationMd4,
       isCorrect: false,
     });
 

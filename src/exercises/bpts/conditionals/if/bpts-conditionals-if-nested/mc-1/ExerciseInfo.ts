@@ -5,23 +5,17 @@ const md: string = `
 What is the output of the following code?
 
 >>>>
-function choosePastry(sweetness: string, size: string): string {
-  if (sweetness === "strong") {
-    if (size === "small") {
-      return "Cupcake";
-    } else {
-      return "Chocolate cake";
-    }
+const x: number = 0;
+
+if (x % 2 !== 0) {
+  console.log("Odd number!");
+} else {
+  if (x > 0) {
+    console.log("Positive even number!");
   } else {
-    if (size === "small") {
-      return "Croissant";
-    } else {
-      return "Lemon cake";
-    }
+    console.log("Non-positive even number!");
   }
 }
-
-console.log(choosePastry("light", "small"));
 <<<<
 `;
 

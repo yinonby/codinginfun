@@ -2,16 +2,12 @@
 import QuestionExerciseTestAbs from "#infra/test/QuestionExerciseTestAbs";
 
 const output: string = `
-false
-false
-true
+"Not a hot planet!"
 `;
 
 const explanation: string = `
-- In the first 2 calls to <<isCloserToTheSunThanEarth>>, the <<if>>
-condition is not met. Therefore, <<false>> is returned.
-- In the last call, the <<if>> condition is met since the value of
-<<plantName>> equals <<"Mercury">>. Therefore, <<true>> is returned.
+Since the value of <<planetName>> is neither "Venus" nor "Mercury",
+the <<if>> condition is not met, and the <<else>> statement is executed.
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {

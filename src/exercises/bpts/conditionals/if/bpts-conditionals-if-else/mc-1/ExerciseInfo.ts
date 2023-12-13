@@ -5,15 +5,13 @@ const md: string = `
 What is the output of the following code?
 
 >>>>
-function isOddNumber(x: number): boolean {
-  if (x % 2 === 0) {
-    return false;
-  } else {
-    return true;
-  }
-}
+const x: number = 9;
 
-console.log(isOddNumber(0));
+if (x % 2 === 0) {
+  console.log("Even number!");
+} else {
+  console.log("Odd number!");
+}
 <<<<
 `;
 

@@ -2,11 +2,14 @@
 import QuestionExerciseTestAbs from "#infra/test/QuestionExerciseTestAbs";
 
 const output: string = `
+"Can start driving!"
 `;
 
 const explanation: string = `
-- While the outer <<if>> condition is met, the inner <<if>> condition
-is not met, and nothing is printed.
+- The outer <<if>> condition is not met. Therefore, the outer <<else>>
+statement is executed.
+- The the inner <<if>> condition is not met. Therefore, the inner <<else>>
+statement is executed.
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {

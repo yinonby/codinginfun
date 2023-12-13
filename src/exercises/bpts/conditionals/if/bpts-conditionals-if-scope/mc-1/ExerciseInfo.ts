@@ -5,20 +5,18 @@ const md: string = `
 What is the output of the following code?
 
 >>>>
-function printSomeNumbers(x: number): void {
-  if (x > 10) {
-    const x: number = 20;
-    console.log(x);
-  } else if (x % 3 === 1) {
-    const x: number = 30;
-    console.log(x);
-  } else {
-    const x: number = 40;
-    console.log(x);
-  }
-}
+const x: number = 10;
 
-printSomeNumbers(10);
+if (x > 10) {
+  const x: number = 20;
+  console.log(x);
+} else if (x % 3 === 1) {
+  const x: number = 30;
+  console.log(x);
+} else {
+  const x: number = 40;
+  console.log(x);
+}
 <<<<
 `;
 

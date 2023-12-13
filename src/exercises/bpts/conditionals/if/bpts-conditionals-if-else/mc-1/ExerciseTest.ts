@@ -1,18 +1,16 @@
 
-import MultiChoiceExerciseTestAbs, { MultiChoiceAnswer }
-  from "#infra/test/MultiChoiceExerciseTestAbs";
+import MultiChoiceExerciseTestAbs, { MultiChoiceAnswer } from "#infra/test/MultiChoiceExerciseTestAbs";
 
 const mcAnswerMd1: string = `
-false
+"Even number!"
 `;
 const mcExplanationMd1: string = `
-- The function <<isOddNumber>> is called with the parameter <<x>> equal
-to <<0>>. The <<if>> condition is met (since the remainder of <<0>>
-  divided by <<2>> is <<0>>), and <<false>> is returned.
+Since the value of <<x>> is an odd number, the <<if>> condition
+isn't met, and the <<else>> statement is executed.
 `;
 
 const mcAnswerMd2: string = `
-No
+"Odd number!"
 `;
 const mcExplanationMd2: string = mcExplanationMd1;
 
@@ -24,12 +22,12 @@ export default class ExerciseTest extends MultiChoiceExerciseTestAbs {
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd1.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd1,
-      isCorrect: true,
+      isCorrect: false,
     });
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd2.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd2,
-      isCorrect: false,
+      isCorrect: true,
     });
 
     return mcAnswers;
