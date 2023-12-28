@@ -3,8 +3,8 @@ import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
 const fruits: string[] = ["Strawberry", "Banana", "Apple", "Mango"];
-for (let i: number = 0; i < ?; i++) {
-  console.log(?);
+for (let i: number = 0; i < #1#; i++) {
+  console.log(#2#);
 }
 `;
 

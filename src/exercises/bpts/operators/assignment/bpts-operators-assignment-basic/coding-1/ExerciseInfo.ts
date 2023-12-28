@@ -5,7 +5,7 @@ const md: string = `
 - We declared a non-constant variable named <<x>> of type <<number>>,
 and initialized it with <<3>>.
 
-- Your task is to replace the question mark <<?>>: add <<4>> to <<x>>,
+- Your task is to replace the placeholder <<#1#>>: add <<4>> to <<x>>,
 and assign the result back to <<x>> (use Addition-Assignment <<+=>> operator).
 `;
 

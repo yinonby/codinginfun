@@ -3,7 +3,7 @@ import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
 let x: number = 3;
-?
+#1#
 console.log(x); // output: 7
 `;
 

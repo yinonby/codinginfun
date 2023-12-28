@@ -8,7 +8,7 @@ and initialized it with <<"Marco">>.
 - We declared another constant variable named <<lastName>> of type <<string>>,
 and initialized it with <<"Polo">>.
 
-- Your task is to replace the question mark <<?>>: declare another
+- Your task is to replace the placeholder <<#1#>>: declare another
 variable <<fullName>>, and initialize its value to <<"Marco Polo">>,
 using the variables above.
 `;

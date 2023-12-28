@@ -6,8 +6,8 @@ const md: string = `
 - We can see that each print to console starts with the same words (<<My name is>>).
 - In the second part, there is no code duplication.
 - Your goal is to finish the implementation of the function <<printMyName>> and use it to print the names like in the first section.
-- Replace the question mark <<?>> that is inside <<printMyName>>, with the variable <<myName>>.
-- Replace the 3 question marks when calling the function <<printMyName>> with the 3 names from the first section.
+- Replace the first placeholder <<#1#>> that is inside <<printMyName>>, with the variable <<myName>>.
+- Replace the placeholders <<#2#>>, <<#3#>>, and <<#4#>>, when calling the function <<printMyName()>>, with the 3 people names from the first section.
 
 Don't forget to follow code conventions.
 `;

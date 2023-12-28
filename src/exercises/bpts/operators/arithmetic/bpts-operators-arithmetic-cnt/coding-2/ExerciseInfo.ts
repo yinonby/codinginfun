@@ -6,7 +6,7 @@ const md: string = `
 of type <<number>>, and initialized it with <<7>>.
 
 - Then we declared another non-constant variable named <<y>> of type <<number>>,
-and left a question mark <<?>> instead of initializing it.
+and left a placeholder <<#1#>> instead of initializing it.
 
 - Your task is to decrement <<x>> by <<1>>, while initializing <<y>> with
 the new value of <<x>>.
