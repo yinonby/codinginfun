@@ -7,7 +7,7 @@ true
 
 const explanation: string = `
 - <<x>> and <<y>> are both initialized with the value <<4>>.
-- The Strict Equality operator <<===>> evaluates whether the value of <<x>>
+- The Strict-Equality operator <<===>> evaluates whether the value of <<x>>
 is equal to the value of <<y>>. Since both variables hold the value <<4>>, the
 evaluation result is 'true'.
 `;
