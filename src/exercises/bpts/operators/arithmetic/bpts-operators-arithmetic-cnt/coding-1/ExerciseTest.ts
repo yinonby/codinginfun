@@ -3,7 +3,7 @@ import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
 let x: number = 7;
-let y: number = ?;
+let y: number = #1#;
 `;
 
 const expectedSolutionText: string = `

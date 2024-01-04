@@ -1,25 +1,31 @@
 
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
+const initialSolutionText: string = `
+`;
+
+const expectedSolutionText: string = `
+function foo() {
+    console.log("Inside foo");
+}
+
+function boo() {
+  console.log("Inside boo");
+  foo();
+}
+`;
+
 const explanationMd = `
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
 
   getInitialSolutionText(): string {
-    return "";
+    return initialSolutionText.replace(/^\s+|\s+$/g, '');;
   }
 
   getExpectedSolutionText(): string {
-    return "" +
-      "function foo() {\n" +
-      "    console.log(\"Inside foo\");\n" +
-      "}\n" +
-      "\n" +
-      "function boo() {\n" +
-      "    console.log(\"Inside boo\");\n" +
-      "    foo();\n" +
-      "}";
+    return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
   }
 
   getExpectedExplanationMd(): string {

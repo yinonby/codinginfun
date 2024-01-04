@@ -34,7 +34,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "'For' loops afterthought";
+    return "'for' loops afterthought";
   }
 
   getTasks(): ExerciseTask[] {

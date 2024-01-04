@@ -7,7 +7,7 @@ const squareOfThree: number = 3 * 3;
 const squareOfFour: number = 4 * 4;
 
 function square(x: number): number {
-    return ?;
+    return #1#;
 }
 `;
 

@@ -5,10 +5,10 @@ const md: string = `
 - We declared a non-constant variable named <<x>> of type <<number>>,
 and initialized it with <<3>>.
 
-- Your task is to replace the first question mark <<?>>: add <<9>> to <<x>>,
+- Your task is to replace the first placeholder <<#1#>>: add <<9>> to <<x>>,
 and assign the result back to <<x>> (use Addition-Assignment <<+=>> operator).
 
-- Then, replace the second question mark <<?>>: divide <<x>> by <<3>>, and
+- Then, replace the second placeholder <<#2#>>: divide <<x>> by <<3>>, and
 assign the result back to <<x>> (use the Division-Assignment operator <</=>>).
 `;
 

@@ -1,28 +1,34 @@
 
 import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
+const initialSolutionText: string = `
+`;
+
+const expectedSolutionText: string = `
+const myName: string = "John";
+
+function foo() {
+    const myName: string = "Bob";
+    console.log("Inside foo: myName is:");
+    console.log(myName);
+}
+
+console.log("Outside foo: myName is:");
+console.log(myName);
+foo();";
+`;
+
 const explanationMd = `
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
 
   getInitialSolutionText(): string {
-    return "";
+    return initialSolutionText.replace(/^\s+|\s+$/g, '');;
   }
 
   getExpectedSolutionText(): string {
-    return "" +
-      "const myName: string = \"John\";\n" +
-      "\n" +
-      "function foo() {\n" +
-      "    const myName: string = \"Bob\";\n" +
-      "    console.log(\"Inside foo: myName is:\");\n" +
-      "    console.log(myName);\n" +
-      "}\n" +
-      "\n" +
-      "console.log(\"Outside foo: myName is:\");\n" +
-      "console.log(myName);\n" +
-      "foo();";
+    return expectedSolutionText.replace(/^\s+|\s+$/g, '');;
   }
 
   getExpectedSolutionRowNum() {

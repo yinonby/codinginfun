@@ -7,7 +7,7 @@ true
 
 const explanation: string = `
 - <<str1>> and <<str2>> are initialized with different strings.
-- Therefore, the Strict Inequality operator <<!==>> evaluates to <<true>>.
+- Therefore, the Strict-Inequality operator <<!==>> evaluates to <<true>>.
 `;
 
 export default class ExerciseTest extends QuestionExerciseTestAbs {

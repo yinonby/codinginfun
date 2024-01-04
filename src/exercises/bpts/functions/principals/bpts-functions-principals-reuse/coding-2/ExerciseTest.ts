@@ -9,11 +9,11 @@ console.log("My name is Lisa");
 
 // Code is not duplicated
 function printMyName(myName: string): void {
-  console.log("My name is " + ?);
+  console.log("My name is " + #1#);
 }
-printMyName(?);
-printMyName(?);
-printMyName(?);
+printMyName(#2#);
+printMyName(#3#);
+printMyName(#4#);
 `;
 
 const expectedSolutionText: string = `

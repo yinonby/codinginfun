@@ -34,7 +34,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "'For' loops iterating arrays";
+    return "'for' loops iterating arrays";
   }
 
   getTasks(): ExerciseTask[] {

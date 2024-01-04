@@ -4,7 +4,7 @@ import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 const initialSolutionText: string = `
 const firstName: string = "Marco";
 const lastName: string = "Polo";
-?
+#1#
 `;
 
 const expectedSolutionText: string = `

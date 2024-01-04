@@ -1,8 +1,8 @@
 import Animal from "./animals/Animal";
-import AnimalSanctuaryLocation from "./AnimalSanctuaryLocation";
 import CageLivingSpace from "./living-spaces/CageLivingSpace";
 import PatioLivingSpace from "./living-spaces/PatioLivingSpace";
 import RoomLivingSpace from "./living-spaces/RoomLivingSpace";
+import AnimalSanctuaryLocation from "./locations/AnimalSanctuaryLocation";
 
 export default class AnimalSanctuary {
   private locations: AnimalSanctuaryLocation[];

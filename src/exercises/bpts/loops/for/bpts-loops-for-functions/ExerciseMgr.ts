@@ -34,7 +34,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "'For' loops and functions";
+    return "'for' loops and functions";
   }
 
   getTasks(): ExerciseTask[] {

@@ -4,7 +4,7 @@ import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 const initialSolutionText: string = `
 const isFast: boolean = false;
 const isFurious: boolean = false;
-?
+#1#
 `;
 
 const expectedSolutionText: string = `

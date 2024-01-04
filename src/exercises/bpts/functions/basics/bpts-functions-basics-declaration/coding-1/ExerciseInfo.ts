@@ -4,7 +4,7 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 const md: string = `
 - In the first line, declare a function named <<foo>>, followed by an opening bracket <<{>>.
 
-- Then, in the next line, begin with 4 spaces, then print "<<Inside foo>>" to the output (console). Don't forget a semicolon <<;>> at the end of the line.
+- Then, in the next line, begin with 2 spaces, then print "<<Inside foo>>" to the output (console). Don't forget a semicolon <<;>> at the end of the line.
 
 - Then, in the next line, close the function using a closing bracket <<}>>.
 `;

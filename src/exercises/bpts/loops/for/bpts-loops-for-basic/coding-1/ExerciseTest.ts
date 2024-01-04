@@ -12,7 +12,7 @@ for (let i: number = 0; i < 5; i++) {
 
 const explanationMd = `
 - We declared the loop as requested, following all code conventions.
-- Note we were asked to use a Less Than operator <<<>>.
+- Note we were asked to use a Less-Than operator <<<>>.
 `;
 
 export default class ExerciseTest extends CodingExerciseTestAbs {
