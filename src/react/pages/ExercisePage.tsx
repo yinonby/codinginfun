@@ -16,6 +16,7 @@ import TaskSelect from '../components/TaskSelect';
 export default function ExercisePage(props: any) {
   const params = useParams();
   const navigate = useNavigate();
+  const progLang: string = params.progLang || "";
   const courseName: string = params.courseName || "";
   const chapterName: string = params.chapterName || "";
   const lessonName: string = params.lessonName || "";
@@ -24,8 +25,8 @@ export default function ExercisePage(props: any) {
 
   React.useEffect(() => {
     if (exerciseName && !taskIdStr) {
-      navigate("/exercises/" + courseName + "/" + chapterName + "/" +
-        lessonName + "/" + exerciseName + "/0");
+      navigate("/o/exercises/" + progLang + "/" + courseName + "/" +
+        chapterName + "/" + lessonName + "/" + exerciseName + "/0");
     }
   });
 

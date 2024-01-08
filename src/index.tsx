@@ -13,15 +13,13 @@ import ExercisePage from "./react/pages/ExercisePage";
 
 const appStyle = {
   fontFamily: "sans-serif",
-}
+};
 
-const ExerciseRedirect = () => {
+const OldBPTSExerciseRedirect = () => {
   const { courseName, chapterName, lessonName, exerciseName,
     taskId } = useParams();
-  let url = "/o/exercises/";
-  if (courseName) {
-    url += courseName + "/";
-  }
+  let url = "/o/exercises/ts/bp/";
+
   if (chapterName) {
     url += chapterName + "/";
   }
@@ -40,50 +38,54 @@ const ExerciseRedirect = () => {
 const router = createBrowserRouter([
   {
     path: "/exercises/:courseName/:chapterName/:lessonName/:exerciseName/:taskId",
-    element: <ExerciseRedirect />,
+    element: <OldBPTSExerciseRedirect />,
   },
   {
     path: "/exercises/:courseName/:chapterName/:lessonName/:exerciseName",
-    element: <ExerciseRedirect />,
+    element: <OldBPTSExerciseRedirect />,
   },
   {
     path: "/exercises/:courseName/:chapterName/:lessonName",
-    element: <ExerciseRedirect />,
+    element: <OldBPTSExerciseRedirect />,
   },
   {
     path: "/exercises/:courseName/:chapterName",
-    element: <ExerciseRedirect />,
+    element: <OldBPTSExerciseRedirect />,
   },
   {
     path: "/exercises/:courseName",
-    element: <ExerciseRedirect />,
+    element: <OldBPTSExerciseRedirect />,
   },
   {
     path: "/exercises",
-    element: <ExerciseRedirect />,
+    element: <OldBPTSExerciseRedirect />,
   },
   {
     path: "/o/codesandbox/:courseName/:chapterName/:lessonName/:exerciseName/:taskId",
     element: <ExerciseContentPage />,
   },
   {
-    path: "/o/exercises/:courseName/:chapterName/:lessonName/:exerciseName/:taskId",
+    path: "/o/exercises/:progLang/:courseName/:chapterName/:lessonName/:exerciseName/:taskId",
     element: <ExercisePage />,
   },
   {
-    path: "/o/exercises/:courseName/:chapterName/:lessonName/:exerciseName",
+    path: "/o/exercises/:progLang/:courseName/:chapterName/:lessonName/:exerciseName",
     element: <ExercisePage />,
   },
   {
-    path: "/o/exercises/:courseName/:chapterName/:lessonName",
+    path: "/o/exercises/:progLang/:courseName/:chapterName/:lessonName",
     element: <ExercisePage />,
   },
   {
-    path: "/o/exercises/:courseName/:chapterName",
+    path: "/o/exercises/:progLang/:courseName/:chapterName",
     element: <ExercisePage />,
   },
   {
-    path: "/o/exercises/:courseName",
+    path: "/o/exercises/:progLang/:courseName",
+    element: <ExercisePage />,
+  },
+  {
+    path: "/o/exercises/:progLang",
     element: <ExercisePage />,
   },
   {
