@@ -17,17 +17,17 @@ export default function ExerciseSelect() {
   function handleChange(courseName: string, chapterName: string,
     lessonName: string, exerciseName: string) {
     if (exerciseName) {
-      navigate("/exercises/" + courseName + "/" + chapterName + "/" +
+      navigate("/o/exercises/ts/" + courseName + "/" + chapterName + "/" +
         lessonName + "/" + exerciseName);
     } else if (lessonName) {
-      navigate("/exercises/" + courseName + "/" + chapterName + "/" +
+      navigate("/o/exercises/ts/" + courseName + "/" + chapterName + "/" +
         lessonName);
     } else if (chapterName) {
-      navigate("/exercises/" + courseName + "/" + chapterName);
+      navigate("/o/exercises/ts/" + courseName + "/" + chapterName);
     } else if (courseName) {
-      navigate("/exercises/" + courseName);
+      navigate("/o/exercises/ts/" + courseName);
     } else {
-      navigate("/exercises/");
+      navigate("/o/exercises/ts/");
     }
   }
 
