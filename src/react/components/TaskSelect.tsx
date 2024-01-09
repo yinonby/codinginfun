@@ -5,6 +5,7 @@ import * as React from 'react';
 import { useParams } from 'react-router-dom';
 import ExerciseMap, { ExerciseItem } from '../../exercises/ExerciseMap';
 import ExerciseTask from '../../infra/task/ExerciseTask';
+import { getExercisesBaseUrl } from '../AppCfg';
 
 export const exerciseMap = new ExerciseMap();
 
@@ -25,6 +26,7 @@ function LinkTab(props: LinkTabProps) {
 
 export default function TaskSelect() {
   const params = useParams();
+  const progLang: string = params.progLang || "";
   const courseName: string = params.courseName || "";
   const chapterName: string = params.chapterName || "";
   const lessonName: string = params.lessonName || "";
@@ -46,8 +48,9 @@ export default function TaskSelect() {
     setValue(newValue);
   };
 
-  const hrefStrPrefix = "/exercises/" + courseName + "/" + chapterName + "/" +
-    lessonName + "/" + exerciseName + "/";
+  const exercisesBaseUrl = getExercisesBaseUrl(progLang);
+  const hrefStrPrefix = exercisesBaseUrl + courseName + "/" + chapterName + "/" +
+  lessonName + "/" + exerciseName + "/";
 
   return (
     <Box sx={{ width: '100%' }}>

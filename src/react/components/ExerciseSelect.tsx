@@ -2,12 +2,14 @@
 import Box from '@mui/material/Box';
 import { useNavigate, useParams } from 'react-router-dom';
 import ExerciseMap from "../../exercises/ExerciseMap";
+import { getExercisesBaseUrl } from '../AppCfg';
 import BaseSelect, { SelectItem } from "./BaseSelect";
 
 const exerciseMap = new ExerciseMap();
 
 export default function ExerciseSelect() {
   const params = useParams();
+  const progLang: string = params.progLang || "";
   const courseName: string = params.courseName || "";
   const chapterName: string = params.chapterName || "";
   const lessonName: string = params.lessonName || "";
@@ -16,18 +18,20 @@ export default function ExerciseSelect() {
 
   function handleChange(courseName: string, chapterName: string,
     lessonName: string, exerciseName: string) {
+    const exercisesBaseUrl = getExercisesBaseUrl(progLang);
+
     if (exerciseName) {
-      navigate("/o/exercises/ts/" + courseName + "/" + chapterName + "/" +
+      navigate(exercisesBaseUrl + courseName + "/" + chapterName + "/" +
         lessonName + "/" + exerciseName);
     } else if (lessonName) {
-      navigate("/o/exercises/ts/" + courseName + "/" + chapterName + "/" +
+      navigate(exercisesBaseUrl + courseName + "/" + chapterName + "/" +
         lessonName);
     } else if (chapterName) {
-      navigate("/o/exercises/ts/" + courseName + "/" + chapterName);
+      navigate(exercisesBaseUrl + courseName + "/" + chapterName);
     } else if (courseName) {
-      navigate("/o/exercises/ts/" + courseName);
+      navigate(exercisesBaseUrl + courseName);
     } else {
-      navigate("/o/exercises/ts/");
+      navigate(exercisesBaseUrl);
     }
   }
 

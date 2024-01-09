@@ -1,5 +1,6 @@
 
 import ExerciseMgrAdapter from "#infra/mgr/ExerciseMgrAbs";
+import { TSAdvOOPExerciseMap } from "./ts/adv-oop/TSAdvOOPExerciseMap";
 import { TSBPExerciseMap } from "./ts/bp/TSBPExerciseMap";
 
 type ExerciseMapItem = {
@@ -37,32 +38,7 @@ export type NameItem = {
 export default class ExerciseMap {
   private map: ExerciseMapItem = {
     "bp": TSBPExerciseMap,
-  }
-
-  getExerciseItem(courseName: string, chapterName: string,
-    lessonName: string,
-    exerciseName: string): ExerciseItem | null {
-
-    if (!this.map[courseName]) {
-      console.log("no course found", courseName);
-      return null;
-    }
-    const chapter = this.map[courseName].chapters.find(e => e.name == chapterName);
-    if (!chapter) {
-      console.log("no chapter found", courseName, chapterName);
-      return null;
-    }
-    const lesson = chapter.lessons.find(e => e.name == lessonName);
-    if (!lesson) {
-      console.log("not lesson found", courseName, chapterName, lessonName);
-      return null;
-    }
-    const exercise = lesson.exercises.find(e => e.name == exerciseName);
-    if (!exercise) {
-      console.log("not exercise found", courseName, chapterName, lessonName, exerciseName);
-      return null;
-    }
-    return exercise;
+    "adv-oop": TSAdvOOPExerciseMap,
   }
 
   getCourses(): NameItem[] {
@@ -97,6 +73,32 @@ export default class ExerciseMap {
         name: e.name,
         displayName: e.exerciseMgr.getTitle(),
       }));
+  }
+
+  getExerciseItem(courseName: string, chapterName: string,
+    lessonName: string,
+    exerciseName: string): ExerciseItem | null {
+
+    if (!this.map[courseName]) {
+      console.log("no course found", courseName);
+      return null;
+    }
+    const chapter = this.map[courseName].chapters.find(e => e.name == chapterName);
+    if (!chapter) {
+      console.log("no chapter found", courseName, chapterName);
+      return null;
+    }
+    const lesson = chapter.lessons.find(e => e.name == lessonName);
+    if (!lesson) {
+      console.log("not lesson found", courseName, chapterName, lessonName);
+      return null;
+    }
+    const exercise = lesson.exercises.find(e => e.name == exerciseName);
+    if (!exercise) {
+      console.log("not exercise found", courseName, chapterName, lessonName, exerciseName);
+      return null;
+    }
+    return exercise;
   }
 
 }

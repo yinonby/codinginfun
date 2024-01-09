@@ -8,6 +8,7 @@ import {
   useParams,
 } from "react-router-dom";
 import './index.css';
+import { getExercisesBaseUrl } from './react/AppCfg';
 import ExerciseContentPage from "./react/pages/ExerciseContentPage";
 import ExercisePage from "./react/pages/ExercisePage";
 
@@ -18,7 +19,7 @@ const appStyle = {
 const OldBPTSExerciseRedirect = () => {
   const { courseName, chapterName, lessonName, exerciseName,
     taskId } = useParams();
-  let url = "/o/exercises/ts/bp/";
+  let url = getExercisesBaseUrl("ts") + "bp/";
 
   if (chapterName) {
     url += chapterName + "/";
@@ -90,11 +91,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/o/exercises",
-    element: <ExercisePage />,
+    element: <Navigate to="/o/exercises/ts" replace />,
   },
   {
-    path: "/",
-    element: <ExercisePage />,
+    path: "/o",
+    element: <Navigate to="/o/exercises/ts" replace />,
   },
 ]);
 
