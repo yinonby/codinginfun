@@ -1,8 +1,8 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { useParams, useNavigate } from 'react-router-dom';
+import Tabs from '@mui/material/Tabs';
+import * as React from 'react';
+import { useParams } from 'react-router-dom';
 import ExerciseMap, { ExerciseItem } from '../../exercises/ExerciseMap';
 import ExerciseTask from '../../infra/task/ExerciseTask';
 

@@ -1,17 +1,14 @@
 
-import { useState } from "react";
+import ExerciseTask from "#infra/task/ExerciseTask";
+import ExerciseTestAbs from "#infra/test/ExerciseTestAbs";
+import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
+import { useState } from "react";
 import { useParams } from 'react-router-dom';
 import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
-import DialogButton from "./DialogButton";
-import RunnableCodingExerciseTestAbs from "#infra/test/RunnableCodingExerciseTestAbs";
-import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
-import DiffCodeEditor from './DiffCodeEditor';
 import CodeEditor from './CodeEditor';
-import { Button } from '@mui/material';
-import ExerciseTask from "#infra/task/ExerciseTask";
-import QuestionExerciseTestAbs from "#infra/test/QuestionExerciseTestAbs";
-import ExerciseTestAbs from "#infra/test/ExerciseTestAbs";
+import DialogButton from "./DialogButton";
+import DiffCodeEditor from './DiffCodeEditor';
 
 export default function SolutionButton(props: any) {
   const params = useParams();
