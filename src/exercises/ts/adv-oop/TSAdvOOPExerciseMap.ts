@@ -8,6 +8,9 @@ import StaticMethodsDeclarationExerciseMgr from "./static/methods/declaration/Ex
 import StaticPropsAccessExerciseMgr from "./static/props/access/ExerciseMgr";
 import StaticPropsDeclarationExerciseMgr from "./static/props/declaration/ExerciseMgr";
 
+import ReadOnlyPropsDeclarationExerciseMgr from "./read-only/props/declaration/ExerciseMgr";
+import ReadOnlyPropsNoChangesExerciseMgr from "./read-only/props/no-changes/ExerciseMgr";
+
 export const TSAdvOOPExerciseMap: CourseItem = {
   "name": "adv-oop",
   "displayName": "Advanced Object-Oriented Programming with TypeScript",
@@ -49,6 +52,26 @@ export const TSAdvOOPExerciseMap: CourseItem = {
             {
               "name": "access-instance",
               "exerciseMgr": new StaticMethodsAccessingInstanceExerciseMgr(),
+            },
+          ]
+        },
+      ]
+    },
+    {
+      "name": "read-only",
+      "displayName": "Read-only members",
+      "lessons": [
+        {
+          "name": "props",
+          "displayName": "Read-only member properties",
+          "exercises": [
+            {
+              "name": "declaration",
+              "exerciseMgr": new ReadOnlyPropsDeclarationExerciseMgr(),
+            },
+            {
+              "name": "no-changes",
+              "exerciseMgr": new ReadOnlyPropsNoChangesExerciseMgr(),
             },
           ]
         },

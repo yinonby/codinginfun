@@ -28,7 +28,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "Accessing static member properties";
+    return "Read-only member properties' value cannot be changed";
   }
 
   getTasks(): ExerciseTask[] {

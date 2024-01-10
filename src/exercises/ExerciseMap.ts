@@ -83,17 +83,17 @@ export default class ExerciseMap {
       console.log("no course found", courseName);
       return null;
     }
-    const chapter = this.map[courseName].chapters.find(e => e.name == chapterName);
+    const chapter = this.map[courseName].chapters.find(e => e.name === chapterName);
     if (!chapter) {
       console.log("no chapter found", courseName, chapterName);
       return null;
     }
-    const lesson = chapter.lessons.find(e => e.name == lessonName);
+    const lesson = chapter.lessons.find(e => e.name === lessonName);
     if (!lesson) {
       console.log("not lesson found", courseName, chapterName, lessonName);
       return null;
     }
-    const exercise = lesson.exercises.find(e => e.name == exerciseName);
+    const exercise = lesson.exercises.find(e => e.name === exerciseName);
     if (!exercise) {
       console.log("not exercise found", courseName, chapterName, lessonName, exerciseName);
       return null;

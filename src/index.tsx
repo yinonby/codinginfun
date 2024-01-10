@@ -17,8 +17,7 @@ const appStyle = {
 };
 
 const OldBPTSExerciseRedirect = () => {
-  const { courseName, chapterName, lessonName, exerciseName,
-    taskId } = useParams();
+  const { chapterName, lessonName, exerciseName, taskId } = useParams();
   let url = getExercisesBaseUrl("ts") + "bp/";
 
   if (chapterName) {

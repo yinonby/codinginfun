@@ -6,7 +6,7 @@ const initialSolutionText: string = `
 
 const expectedSolutionText: string = `
 function foo() {
-  console.log(\"Inside foo\");
+  console.log("Inside foo");
 }
 `;
 
