@@ -35,16 +35,29 @@ export default function Header() {
     <HeaderContainer>
       <Box style={boxStyle}>
         <Link to="/o/exercises/ts">
-            <img
-              style={{
-                height: "48px", objectFit: "contain",
-                maxWidth: "48px"
-              }}
-              srcSet="/img/new-logo-no-background.png"
-              src="/img/new-logo-no-background.png"
-              alt="logo"
-              loading="lazy"
-            />
+          <img
+            style={{
+              height: "48px", objectFit: "contain",
+              maxWidth: "48px"
+            }}
+            srcSet="/img/new-logo-no-background.png"
+            src="/img/new-logo-no-background.png"
+            alt="logo"
+            loading="lazy"
+          />
+        </Link>
+        <Box sx={{flex: 1}}/>
+        <Link to="https://www.instagram.com/codinginfun/" target="_blank">
+          <img
+            style={{
+              height: "48px", objectFit: "contain",
+              maxWidth: "48px"
+            }}
+            srcSet="/img/instagram-icon.png"
+            src="/img/instagram-icon.png"
+            alt="instagram"
+            loading="lazy"
+          />
         </Link>
       </Box>
     </HeaderContainer>
