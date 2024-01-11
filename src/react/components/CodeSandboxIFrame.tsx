@@ -23,7 +23,9 @@ export default function CodeSandboxIFrame() {
     "%2F" + lessonName + "%2F" + exerciseName + "%2F" + taskIdStr +
     "&module=" + "%2F" + "src" + "%2F" + "exercises" + "%2F" + progLang +
     "%2F" + courseName + "%2F" + chapterName +
-    "%2F" + lessonName + "%2F" + exerciseName + "%2F" + "Exercise.ts";
+    "%2F" + lessonName + "%2F" + exerciseName + "%2F" + "task-" + taskIdStr +
+    "%2F" + "Exercise.ts";
+
   const style = {
     width: "100%",
     height: "100%",

@@ -84,11 +84,11 @@ export const TSAdvOOPExerciseMap: CourseItem = {
       "displayName": "Inheritance",
       "lessons": [
         {
-          "name": "props",
+          "name": "multi-level",
           "displayName": "Multi-level inheritance",
           "exercises": [
             {
-              "name": "declaration",
+              "name": "classic",
               "exerciseMgr": new InheritanceMultiLevelClassicExerciseMgr(),
             },
           ]
