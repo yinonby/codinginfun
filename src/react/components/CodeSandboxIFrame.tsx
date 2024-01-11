@@ -3,12 +3,13 @@ import { useParams } from 'react-router-dom';
 
 export default function CodeSandboxIFrame() {
   const params = useParams();
+  const progLang: string = params.progLang || "";
   const courseName: string = params.courseName || "";
   const chapterName: string = params.chapterName || "";
   const lessonName: string = params.lessonName || "";
   const exerciseName: string = params.exerciseName || "";
   const taskIdStr: string = params.taskId || "";
-  const repo: string = "github/yinonby/codinginfun/tree/devel";
+  const repo: string = "github/yinonby/cif-sandbox/tree/devel";
 
   if (!taskIdStr) {
     console.error("missing taskId in path");
@@ -17,10 +18,12 @@ export default function CodeSandboxIFrame() {
 
   const src: string = "https://codesandbox.io/embed/" + repo +
     "/?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark" +
-    "&initialpath=codesandbox%2F" + courseName + "%2F" + chapterName +
+    "&initialpath=" + "o" + "%2F" + "codesandbox" + "%2F" + progLang +
+    "%2F" + courseName + "%2F" + chapterName +
     "%2F" + lessonName + "%2F" + exerciseName + "%2F" + taskIdStr +
-    "&module=%2Fsrc%2Fexercises%2F" + courseName + "%2F" + chapterName +
-    "%2F" + lessonName + "%2F" + exerciseName + "%2FExercise.ts";
+    "&module=" + "%2F" + "src" + "%2F" + "exercises" + "%2F" + progLang +
+    "%2F" + courseName + "%2F" + chapterName +
+    "%2F" + lessonName + "%2F" + exerciseName + "%2F" + "Exercise.ts";
   const style = {
     width: "100%",
     height: "100%",
