@@ -11,6 +11,8 @@ import StaticPropsDeclarationExerciseMgr from "./static/props/declaration/Exerci
 import ReadOnlyPropsDeclarationExerciseMgr from "./read-only/props/declaration/ExerciseMgr";
 import ReadOnlyPropsNoChangesExerciseMgr from "./read-only/props/no-changes/ExerciseMgr";
 
+import InheritanceMultiLevelClassicExerciseMgr from "./inheritance/multi-level/classic/ExerciseMgr";
+
 export const TSAdvOOPExerciseMap: CourseItem = {
   "name": "adv-oop",
   "displayName": "Advanced Object-Oriented Programming with TypeScript",
@@ -72,6 +74,22 @@ export const TSAdvOOPExerciseMap: CourseItem = {
             {
               "name": "no-changes",
               "exerciseMgr": new ReadOnlyPropsNoChangesExerciseMgr(),
+            },
+          ]
+        },
+      ]
+    },
+    {
+      "name": "inheritance",
+      "displayName": "Inheritance",
+      "lessons": [
+        {
+          "name": "props",
+          "displayName": "Multi-level inheritance",
+          "exercises": [
+            {
+              "name": "declaration",
+              "exerciseMgr": new InheritanceMultiLevelClassicExerciseMgr(),
             },
           ]
         },
