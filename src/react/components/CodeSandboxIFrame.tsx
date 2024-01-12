@@ -17,7 +17,7 @@ export default function CodeSandboxIFrame() {
   }
 
   const src: string = "https://codesandbox.io/embed/" + repo +
-    "/?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark" +
+    "/?fontsize=14&hidenavigation=1&theme=dark" +
     "&initialpath=" + "o" + "%2F" + "codesandbox" + "%2F" + progLang +
     "%2F" + courseName + "%2F" + chapterName +
     "%2F" + lessonName + "%2F" + exerciseName + "%2F" + taskIdStr +
