@@ -5,6 +5,9 @@ import RunnableCodingExerciseTestAbs from "#infra/test/RunnableCodingExerciseTes
 import SolutionButton from "../SolutionButton";
 import { TestResult } from "../TestResultView";
 import TestResultView from '../TestResultView';
+import { Grid } from "@mui/material";
+import CodeSandboxIFrame from "../CodeSandboxIFrame";
+import CheckAnswerButton from "../CheckAnswerButton";
 
 export function CodesandboxTaskView(props: any) {
   const exercieTest: RunnableCodingExerciseTestAbs = props.exercieTest;
@@ -71,21 +74,26 @@ export function CodesandboxTaskView(props: any) {
     setTestResult(tmpTestResult);
 
   };
+  
+  const codesandboxContainerStyle = {
+    borderRight: "1px solid black",
+    borderRadius: "4px",
+    flex: 1,
+  }
 
   return (
-    <>
-      <Box mb={2} sx={{ display: "flex", flexDirection: "row" }}>
-        <Box mr={2}>
-          <Button variant="contained" onClick={handleClick}
-            size="small">
-            Run Tests
-          </Button>
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={12} md={12}>
+        <Box sx={{ display: "flex", flexDirection: "column", height: "60vh" }}>
+          <Box sx={codesandboxContainerStyle} mb={2}>
+            <CodeSandboxIFrame />
+          </Box>
         </Box>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12}>
         <SolutionButton />
-      </Box>
-      <TestResultView okMessage="Your code is correct!"
-        errPrefix="Error"
-        testResult={testResult} />
-    </>
+      </Grid>
+    </Grid>
   );
+
 }

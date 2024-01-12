@@ -53,13 +53,15 @@ export default function SolutionButton(props: any) {
       dialogProps={{ maxWidth: "xl" }}
       buttonText="Show correct solution"
       onClose={handleClose}>
-      <Box mb={2}>
-        <Button variant="outlined" onClick={handleClick}
-          size="small">
-          {showComparison ? "Show correct solution only" :
-            "Compare this correct solution to my code"}
-        </Button>
-      </Box>
+      {currentSolutionText !== undefined &&
+        <Box mb={2}>
+          <Button variant="outlined" onClick={handleClick}
+            size="small">
+            {showComparison ? "Show correct solution only" :
+              "Compare this correct solution to my code"}
+          </Button>
+        </Box>
+      }
       <Box sx={{
         height: "300px",
         border: "1px solid black",

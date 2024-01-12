@@ -45,15 +45,19 @@ export default function ExerciseContent(props: any) {
   const exerciseTask: ExerciseTask = exerciseTasks[taskId];
   const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
   const taskTypeStr: string = exercieInfo.getTaskTypeStr();
+  const instWidth: number = exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX ?
+    3 : 6;
+  const contentWidth: number = exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX ?
+    9 : 6;
 
   return (
     <Box>
       <h4>{taskTypeStr}</h4>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={12} md={6}>
+        <Grid item xs={12} sm={12} md={instWidth}>
           <Instructions exercieInfo={exercieInfo} />
         </Grid>
-        <Grid item xs={12} sm={12} md={6}>
+        <Grid item xs={12} sm={12} md={contentWidth}>
           <TaskView exerciseTask={exerciseTask} />
         </Grid>
       </Grid>

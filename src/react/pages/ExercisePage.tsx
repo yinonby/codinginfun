@@ -97,47 +97,5 @@ function ExerciseTitle() {
 }
 
 function ActualContent() {
-  const params = useParams();
-  const courseName: string = params.courseName || "";
-  const chapterName: string = params.chapterName || "";
-  const lessonName: string = params.lessonName || "";
-  const exerciseName: string = params.exerciseName || "";
-  const taskIdStr: string = params.taskId || "";
-  const taskId: number = Number(taskIdStr);
-  const codesandboxContainerStyle = {
-    borderRight: "1px solid black",
-    borderRadius: "4px",
-    flex: 1,
-  }
-
-  const exerciseMap = new ExerciseMap();
-  const exerciseItem: ExerciseItem | null =
-    exerciseMap.getExerciseItem(courseName, chapterName,
-      lessonName, exerciseName);
-  if (!exerciseItem) {
-    return <Box mx={2} className="app">No exercise found</Box>;
-  }
-
-  const exerciseTask: ExerciseTask =
-    exerciseItem.exerciseMgr.getTasks()[taskId];
-  const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
-
-  if (exercieInfo.getType() !== EX_TYPE.EX_TYPE_SANDBOX) {
-    return <ExerciseContent />;
-  } else {
-    return (
-      <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-        <Box sx={codesandboxContainerStyle} mb={2}>
-          <CodeSandboxIFrame />
-        </Box>
-        <Box sx={{
-          display: "flex",
-          flexDirection: "row",
-        }}>
-          <SolutionButton />
-        </Box>
-      </Box>
-    );
-  }
-
+  return <ExerciseContent />;
 }
