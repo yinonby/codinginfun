@@ -15,6 +15,8 @@ class App {
 }
 
 class GamingApp extends App {
+  public static GAME_TYPE_VIDEO: string = "Video";
+
   constructor(appName: string, private gameType: string) {
     super(appName);
   }
@@ -25,8 +27,10 @@ class GamingApp extends App {
 }
 
 class VideoGamingApp extends GamingApp {
+  public static VIDEO_GAME_GENRE_SPORTS: string = "Sports";
+
   constructor(appName: string, private genre: string) {
-    super(appName, "Video");
+    super(appName, GamingApp.GAME_TYPE_VIDEO);
   }
 
   public getGenre(): string {
@@ -36,7 +40,7 @@ class VideoGamingApp extends GamingApp {
 
 class SportsVideoGamingApp extends VideoGamingApp {
   constructor(appName: string) {
-    super(appName, "Sports");
+    super(appName, VideoGamingApp.VIDEO_GAME_GENRE_SPORTS);
   }
 }
 
