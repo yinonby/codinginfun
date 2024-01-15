@@ -5,24 +5,21 @@ const md: string = `
 Implement the following hierarchy:
 
 Class <<App>>:
-- Has a <<private>> parameter property named <<appName>>.
-- Provides a <<public>> getter method <<getAppName()>>.
+- Should have a <<private>> parameter property named <<appName>>.
+- Should provide a <<public>> getter method <<getAppName()>>.
 
 Class <<GamingApp>>:
-- Extends class <<App>>.
-- Has a static <<public>> member of type <<string>>,
+- Should extend class <<App>>.
+- Should have a static <<public>> member of type <<string>>,
 named <<GAME_TYPE_VIDEO>>, initialized with value "Video".
-- Has a constructor parameter <<appName>>.
-- Has a <<private>> parameter property named <<gameType>>.
-- Provides a <<public>> getter method <<getGameType()>>.
+- Should have a constructor parameter <<appName>>.
+- Should have a <<private>> parameter property named <<gameType>>.
+- Should provide a <<public>> getter method <<getGameType()>>.
 
 Class <<VideoGamingApp>>:
-- Extends class <<GamingApp>>.
-- Has a static <<public>> member of type <<string>>,
-named <<VIDEO_GAME_GENRE_SPORTS>>, initialized with value "Sports".
-- Has a constructor parameter <<appName>>.
-- Constructs the parent using <<GamingApp.GAME_TYPE_VIDE>> for <<gameType>>.
-- Provides a <<public>> getter method <<getGenre()>>.
+- Should extend class <<GamingApp>>.
+- Should have a constructor parameter <<appName>>.
+- Should constructs the parent using <<GamingApp.GAME_TYPE_VIDE>> for <<gameType>>.
 
 Don't forget to follow code conventions.
 `;

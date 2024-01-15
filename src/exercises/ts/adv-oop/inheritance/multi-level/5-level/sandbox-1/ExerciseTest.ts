@@ -5,6 +5,9 @@ const initialSolutionText: string = `
 `;
 
 const expectedSolutionText: string = `
+const APP_NAME_FIFA: string = "FIFA";
+const APP_NAME_NBA: string = "NBA";
+
 class App {
   constructor(private appName: string) {
   }
@@ -46,18 +49,19 @@ class SportsVideoGamingApp extends VideoGamingApp {
 
 class FifaApp extends SportsVideoGamingApp {
   constructor() {
-    super("FIFA");
+    super(APP_NAME_FIFA);
   }
 }
 
 class NbaApp extends SportsVideoGamingApp {
   constructor() {
-    super("NBA");
+    super(APP_NAME_NBA);
   }
 }
 
 /* do not remove the following lines */
 export {
+  APP_NAME_FIFA, APP_NAME_NBA,
   App, FifaApp, GamingApp, NbaApp, SportsVideoGamingApp, VideoGamingApp
 };
 `;
