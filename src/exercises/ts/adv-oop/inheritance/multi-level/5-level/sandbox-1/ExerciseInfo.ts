@@ -18,6 +18,23 @@ Class <<VideoGamingApp>>:
 - Extends class <<GamingApp>>.
 - Has a constructor parameter <<appName>>.
 - Constructs the parent with <<gameType>> = <<"Video">>.
+- Provides a <<public>> getter method <<getGenre()>>.
+
+Class <<SportsVideoGamingApp>>:
+- Extends class <<VideoGamingApp>>.
+- Has a constructor parameter <<appName>>.
+- Constructs the parent with <<genre>> = <<"Sports">>.
+
+Class <<FifaApp>>:
+- Extends class <<SportsVideoGamingApp>>.
+- Has a constructor parameter <<appName>>.
+- Constructs the parent with <<appName>> = <<"FIFA">>.
+- Leave the keyword <<export>> as it is - it is required for testing.
+
+Class <<NbaApp>>:
+- Extends class <<SportsVideoGamingApp>>.
+- Has a constructor parameter <<appName>>.
+- Constructs the parent with <<appName>> = <<"NBA">>.
 - Leave the keyword <<export>> as it is - it is required for testing.
 
 Don't forget to follow code conventions.

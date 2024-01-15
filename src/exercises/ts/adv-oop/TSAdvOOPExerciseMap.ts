@@ -11,6 +11,7 @@ import StaticPropsDeclarationExerciseMgr from "./static/props/declaration/Exerci
 import ReadOnlyPropsDeclarationExerciseMgr from "./read-only/props/declaration/ExerciseMgr";
 import ReadOnlyPropsNoChangesExerciseMgr from "./read-only/props/no-changes/ExerciseMgr";
 
+import InheritanceMultiLevel5LevelExerciseMgr from "./inheritance/multi-level/5-level/ExerciseMgr";
 import InheritanceMultiLevelClassicExerciseMgr from "./inheritance/multi-level/classic/ExerciseMgr";
 
 export const TSAdvOOPExerciseMap: CourseItem = {
@@ -90,6 +91,10 @@ export const TSAdvOOPExerciseMap: CourseItem = {
             {
               "name": "classic",
               "exerciseMgr": new InheritanceMultiLevelClassicExerciseMgr(),
+            },
+            {
+              "name": "5-level",
+              "exerciseMgr": new InheritanceMultiLevel5LevelExerciseMgr(),
             },
           ]
         },
