@@ -40,17 +40,22 @@ class SportsVideoGamingApp extends VideoGamingApp {
   }
 }
 
-export class FifaApp extends SportsVideoGamingApp {
+class FifaApp extends SportsVideoGamingApp {
   constructor() {
     super("FIFA");
   }
 }
 
-export class NbaApp extends SportsVideoGamingApp {
+class NbaApp extends SportsVideoGamingApp {
   constructor() {
     super("NBA");
   }
 }
+
+/* do not remove the following lines */
+export {
+  App, FifaApp, GamingApp, NbaApp, SportsVideoGamingApp, VideoGamingApp
+};
 `;
 
 const explanationMd = `

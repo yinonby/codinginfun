@@ -24,11 +24,16 @@ class GamingApp extends App {
   }
 }
 
-export class VideoGamingApp extends GamingApp {
+class VideoGamingApp extends GamingApp {
   constructor(appName: string) {
     super(appName, "Video");
   }
 }
+
+/* do not remove the following lines */
+export {
+  App, GamingApp, VideoGamingApp
+};
 `;
 
 const explanationMd = `
