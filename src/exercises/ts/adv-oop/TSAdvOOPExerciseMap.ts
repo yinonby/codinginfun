@@ -14,6 +14,11 @@ import ReadOnlyPropsNoChangesExerciseMgr from "./read-only/props/no-changes/Exer
 import InheritanceMultiLevel5LevelExerciseMgr from "./inheritance/multi-level/5-level/ExerciseMgr";
 import InheritanceMultiLevelClassicExerciseMgr from "./inheritance/multi-level/classic/ExerciseMgr";
 
+import AbstractionBasicsAbstractMethodsExerciseMgr from "./abstraction/basics/abstract-methods/ExerciseMgr";
+import AbstractionBasicsDeclarationExerciseMgr from "./abstraction/basics/declaration/ExerciseMgr";
+import AbstractionBasicsInheritanceExerciseMgr from "./abstraction/basics/inheritance/ExerciseMgr";
+import AbstractionBasicsNormalMethodsExerciseMgr from "./abstraction/basics/normal-methods/ExerciseMgr";
+
 export const TSAdvOOPExerciseMap: CourseItem = {
   "name": "adv-oop",
   "displayName": "Advanced Object-Oriented Programming with TypeScript",
@@ -100,6 +105,34 @@ export const TSAdvOOPExerciseMap: CourseItem = {
         },
       ]
     },
+    {
+      "name": "abstraction",
+      "displayName": "Abstraction",
+      "lessons": [
+        {
+          "name": "basics",
+          "displayName": "Basic abstraction",
+          "exercises": [
+            {
+              "name": "declaration",
+              "exerciseMgr": new AbstractionBasicsDeclarationExerciseMgr(),
+            },
+            {
+              "name": "abstract-methods",
+              "exerciseMgr": new AbstractionBasicsAbstractMethodsExerciseMgr(),
+            },
+            {
+              "name": "normal-methods",
+              "exerciseMgr": new AbstractionBasicsNormalMethodsExerciseMgr(),
+            },
+            {
+              "name": "inheritance",
+              "exerciseMgr": new AbstractionBasicsInheritanceExerciseMgr(),
+            },
+          ]
+        },
+      ]
+    }
   ]
 }
 
