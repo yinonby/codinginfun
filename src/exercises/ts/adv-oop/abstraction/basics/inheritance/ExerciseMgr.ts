@@ -9,6 +9,8 @@ import Mc2ExerciseInfo from "./mc-2/ExerciseInfo";
 import Mc2ExerciseTest from "./mc-2/ExerciseTest";
 import Mc3ExerciseInfo from "./mc-3/ExerciseInfo";
 import Mc3ExerciseTest from "./mc-3/ExerciseTest";
+import Sandbox1ExerciseInfo from "./sandbox-1/ExerciseInfo";
+import Sandbox1ExerciseTest from "./sandbox-1/ExerciseTest";
 
 export default class ExerciseMgr extends ExerciseMgrAbs {
   private exerciseTasks: ExerciseTask[] = [];
@@ -30,6 +32,10 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
     this.exerciseTasks.push(new ExerciseTask(
       new Mc3ExerciseInfo(),
       new Mc3ExerciseTest(),
+    ));
+    this.exerciseTasks.push(new ExerciseTask(
+      new Sandbox1ExerciseInfo(),
+      new Sandbox1ExerciseTest(),
     ));
   }
 
