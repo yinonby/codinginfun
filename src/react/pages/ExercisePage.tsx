@@ -1,16 +1,12 @@
 
-import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 import Box from '@mui/material/Box';
 import * as React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import ExerciseMap, { ExerciseItem } from "../../exercises/ExerciseMap";
 import ExerciseMgrAdapter from '../../infra/mgr/ExerciseMgrAbs';
-import ExerciseTask from '../../infra/task/ExerciseTask';
-import CodeSandboxIFrame from "../components/CodeSandboxIFrame";
 import ExerciseContent from "../components/ExerciseContent";
 import ExerciseSelect from "../components/ExerciseSelect";
 import Header, { Content } from "../components/Header";
-import SolutionButton from "../components/SolutionButton";
 import TaskSelect from '../components/TaskSelect';
 
 export default function ExercisePage(props: any) {

@@ -16,7 +16,7 @@ import InheritanceMultiLevelClassicExerciseMgr from "./inheritance/multi-level/c
 
 import AbstractionBasicsAbstractMethodsExerciseMgr from "./abstraction/basics/abstract-methods/ExerciseMgr";
 import AbstractionBasicsDeclarationExerciseMgr from "./abstraction/basics/declaration/ExerciseMgr";
-import AbstractionBasicsInheritanceExerciseMgr from "./abstraction/basics/inheritance/ExerciseMgr";
+import AbstractionBasicsInheritanceExerciseMgr from "./abstraction/basics/mixed-inheritance/ExerciseMgr";
 import AbstractionBasicsNormalMethodsExerciseMgr from "./abstraction/basics/normal-methods/ExerciseMgr";
 
 export const TSAdvOOPExerciseMap: CourseItem = {

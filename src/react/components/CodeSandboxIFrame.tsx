@@ -1,5 +1,10 @@
 
+import ExerciseInfoAbs from '#infra/info/ExerciseInfoAbs';
+import SandboxExerciseInfoAbs from '#infra/info/SandboxExerciseInfoAbs';
+import ExerciseTask from '#infra/task/ExerciseTask';
+import { Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
+import ExerciseMap, { ExerciseItem } from '../../exercises/ExerciseMap';
 
 export default function CodeSandboxIFrame() {
   const params = useParams();
@@ -15,15 +20,32 @@ export default function CodeSandboxIFrame() {
     console.error("missing taskId in path");
     return <div>Missing taskId</div>;
   }
+  const taskId: number = Number(taskIdStr);
+
+  const exerciseMap = new ExerciseMap();
+  const exerciseItem: ExerciseItem | null =
+    exerciseMap.getExerciseItem(courseName, chapterName,
+      lessonName, exerciseName);
+  if (! exerciseItem) {
+    return <Box mx={2}>No exercise found</Box>;
+  }
+
+  const exerciseTask: ExerciseTask =
+    exerciseItem.exerciseMgr.getTask(taskId);
+  const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
+  if (! (exercieInfo instanceof SandboxExerciseInfoAbs)) {
+    return <Box mx={2}>Invalid ExerciseInfo</Box>;
+  }
+  const sandboxId: string = exercieInfo.getSandboxId();
 
   const src: string = "https://codesandbox.io/embed/" + repo +
     "/?fontsize=14&hidenavigation=1&theme=dark" +
     "&initialpath=" + "o" + "%2F" + "codesandbox" + "%2F" + progLang +
     "%2F" + courseName + "%2F" + chapterName +
-    "%2F" + lessonName + "%2F" + exerciseName + "%2F" + taskIdStr +
+    "%2F" + lessonName + "%2F" + exerciseName + "%2F" + sandboxId +
     "&module=" + "%2F" + "src" + "%2F" + "exercises" + "%2F" + progLang +
     "%2F" + courseName + "%2F" + chapterName +
-    "%2F" + lessonName + "%2F" + exerciseName + "%2F" + "task-" + taskIdStr +
+    "%2F" + lessonName + "%2F" + exerciseName + "%2F" + sandboxId +
     "%2F" + "Exercise.ts";
 
   const style = {

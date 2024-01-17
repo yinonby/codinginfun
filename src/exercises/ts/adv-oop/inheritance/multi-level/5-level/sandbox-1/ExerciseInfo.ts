@@ -1,5 +1,6 @@
 
-import ExerciseInfoAbs, { EX_TYPE } from "../../../../../../../infra/info/ExerciseInfoAbs";
+import SandboxExerciseInfoAbs from "#infra/info/SandboxExerciseInfoAbs";
+import { EX_TYPE } from "../../../../../../../infra/info/ExerciseInfoAbs";
 
 const md: string = `
 Constants <<APP_NAME_FIFA>> and <<APP_NAME_NBA>> are given.
@@ -32,7 +33,7 @@ Class <<NbaApp>>:
 Don't forget to follow code conventions.
 `;
 
-export default class ExerciseInfo extends ExerciseInfoAbs {
+export default class ExerciseInfo extends SandboxExerciseInfoAbs {
 
   getType(): EX_TYPE {
     return EX_TYPE.EX_TYPE_SANDBOX;
@@ -40,6 +41,10 @@ export default class ExerciseInfo extends ExerciseInfoAbs {
 
   getMdInstructions(): string {
     return md;
+  }
+
+  public getSandboxId(): string {
+    return "sb-1";
   }
 
 }
