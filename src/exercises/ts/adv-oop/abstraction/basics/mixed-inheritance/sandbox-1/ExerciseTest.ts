@@ -5,22 +5,30 @@ const initialSolutionText: string = `
 `;
 
 const expectedSolutionText: string = `
-const COFFEE_NESPRESSO: string = "Nespresso coffee";
-const COFFEE_DELONGHI: string = "DeLonghi coffee";
+const COFFEE_TYPE_FILTER: string = "Filter coffee type";
+const COFFEE_MELITTA: string = "Melitta coffee";
+const COFFEE_RUSSEL_HOBBS: string = "Russel Hobbs coffee";
 
 abstract class CoffeeMaker {
+  public abstract getCoffeeType(): string;
   public abstract getCoffee(): string;
 }
 
-class NespressoCoffeeMaker extends CoffeeMaker {
-  public getCoffee(): string {
-    return COFFEE_NESPRESSO;
+abstract class FilterCoffeeMaker {
+  public getCoffeeType(): string {
+    return COFFEE_TYPE_FILTER;
   }
 }
 
-class DeLonghiCoffeeMaker extends CoffeeMaker {
+class MelittaFilterCoffeeMaker extends FilterCoffeeMaker {
   public getCoffee(): string {
-    return COFFEE_DELONGHI;
+    return COFFEE_MELITTA;
+  }
+}
+
+class RusselHobbsFilterCoffeeMaker extends FilterCoffeeMaker {
+  public getCoffee(): string {
+    return COFFEE_RUSSEL_HOBBS;
   }
 }
 `;

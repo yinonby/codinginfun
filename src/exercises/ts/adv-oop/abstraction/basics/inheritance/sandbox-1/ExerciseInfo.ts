@@ -14,11 +14,11 @@ whose return-type is <<string>>.
 
 Class <<NespressoCoffeeMaker>>:
 - Should be a non-abstract class, which extends class <<CoffeeMaker>>.
-- Should return <<COFFEE_NESPRESSO>> when implementing <<getCoffee()>>.
+- Should implement <<getCoffee()>> by returning <<COFFEE_NESPRESSO>>.
 
-Class <<DelonghiCoffeeMaker>>:
+Class <<DeLonghiCoffeeMaker>>:
 - Should be a non-abstract class, which extends class <<CoffeeMaker>>.
-- Should return <<COFFEE_DELONGHI>> when implementing <<getCoffee()>>.
+- Should implement <<getCoffee()>> by returning <<COFFEE_DELONGHI>>.
 
 Don't forget to follow code conventions.
 `;
