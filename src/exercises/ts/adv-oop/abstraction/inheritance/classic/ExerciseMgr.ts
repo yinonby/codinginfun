@@ -40,7 +40,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "Abstract inheritance";
+    return "Classic abstract inheritance";
   }
 
   getTasks(): ExerciseTask[] {

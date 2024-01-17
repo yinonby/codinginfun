@@ -16,9 +16,9 @@ import InheritanceMultiLevelClassicExerciseMgr from "./inheritance/multi-level/c
 
 import AbstractionBasicsAbstractMethodsExerciseMgr from "./abstraction/basics/abstract-methods/ExerciseMgr";
 import AbstractionBasicsDeclarationExerciseMgr from "./abstraction/basics/declaration/ExerciseMgr";
-import AbstractionBasicsInheritanceExerciseMgr from "./abstraction/basics/inheritance/ExerciseMgr";
-import AbstractionBasicsMixedInheritanceExerciseMgr from "./abstraction/basics/mixed-inheritance/ExerciseMgr";
 import AbstractionBasicsNormalMethodsExerciseMgr from "./abstraction/basics/normal-methods/ExerciseMgr";
+import AbstractionInheritanceClassicExerciseMgr from "./abstraction/inheritance/classic/ExerciseMgr";
+import AbstractionInheritanceMixedExerciseMgr from "./abstraction/inheritance/mixed/ExerciseMgr";
 
 export const TSAdvOOPExerciseMap: CourseItem = {
   "name": "adv-oop",
@@ -126,13 +126,19 @@ export const TSAdvOOPExerciseMap: CourseItem = {
               "name": "normal-methods",
               "exerciseMgr": new AbstractionBasicsNormalMethodsExerciseMgr(),
             },
+          ]
+        },
+        {
+          "name": "inheritance",
+          "displayName": "Abstract inheritance",
+          "exercises": [
             {
-              "name": "inheritance",
-              "exerciseMgr": new AbstractionBasicsInheritanceExerciseMgr(),
+              "name": "classic",
+              "exerciseMgr": new AbstractionInheritanceClassicExerciseMgr(),
             },
             {
-              "name": "mixed-inheritance",
-              "exerciseMgr": new AbstractionBasicsMixedInheritanceExerciseMgr(),
+              "name": "mixed",
+              "exerciseMgr": new AbstractionInheritanceMixedExerciseMgr(),
             },
           ]
         },
