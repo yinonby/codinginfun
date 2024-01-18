@@ -20,6 +20,9 @@ import AbstractionBasicsNormalMethodsExerciseMgr from "./abstraction/basics/norm
 import AbstractionInheritanceClassicExerciseMgr from "./abstraction/inheritance/classic/ExerciseMgr";
 import AbstractionInheritanceMixedExerciseMgr from "./abstraction/inheritance/mixed/ExerciseMgr";
 
+import PolymorphismBasicsInstanceofExerciseMgr from "./polymorphism/basics/instanceof/ExerciseMgr";
+import PolymorphismBasicsVariableExerciseMgr from "./polymorphism/basics/variable/ExerciseMgr";
+
 export const TSAdvOOPExerciseMap: CourseItem = {
   "name": "adv-oop",
   "displayName": "Advanced Object-Oriented Programming with TypeScript",
@@ -139,6 +142,26 @@ export const TSAdvOOPExerciseMap: CourseItem = {
             {
               "name": "mixed",
               "exerciseMgr": new AbstractionInheritanceMixedExerciseMgr(),
+            },
+          ]
+        },
+      ]
+    },
+    {
+      "name": "polymorphism",
+      "displayName": "Polymorphism",
+      "lessons": [
+        {
+          "name": "basics",
+          "displayName": "Basic polymorphism",
+          "exercises": [
+            {
+              "name": "variable",
+              "exerciseMgr": new PolymorphismBasicsVariableExerciseMgr(),
+            },
+            {
+              "name": "instanceof",
+              "exerciseMgr": new PolymorphismBasicsInstanceofExerciseMgr(),
             },
           ]
         },
