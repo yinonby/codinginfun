@@ -5,8 +5,8 @@ const initialSolutionText: string = `
 `;
 
 const expectedSolutionText: string = `
-const paiValue: number = 3.14;
-console.log(paiValue);
+const piValue: number = 3.14;
+console.log(piValue);
 let myAge: number = 35;
 console.log(myAge);
 myAge = 36;

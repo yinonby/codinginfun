@@ -3,9 +3,9 @@ import ExerciseInfoAbs, { EX_TYPE } from "#infra/info/ExerciseInfoAbs";
 
 const md: string = `
 Tasks:
-- Declare a constant variable named <<paiValue>>, of type number,
+- Declare a constant variable named <<piValue>>, of type number,
 and initialize its value to <<3.14>>.
-- Then, in the next line, print the value of <<paiValue>>
+- Then, in the next line, print the value of <<piValue>>
 to the output (console).
 - Then, in the next line, declare a non-constant variable named <<myAge>>,
 of type <<number>>, and initialize its value to <<35>>.
