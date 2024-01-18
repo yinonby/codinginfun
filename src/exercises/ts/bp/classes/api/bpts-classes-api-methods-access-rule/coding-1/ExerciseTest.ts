@@ -3,28 +3,28 @@ import CodingExerciseTestAbs from "#infra/test/CodingExerciseTestAbs";
 
 const initialSolutionText: string = `
 class Company {
-  private employeeNames: string[] = [];
+  private employeeNames: string[] = [];
 
   constructor(private companyName: string) {
   }
 
-  #1# getCompanyName(): string {
+  #1# getCompanyName(): string {
     return this.companyName;
   }
 
-  #2# setCompanyName(companyName: string): void {
+  #2# setCompanyName(companyName: string): void {
     this.companyName = companyName;
   }
 
   #3# addEmployee(employeeName: string): void {
     // verify employee has not already been added
     if (this.isEmployeeInList(employeeName)) {
-      console.log("Employee " + employeeName + " already exists");
+      console.log("Employee " + employeeName + " already exists");
       return;
     }
 
     this.employeeNames.push(employeeName);
-    console.log("Employee " + employeeName + " added");
+    console.log("Employee " + employeeName + " added");
   }
 
   // used internally only, to check if this employee is already in the list
@@ -36,28 +36,28 @@ class Company {
 
 const expectedSolutionText: string = `
 class Company {
-  private employeeNames: string[] = [];
+  private employeeNames: string[] = [];
 
   constructor(private companyName: string) {
   }
 
-  public getCompanyName(): string {
+  public getCompanyName(): string {
     return this.companyName;
   }
 
-  public setCompanyName(companyName: string): void {
+  public setCompanyName(companyName: string): void {
     this.companyName = companyName;
   }
 
   public addEmployee(employeeName: string): void {
     // verify employee has not already been added
     if (this.isEmployeeInList(employeeName)) {
-      console.log("Employee " + employeeName + " already exists");
+      console.log("Employee " + employeeName + " already exists");
       return;
     }
 
     this.employeeNames.push(employeeName);
-    console.log("Employee " + employeeName + " added");
+    console.log("Employee " + employeeName + " added");
   }
 
   // used internally only, to check if this employee is already in the list

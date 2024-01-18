@@ -20,6 +20,7 @@ import AbstractionBasicsNormalMethodsExerciseMgr from "./abstraction/basics/norm
 import AbstractionInheritanceClassicExerciseMgr from "./abstraction/inheritance/classic/ExerciseMgr";
 import AbstractionInheritanceMixedExerciseMgr from "./abstraction/inheritance/mixed/ExerciseMgr";
 
+import PolymorphismBasicsAbstractionExerciseMgr from "./polymorphism/basics/abstraction/ExerciseMgr";
 import PolymorphismBasicsArraysExerciseMgr from "./polymorphism/basics/arrays/ExerciseMgr";
 import PolymorphismBasicsInstanceofExerciseMgr from "./polymorphism/basics/instanceof/ExerciseMgr";
 import PolymorphismBasicsParametersExerciseMgr from "./polymorphism/basics/parameters/ExerciseMgr";
@@ -172,6 +173,10 @@ export const TSAdvOOPExerciseMap: CourseItem = {
             {
               "name": "parameters",
               "exerciseMgr": new PolymorphismBasicsParametersExerciseMgr(),
+            },
+            {
+              "name": "abstraction",
+              "exerciseMgr": new PolymorphismBasicsAbstractionExerciseMgr(),
             },
           ]
         },
