@@ -20,8 +20,10 @@ import AbstractionBasicsNormalMethodsExerciseMgr from "./abstraction/basics/norm
 import AbstractionInheritanceClassicExerciseMgr from "./abstraction/inheritance/classic/ExerciseMgr";
 import AbstractionInheritanceMixedExerciseMgr from "./abstraction/inheritance/mixed/ExerciseMgr";
 
+import PolymorphismBasicsArraysExerciseMgr from "./polymorphism/basics/arrays/ExerciseMgr";
 import PolymorphismBasicsInstanceofExerciseMgr from "./polymorphism/basics/instanceof/ExerciseMgr";
-import PolymorphismBasicsVariableExerciseMgr from "./polymorphism/basics/variable/ExerciseMgr";
+import PolymorphismBasicsParametersExerciseMgr from "./polymorphism/basics/parameters/ExerciseMgr";
+import PolymorphismBasicsVariablesExerciseMgr from "./polymorphism/basics/variables/ExerciseMgr";
 
 export const TSAdvOOPExerciseMap: CourseItem = {
   "name": "adv-oop",
@@ -157,11 +159,19 @@ export const TSAdvOOPExerciseMap: CourseItem = {
           "exercises": [
             {
               "name": "variable",
-              "exerciseMgr": new PolymorphismBasicsVariableExerciseMgr(),
+              "exerciseMgr": new PolymorphismBasicsVariablesExerciseMgr(),
             },
             {
               "name": "instanceof",
               "exerciseMgr": new PolymorphismBasicsInstanceofExerciseMgr(),
+            },
+            {
+              "name": "arrays",
+              "exerciseMgr": new PolymorphismBasicsArraysExerciseMgr(),
+            },
+            {
+              "name": "parameters",
+              "exerciseMgr": new PolymorphismBasicsParametersExerciseMgr(),
             },
           ]
         },

@@ -5,8 +5,11 @@ const mcAnswerMd1: string = `
 Yes
 `;
 const mcExplanationMd1: string = `
-Although this code might compile with no errors, we should never assign
-an instance of a parent class to a variable whose type is the child class.
+There is no problem with the validity of the code. However, note
+that class <<Flower>> is not a child class of class <<Plant>>. Therefore,
+as long as we only call the function with instances of class <<Plant>> (or
+any child class), the condition inside the function will always
+evaluate to <<false>>.
 `;
 
 const mcAnswerMd2: string = `
@@ -22,12 +25,12 @@ export default class ExerciseTest extends MultiChoiceExerciseTestAbs {
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd1.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd1,
-      isCorrect: false,
+      isCorrect: true,
     });
     mcAnswers.push({
       mcAnswerMd: mcAnswerMd2.replace(/^\s+|\s+$/g, ''),
       mcExplanationMd: mcExplanationMd2,
-      isCorrect: true,
+      isCorrect: false,
     });
 
     return mcAnswers;
