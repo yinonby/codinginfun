@@ -7,11 +7,11 @@ Is the following code valid?
 >>>>
 class Plant {}
 
-class Tree extends Plant {}
+class Animal {}
 
-const plant: Plant = new Tree();
-if (plant instanceof Tree) {
-  console.log("plant is a Tree");
+const plant: Plant = new Plant();
+if (plant instanceof Animal) {
+  console.log("plant is an Animal");
 }
 <<<<
 `;

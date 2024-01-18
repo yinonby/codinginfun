@@ -5,8 +5,8 @@ const mcAnswerMd1: string = `
 Yes
 `;
 const mcExplanationMd1: string = `
-We cannot assign an instance of a parent class to a variable whose
-type is the child class.
+Although this code might compile with no errors, we should never assign
+an instance of a parent class to a variable whose type is the child class.
 `;
 
 const mcAnswerMd2: string = `

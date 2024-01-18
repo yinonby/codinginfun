@@ -7,7 +7,8 @@ Is the following code valid?
 >>>>
 class Plant {}
 
-class Tree extends Plant {}
+class Tree extends Plant {
+}
 
 const tree: Tree = new Plant();
 <<<<

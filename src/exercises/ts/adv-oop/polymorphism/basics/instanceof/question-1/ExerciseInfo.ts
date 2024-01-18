@@ -11,8 +11,6 @@ class Flower extends Plant {}
 
 class Tree extends Plant {}
 
-<<<<
->>>>
 let plant: Plant = new Flower();
 if (plant instanceof Tree) {
   console.log("plant is a Tree!");
