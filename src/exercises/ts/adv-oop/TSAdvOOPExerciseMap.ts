@@ -26,6 +26,12 @@ import PolymorphismBasicsInstanceofExerciseMgr from "./polymorphism/basics/insta
 import PolymorphismBasicsParametersExerciseMgr from "./polymorphism/basics/parameters/ExerciseMgr";
 import PolymorphismBasicsVariablesExerciseMgr from "./polymorphism/basics/variables/ExerciseMgr";
 
+import InterfacesBasicsDeclarationExerciseMgr from "./interfaces/basics/declaration/ExerciseMgr";
+import InterfacesBasicsExtensionExerciseMgr from "./interfaces/basics/extension/ExerciseMgr";
+import InterfacesBasicsImplementionExerciseMgr from "./interfaces/basics/implementation/ExerciseMgr";
+import InterfacesBasicsMethodsExerciseMgr from "./interfaces/basics/methods/ExerciseMgr";
+import InterfacesBasicsMultiImplementionExerciseMgr from "./interfaces/basics/multi-implementation/ExerciseMgr";
+
 export const TSAdvOOPExerciseMap: CourseItem = {
   "name": "adv-oop",
   "displayName": "Advanced Object-Oriented Programming with TypeScript",
@@ -177,6 +183,43 @@ export const TSAdvOOPExerciseMap: CourseItem = {
             {
               "name": "abstraction",
               "exerciseMgr": new PolymorphismBasicsAbstractionExerciseMgr(),
+            },
+          ]
+        },
+      ]
+    },
+    {
+      "name": "interfaces",
+      "displayName": "Interfaces",
+      "chapterDescriptionMd": `\
+        In this chapter, we will plan an interface \
+        to serve a platform playing audio, like Spotify. \
+        The interface will be used to play different types of media, \
+        such as songs, podcasts, and announcements.`,
+      "lessons": [
+        {
+          "name": "basics",
+          "displayName": "Basic interfaces",
+          "exercises": [
+            {
+              "name": "declaration",
+              "exerciseMgr": new InterfacesBasicsDeclarationExerciseMgr(),
+            },
+            {
+              "name": "methods",
+              "exerciseMgr": new InterfacesBasicsMethodsExerciseMgr(),
+            },
+            {
+              "name": "implementation",
+              "exerciseMgr": new InterfacesBasicsImplementionExerciseMgr(),
+            },
+            {
+              "name": "multi-implementation",
+              "exerciseMgr": new InterfacesBasicsMultiImplementionExerciseMgr(),
+            },
+            {
+              "name": "extension",
+              "exerciseMgr": new InterfacesBasicsExtensionExerciseMgr(),
             },
           ]
         },

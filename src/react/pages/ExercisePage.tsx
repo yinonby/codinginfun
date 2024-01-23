@@ -7,6 +7,7 @@ import ExerciseMgrAdapter from '../../infra/mgr/ExerciseMgrAbs';
 import ExerciseContent from "../components/ExerciseContent";
 import ExerciseSelect from "../components/ExerciseSelect";
 import Header, { Content } from "../components/Header";
+import Markdown from '../components/Markdown';
 import TaskSelect from '../components/TaskSelect';
 
 export default function ExercisePage(props: any) {
@@ -47,6 +48,7 @@ export default function ExercisePage(props: any) {
               <h1>Student Exercises:</h1>
               <Box mb={2} >
                 <ExerciseSelect />
+                <ChapterDescription/>
               </Box>
               {exerciseName && taskIdStr &&
                 <>
@@ -68,6 +70,30 @@ export default function ExercisePage(props: any) {
       </Content>
     </>
   );
+}
+
+function ChapterDescription() {
+  const params = useParams();
+  const courseName: string = params.courseName || "";
+  const chapterName: string = params.chapterName || "";
+
+  const exerciseMap = new ExerciseMap();
+
+  if (! chapterName) {
+    return null;
+  }
+
+  const chapterDescriptionMd: string | undefined =
+    exerciseMap.getChapterDescriptionMd(courseName, chapterName);
+  if (! chapterDescriptionMd) {
+    return null;
+  }
+
+  return (
+    <Box my={2} sx={{typography: "subtitle1"}}>
+      <Markdown md={chapterDescriptionMd.replace(/^\s+|\s+$/g, '')} />
+    </Box>
+  )
 }
 
 function ExerciseTitle() {

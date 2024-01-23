@@ -16,6 +16,7 @@ export type CourseItem = {
 type ChapterItem = {
   name: string,
   displayName: string,
+  chapterDescriptionMd?: string,
   lessons: LessonItem[],
 }
 
@@ -53,6 +54,12 @@ export default class ExerciseMap {
       name: e.name,
       displayName: e.displayName,
     }));
+  }
+
+  getChapterDescriptionMd(courseName: string, chapterName: string): string | undefined {
+    return this.map[courseName].chapters
+      .find(e => e.name === chapterName)!.chapterDescriptionMd;
+
   }
 
   getLessonNames(courseName: string, chapterName: string): NameItem[] {
