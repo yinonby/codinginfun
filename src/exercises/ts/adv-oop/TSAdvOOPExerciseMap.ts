@@ -34,6 +34,9 @@ import InterfacesBasicsManyImplementionsExerciseMgr from "./interfaces/basics/ma
 import InterfacesBasicsMethodsExerciseMgr from "./interfaces/basics/methods/ExerciseMgr";
 import InterfacesBasicsMultiImplementionExerciseMgr from "./interfaces/basics/multi-implementation/ExerciseMgr";
 
+import InterfacesWithAbstractionImplementionExerciseMgr from "./interfaces/with-abstraction/implementation/ExerciseMgr";
+import InterfacesWithAbstractionMadeAbstractExerciseMgr from "./interfaces/with-abstraction/made-abstract/ExerciseMgr";
+
 export const TSAdvOOPExerciseMap: CourseItem = {
   "name": "adv-oop",
   "displayName": "Advanced Object-Oriented Programming with TypeScript",
@@ -233,6 +236,20 @@ export const TSAdvOOPExerciseMap: CourseItem = {
             },
           ]
         },
+        {
+          "name": "with-abstraction",
+          "displayName": "Interfaces with data abstraction",
+          "exercises": [
+            {
+              "name": "implementation",
+              "exerciseMgr": new InterfacesWithAbstractionImplementionExerciseMgr(),
+            },
+            {
+              "name": "made-abstract",
+              "exerciseMgr": new InterfacesWithAbstractionMadeAbstractExerciseMgr(),
+            },
+          ]
+        }
       ]
     }
   ]
