@@ -26,9 +26,11 @@ import PolymorphismBasicsInstanceofExerciseMgr from "./polymorphism/basics/insta
 import PolymorphismBasicsParametersExerciseMgr from "./polymorphism/basics/parameters/ExerciseMgr";
 import PolymorphismBasicsVariablesExerciseMgr from "./polymorphism/basics/variables/ExerciseMgr";
 
+import InterfacesBasicsAsParametersExerciseMgr from "./interfaces/basics/as-parameters/ExerciseMgr";
 import InterfacesBasicsDeclarationExerciseMgr from "./interfaces/basics/declaration/ExerciseMgr";
 import InterfacesBasicsExtensionExerciseMgr from "./interfaces/basics/extension/ExerciseMgr";
 import InterfacesBasicsImplementionExerciseMgr from "./interfaces/basics/implementation/ExerciseMgr";
+import InterfacesBasicsManyImplementionsExerciseMgr from "./interfaces/basics/many-implementations/ExerciseMgr";
 import InterfacesBasicsMethodsExerciseMgr from "./interfaces/basics/methods/ExerciseMgr";
 import InterfacesBasicsMultiImplementionExerciseMgr from "./interfaces/basics/multi-implementation/ExerciseMgr";
 
@@ -218,8 +220,16 @@ export const TSAdvOOPExerciseMap: CourseItem = {
               "exerciseMgr": new InterfacesBasicsMultiImplementionExerciseMgr(),
             },
             {
+              "name": "many-implementations",
+              "exerciseMgr": new InterfacesBasicsManyImplementionsExerciseMgr(),
+            },
+            {
               "name": "extension",
               "exerciseMgr": new InterfacesBasicsExtensionExerciseMgr(),
+            },
+            {
+              "name": "as-parameters",
+              "exerciseMgr": new InterfacesBasicsAsParametersExerciseMgr(),
             },
           ]
         },
