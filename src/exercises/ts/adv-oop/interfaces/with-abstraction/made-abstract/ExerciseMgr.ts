@@ -22,7 +22,7 @@ export default class ExerciseMgr extends ExerciseMgrAbs {
   }
 
   getTitle(): string {
-    return "Declaring interfaces methods as abstract methods";
+    return "Declaring interface methods as abstract methods";
   }
 
   getTasks(): ExerciseTask[] {
