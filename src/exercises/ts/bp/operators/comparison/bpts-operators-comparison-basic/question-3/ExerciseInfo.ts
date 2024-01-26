@@ -6,7 +6,7 @@ What is the expected output of the following code?
 
 >>>>
 const str1: string = "Hello";
-const str2: string = "Helo;
+const str2: string = "Helo";
 console.log(str1 !== str2);
 <<<<
 `;
