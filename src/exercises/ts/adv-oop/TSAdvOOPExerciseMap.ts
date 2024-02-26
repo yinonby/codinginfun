@@ -37,6 +37,8 @@ import InterfacesBasicsMultiImplementionExerciseMgr from "./interfaces/basics/mu
 import InterfacesWithAbstractionImplementionExerciseMgr from "./interfaces/with-abstraction/implementation/ExerciseMgr";
 import InterfacesWithAbstractionMadeAbstractExerciseMgr from "./interfaces/with-abstraction/made-abstract/ExerciseMgr";
 
+import SummaryConnectingEverythingBookingSystemExerciseMgr from "./summary/connecting-everything/booking-system/ExerciseMgr";
+
 export const TSAdvOOPExerciseMap: CourseItem = {
   "name": "adv-oop",
   "displayName": "Advanced Object-Oriented Programming with TypeScript",
@@ -247,6 +249,24 @@ export const TSAdvOOPExerciseMap: CourseItem = {
             {
               "name": "made-abstract",
               "exerciseMgr": new InterfacesWithAbstractionMadeAbstractExerciseMgr(),
+            },
+          ]
+        }
+      ]
+    },
+    {
+      "name": "summary",
+      "displayName": "Summary",
+      "chapterDescriptionMd": `\
+        In this chapter, we will plan a travel booking system.`,
+      "lessons": [
+        {
+          "name": "connecting-everything",
+          "displayName": "Connecting everything",
+          "exercises": [
+            {
+              "name": "booking-system",
+              "exerciseMgr": new SummaryConnectingEverythingBookingSystemExerciseMgr(),
             },
           ]
         }

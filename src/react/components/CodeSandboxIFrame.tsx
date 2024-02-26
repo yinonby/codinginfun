@@ -1,5 +1,6 @@
 
-import ExerciseInfoAbs from '#infra/info/ExerciseInfoAbs';
+import ExerciseInfoAbs, { EX_TYPE } from '#infra/info/ExerciseInfoAbs';
+import ModularSandboxExerciseInfoAbs from '#infra/info/ModularSandboxExerciseInfoAbs';
 import SandboxExerciseInfoAbs from '#infra/info/SandboxExerciseInfoAbs';
 import ExerciseTask from '#infra/task/ExerciseTask';
 import { Box } from '@mui/material';
@@ -33,20 +34,41 @@ export default function CodeSandboxIFrame() {
   const exerciseTask: ExerciseTask =
     exerciseItem.exerciseMgr.getTask(taskId);
   const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
-  if (! (exercieInfo instanceof SandboxExerciseInfoAbs)) {
-    return <Box mx={2}>Invalid ExerciseInfo</Box>;
+
+  let initialPath: string = "";
+  let module: string = "";
+  let hidenavigation: string = "";
+  if (exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX) {
+    if (! (exercieInfo instanceof SandboxExerciseInfoAbs)) {
+      return <Box mx={2}>Invalid ExerciseInfo</Box>;
+    }
+    const sandboxId: string = exercieInfo.getSandboxId();
+
+    hidenavigation = "1";
+    initialPath = "o" + "%2F" + "codesandbox" + "%2F" + progLang +
+      "%2F" + courseName + "%2F" + chapterName +
+      "%2F" + lessonName + "%2F" + exerciseName + "%2F" + sandboxId;
+    module = "%2F" + "src" + "%2F" + "exercises" + "%2F" + progLang +
+      "%2F" + courseName + "%2F" + chapterName +
+      "%2F" + lessonName + "%2F" + exerciseName + "%2F" + sandboxId +
+      "%2F" + "Exercise.ts";
+  } else if (exercieInfo.getType() === EX_TYPE.EX_TYPE_MODULAR_SANDBOX) {
+    if (! (exercieInfo instanceof ModularSandboxExerciseInfoAbs)) {
+      return <Box mx={2}>Invalid ExerciseInfo</Box>;
+    }
+    const initialFilePath: string = exercieInfo.getInitialFilePath();
+    
+    hidenavigation = "0";
+    initialPath = "o" + "%2F" + "codesandbox" + "%2F" + "modular" +
+      "%2F" + progLang + "%2F" + exerciseName;
+    module = "%2F" + "src" + "%2F" + "exercises" +
+      "%2F" + progLang + "%2F" + exerciseName + "%2F" + initialFilePath;
   }
-  const sandboxId: string = exercieInfo.getSandboxId();
 
   const src: string = "https://codesandbox.io/embed/" + repo +
     "/?fontsize=14&hidenavigation=1&theme=dark" +
-    "&initialpath=" + "o" + "%2F" + "codesandbox" + "%2F" + progLang +
-    "%2F" + courseName + "%2F" + chapterName +
-    "%2F" + lessonName + "%2F" + exerciseName + "%2F" + sandboxId +
-    "&module=" + "%2F" + "src" + "%2F" + "exercises" + "%2F" + progLang +
-    "%2F" + courseName + "%2F" + chapterName +
-    "%2F" + lessonName + "%2F" + exerciseName + "%2F" + sandboxId +
-    "%2F" + "Exercise.ts";
+    "&initialpath=" + initialPath +
+    "&module=" + module;
 
   const style = {
     width: "100%",

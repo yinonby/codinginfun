@@ -45,10 +45,8 @@ export default function ExerciseContent(props: any) {
   const exerciseTask: ExerciseTask = exerciseTasks[taskId];
   const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
   const taskTypeStr: string = exercieInfo.getTaskTypeStr();
-  const instWidth: number = exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX ?
-    3 : 6;
-  const contentWidth: number = exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX ?
-    9 : 6;
+  const instWidth: number = exercieInfo.isSandbox() ? 3 : 6;
+  const contentWidth: number = exercieInfo.isSandbox() ? 9 : 6;
 
   return (
     <Box>
@@ -74,7 +72,7 @@ function TaskView(props: any) {
 
   return (
     <Box>
-      {exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX &&
+      {exercieInfo.isSandbox() &&
         <CodesandboxTaskView exercieTest={exercieTest} />
       }
 
