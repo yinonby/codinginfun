@@ -54,13 +54,20 @@ export default function ExerciseContent(props: any) {
       <h4>{taskTypeStr}</h4>
       <Grid container spacing={2}>
         {exerciseInfo.getType() !== EX_TYPE.EX_TYPE_CODING_ADVANCED &&
-          <Grid item xs={12} sm={12} md={instWidth}>
-            <Instructions exerciseInfo={exerciseInfo} />
+          <>
+            <Grid item xs={12} sm={12} md={instWidth}>
+              <Instructions exerciseInfo={exerciseInfo} />
+            </Grid>
+            <Grid item xs={12} sm={12} md={contentWidth}>
+              <TaskView exerciseTask={exerciseTask} />
+            </Grid>
+          </>
+        }
+        {exerciseInfo.getType() === EX_TYPE.EX_TYPE_CODING_ADVANCED &&
+          <Grid item xs={12} sm={12} md={12}>
+            <TaskView exerciseTask={exerciseTask} />
           </Grid>
         }
-        <Grid item xs={12} sm={12} md={contentWidth}>
-          <TaskView exerciseTask={exerciseTask} />
-        </Grid>
       </Grid>
     </Box>
   );
