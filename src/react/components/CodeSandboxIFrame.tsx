@@ -33,16 +33,16 @@ export default function CodeSandboxIFrame() {
 
   const exerciseTask: ExerciseTask =
     exerciseItem.exerciseMgr.getTask(taskId);
-  const exercieInfo: ExerciseInfoAbs = exerciseTask.getInfo();
+  const exerciseInfo: ExerciseInfoAbs = exerciseTask.getInfo();
 
   let initialPath: string = "";
   let module: string = "";
   let hidenavigation: string = "";
-  if (exercieInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX) {
-    if (! (exercieInfo instanceof SandboxExerciseInfoAbs)) {
+  if (exerciseInfo.getType() === EX_TYPE.EX_TYPE_SANDBOX) {
+    if (! (exerciseInfo instanceof SandboxExerciseInfoAbs)) {
       return <Box mx={2}>Invalid ExerciseInfo</Box>;
     }
-    const sandboxId: string = exercieInfo.getSandboxId();
+    const sandboxId: string = exerciseInfo.getSandboxId();
 
     hidenavigation = "1";
     initialPath = "o" + "%2F" + "codesandbox" + "%2F" + progLang +
@@ -52,11 +52,11 @@ export default function CodeSandboxIFrame() {
       "%2F" + courseName + "%2F" + chapterName +
       "%2F" + lessonName + "%2F" + exerciseName + "%2F" + sandboxId +
       "%2F" + "Exercise.ts";
-  } else if (exercieInfo.getType() === EX_TYPE.EX_TYPE_MODULAR_SANDBOX) {
-    if (! (exercieInfo instanceof ModularSandboxExerciseInfoAbs)) {
+  } else if (exerciseInfo.getType() === EX_TYPE.EX_TYPE_MODULAR_SANDBOX) {
+    if (! (exerciseInfo instanceof ModularSandboxExerciseInfoAbs)) {
       return <Box mx={2}>Invalid ExerciseInfo</Box>;
     }
-    const initialFilePath: string = exercieInfo.getInitialFilePath();
+    const initialFilePath: string = exerciseInfo.getInitialFilePath();
     
     hidenavigation = "0";
     initialPath = "o" + "%2F" + "codesandbox" + "%2F" + "modular" +

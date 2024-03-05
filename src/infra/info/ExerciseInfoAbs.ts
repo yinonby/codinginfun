@@ -7,6 +7,8 @@ export default abstract class ExerciseInfoAbs {
     if (this.getType() === EX_TYPE.EX_TYPE_SANDBOX ||
       this.getType() === EX_TYPE.EX_TYPE_MODULAR_SANDBOX) {
       return "Sandbox coding exercise";
+    } else if (this.getType() === EX_TYPE.EX_TYPE_CODING_ADVANCED) {
+      return "Advanced coding exercise";
     } else if (this.getType() === EX_TYPE.EX_TYPE_CODING) {
       return "Coding exercise";
     } else if (this.getType() === EX_TYPE.EX_TYPE_QUESTION) {
@@ -28,6 +30,7 @@ export enum EX_TYPE {
   EX_TYPE_CODING,
   EX_TYPE_SANDBOX,
   EX_TYPE_MODULAR_SANDBOX,
+  EX_TYPE_CODING_ADVANCED,
   EX_TYPE_QUESTION,
   EX_TYPE_MULTICHOICE,
 }

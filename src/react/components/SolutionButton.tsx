@@ -39,8 +39,8 @@ export default function SolutionButton(props: any) {
 
   const exerciseTask: ExerciseTask =
     exerciseItem.exerciseMgr.getTask(taskId);
-  const exercieTest: ExerciseTestAbs = exerciseTask.getTest();
-  const expectedSolutionText = exercieTest.getExpectedSolutionText();
+  const exerciseTest: ExerciseTestAbs = exerciseTask.getTest();
+  const expectedSolutionText = exerciseTest.getExpectedSolutionText();
   const handleClick = () => {
     setShowComparison(!showComparison);
   }

@@ -8,8 +8,8 @@ import { ExplainedTestResult } from "../ExplainedTestResultView";
 import SolutionButton from "../SolutionButton";
 
 export function CodingTaskView(props: any) {
-  const exercieTest: CodingExerciseTestAbs = props.exercieTest;
-  const initialSolutionText: string = exercieTest.getInitialSolutionText();
+  const exerciseTest: CodingExerciseTestAbs = props.exerciseTest;
+  const initialSolutionText: string = exerciseTest.getInitialSolutionText();
   const [solutionText, setSolutionText] = useState(initialSolutionText);
 
   const handleEditorChange = (value: string) => {
@@ -25,7 +25,7 @@ export function CodingTaskView(props: any) {
     try {
       const cleanSolutionText = solutionText.replaceAll("\r", "");
       console.log("Verifying your code...");
-      exercieTest.verify(cleanSolutionText);
+      exerciseTest.verify(cleanSolutionText);
       console.log("Verifying your code... ok");
     } catch (e) {
       passed = false;
@@ -41,8 +41,8 @@ export function CodingTaskView(props: any) {
     const tmpExplainedTestResult: ExplainedTestResult = {
       run: true,
       passed: passed,
-      expectedSolutionText: exercieTest.getExpectedSolutionText(),
-      explanation: exercieTest.getExpectedExplanationMd(),
+      expectedSolutionText: exerciseTest.getExpectedSolutionText(),
+      explanation: exerciseTest.getExpectedExplanationMd(),
     };
     return tmpExplainedTestResult;
 
@@ -52,7 +52,7 @@ export function CodingTaskView(props: any) {
     setSolutionText(initialSolutionText);
   }
 
-  const rowNum: number = exercieTest.getExpectedSolutionRowNum();
+  const rowNum: number = exerciseTest.getExpectedSolutionRowNum();
   const height: number = 19 * rowNum;
 
   return (

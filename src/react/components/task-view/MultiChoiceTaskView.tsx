@@ -15,8 +15,8 @@ import {
 } from "../ExplainedTestResultView";
 
 export function MultiChoiceTaskView(props: any) {
-  const exercieTest: MultiChoiceExerciseTestAbs = props.exercieTest;
-  const mcAnswers: MultiChoiceAnswer[] = exercieTest.getMcAnswers();
+  const exerciseTest: MultiChoiceExerciseTestAbs = props.exerciseTest;
+  const mcAnswers: MultiChoiceAnswer[] = exerciseTest.getMcAnswers();
   const [selectedIdx, setSelectedIdx] = React.useState<number | null>(null);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +30,7 @@ export function MultiChoiceTaskView(props: any) {
     console.clear();
     console.log("Running all tests:");
 
-    if (selectedIdx === exercieTest.getCorrectAnswerIdx()) {
+    if (selectedIdx === exerciseTest.getCorrectAnswerIdx()) {
       console.log("Answer is correct :)");
     } else {
       console.log("Answer is incorrect :(");
@@ -40,8 +40,8 @@ export function MultiChoiceTaskView(props: any) {
     const tmpExplainedTestResult: ExplainedTestResult = {
       run: true,
       passed: passed,
-      expectedSolutionText: exercieTest.getExpectedSolutionText(),
-      explanation: exercieTest.getMcAnswerExplanationMd(selectedIdx!),
+      expectedSolutionText: exerciseTest.getExpectedSolutionText(),
+      explanation: exerciseTest.getMcAnswerExplanationMd(selectedIdx!),
     };
     return tmpExplainedTestResult;
   };

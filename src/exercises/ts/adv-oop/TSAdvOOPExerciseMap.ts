@@ -257,8 +257,6 @@ export const TSAdvOOPExerciseMap: CourseItem = {
     {
       "name": "summary",
       "displayName": "Summary",
-      "chapterDescriptionMd": `\
-        In this chapter, we will plan a travel booking system.`,
       "lessons": [
         {
           "name": "connecting-everything",

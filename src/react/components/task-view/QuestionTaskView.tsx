@@ -6,7 +6,7 @@ import CheckAnswerButton from "../CheckAnswerButton";
 import { ExplainedTestResult } from "../ExplainedTestResultView";
 
 export function QuestionTaskView(props: any) {
-  const exercieTest: QuestionExerciseTestAbs = props.exercieTest;
+  const exerciseTest: QuestionExerciseTestAbs = props.exerciseTest;
   const [solutionText, setSolutionText] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,7 +23,7 @@ export function QuestionTaskView(props: any) {
     try {
       const cleanSolutionText = solutionText.replaceAll("\r", "");
       console.log("Verifying your answer...");
-      exercieTest.verify(cleanSolutionText);
+      exerciseTest.verify(cleanSolutionText);
       console.log("Verifying your answer... ok");
     } catch (e) {
       passed = false;
@@ -43,13 +43,13 @@ export function QuestionTaskView(props: any) {
     const tmpExplainedTestResult: ExplainedTestResult = {
       run: true,
       passed: passed,
-      expectedSolutionText: exercieTest.getExpectedSolutionText(),
-      explanation: exercieTest.getExpectedExplanationMd(),
+      expectedSolutionText: exerciseTest.getExpectedSolutionText(),
+      explanation: exerciseTest.getExpectedExplanationMd(),
     };
     return tmpExplainedTestResult;
   };
 
-  const rowNum: number = exercieTest.getExpectedSolutionRowNum();
+  const rowNum: number = exerciseTest.getExpectedSolutionRowNum();
 
   return (
     <Grid container spacing={2}>
