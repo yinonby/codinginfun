@@ -7,7 +7,7 @@ import ExerciseMap, { ExerciseItem } from '../../exercises/ExerciseMap';
 import ExerciseTask from '../../infra/task/ExerciseTask';
 import { getExercisesBaseUrl } from '../AppCfg';
 
-export const exerciseMap = new ExerciseMap();
+const exerciseMap = new ExerciseMap();
 
 interface LinkTabProps {
   label?: string;
@@ -44,6 +44,10 @@ export default function TaskSelect() {
 
   const exerciseTasks: ExerciseTask[] = exerciseItem.exerciseMgr.getTasks();
 
+  if (exerciseTasks.length <= 1) {
+    return null;
+  }
+
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -53,7 +57,7 @@ export default function TaskSelect() {
   lessonName + "/" + exerciseName + "/";
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%' }} mb={2}>
       <Tabs value={value} onChange={handleChange}
         variant="scrollable"
         aria-label="Task navigation">

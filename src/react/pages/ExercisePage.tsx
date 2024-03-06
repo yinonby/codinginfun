@@ -53,9 +53,7 @@ export default function ExercisePage(props: any) {
               {exerciseName && taskIdStr &&
                 <>
                   <ExerciseTitle />
-                  <Box mb={2} >
-                    <TaskSelect />
-                  </Box>
+                  <TaskSelect />
                   <Box pb={4} sx={{ flex: 1 }} >
                     {exerciseName && taskIdStr && <ActualContent />}
                   </Box>

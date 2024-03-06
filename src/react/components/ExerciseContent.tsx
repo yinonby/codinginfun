@@ -51,7 +51,9 @@ export default function ExerciseContent(props: any) {
 
   return (
     <Box>
-      <h4>{taskTypeStr}</h4>
+      <Box sx={{typography: "subtitle1", fontWeight: "bold"}}>
+        {taskTypeStr}
+      </Box>
       <Grid container spacing={2}>
         {exerciseInfo.getType() !== EX_TYPE.EX_TYPE_CODING_ADVANCED &&
           <>
